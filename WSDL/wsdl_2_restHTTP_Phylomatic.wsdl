@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl2:description xmlns:wsdl2="http://www.w3.org/ns/wsdl" xmlns:tns="http://axis2.apache.org" xmlns:wsoap="http://www.w3.org/ns/wsdl/soap" xmlns:wrpc="http://www.w3.org/ns/wsdl/rpc" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdlx="http://www.w3.org/ns/wsdl-extensions" xmlns:ns="http://axis2.apache.org" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:whttp="http://www.w3.org/ns/wsdl/http" targetNamespace="http://axis2.apache.org">
+    <wsdl2:types>
+        <xs:schema xmlns:ax21="http://axis2.apache.org" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://axis2.apache.org">    
+            <xs:element name="storedtree">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="storedtree" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="informat">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="informat" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="method">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="method" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="taxaformat">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="taxaformat" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outformat">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="outformat" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="taxa">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="taxa" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetPhylomaticResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            
+        </xs:schema>
+    </wsdl2:types>
+    <wsdl2:interface name="ServiceInterface">
+        <wsdl2:operation name="GetPhylomatic" pattern="http://www.w3.org/ns/wsdl/in-out">
+            <wsdl2:input element="ns:storedtree" wsaw:Action="urn:storedtree"/>
+			<wsdl2:input element="ns:informat" wsaw:Action="urn:informat"/>
+			<wsdl2:input element="ns:method" wsaw:Action="urn:method"/>
+			<wsdl2:input element="ns:taxaformat" wsaw:Action="urn:taxaformat"/>
+			<wsdl2:input element="ns:outformat" wsaw:Action="urn:outformat"/>
+			<wsdl2:input element="ns:taxa" wsaw:Action="urn:taxa"/>
+            <wsdl2:output element="ns:GetPhylomaticResponse" wsaw:Action="urn:GetPhylomaticResponse"/>
+        </wsdl2:operation>
+    </wsdl2:interface>
+    <wsdl2:binding name="PhylomaticServiceHttpBinding" interface="tns:ServiceInterface" type="http://www.w3.org/ns/wsdl/http">
+        <wsdl2:operation ref="tns:GetPhylomatic" whttp:location="pmws?" whttp:method="GET" whttp:contentEncodingDefault="application/x-www-form-urlencoded" whttp:queryParameterSeparator=""/>   
+    </wsdl2:binding>
+    <wsdl2:service name="PhylomaticService" interface="tns:ServiceInterface">
+        <wsdl2:endpoint name="PhylomaticServiceHttpEndpoint" binding="tns:PhylomaticServiceHttpBinding" address="http://phylodiversity.net/phylomatic/"/>
+    </wsdl2:service>
+</wsdl2:description>
