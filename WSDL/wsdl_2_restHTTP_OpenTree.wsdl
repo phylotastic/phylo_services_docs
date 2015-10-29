@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl2:description xmlns:wsdl2="http://www.w3.org/ns/wsdl" xmlns:tns="http://axis2.apache.org" xmlns:wsoap="http://www.w3.org/ns/wsdl/soap" xmlns:wrpc="http://www.w3.org/ns/wsdl/rpc" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdlx="http://www.w3.org/ns/wsdl-extensions" xmlns:ns="http://axis2.apache.org" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:whttp="http://www.w3.org/ns/wsdl/http" targetNamespace="http://axis2.apache.org">
+    <wsdl2:types>
+        <xs:schema xmlns:ax21="http://axis2.apache.org" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://axis2.apache.org">    
+            <xs:element name="study_list" nillable="false" type="xs:boolean" />
+			<xs:element name="include_lineage" nillable="true" type="xs:boolean" />
+			<xs:element name="include_dubious" nillable="true" type="xs:boolean" />
+			<xs:element name="list_terminal_descendants" nillable="true" type="xs:boolean" />
+            <xs:element name="ott_id" nillable="false" type="xs:long"/>
+			<xs:simpleType name="list_of_long">
+			    <xs:list itemType="xs:long"/>
+			</xs:simpleType>
+			<xs:simpleType name="list_of_string">
+			    <xs:list itemType="xs:string"/>
+			</xs:simpleType>
+			<xs:element name="ott_ids" type="list_of_long"/>
+			<xs:element name="tree_id" nillable="true" type="xs:string"/>
+			<xs:element name="node_id" nillable="false" type="xs:long"/>
+			<xs:element name="node_ids" type="list_of_long" />
+            <xs:element name="tree_ids" type="list_of_string" />
+            <xs:element name="names" type="list_of_string" />
+			<xs:element name="name" nillable="false" type="xs:string"/>
+			<xs:element name="context_name" nillable="true" type="xs:string"/>
+			<xs:element name="label_format" nillable="true" type="xs:string"/>
+            <xs:element name="OpenTreeAboutResponse" type="xs:string" />
+            <xs:element name="OpenTree_GetSubTree_By_ott_id_Response" nillable="true" type="xs:string" />
+            <xs:element name="OpenTree_GetSubTree_By_tree_id_Response" nillable="true" type="xs:string"/>
+			<xs:element name="OpenTree_GetSubTree_By_node_id_Response" nillable="true" type="xs:string"/>
+			<xs:element name="OpenTree_GetMRCA_By_ott_ids_Response" nillable="true" type="xs:string"/>
+			<xs:element name="OpenTree_GetMRCA_By_node_ids_Response" nillable="true" type="xs:string"/>
+            <xs:element name="GraphAboutResponse" nillable="true" type="xs:string"/>
+            <xs:element name="Graph_GetNodeInfo_By_ott_id_Response" nillable="true" type="xs:string" />  
+			<xs:element name="Graph_GetNodeInfo_By_node_id_Response" nillable="true" type="xs:string" />
+			<xs:element name="TNRS_GetMatchNames_By_names_Response" nillable="true" type="xs:string" /> 
+			<xs:element name="TNRS_GetAutocompleteName_By_name_Response" nillable="true" type="xs:string" />  
+			<xs:element name="TNRS_GetContexts_Response" nillable="true" type="xs:string" />
+			<xs:element name="TNRS_GetInferContext_By_names_Response" nillable="true" type="xs:string" />
+			<xs:element name="Taxonomy_About_Response" nillable="true" type="xs:string" /> 
+			<xs:element name="Taxonomy_Lica_By_ott_ids_Response" nillable="true" type="xs:string" />
+			<xs:element name="Taxonomy_GetSubTree_By_ott_id_Response" nillable="true" type="xs:string" />
+			<xs:element name="Taxonomy_GetTaxon_By_ott_id_Response" nillable="true" type="xs:string" />
+			
+        </xs:schema>
+    </wsdl2:types>
+    <wsdl2:interface name="ServiceInterface">
+	
+	    <!-- Open Tree Of Life Services -->
+	   
+        <wsdl2:operation name="OpenTreeAbout" pattern="http://www.w3.org/ns/wsdl/in-out">
+            <wsdl2:input element="ns:study_list" wsaw:Action="urn:study_list"/>
+            <wsdl2:output element="ns:OpenTreeAboutResponse" wsaw:Action="urn:OpenTreeAboutResponse"/>
+        </wsdl2:operation>
+        <wsdl2:operation name="OpenTree_GetSubTree_By_ott_id" pattern="http://www.w3.org/ns/wsdl/in-out">
+            <wsdl2:input element="ns:ott_id" wsaw:Action="urn:ott_id"/>
+            <wsdl2:output element="ns:OpenTree_GetSubTree_By_ott_id_Response" wsaw:Action="urn:OpenTree_GetSubTree_By_ott_id_Response"/>
+        </wsdl2:operation>
+        <wsdl2:operation name="OpenTree_GetSubTree_By_tree_id" pattern="http://www.w3.org/ns/wsdl/in-out">
+            <wsdl2:input element="ns:tree_id" wsaw:Action="urn:tree_id"/>
+            <wsdl2:output element="ns:OpenTree_GetSubTree_By_tree_id_Response" wsaw:Action="urn:OpenTree_GetSubTree_By_tree_id_Response"/>
+        </wsdl2:operation>
+        <wsdl2:operation name="OpenTree_GetSubTree_By_node_id" pattern="http://www.w3.org/ns/wsdl/in-out">
+            <wsdl2:input element="ns:node_id" wsaw:Action="urn:node_id"/>
+            <wsdl2:output element="ns:OpenTree_GetSubTree_By_node_id_Response" wsaw:Action="urn:OpenTree_GetSubTree_By_node_id_Response"/>
+        </wsdl2:operation>
+        <wsdl2:operation name="OpenTree_GetMRCA_By_ott_ids" pattern="http://www.w3.org/ns/wsdl/in-out">
+            <wsdl2:input element="ns:ott_ids" wsaw:Action="urn:ott_ids"/>
+            <wsdl2:output element="ns:OpenTree_GetMRCA_By_ott_ids_Response" wsaw:Action="urn:OpenTree_GetMRCA_By_ott_ids_Response"/>
+        </wsdl2:operation>
+        <wsdl2:operation name="OpenTree_GetMRCA_By_node_ids" pattern="http://www.w3.org/ns/wsdl/in-out">
+            <wsdl2:input element="ns:node_ids" wsaw:Action="urn:node_ids"/>
+            <wsdl2:output element="ns:OpenTree_GetMRCA_By_node_ids_Response" wsaw:Action="urn:OpenTree_GetMRCA_By_node_ids_Response"/>
+        </wsdl2:operation>
+        <wsdl2:operation name="OpenTree_GetInducedSubTree_By_ott_ids" pattern="http://www.w3.org/ns/wsdl/in-out">
+            <wsdl2:input element="ns:ott_ids" wsaw:Action="urn:ott_ids"/>
+            <wsdl2:output element="ns:OpenTree_GetInducedSubTree_By_ott_ids_Response" wsaw:Action="urn:OpenTree_GetInducedSubTree_By_ott_ids_Response"/>
+        </wsdl2:operation>
+        <wsdl2:operation name="OpenTree_GetInducedSubTree_By_node_ids" pattern="http://www.w3.org/ns/wsdl/in-out">
+            <wsdl2:input element="ns:node_ids" wsaw:Action="urn:node_ids"/>
+            <wsdl2:output element="ns:OpenTree_GetInducedSubTree_By_node_ids_Response" wsaw:Action="urn:OpenTree_GetInducedSubTree_By_node_ids_Response"/>
+        </wsdl2:operation>
+		
+		<!-- Graph Service -->
+		
+        <wsdl2:operation name="GraphAbout" pattern="http://www.w3.org/ns/wsdl/in-out">
+            <wsdl2:output element="ns:GraphAboutResponse" wsaw:Action="urn:GraphAboutResponse"/>
+        </wsdl2:operation>
+        <wsdl2:operation name="Graph_GetNodeInfo_By_ott_id" pattern="http://www.w3.org/ns/wsdl/in-out">
+		    <wsdl2:input element="ns:ott_id" wsaw:Action="urn:ott_id"/>
+			<wsdl2:input element="ns:include_lineage" wsaw:Action="urn:include_lineage"/>
+            <wsdl2:output element="ns:Graph_GetNodeInfo_By_ott_id_Response" wsaw:Action="urn:Graph_GetNodeInfo_By_ott_id_Response"/>
+        </wsdl2:operation>
+        <wsdl2:operation name="Graph_GetNodeInfo_By_node_id" pattern="http://www.w3.org/ns/wsdl/in-out">
+		    <wsdl2:input element="ns:node_id" wsaw:Action="urn:node_id"/>
+			<wsdl2:input element="ns:include_lineage" wsaw:Action="urn:include_lineage"/>
+            <wsdl2:output element="ns:Graph_GetNodeInfo_By_node_id_Response" wsaw:Action="urn:Graph_GetNodeInfo_By_node_id_Response"/>
+        </wsdl2:operation>
+		
+		<!-- TNRS Services -->
+		
+        <wsdl2:operation name="TNRS_GetMatchNames_By_names" pattern="http://www.w3.org/ns/wsdl/in-out">
+		    <wsdl2:input element="ns:names" wsaw:Action="urn:names"/>
+			<!-- PHAN NAY CON THIEU RAT NHIEU THU -->
+            <wsdl2:output element="ns:TNRS_GetMatchNames_By_names_Response" wsaw:Action="urn:TNRS_GetMatchNames_By_names_Response"/>
+        </wsdl2:operation>
+        <wsdl2:operation name="TNRS_GetAutocompleteName_By_name" pattern="http://www.w3.org/ns/wsdl/in-out">
+		    <wsdl2:input element="ns:name" wsaw:Action="urn:name"/>
+			<wsdl2:input element="ns:context_name" wsaw:Action="urn:context_name"/>
+			<wsdl2:input element="ns:include_dubious" wsaw:Action="urn:include_dubious"/>
+            <wsdl2:output element="ns:TNRS_GetAutocompleteName_By_name_Response" wsaw:Action="urn:TTNRS_GetAutocompleteName_By_name_Response"/>
+        </wsdl2:operation>
+        <wsdl2:operation name="TNRS_GetContexts" pattern="http://www.w3.org/ns/wsdl/in-out">
+            <wsdl2:output element="ns:TNRS_GetContexts_Response" wsaw:Action="urn:TNRS_GetContexts_Response"/>
+        </wsdl2:operation>
+        <wsdl2:operation name="TNRS_GetInferContext_By_names" pattern="http://www.w3.org/ns/wsdl/in-out">
+		    <wsdl2:input element="ns:names" wsaw:Action="urn:names"/>
+            <wsdl2:output element="ns:TNRS_GetInferContext_By_names_Response" wsaw:Action="urn:TNRS_GetInferContext_By_names_Response"/>
+        </wsdl2:operation>
+		
+		<!-- Taxonomy Services -->
+		
+        <wsdl2:operation name="Taxonomy_About" pattern="http://www.w3.org/ns/wsdl/in-out">
+            <wsdl2:output element="ns:Taxonomy_About_Response" wsaw:Action="urn:Taxonomy_About_Response"/>
+        </wsdl2:operation>
+        <wsdl2:operation name="Taxonomy_Lica_By_ott_ids" pattern="http://www.w3.org/ns/wsdl/in-out">
+		    <wsdl2:input element="ns:ott_ids" wsaw:Action="urn:ott_ids"/>
+			<!-- Phan nay van con thieu include_lineage -->
+            <wsdl2:output element="ns:Taxonomy_Lica_By_ott_ids_Response" wsaw:Action="urn:Taxonomy_Lica_By_ott_ids_Response"/>
+        </wsdl2:operation>
+        <wsdl2:operation name="Taxonomy_GetSubTree_By_ott_id" pattern="http://www.w3.org/ns/wsdl/in-out">
+		    <wsdl2:input element="ns:ott_id" wsaw:Action="urn:ott_id"/>
+		    <wsdl2:input element="ns:label_format" wsaw:Action="urn:label_format"/>			
+            <wsdl2:output element="ns:Taxonomy_GetSubTree_By_ott_id_Response" wsaw:Action="urn:Taxonomy_GetSubTree_By_ott_id_Response"/>
+        </wsdl2:operation>
+        <wsdl2:operation name="Taxonomy_GetTaxon_By_ott_id" pattern="http://www.w3.org/ns/wsdl/in-out">
+		    <wsdl2:input element="ns:ott_id" wsaw:Action="urn:ott_id"/>
+		    <wsdl2:input element="ns:include_lineage" wsaw:Action="urn:include_lineage"/>
+			<wsdl2:input element="ns:list_terminal_descendants" wsaw:Action="urn:list_terminal_descendants"/>			
+            <wsdl2:output element="ns:Taxonomy_GetTaxon_By_ott_id_Response" wsaw:Action="urn:Taxonomy_GetTaxon_By_ott_id_Response"/>
+        </wsdl2:operation>
+    </wsdl2:interface>
+    <wsdl2:binding name="OpenTreeServiceHttpBinding" interface="tns:ServiceInterface" type="http://www.w3.org/ns/wsdl/http">
+	    
+	    <!-- Open Tree Of Life Services -->
+		
+        <wsdl2:operation ref="tns:OpenTreeAbout" whttp:location="tree_of_life/about" whttp:method="POST" whttp:contentEncodingDefault="application/json" whttp:inputSerialization="application/json"  whttp:outputSerialization="application/json" whttp:queryParameterSeparator=""/>
+		<wsdl2:operation ref="tns:OpenTree_GetSubTree_By_ott_id" whttp:location="tree_of_life/subtree" whttp:method="POST" whttp:contentEncodingDefault="application/json" whttp:inputSerialization="application/json"  whttp:outputSerialization="application/json" whttp:queryParameterSeparator=""/>
+		<wsdl2:operation ref="tns:OpenTree_GetSubTree_By_tree_id" whttp:location="tree_of_life/subtree" whttp:method="POST" whttp:contentEncodingDefault="application/json" whttp:inputSerialization="application/json"  whttp:outputSerialization="application/json" whttp:queryParameterSeparator=""/> 
+		<wsdl2:operation ref="tns:OpenTree_GetSubTree_By_node_id" whttp:location="tree_of_life/subtree" whttp:method="POST" whttp:contentEncodingDefault="application/json" whttp:inputSerialization="application/json"  whttp:outputSerialization="application/json" whttp:queryParameterSeparator=""/>
+		<wsdl2:operation ref="tns:OpenTree_GetMRCA_By_ott_ids" whttp:location="tree_of_life/mrca" whttp:method="POST" whttp:contentEncodingDefault="application/json" whttp:inputSerialization="application/json"  whttp:outputSerialization="application/json" whttp:queryParameterSeparator=""/>
+		<wsdl2:operation ref="tns:OpenTree_GetMRCA_By_node_ids" whttp:location="tree_of_life/mrca" whttp:method="POST" whttp:contentEncodingDefault="application/json" whttp:inputSerialization="application/json"  whttp:outputSerialization="application/json" whttp:queryParameterSeparator=""/>
+		<wsdl2:operation ref="tns:OpenTree_GetInducedSubTree_By_ott_ids" whttp:location="tree_of_life/induced_subtree" whttp:method="POST" whttp:contentEncodingDefault="application/json" whttp:inputSerialization="application/json"  whttp:outputSerialization="application/json" whttp:queryParameterSeparator=""/>
+		<wsdl2:operation ref="tns:OpenTree_GetInducedSubTree_By_node_ids" whttp:location="tree_of_life/induced_subtree" whttp:method="POST" whttp:contentEncodingDefault="application/json" whttp:inputSerialization="application/json"  whttp:outputSerialization="application/json" whttp:queryParameterSeparator=""/>
+		
+		<!-- Graph Service -->
+		
+		<wsdl2:operation ref="tns:GraphAbout" whttp:location="graph/about" whttp:method="POST" whttp:contentEncodingDefault="application/json" whttp:inputSerialization="application/json"  whttp:outputSerialization="application/json" whttp:queryParameterSeparator=""/>
+		<wsdl2:operation ref="tns:Graph_GetNodeInfo_By_ott_id" whttp:location="graph/node_info" whttp:method="POST" whttp:contentEncodingDefault="application/json" whttp:inputSerialization="application/json"  whttp:outputSerialization="application/json" whttp:queryParameterSeparator=""/>
+		<wsdl2:operation ref="tns:Graph_GetNodeInfo_By_node_id" whttp:location="graph/node_info" whttp:method="POST" whttp:contentEncodingDefault="application/json" whttp:inputSerialization="application/json"  whttp:outputSerialization="application/json" whttp:queryParameterSeparator=""/>
+		
+		<!-- TNRS Services -->
+		
+		<wsdl2:operation ref="tns:TNRS_GetMatchNames_By_names" whttp:location="tnrs/match_names" whttp:method="POST" whttp:contentEncodingDefault="application/json" whttp:inputSerialization="application/json"  whttp:outputSerialization="application/json" whttp:queryParameterSeparator=""/>
+		<wsdl2:operation ref="tns:TNRS_GetAutocompleteName_By_name" whttp:location="tnrs/autocomplete_name" whttp:method="POST" whttp:contentEncodingDefault="application/json" whttp:inputSerialization="application/json"  whttp:outputSerialization="application/json" whttp:queryParameterSeparator=""/>
+		<wsdl2:operation ref="tns:TNRS_GetContexts" whttp:location="tnrs/contexts" whttp:method="POST" whttp:contentEncodingDefault="application/json" whttp:inputSerialization="application/json"  whttp:outputSerialization="application/json" whttp:queryParameterSeparator=""/>
+		<wsdl2:operation ref="tns:TNRS_GetInferContext_By_names" whttp:location="tnrs/infer_context" whttp:method="POST" whttp:contentEncodingDefault="application/json" whttp:inputSerialization="application/json"  whttp:outputSerialization="application/json" whttp:queryParameterSeparator=""/>
+		
+		<!-- Taxonomy Services -->
+		
+		<wsdl2:operation ref="tns:Taxonomy_About" whttp:location="taxonomy/about" whttp:method="POST" whttp:contentEncodingDefault="application/json"  whttp:inputSerialization="application/json"  whttp:outputSerialization="application/json" whttp:queryParameterSeparator=""/>
+		<wsdl2:operation ref="tns:Taxonomy_Lica_By_ott_ids" whttp:location="taxonomy/lica" whttp:method="POST" whttp:contentEncodingDefault="application/json" whttp:inputSerialization="application/json"  whttp:outputSerialization="application/json" whttp:queryParameterSeparator=""/>
+		<wsdl2:operation ref="tns:Taxonomy_GetSubTree_By_ott_id" whttp:location="taxonomy/subtree" whttp:method="POST" whttp:contentEncodingDefault="application/json" whttp:inputSerialization="application/json"  whttp:outputSerialization="application/json" whttp:queryParameterSeparator=""/>
+		<wsdl2:operation ref="tns:Taxonomy_GetTaxon_By_ott_id" whttp:location="taxonomy/taxon" whttp:method="POST" whttp:contentEncodingDefault="application/json" whttp:inputSerialization="application/json"  whttp:outputSerialization="application/json" whttp:queryParameterSeparator=""/>
+    </wsdl2:binding>
+    <wsdl2:service name="OpenTreeService" interface="tns:ServiceInterface">
+        <wsdl2:endpoint name="OpenTreeServiceHttpEndpoint" binding="tns:OpenTreeServiceHttpBinding" address="http://api.opentreeoflife.org/v2/"/>
+    </wsdl2:service>
+</wsdl2:description>

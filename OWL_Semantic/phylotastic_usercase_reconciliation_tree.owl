@@ -1,0 +1,544 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#"
+     xml:base="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl">
+        <rdfs:comment rdf:datatype="&xsd;string">OWL for Phylotastic Autogerate Gene Species Reconcilation Tree Web Services</rdfs:comment>
+        <owl:versionIRI rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl/1.0.0"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#hasDataFormat -->
+
+    <owl:ObjectProperty rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#hasDataFormat">
+        <rdfs:range rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#DataFormat"/>
+        <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#DataType"/>
+        <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Input"/>
+        <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Output"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#hasEffects -->
+
+    <owl:ObjectProperty rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#hasEffects">
+        <rdfs:range rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Effects"/>
+        <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Operation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#hasInput -->
+
+    <owl:ObjectProperty rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#hasInput">
+        <rdfs:range rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Input"/>
+        <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Operation"/>
+        <rdfs:subPropertyOf rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#hasParameter"/>
+        <owl:inverseOf rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#isInputOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#hasOperation -->
+
+    <owl:ObjectProperty rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#hasOperation">
+        <rdfs:range rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Operation"/>
+        <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#WebService"/>
+        <owl:inverseOf rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#isOperationOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#hasOutput -->
+
+    <owl:ObjectProperty rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#hasOutput">
+        <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Operation"/>
+        <rdfs:range rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Output"/>
+        <rdfs:subPropertyOf rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#hasParameter"/>
+        <owl:inverseOf rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#isOutputOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#hasParameter -->
+
+    <owl:ObjectProperty rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#hasParameter">
+        <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Operation"/>
+        <rdfs:range rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Parameter"/>
+        <owl:inverseOf rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#isParameterOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#hasPrecondition -->
+
+    <owl:ObjectProperty rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#hasPrecondition">
+        <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Operation"/>
+        <rdfs:range rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Precondition"/>
+        <owl:inverseOf rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#isPreconditionOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#include -->
+
+    <owl:ObjectProperty rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#include">
+        <rdfs:range rdf:resource="&owl;Thing"/>
+        <rdfs:domain rdf:resource="&owl;Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#isDataType -->
+
+    <owl:ObjectProperty rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#isDataType">
+        <rdfs:range rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#DataType"/>
+        <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Input"/>
+        <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Output"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#isEffectOf -->
+
+    <owl:ObjectProperty rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#isEffectOf">
+        <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Effects"/>
+        <rdfs:range rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Operation"/>
+        <owl:inverseOf rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#hasEffects"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#isInputOf -->
+
+    <owl:ObjectProperty rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#isInputOf">
+        <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Input"/>
+        <rdfs:range rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Operation"/>
+        <rdfs:subPropertyOf rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#isParameterOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#isOperationOf -->
+
+    <owl:ObjectProperty rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#isOperationOf">
+        <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Operation"/>
+        <rdfs:range rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#WebService"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#isOutputOf -->
+
+    <owl:ObjectProperty rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#isOutputOf">
+        <rdfs:range rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Operation"/>
+        <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Output"/>
+        <rdfs:subPropertyOf rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#isParameterOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#isParameterOf -->
+
+    <owl:ObjectProperty rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#isParameterOf">
+        <rdfs:range rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Operation"/>
+        <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Parameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#isPreconditionOf -->
+
+    <owl:ObjectProperty rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#isPreconditionOf">
+        <rdfs:range rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Operation"/>
+        <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Precondition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#is_a_part_of -->
+
+    <owl:ObjectProperty rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#is_a_part_of">
+        <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Effects"/>
+        <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Input"/>
+        <rdfs:range rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Input"/>
+        <rdfs:range rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Operation"/>
+        <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Operation"/>
+        <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Parameter"/>
+        <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Precondition"/>
+        <rdfs:range rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#WebService"/>
+        <owl:inverseOf rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#include"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#name -->
+
+    <owl:DatatypeProperty rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#name"/>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#numberInput -->
+
+    <owl:DatatypeProperty rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#numberInput"/>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#numberOutput -->
+
+    <owl:DatatypeProperty rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#numberOutput"/>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#textDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#textDescription"/>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#type -->
+
+    <owl:DatatypeProperty rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#type"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#DataFormat -->
+
+    <owl:Class rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#DataFormat"/>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#DataType -->
+
+    <owl:Class rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#DataType"/>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Effects -->
+
+    <owl:Class rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Effects"/>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Input -->
+
+    <owl:Class rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Input">
+        <rdfs:subClassOf rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Parameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Operation -->
+
+    <owl:Class rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Operation">
+        <rdfs:comment rdf:datatype="&xsd;string">Operation in a Web Service</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Output -->
+
+    <owl:Class rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Output">
+        <rdfs:subClassOf rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Parameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Parameter -->
+
+    <owl:Class rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Parameter"/>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#PhylogeneticTree -->
+
+    <owl:Class rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#PhylogeneticTree">
+        <rdfs:subClassOf rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Tree"/>
+    </owl:Class>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#PlainText -->
+
+    <owl:Class rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#PlainText">
+        <rdfs:subClassOf rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#DataType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Precondition -->
+
+    <owl:Class rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Precondition"/>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Tree -->
+
+    <owl:Class rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Tree">
+        <rdfs:subClassOf rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#DataType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#WebService -->
+
+    <owl:Class rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#WebService"/>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#phyloDataFormat -->
+
+    <owl:Class rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#phyloDataFormat">
+        <rdfs:subClassOf rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#DataFormat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#structureDataFormat -->
+
+    <owl:Class rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#structureDataFormat">
+        <rdfs:subClassOf rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#DataFormat"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#GeneSpeciesReconciliationTree -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#GeneSpeciesReconciliationTree">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#PhylogeneticTree"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Gene Species Reconciliation Tree</rdfs:comment>
+        <name rdf:datatype="&xsd;string">Gene Species Reconciliation Tree</name>
+        <hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#phyloXML"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#GeneTree -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#GeneTree">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#PhylogeneticTree"/>
+        <name rdf:datatype="&xsd;string">Gene Tree</name>
+        <rdfs:comment rdf:datatype="&xsd;string">Gene Tree instance</rdfs:comment>
+        <hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#newick"/>
+        <hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#phyloXML"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#GetReconciliationOp_Effects -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#GetReconciliationOp_Effects">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Effects"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#GetReconciliationOp_Input -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#GetReconciliationOp_Input">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Input"/>
+        <name rdf:datatype="&xsd;string">GetReconciliationTreeFromGeneTreeOperationInput</name>
+        <rdfs:comment rdf:datatype="&xsd;string">Input element of get reconcilation tree Operation = Collection of all input params</rdfs:comment>
+        <isInputOf rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#PhylotasticWS_Get_GeneSpeciesReconciliationTree_by_gene_tree_WF1"/>
+        <include rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#format"/>
+        <include rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#gene_tree_data"/>
+        <hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#x-www-urlencoded"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#GetReconciliationOp_Output -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#GetReconciliationOp_Output">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Output"/>
+        <name rdf:datatype="&xsd;string">GetReconciliationOp_Output</name>
+        <rdfs:comment rdf:datatype="&xsd;string">Output element of get reconciliation tree operation = collection of all output params</rdfs:comment>
+        <hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#JSON"/>
+        <isOutputOf rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#PhylotasticWS_Get_GeneSpeciesReconciliationTree_by_gene_tree_WF1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#GetReconciliationOp_Precondition -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#GetReconciliationOp_Precondition">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Precondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#JSON -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#JSON">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#structureDataFormat"/>
+        <name rdf:datatype="&xsd;string">JSON</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#PhylotasticWS_Get_GeneSpeciesReconciliationTree_by_gene_tree_WF1 -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#PhylotasticWS_Get_GeneSpeciesReconciliationTree_by_gene_tree_WF1">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Operation"/>
+        <numberInput rdf:datatype="&xsd;integer">2</numberInput>
+        <name rdf:datatype="&xsd;string">PhylotasticWS_Get_GeneSpeciesReconciliationTree_by_gene_tree_WF1</name>
+        <hasEffects rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#GetReconciliationOp_Effects"/>
+        <hasInput rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#GetReconciliationOp_Input"/>
+        <hasOutput rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#GetReconciliationOp_Output"/>
+        <hasPrecondition rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#GetReconciliationOp_Precondition"/>
+        <isOperationOf rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Phylotastic_UserCase_WS"/>
+        <is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Phylotastic_UserCase_WS"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Phylotastic_UserCase_WS -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Phylotastic_UserCase_WS">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#WebService"/>
+        <hasOperation rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#PhylotasticWS_Get_GeneSpeciesReconciliationTree_by_gene_tree_WF1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#SpeciesTree -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#SpeciesTree">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#PhylogeneticTree"/>
+        <name rdf:datatype="&xsd;string">Species Tree</name>
+        <rdfs:comment rdf:datatype="&xsd;string">Species Tree instance</rdfs:comment>
+        <hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#newick"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Text -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Text">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#PlainText"/>
+        <name rdf:datatype="&xsd;string">Text</name>
+        <type rdf:datatype="&xsd;string">string</type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#XML -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#XML">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#structureDataFormat"/>
+        <name rdf:datatype="&xsd;string">XML</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#format -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#format">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Input"/>
+        <name rdf:datatype="&xsd;string">format</name>
+        <is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#GetReconciliationOp_Input"/>
+        <isDataType rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Text"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#gene_tree_data -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#gene_tree_data">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#Input"/>
+        <name rdf:datatype="&xsd;string">Gene Tree Data</name>
+        <isDataType rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#GeneTree"/>
+        <is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#GetReconciliationOp_Input"/>
+        <hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#newick"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#newick -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#newick">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#phyloDataFormat"/>
+        <name rdf:datatype="&xsd;string">newick</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#phyloXML -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#phyloXML">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#phyloDataFormat"/>
+        <name rdf:datatype="&xsd;string">PhyloXML</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#x-www-urlencoded -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#x-www-urlencoded">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_usercase_reconciliation_tree.owl#structureDataFormat"/>
+        <name rdf:datatype="&xsd;string">X-WWW-URLENCODED</name>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl2:description xmlns:wsdl2="http://www.w3.org/ns/wsdl" xmlns:tns="http://axis2.apache.org" xmlns:wsoap="http://www.w3.org/ns/wsdl/soap" xmlns:wrpc="http://www.w3.org/ns/wsdl/rpc" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdlx="http://www.w3.org/ns/wsdl-extensions" xmlns:ns="http://axis2.apache.org" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:whttp="http://www.w3.org/ns/wsdl/http" targetNamespace="http://axis2.apache.org">
+    <wsdl2:types>
+        <xs:schema xmlns:ax21="http://axis2.apache.org" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://axis2.apache.org">    
+            <xs:element name="species" nillable="false" type="xs:string" />
+			<xs:element name="tree" nillable="false" type="xs:string" />
+			<xs:element name="format" nillable="false" type="xs:string" />
+			<xs:element name="PhylotasticPrunner_GetPhylotasticSpeciesTree_Response" nillable="true" type="xs:string"/>
+        </xs:schema>
+    </wsdl2:types>
+    <wsdl2:interface name="PhylotasticPrunnerWS_ServiceInterface">
+        <wsdl2:operation name="PhylotasticPrunner_GetPhylotasticSpeciesTree" pattern="http://www.w3.org/ns/wsdl/in-out">
+            <wsdl2:input element="ns:species" wsaw:Action="urn:species"/>
+			<wsdl2:input element="ns:tree" wsaw:Action="urn:tree"/>
+			<wsdl2:input element="ns:format" wsaw:Action="urn:format"/>
+            <wsdl2:output element="ns:PhylotasticPrunner_GetPhylotasticSpeciesTree_Response" wsaw:Action="urn:PhylotasticPrunner_GetPhylotasticSpeciesTree_Response"/>
+        </wsdl2:operation>
+    </wsdl2:interface>
+    <wsdl2:binding name="PhylotasticPrunnerWS_HttpBinding" interface="tns:PhylotasticPrunnerWS_ServiceInterface" type="http://www.w3.org/ns/wsdl/http">
+        <wsdl2:operation ref="tns:PhylotasticPrunner_GetPhylotasticSpeciesTree" whttp:location="script/phylotastic.cgi" whttp:method="GET" whttp:contentEncodingDefault="application/x-www-form-urlencoded" whttp:inputSerialization="application/x-www-form-urlencoded" whttp:outputSerialization="newick" whttp:queryParameterSeparator=""/> 
+    </wsdl2:binding>
+    <wsdl2:service name="PhylotasticPrunner_Service" interface="tns:PhylotasticPrunnerWS_ServiceInterface">
+        <wsdl2:endpoint name="PhylotasticPrunner_Service_HttpEndpoint" binding="tns:PhylotasticPrunnerWS_HttpBinding" address="http://phylotastic-wg.cs.nmsu.edu/"/>
+    </wsdl2:service>
+</wsdl2:description>
