@@ -1,6 +1,6 @@
 # How to Call Phylotastic Web Services
 #### Language (Ruby):
-**__Get__** Method:
+**__GET__** Method:
 
 *#Template of a Ruby client to call web services using HTTP GET (service_client_get.rb)*
 ```ruby
@@ -51,7 +51,7 @@ if __FILE__ == $0
  	call_service("Vulpes", "Nepal")
 end
 ```
-**__Post__** Method:
+**__POST__** Method:
 
 *#Template of a Ruby client to call web services using HTTP POST (service_client_post.rb)*
 
@@ -115,4 +115,124 @@ if __FILE__ == $0
 end
 ```
 
+#### Language (Python):
+**__GET__** Method:
 
+*#Template of a Python client to call web services using HTTP GET (service_client_get.py)*
+
+```python
+import requests
+import urllib
+
+def call_service(inputData):
+ 	url = "http://hostname/servicepath/servicename"    
+ 	
+ 	headers = {'content-type': 'application/json'} 	
+ 	
+ 	encoded_data = urllib.urlencode(inputData)
+    
+ 	response = requests.get(url, params=encoded_data, headers=headers)   
+ 	
+	if response.status_code == requests.codes.ok:
+ 	 	print response.text
+ 	else:
+		print 'Error in response'
+
+if __name__ == '__main__':
+
+ 	inputData = {
+ 	 	'parameter1Name': 'parameter1Value',
+ 	 	'parameter2Name': 'parameter2Value'  
+  	}
+
+  	call_service(inputData)
+```
+
+__Example:__ *(Call a service to get all Species from a Taxon filtered by country)*
+
+```python
+import requests
+import urllib
+
+def call_service(inputData):
+ 	url = "http://phylo.cs.nmsu.edu:5004/phylotastic_ws/ts/country_species"    
+ 	headers = {'content-type': 'application/json'} 	
+ 	
+ 	encoded_data = urllib.urlencode(inputData)
+    
+ 	response = requests.get(url, params=encoded_data, headers=headers)   
+ 	
+	if response.status_code == requests.codes.ok:
+ 	 	print response.text
+ 	else:
+		print 'Error in response'
+
+if __name__ == '__main__':
+
+ 	inputData = {
+ 	 	'taxon': 'Panthera',
+ 	 	'country': 'Bangladesh'   
+  	}
+
+  	call_service(inputData)
+```
+
+**__POST__** Method:
+
+*#Template of a Python client to call web services using HTTP POST (service_client_post.py)*
+
+```python
+import json
+import requests
+
+def call_service(inputData):
+
+	url = "http://hostname/servicepath/servicename"    
+  	headers = {'content-type': 'application/json'}
+ 
+ 	json_inputdata = json.dumps(inputData)
+ 
+ 	response = requests.post(url, data=json_inputdata, headers=headers)
+    
+ 	if response.status_code == requests.codes.ok:
+ 		print response.text
+ 	else:
+	 	print 'Error in response'
+
+if __name__ == '__main__':
+
+ 	inputData = {
+ 	 	'parameter1Name': 'parameter1Value',
+ 	 	'parameter2Name': 'parameter2Value'  
+  	}
+
+  	call_service(inputData)
+```
+__Example:__ *(Call a service to resolve scientific names with Open Tree TNRS)*
+
+```python
+import json
+import requests
+
+def call_service(inputData):
+
+	url = "http://phylo.cs.nmsu.edu:5004/phylotastic_ws/tnrs/ot/names"    
+  	headers = {'content-type': 'application/json'}
+ 
+ 	json_inputdata = json.dumps(inputData)
+ 
+ 	response = requests.post(url, data=json_inputdata, headers=headers)
+    
+ 	if response.status_code == requests.codes.ok:
+ 		print response.text
+ 	else:
+	 	print 'Error in response'
+
+if __name__ == '__main__':
+
+ 	inputData = {
+     	 	'scientificNames': ["Formica exsectoides", "Formica pecefica"]
+  	}
+
+  	call_service(inputData)
+```
