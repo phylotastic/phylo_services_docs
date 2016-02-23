@@ -26,7 +26,7 @@ __Examples:__
 http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/names_url?url=http://en.wikipedia.org/wiki/Ant
 ```
 ```
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/names_urlurl=https://en.wikipedia.org/wiki/Plain_pigeon
+http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/names_url?url=https://en.wikipedia.org/wiki/Plain_pigeon
 ```
 ```
 http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/names_url?url=http://www.fws.gov/westvirginiafieldoffice/PDF/beechridgehcp/Appendix_D_Table_D-1.pdf
