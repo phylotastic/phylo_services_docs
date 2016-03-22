@@ -15,20 +15,21 @@ file format.
 ---
 
 #### Data files format:
-The data files are formatted as fielded text, where data records are expressed as rows of text, and data elements (columns) are separated with a standard delimiter __comma__ (commonly referred to as CSV or ‘comma-separated value’ files). The first row of the data file may optionally contain data or represent a ‘header row’. 
+The data files are formatted as fielded text, where data records are expressed as rows of text, and data elements (columns) are separated with a standard delimiter __comma__ (commonly referred to as CSV or ‘comma-separated value’ files). The first row of the data file may optionally contain data or represent a ‘header row’. If there are multiple values for a single field and the values are separated by commas, then the entire field must be enclosed in double quotes.
 
 ---
 
 #### Sample contents of a "species" data file:
 ``` text
-speciesNumber,vernacularName,scientificName,taxonomicAuthorship
-1,Chinese Mountain Cat,Felis bieti,Milne-Edwards 1892
-2,Domestic Cat,Felis catus,Linnaeus 1758
+vernacularName,scientificName,scientificNameAuthorship,family,order,phylum,nomenclaturalCode
+Amur maple,Acer ginnala, Maxim.,Aceraceae,Sapindales,Streptophyta,ICN
+Japanses chaff flower,Achyranthes japonica,(Miq.) Nakal,Amaranthaceae,Caryophyllales,Streptophyta,ICN
 ```
 #### Sample contents of a "list" data file:
 ``` text
-displayName,description,author,date,source,statementOfPurpose
-Felidae,List of Felidae species,Dail,11-Jan-16,https://en.wikipedia.org/wiki/Felidae,Publish in phylotastic portal
+listTitle,description,author,datePublished,curator,dateCurated,source,keywords,focalClade,extraInfo
+Illinois Invasive Plants,This list contains the invasive species, with their Family and Order,Invasive.org  Center for Invasive Species and Ecosystem Health
+,23-Jan-14,HD Laughinghouse,24-Feb-16,http://www.invasive.org/species/list.cfm?id=152,"Plants, invasive species, IllinoisPublish",Embryophyta
 ```
 
 #### Sample meta file:

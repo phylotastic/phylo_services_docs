@@ -7,11 +7,13 @@ fieldsEnclosedBy='' ignoreHeaderLines="0" rowType="http://phylo.cs.nmsu.edu/sls/
 <location>species.csv</location>
 </files>
 
-<field index="1" term="http://phylo.cs.nmsu.edu/sls/terms/species/#speciesNumber"/>
-<field index="2" term="http://phylo.cs.nmsu.edu/sls/terms/species/#vernacularName"/>
-<field index="3" term="http://phylo.cs.nmsu.edu/sls/terms/species/#scientificName"/>
-<field index="4" term="http://phylo.cs.nmsu.edu/sls/terms/species/#taxonomicAuthorship"/>
-
+<field index="1" term="http://phylo.cs.nmsu.edu/sls/terms/species/vernacular_name"/>
+<field index="2" term="http://phylo.cs.nmsu.edu/sls/terms/species/scientific_name"/>
+<field index="3" term="http://phylo.cs.nmsu.edu/sls/terms/species/scientificNameAuthorship"/>
+<field index="4" term="http://phylo.cs.nmsu.edu/sls/terms/species/family"/>
+<field index="5" term="http://phylo.cs.nmsu.edu/sls/terms/species/order"/>
+<field index="6" term="http://phylo.cs.nmsu.edu/sls/terms/species/phylum"/>
+<field index="7" term="http://phylo.cs.nmsu.edu/sls/terms/species/nomenclaturalCode"/>
 </species>
 
 <list encoding="UTF-8" fieldsTerminatedBy="," linesTerminatedBy="\n"
@@ -21,12 +23,16 @@ fieldsEnclosedBy='' ignoreHeaderLines="0" rowType="http://phylo.cs.nmsu.edu/sls/
 <location>list.csv</location>
 </files>
 
-<field index="1" term="http://phylo.cs.nmsu.edu/sls/terms/list/#displayName"/>
-<field index="2" term="http://phylo.cs.nmsu.edu/sls/terms/list/#description"/>
-<field index="3" term="http://phylo.cs.nmsu.edu/sls/terms/list/#author"/>
-<field index="4" term="http://phylo.cs.nmsu.edu/sls/terms/list/#date"/>
-<field index="5" term="http://phylo.cs.nmsu.edu/sls/terms/list/#source"/>
-<field index="6" term="http://phylo.cs.nmsu.edu/sls/terms/list/#statementOfPurpose"/>
+<field index="1" term="http://phylo.cs.nmsu.edu/sls/terms/list/listTitle"/>
+<field index="2" term="http://phylo.cs.nmsu.edu/sls/terms/list/description"/>
+<field index="3" term="http://phylo.cs.nmsu.edu/sls/terms/list/author"/>
+<field index="4" term="http://phylo.cs.nmsu.edu/sls/terms/list/datePublished"/>
+<field index="5" term="http://phylo.cs.nmsu.edu/sls/terms/list/curator"/>
+<field index="6" term="http://phylo.cs.nmsu.edu/sls/terms/list/dateCurated"/>
+<field index="7" term="http://phylo.cs.nmsu.edu/sls/terms/list/source"/>
+<field index="8" term="http://phylo.cs.nmsu.edu/sls/terms/list/keywords"/>
+<field index="9" term="http://phylo.cs.nmsu.edu/sls/terms/list/focalClade"/>
+<field index="10" term="http://phylo.cs.nmsu.edu/sls/terms/list/extraInfo"/>
 
 </list>
 
