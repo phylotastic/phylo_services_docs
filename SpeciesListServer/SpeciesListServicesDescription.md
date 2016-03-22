@@ -60,8 +60,8 @@ __Parameters:__
 * *Name:* 	 	__user_id__
 * *Category:*  	mandatory
 * *Data Type:*  integer 
-* *Description:*  User id of a user who is registered for web or mobile application  
- 		
+* *Description:*  User id of a user who is registered for web or mobile application
+
 * *Name:* 	 	__include_all__ 
 * *Category:*  	optional
 * *Data Type:*  boolean
