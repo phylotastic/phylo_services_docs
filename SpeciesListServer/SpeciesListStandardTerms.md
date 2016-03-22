@@ -22,8 +22,9 @@
 7. + __Term Name:__ *nomenclaturalCode*
    + __Term Definition:__ The number that acts as a unique identifier for a species
    + __Example:__ ICZN
+
 ---
-listTitle,description,author,datePublished,curator,dateCurated,source,keywords,focalClade,extraInfo
+
 #### List data:
 1. + __Term Name:__ *listTitle*
    + __Term Definition:__ A name of the list that will be displayed.
