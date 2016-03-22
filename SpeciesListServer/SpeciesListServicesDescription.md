@@ -56,11 +56,12 @@ __Input Format:__ 		application/x-www-form-urlencoded
 
 __Output Format:__ 		application/json 
  				
-__Parameters:__  			
+__Parameters:__
 * *Name:* 	 	__user_id__
 * *Category:*  	mandatory
 * *Data Type:*  integer 
 * *Description:*  User id of a user who is registered for web or mobile application
+
 
 * *Name:* 	 	__include_all__ 
 * *Category:*  	optional
@@ -103,7 +104,7 @@ __Input Format:__ 		application/x-www-form-urlencoded
 
 __Output Format:__ 		application/json 
  				
-__Parameters:__  			
+__Parameters:__
 * *Name:* 	 	list_id 
 * *Category:*  	mandatory
 * *Data Type:*  integer
@@ -133,16 +134,18 @@ __Input Format:__ 		application/json
 
 __Output Format:__ 		application/json 
  				
-__Parameters:__  			
+__Parameters:__
 * *Name:* 	 	__user_name__
 * *Category:*  	mandatory
 * *Data Type:*  string
 * *Description:*  Name/email of the registered user of web or mobile application
 
+
 * *Name:* 	 	__user_id__
 * *Category:*  	mandatory
 * *Data Type:*  integer
 * *Description:*  Unique id of the registered user of web or mobile application
+
 
 * *Name:* 	 	__list__
 * *Category:*  	mandatory
@@ -186,7 +189,7 @@ __Parameters:__
     + Description:  true if the new list posted can be viewed by public. Otherwise false. 
   + Property name: __list_species__
     + Data type: an array of complex json species object
-    + Description:  true if the new list posted can be viewed by public. Otherwise false.
+    + Description:  the data about species belonging to the list
 
 <a name="jsonspecies">The complex json species object</a> contains the actual data (species). It has the following properties:
 
@@ -207,10 +210,10 @@ __Parameters:__
     + Description: the taxonomic rank order where the species belongs to
 + Property name: __phylum__
     + Data type: string
-    + Description: the taxonomic rank phylum where the species belongs to  
+    + Description: the taxonomic rank phylum where the species belongs to
 + Property name: __nomenclature_code__
     + Data type: string
-    + Description: the nomenclature code of the species
+    + Description: the nomenclatural code of the species
 
 __Examples:__ 
 ```
