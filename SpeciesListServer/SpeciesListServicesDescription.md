@@ -15,7 +15,7 @@ __Input Format:__ 		application/x-www-form-urlencoded
 __Output Format:__ 		application/json 
  				
 __Parameters:__  			
-* *Name:* 	 	include_all
+* *Name:* 	 	__include_all__
 * *Category:*  	optional
 * *Data Type:*  boolean 
 * *Description:*  It is an optional parameter which is by default false and shows minimal information. When given true it will display all information related to public lists.  
@@ -92,6 +92,42 @@ __Service Quality:__
 
 #### Web Service 10.
 
+__Service Name:__  	 	Get a list
+
+__Service Description:__ 	A service to get all metadata and data of a particular list that a registered user of web or mobile application has published
+
+__Resource URI:__  		<http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/get_list>
+
+__HTTP Method:__ 		GET
+
+__Input Format:__ 		application/x-www-form-urlencoded
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__
+* *Name:* 	 	__list_id__ 
+* *Category:*  	mandatory
+* *Data Type:*  integer
+* *Description:*  List id of a list published by a registered user of phylotastic web or mobile application
+
+* *Name:* 	 	__include_all__ 
+* *Category:*  	optional
+* *Data Type:*  boolean
+* *Description:*  It is an optional parameter which is by default false and shows only metadata of list. When given true it will display all data related to that list.
+
+ 				
+__Examples:__ 
+```
+http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/get_list?list_id=2
+```
+```
+http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/get_list?list_id=2&include_all=true
+```
+
+---
+
+#### Web Service 11.
+
 __Service Name:__  	 	Get all species of a list
 
 __Service Description:__ 	A service to get all species of a particular list that a registered user of web or mobile application has published
@@ -105,7 +141,7 @@ __Input Format:__ 		application/x-www-form-urlencoded
 __Output Format:__ 		application/json 
  				
 __Parameters:__
-* *Name:* 	 	list_id 
+* *Name:* 	 	__list_id__ 
 * *Category:*  	mandatory
 * *Data Type:*  integer
 * *Description:*  List id of a list published by a registered user of phylotastic web or mobile application
@@ -120,7 +156,7 @@ http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/get_species?list_id=2&include_a
 
 ---
 
-#### Web Service 11.
+#### Web Service 12.
 
 __Service Name:__  	 	Post a new list of species
 
@@ -232,7 +268,7 @@ __Service Quality:__
  * *Uptime:* 
  
 ---
-#### Web Service 12.
+#### Web Service 13.
 
 __Service Name:__  	 	Add species to an existing list
 
@@ -280,7 +316,7 @@ __Service Quality:__
  * *Uptime:* 
  
 ---
-#### Web Service 13.
+#### Web Service 14.
 
 __Service Name:__  	 	Remove species from an existing list
 
@@ -328,8 +364,56 @@ __Service Quality:__
  * *Uptime:* 
  
 ---
+#### Web Service 15.
 
-#### Web Service 14.
+__Service Name:__  	 	Replace species of an existing list
+
+__Service Description:__ 	A service to replace the existing [species objects](#jsonspecies) with new species object of an existing list.
+
+__Resource URI:__  	<http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/replace_species>
+
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		application/json
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__  			
+* *Name:* 	 	__user_id__
+* *Category:*  	mandatory
+* *Data Type:*  integer
+* *Description:*  Unique id of the registered user of web or mobile application
+
+* *Name:* 	 	__list_id__
+* *Category:*  	mandatory
+* *Data Type:*  integer
+* *Description:*  Unique id of an existing list
+
+* *Name:* 	 	__species__
+* *Category:*  	mandatory
+* *Data Type:*  an array of [complex json species object](#jsonspecies)
+* *Description:*  An array of complex json species objects to replace the existing species objects.
+
+__Examples:__ 
+```
+curl -X POST http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/replace_species -H 'content-type:application/json' -d '{"user_id": 3, "list_id": 2, "species":[{"family": "", "scientific_name": "Aix sponsa", "scientific_name_authorship": "", "vernacular_name": "Wood Duck", "phylum": "", "nomenclature_code": "ICZN", "order": "Anseriformes"}, {"family": "", "scientific_name": "Anas strepera", "scientific_name_authorship": "", "vernacular_name": "Gadwall", "phylum": "", "nomenclature_code": "ICZN", "order": "Anseriformes"}]}'
+```
+
+__Citation:__  	 	
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*
+ * *Restrictions on scope:*
+ * *Expected response time:*  	__1s~2s__
+ * *Informative message:*
+   * when service is down --
+   * when malformed input is provided --
+ * *Uptime:* 
+ 
+---
+
+#### Web Service 16.
 
 __Service Name:__  	 	Remove an existing list
 
