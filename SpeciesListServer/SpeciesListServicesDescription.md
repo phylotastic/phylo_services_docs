@@ -59,8 +59,8 @@ __Output Format:__ 		application/json
 __Parameters:__
 * *Name:* 	 	__user_id__
 * *Category:*  	mandatory
-* *Data Type:*  integer 
-* *Description:*  User id of a user who is registered for web or mobile application
+* *Data Type:*  string 
+* *Description:*  User id (valid email) of a user who is registered for web or mobile application
 
 
 * *Name:* 	 	__include_all__ 
@@ -70,10 +70,10 @@ __Parameters:__
 
 __Examples:__ 
 ```
-http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/get_user_lists?user_id=2
+http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/get_user_lists?user_id=hdail.laughinghouse@gmail.com
 ```
 ```
-http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/get_user_lists?user_id=2&include_all=true
+http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/get_user_lists?user_id=hdail.laughinghouse@gmail.com&include_all=true
 ```
 
 __Citation:__  	 		
@@ -171,16 +171,11 @@ __Input Format:__ 		application/json
 __Output Format:__ 		application/json 
  				
 __Parameters:__
-* *Name:* 	 	__user_name__
-* *Category:*  	mandatory
-* *Data Type:*  string
-* *Description:*  Name/email of the registered user of web or mobile application
-
 
 * *Name:* 	 	__user_id__
 * *Category:*  	mandatory
-* *Data Type:*  integer
-* *Description:*  Unique id of the registered user of web or mobile application
+* *Data Type:*  string
+* *Description:*  Unique id (valid email) of the registered user of web or mobile application
 
 
 * *Name:* 	 	__list__
@@ -253,7 +248,7 @@ __Parameters:__
 
 __Examples:__ 
 ```
-curl -X POST http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/insert_list -H 'content-type:application/json' -d '{"user_name": "hdail.laughinghouse@gmail.com", "list": {"list_extra_info": "", "list_description": "A list on the bird species add their endangered, threatened or invasive status", "list_keywords": ["bird", "endangered species", "Everglades"], "list_curator": "HD Laughinghouse", "list_origin": "webapp", "list_curation_date": "02-24-2016", "list_source": "Des", "list_focal_clade": "Aves", "list_title": "Bird Species List for Everglades National Park", "list_author": ["Bass", "O. & Cunningham", "R."], "list_date_published": "01-01-2006", "is_list_public": true, "list_species": [{"family": "", "scientific_name": "Aix sponsa", "scientific_name_authorship": "", "vernacular_name": "Wood Duck", "phylum": "", "nomenclature_code": "ICZN", "order": "Anseriformes"}, {"family": "", "scientific_name": "Anas strepera", "scientific_name_authorship": "", "vernacular_name": "Gadwall", "phylum": "", "nomenclature_code": "ICZN", "order": "Anseriformes"}, {"family": "", "scientific_name": "Caprimulgus vociferus", "scientific_name_authorship": "", "vernacular_name": "Whip-poor-will", "phylum": "", "nomenclature_code": "ICZN", "order": "Caprimulgiformes"}, {"family": "", "scientific_name": "Columba livia", "scientific_name_authorship": "", "vernacular_name": "Rock Dove", "phylum": "", "nomenclature_code": "ICZN", "order": "Columbiformes"}, {"family": "", "scientific_name": "Ceryle alcyon", "scientific_name_authorship": "", "vernacular_name": "Belted Kingfisher", "phylum": "", "nomenclature_code": "ICZN", "order": "Coraciiformes"}, {"family": "", "scientific_name": "Aramus guarauna", "scientific_name_authorship": "", "vernacular_name": "Limpkin", "phylum": "", "nomenclature_code": "ICZN", "order": "Gruiformes"}]}, "user_id": 2}'
+curl -X POST http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/insert_list -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "list": {"list_extra_info": "", "list_description": "A list on the bird species add their endangered, threatened or invasive status", "list_keywords": ["bird", "endangered species", "Everglades"], "list_curator": "HD Laughinghouse", "list_origin": "webapp", "list_curation_date": "02-24-2016", "list_source": "Des", "list_focal_clade": "Aves", "list_title": "Bird Species List for Everglades National Park", "list_author": ["Bass", "O. & Cunningham", "R."], "list_date_published": "01-01-2006", "is_list_public": true, "list_species": [{"family": "", "scientific_name": "Aix sponsa", "scientific_name_authorship": "", "vernacular_name": "Wood Duck", "phylum": "", "nomenclature_code": "ICZN", "order": "Anseriformes"}, {"family": "", "scientific_name": "Anas strepera", "scientific_name_authorship": "", "vernacular_name": "Gadwall", "phylum": "", "nomenclature_code": "ICZN", "order": "Anseriformes"}, {"family": "", "scientific_name": "Caprimulgus vociferus", "scientific_name_authorship": "", "vernacular_name": "Whip-poor-will", "phylum": "", "nomenclature_code": "ICZN", "order": "Caprimulgiformes"}, {"family": "", "scientific_name": "Columba livia", "scientific_name_authorship": "", "vernacular_name": "Rock Dove", "phylum": "", "nomenclature_code": "ICZN", "order": "Columbiformes"}, {"family": "", "scientific_name": "Ceryle alcyon", "scientific_name_authorship": "", "vernacular_name": "Belted Kingfisher", "phylum": "", "nomenclature_code": "ICZN", "order": "Coraciiformes"}, {"family": "", "scientific_name": "Aramus guarauna", "scientific_name_authorship": "", "vernacular_name": "Limpkin", "phylum": "", "nomenclature_code": "ICZN", "order": "Gruiformes"}]}}'
 ```
 __Citation:__  	 		
 
@@ -285,8 +280,8 @@ __Output Format:__ 		application/json
 __Parameters:__  			
 * *Name:* 	 	__user_id__
 * *Category:*  	mandatory
-* *Data Type:*  integer
-* *Description:*  Unique id of the registered user of web or mobile application
+* *Data Type:*  string
+* *Description:*  Unique id (valid email) of the registered user of web or mobile application
 
 * *Name:* 	 	__list_id__
 * *Category:*  	mandatory
@@ -300,7 +295,7 @@ __Parameters:__
  				
 __Examples:__ 
 ```
-curl -X POST http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/insert_species -H 'content-type:application/json' -d '{"user_id": 3, "list_id": 2, "species":[{"family": "", "scientific_name": "Aix sponsa", "scientific_name_authorship": "", "vernacular_name": "Wood Duck", "phylum": "", "nomenclature_code": "ICZN", "order": "Anseriformes"}, {"family": "", "scientific_name": "Anas strepera", "scientific_name_authorship": "", "vernacular_name": "Gadwall", "phylum": "", "nomenclature_code": "ICZN", "order": "Anseriformes"}]}'
+curl -X POST http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/insert_species -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "list_id": 2, "species":[{"family": "", "scientific_name": "Aix sponsa", "scientific_name_authorship": "", "vernacular_name": "Wood Duck", "phylum": "", "nomenclature_code": "ICZN", "order": "Anseriformes"}, {"family": "", "scientific_name": "Anas strepera", "scientific_name_authorship": "", "vernacular_name": "Gadwall", "phylum": "", "nomenclature_code": "ICZN", "order": "Anseriformes"}]}'
 ```
 
 __Citation:__  	 	
@@ -333,8 +328,8 @@ __Output Format:__ 		application/json
 __Parameters:__  			
 * *Name:* 	 	__user_id__
 * *Category:*  	mandatory
-* *Data Type:*  integer
-* *Description:*  Unique id of the registered user of web or mobile application
+* *Data Type:*  string
+* *Description:*  Unique id (valid email) of the registered user of web or mobile application
 
 * *Name:* 	 	__list_id__
 * *Category:*  	mandatory
@@ -348,7 +343,7 @@ __Parameters:__
 
 __Examples:__ 
 ```
-curl -X POST http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/remove_species -H 'content-type:application/json' -d '{"user_id": 3, "list_id": 2, "species":["Aix sponsa", "Anas strepera"]}'
+curl -X POST http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/remove_species -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "list_id": 2, "species":["Aix sponsa", "Anas strepera"]}'
 ```
 
 __Citation:__  	 	
@@ -381,8 +376,8 @@ __Output Format:__ 		application/json
 __Parameters:__  			
 * *Name:* 	 	__user_id__
 * *Category:*  	mandatory
-* *Data Type:*  integer
-* *Description:*  Unique id of the registered user of web or mobile application
+* *Data Type:*  string
+* *Description:*  Unique id (valid email) of the registered user of web or mobile application
 
 * *Name:* 	 	__list_id__
 * *Category:*  	mandatory
@@ -396,7 +391,7 @@ __Parameters:__
 
 __Examples:__ 
 ```
-curl -X POST http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/replace_species -H 'content-type:application/json' -d '{"user_id": 3, "list_id": 2, "species":[{"family": "", "scientific_name": "Aix sponsa", "scientific_name_authorship": "", "vernacular_name": "Wood Duck", "phylum": "", "nomenclature_code": "ICZN", "order": "Anseriformes"}, {"family": "", "scientific_name": "Anas strepera", "scientific_name_authorship": "", "vernacular_name": "Gadwall", "phylum": "", "nomenclature_code": "ICZN", "order": "Anseriformes"}]}'
+curl -X POST http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/replace_species -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "list_id": 2, "species":[{"family": "", "scientific_name": "Aix sponsa", "scientific_name_authorship": "", "vernacular_name": "Wood Duck", "phylum": "", "nomenclature_code": "ICZN", "order": "Anseriformes"}, {"family": "", "scientific_name": "Anas strepera", "scientific_name_authorship": "", "vernacular_name": "Gadwall", "phylum": "", "nomenclature_code": "ICZN", "order": "Anseriformes"}]}'
 ```
 
 __Citation:__  	 	
@@ -430,8 +425,8 @@ __Output Format:__ 		application/json
 __Parameters:__  			
 * *Name:* 	 	__user_id__
 * *Category:*  	mandatory
-* *Data Type:*  integer
-* *Description:*  Unique id of the registered user of web or mobile application
+* *Data Type:*  string
+* *Description:*  Unique id (valid email) of the registered user of web or mobile application
 
 * *Name:* 	 	__list_id__
 * *Category:*  	mandatory
@@ -439,7 +434,7 @@ __Parameters:__
 * *Description:*  Unique id of an existing list
 __Examples:__ 
 ```
-http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/remove_list?user_id=2&list_id=2
+http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/remove_list?user_id=hdail.laughinghouse@gmail.com&list_id=2
 ```
 
 __Citation:__  	 	
