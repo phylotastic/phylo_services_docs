@@ -359,4 +359,60 @@ __Service Quality:__
 ---
 
 
+#### Web Service 17.
+
+__Service Name:__  	 	Get image urls of a list of species
+
+__Service Description:__ 	A service to get image urls and corresponding license information of a list of species from EOL.
+
+__Resource URI:__  	<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/si/eol/get_images>
+
+__HTTP Method:__ 		GET
+
+__Input Format:__ 		application/x-www-form-urlencoded
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__
+* *Name:* 	 	species
+* *Category:*  	mandatory
+* *Data Type:*  string 
+* *Description:*  list of species names delimited by pipe "|"
+ 				
+__Examples:__ 
+```
+http://phylo.cs.nmsu.edu:5004/phylotastic_ws/si/eol/get_images?species=Panthera%20leo|Panthera%20onca|Panthera%20pardus
+```
+
+__Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/si/eol/images>
+
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		application/json
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__  			
+* *Name:* 	 	species 
+* *Category:*  	mandatory
+* *Data Type:*  list of string
+* *Description:*  list of species names
+ 				
+__Examples:__ 
+```
+curl -X POST http://phylo.cs.nmsu.edu:5004/phylotastic_ws/si/eol/images -H 'content-type:application/json' -d '{"species": ["Catopuma badia","Catopuma temminckii"]}'
+```
+__Citation:__  	 	http://eol.org/api
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*
+ * *Restrictions on scope:*
+ * *Expected response time:*  	__2s~6s__
+ * *Informative message:*
+   * when service is down --
+   * when malformed input is provided --
+ * *Uptime:* 
+ 
+---
 
