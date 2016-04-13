@@ -416,3 +416,45 @@ __Service Quality:__
  
 ---
 
+#### Web Service 18.
+
+__Service Name:__  	 	Get Species (of a Taxon) that have genome sequence in NCBI
+
+__Service Description:__ 	A service to get subset of Species that belong to a particular Taxon and have genome sequence in NCBI. 
+
+__Resource URI:__  	<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/ts/ncbi/genome_species>
+
+__HTTP Method:__ 		GET
+
+__Input Format:__ 		application/x-www-form-urlencoded
+
+__Output Format:__ 		application/json
+ 				
+__Parameters:__
+ 
+* *Name:* 	 	taxon
+* *Category:*  	mandatory
+* *Data Type:*  string 
+* *Description:*  name of a taxon
+
+__Examples:__ 
+```
+http://phylo.cs.nmsu.edu:5004/phylotastic_ws/ts/ncbi/genome_species?taxon=Panthera
+```
+```
+http://phylo.cs.nmsu.edu:5004/phylotastic_ws/ts/ncbi/genome_species?taxon=Rodentia
+```
+__Citation:__
+- http://www.ncbi.nlm.nih.gov/books/NBK25500/#chapter1.Finding_Related_Data_Through_En
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*
+ * *Restrictions on scope:*
+ * *Expected response time:*  	__2s~15s__
+ * *Informative message:*
+   * when service is down --
+   * when malformed input is provided --
+ * *Uptime:* 
+ 
+---
