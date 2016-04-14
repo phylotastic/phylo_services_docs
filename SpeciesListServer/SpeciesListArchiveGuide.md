@@ -32,5 +32,5 @@ Illinois Invasive Plants,This list contains the invasive species, with their Fam
 ,23-Jan-14,HD Laughinghouse,24-Feb-16,http://www.invasive.org/species/list.cfm?id=152,"Plants, invasive species, IllinoisPublish",Embryophyta
 ```
 
-#### Sample meta file:
+#### Sample metafile:
 A sample meta file can be found at [https://github.com/phylotastic/Phylotastic_WebService_Documentation/tree/master/SpeciesListServer/metafile.xml]
