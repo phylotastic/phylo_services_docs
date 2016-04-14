@@ -3,14 +3,14 @@
 A species list archive must consist of multiple files. The specific types of files that must be included in an archive are the following:
 
 1. A required __*species*__ __data__ file consisting of data for a list of species. 
-2. A required __*list*__ __data__ file consisting of metadata of list that relate to the species data. A list data record points to multiple records in the __*species*__ data file. 
+2. A required __*list*__ __data__ file consisting of metadata in the list that relate to the species data. A list data record points to multiple records in the __*species*__ __data__ file. 
 
-3. A optional __*descriptor*__ metafile describes how the files in the archive are organised. It describes the files in the archive and maps each data column to a corresponding standard term. The metafile is a relatively simple XML
+3. An optional __*descriptor*__ metafile describing how the files in the archive are organised. This describes the files in the archive and maps each data column to a corresponding standard term. The metafile is a relatively simple XML
 file format. 
-    - A metafile is required if the data files use non-standard column names in the first (header) row of data or follow different order of the standard column names.
-    - A definitive list of standard terms/column names can be found on [https://github.com/phylotastic/Phylotastic_WebService_Documentation/tree/master/SpeciesListServer/SpeciesListStandardTerms.md] 
+    - A metafile is required if the data files use non-standard column names in the first (header) row of the data or follow a different order than the standard column names.
+    - A definitive list of standard terms/column names are found on [https://github.com/phylotastic/Phylotastic_WebService_Documentation/tree/master/SpeciesListServer/SpeciesListStandardTerms.md] 
 
-> The entire collection of files (species data, list data, descriptor metafile) can be compressed into a single archive file. Compression formats include ZIP 18 and TAR.GZ/TGZ. This single, compressed file is the __Species List Archive__ file! This file can be easily uploaded to Phylotastic portal to publish author's own list of species.
+> Compress all files (species data, list data, descriptor metafile) into a single archive file. Compression formats include ZIP 18 and TAR.GZ/TGZ. This single, compressed file is the __Species List Archive__ file, which can be easily uploaded into the Phylotastic portal to publish an author's own species list.
 
 ---
 
