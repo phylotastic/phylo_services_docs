@@ -359,7 +359,7 @@ __Service Quality:__
 ---
 
 
-#### Web Service 17.
+#### Web Service 8.
 
 __Service Name:__  	 	Get image urls of a list of species
 
@@ -416,7 +416,7 @@ __Service Quality:__
  
 ---
 
-#### Web Service 18.
+#### Web Service 9.
 
 __Service Name:__  	 	Get Species (of a Taxon) that have genome sequence in NCBI
 
