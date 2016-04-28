@@ -18,7 +18,7 @@
    + __Example:__ 	Carnivora
 6. + __Term Name:__ *class*
    + __Term Definition:__ The scientific name of the class in which the taxon is classified.
-   + __Example:__ 	Carnivora
+   + __Example:__ 	Mammalia
 8. + __Term Name:__ *phylum*
    + __Term Definition:__ The scientific name of the phylum in which the taxon is classified.
    + __Example:__ Chordata
