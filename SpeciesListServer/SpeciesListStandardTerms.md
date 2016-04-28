@@ -15,11 +15,14 @@
    + __Example:__ 	Felidae
 5. + __Term Name:__ *order*
    + __Term Definition:__ The scientific name of the order in which the taxon is classified.
-   + __Example:__ 	Carnivora  
-6. + __Term Name:__ *phylum*
+   + __Example:__ 	Carnivora
+6. + __Term Name:__ *class*
+   + __Term Definition:__ The scientific name of the class in which the taxon is classified.
+   + __Example:__ 	Carnivora
+8. + __Term Name:__ *phylum*
    + __Term Definition:__ The scientific name of the phylum in which the taxon is classified.
    + __Example:__ Chordata
-7. + __Term Name:__ *nomenclaturalCode*
+9. + __Term Name:__ *nomenclaturalCode*
    + __Term Definition:__ The nomenclatural code under which the scientificName is constructed.
    + __Example:__ ICZN
 
