@@ -194,111 +194,9 @@ __Service Quality:__
    * when malformed input is provided --
  * *Uptime:* 
  
+
 ---
 #### Web Service 10.
-
-__Service Name:__  	 	Add species to an existing list
-
-__Service Description:__ 	A service to add more species to an existing list of species.
-
-__Resource URI:__  	<http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/insert_species>
-
-__HTTP Method:__ 		POST
-
-__Input Format:__ 		application/json
-
-__Output Format:__ 		application/json 
- 				
-__Parameters:__
-
-* *Name:* 	 	__user_id__
-* *Category:*  	mandatory
-* *Data Type:*  string
-* *Description:*  Unique id (valid gmail address) of a phylotastic web application user
-
-* *Name:* 	 	__list_id__
-* *Category:*  	mandatory
-* *Data Type:*  integer
-* *Description:*  Unique id of an existing list
-
-* *Name:* 	 	__species__
-* *Category:*  	mandatory
-* *Data Type:*  an array of [complex json species object](#jsonspecies)
-* *Description:*  All data related to the new species encapsulated in a complex json object.
- 				
-__Examples:__ 
-```
-curl -X POST http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/insert_species -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "list_id": 2, "species":[{"family": "", "scientific_name": "Aix sponsa", "scientific_name_authorship": "", "vernacular_name": "Wood Duck", "phylum": "", "nomenclature_code": "ICZN", "order": "Anseriformes"}, {"family": "", "scientific_name": "Anas strepera", "scientific_name_authorship": "", "vernacular_name": "Gadwall", "phylum": "", "nomenclature_code": "ICZN", "order": "Anseriformes"}]}'
-```
-
-__Citation:__
-
-__Service Quality:__
-
- * *Restrictions on capacity:*
- * *Restrictions on scope:*
- * *Expected response time:*  	__1s~3s__
- * *Informative message:*
-   * when service is down --
-   * when malformed input is provided --
- * *Uptime:* 
- 
----
-#### Web Service 11.
-
-__Service Name:__  	 	Remove species from an existing list
-
-__Service Description:__ 	A service to remove species from an existing list of species.
-
-__Resource URI:__  	<http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/remove_species>
-
-__HTTP Method:__ 		POST
-
-__Input Format:__ 		application/json
-
-__Output Format:__ 		application/json 
- 				
-__Parameters:__
-
-* *Name:* 	 	__user_id__
-* *Category:*  	mandatory
-* *Data Type:*  string
-* *Description:*  Unique id (valid gmail address) of a phylotastic web application user
-
-* *Name:* 	 	__access_token__
-* *Category:*  	mandatory
-* *Data Type:*  string
-* *Description:*  Access token for the user with *user_id* (valid gmail address)
-
-* *Name:* 	 	__list_id__
-* *Category:*  	mandatory
-* *Data Type:*  integer
-* *Description:*  Unique id of an existing list
-
-* *Name:* 	 	__species__
-* *Category:*  	mandatory
-* *Data Type:*  an array of strings
-* *Description:*  An array of species names to be removed from an existing list.
-
-__Examples:__ 
-```
-curl -X POST http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/remove_species -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "access_token": "ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA", "list_id": 2, "species":["Aix sponsa", "Anas strepera"]}'
-```
-
-__Citation:__
-
-__Service Quality:__
-
- * *Restrictions on capacity:*
- * *Restrictions on scope:*
- * *Expected response time:*  	__1s~3s__
- * *Informative message:*
-   * when service is down --
-   * when malformed input is provided --
- * *Uptime:* 
- 
----
-#### Web Service 12.
 
 __Service Name:__  	 	Replace species of an existing list
 
@@ -353,7 +251,7 @@ __Service Quality:__
  
 ---
 
-#### Web Service 13.
+#### Web Service 11.
 
 __Service Name:__  	 	Remove an existing list
 
