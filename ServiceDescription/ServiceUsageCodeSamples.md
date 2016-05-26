@@ -110,7 +110,7 @@ def call_service(input_data)
 end
 
 if __FILE__ == $0
- 	input_data = {"scientificNames"=> ["Formica exsectoides", "Formica pecefica"]}
+ 	input_data = {"scientificNames"=> ["Formica exsectoides", "Formica pacifica"]}
  	call_service(input_data)
 end
 ```
@@ -231,7 +231,7 @@ def call_service(inputData):
 if __name__ == '__main__':
 
  	inputData = {
-     	 	'scientificNames': ["Formica exsectoides", "Formica pecefica"]
+     	 	'scientificNames': ["Formica exsectoides", "Formica pacifica"]
   	}
 
   	call_service(inputData)
