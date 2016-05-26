@@ -40,13 +40,13 @@
    + __Example:__ Dail
 4. + __Term Name:__ *datePublished*
    + __Term Definition:__ The date when the author published their list.
-   + __Example:__ 11-Jan-15
+   + __Example:__ YYYY-MM-DD (March 30, 1998 would be: 1998-03-30)
 5. + __Term Name:__ *curator*
    + __Term Definition:__ The person who inputs the list data into the server.
-   + __Example:__ Dail
+   + __Example:__ Dail Laughinghouse
 6. + __Term Name:__ *dateCurated*
    + __Term Definition:__ The date in which the list data are entered
-   + __Example:__ 05-Feb-16
+   + __Example:__ YYYY-MM-DD (March 30, 1998 would be: 1998-03-30)
 7. + __Term Name:__ *source*
    + __Term Definition:__ The name of the source (URL, book) from where the list of species is created.
    + __Example:__ https://en.wikipedia.org/wiki/Felidae
