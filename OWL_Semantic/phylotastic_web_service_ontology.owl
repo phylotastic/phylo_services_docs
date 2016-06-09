@@ -211,12 +211,15 @@
 
     <owl:ObjectProperty rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#is_a_part_of">
         <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Effects"/>
+        <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Fields"/>
         <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Input"/>
         <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Operation"/>
+        <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Output"/>
         <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Parameter"/>
         <rdfs:domain rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Precondition"/>
         <rdfs:range rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Input"/>
         <rdfs:range rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Operation"/>
+        <rdfs:range rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Output"/>
         <rdfs:range rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#WebService"/>
     </owl:ObjectProperty>
     
@@ -491,6 +494,14 @@
     
 
 
+    <!-- http://phylotastic.org/owl/phylotastic_web_service.owl#Source_Data_Serialization_Messaging_Format -->
+
+    <owl:Class rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#Source_Data_Serialization_Messaging_Format">
+        <rdfs:subClassOf rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Source_Web_Standard"/>
+    </owl:Class>
+    
+
+
     <!-- http://phylotastic.org/owl/phylotastic_web_service.owl#Source_OpenTree -->
 
     <owl:Class rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#Source_OpenTree">
@@ -503,6 +514,14 @@
 
     <owl:Class rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#Source_Phylogenetic">
         <rdfs:subClassOf rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Source_Biology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_web_service.owl#Source_Web_Standard -->
+
+    <owl:Class rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#Source_Web_Standard">
+        <rdfs:subClassOf rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#DefinedSource"/>
     </owl:Class>
     
 
@@ -670,6 +689,7 @@
     <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#FindScientificNamesFromText_Output">
         <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Output"/>
         <phylotastic_web_service:containComponents rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#scientificNames"/>
+        <phylotastic_web_service:containComponents rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#status_code"/>
         <phylotastic_web_service:hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#JSON"/>
         <phylotastic_web_service:isOutputOf rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#FindScientificNamesFromText"/>
         <phylotastic_web_service:isParameterOf rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#FindScientificNamesFromText"/>
@@ -707,9 +727,84 @@
     <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#FindScientificNamesFromWebPage_Output">
         <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Output"/>
         <phylotastic_web_service:containComponents rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#scientificNames"/>
+        <phylotastic_web_service:containComponents rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#status_code"/>
         <phylotastic_web_service:hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#JSON"/>
         <phylotastic_web_service:isOutputOf rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#FindScientificNamesFromWebPage"/>
         <phylotastic_web_service:isParameterOf rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#FindScientificNamesFromWebPage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_ByCountry_GET -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_ByCountry_GET">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Operation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_ByCountry_GET_Input -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_ByCountry_GET_Input">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Input"/>
+        <phylotastic_web_service:containComponents rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#country"/>
+        <phylotastic_web_service:containComponents rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#taxon"/>
+        <phylotastic_web_service:hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#x-www-urlencoded"/>
+        <phylotastic_web_service:isInputOf rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_ByCountry_GET"/>
+        <phylotastic_web_service:isParameterOf rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_ByCountry_GET"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_ByCountry_GET_Output -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_ByCountry_GET_Output">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Output"/>
+        <phylotastic_web_service:containComponents rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#message"/>
+        <phylotastic_web_service:containComponents rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#species"/>
+        <phylotastic_web_service:containComponents rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#status_code"/>
+        <phylotastic_web_service:containComponents rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#taxon"/>
+        <phylotastic_web_service:hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#JSON"/>
+        <phylotastic_web_service:isOutputOf rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_ByCountry_GET"/>
+        <phylotastic_web_service:isParameterOf rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_ByCountry_GET"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_OpenTree_GET -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_OpenTree_GET">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Operation"/>
+        <phylotastic_web_service:hasInput rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_OpenTree_GET_Input"/>
+        <phylotastic_web_service:hasOutput rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_OpenTree_GET_Output"/>
+        <phylotastic_web_service:hasParameter rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_OpenTree_GET_Input"/>
+        <phylotastic_web_service:hasParameter rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_OpenTree_GET_Output"/>
+        <phylotastic_web_service:isOperationOf rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Phylotastic_Web_Services"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_OpenTree_GET_Input -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_OpenTree_GET_Input">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Input"/>
+        <phylotastic_web_service:containComponents rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#taxon"/>
+        <phylotastic_web_service:hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#x-www-urlencoded"/>
+        <phylotastic_web_service:isInputOf rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_OpenTree_GET"/>
+        <phylotastic_web_service:isParameterOf rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_OpenTree_GET"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_OpenTree_GET_Output -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_OpenTree_GET_Output">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Output"/>
+        <phylotastic_web_service:containComponents rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#message"/>
+        <phylotastic_web_service:containComponents rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#status_code"/>
+        <phylotastic_web_service:hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#JSON"/>
+        <phylotastic_web_service:isOutputOf rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_OpenTree_GET"/>
+        <phylotastic_web_service:isParameterOf rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_OpenTree_GET"/>
     </owl:NamedIndividual>
     
 
@@ -796,6 +891,7 @@
 
     <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#JSON">
         <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#structureDataFormat"/>
+        <phylotastic_web_service:isDefinedBy rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#W3C_JSON"/>
         <phylotastic_web_service:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JSON</phylotastic_web_service:name>
     </owl:NamedIndividual>
     
@@ -894,6 +990,7 @@
     <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#ResolveScientificNamesWithOpenTreeTNRS_GET_Output">
         <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Output"/>
         <phylotastic_web_service:containComponents rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#resolvedNames"/>
+        <phylotastic_web_service:containComponents rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#status_code"/>
         <phylotastic_web_service:hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#JSON"/>
         <phylotastic_web_service:isOutputOf rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#ResolveScientificNamesWithOpenTreeTNRS_GET"/>
         <phylotastic_web_service:isParameterOf rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#ResolveScientificNamesWithOpenTreeTNRS_GET"/>
@@ -905,6 +1002,36 @@
 
     <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#ResolveScientificNamesWithOpenTreeTNRS_POST">
         <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Operation"/>
+        <phylotastic_web_service:hasInput rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#ResolveScientificNamesWithOpenTreeTNRS_POST_Input"/>
+        <phylotastic_web_service:hasOutput rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#ResolveScientificNamesWithOpenTreeTNRS_POST_Output"/>
+        <phylotastic_web_service:hasParameter rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#ResolveScientificNamesWithOpenTreeTNRS_POST_Input"/>
+        <phylotastic_web_service:hasParameter rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#ResolveScientificNamesWithOpenTreeTNRS_POST_Output"/>
+        <phylotastic_web_service:isOperationOf rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Phylotastic_Web_Services"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_web_service.owl#ResolveScientificNamesWithOpenTreeTNRS_POST_Input -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#ResolveScientificNamesWithOpenTreeTNRS_POST_Input">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Input"/>
+        <phylotastic_web_service:containComponents rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#scientificNames"/>
+        <phylotastic_web_service:hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#JSON"/>
+        <phylotastic_web_service:isInputOf rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#ResolveScientificNamesWithOpenTreeTNRS_POST"/>
+        <phylotastic_web_service:isParameterOf rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#ResolveScientificNamesWithOpenTreeTNRS_POST"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_web_service.owl#ResolveScientificNamesWithOpenTreeTNRS_POST_Output -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#ResolveScientificNamesWithOpenTreeTNRS_POST_Output">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Output"/>
+        <phylotastic_web_service:containComponents rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#resolvedNames"/>
+        <phylotastic_web_service:containComponents rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#status_code"/>
+        <phylotastic_web_service:hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#JSON"/>
+        <phylotastic_web_service:isOutputOf rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#ResolveScientificNamesWithOpenTreeTNRS_POST"/>
+        <phylotastic_web_service:isParameterOf rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#ResolveScientificNamesWithOpenTreeTNRS_POST"/>
     </owl:NamedIndividual>
     
 
@@ -927,10 +1054,41 @@
     
 
 
+    <!-- http://phylotastic.org/owl/phylotastic_web_service.owl#W3C_JSON -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#W3C_JSON">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Source_Data_Serialization_Messaging_Format"/>
+        <phylotastic_web_service:definedAtURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.w3.org/TR/json-ld/</phylotastic_web_service:definedAtURL>
+        <phylotastic_web_service:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">W3C_JSON</phylotastic_web_service:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_web_service.owl#W3C_XML -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#W3C_XML">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Source_Data_Serialization_Messaging_Format"/>
+        <phylotastic_web_service:definedAtURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.w3.org/TR/xmlschema11-1/</phylotastic_web_service:definedAtURL>
+        <phylotastic_web_service:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">W3C_XML</phylotastic_web_service:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_web_service.owl#W3C_X_WWW_URLENCODE -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#W3C_X_WWW_URLENCODE">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Source_Data_Serialization_Messaging_Format"/>
+        <phylotastic_web_service:definedAtURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.w3.org/TR/html401/interact/forms.html</phylotastic_web_service:definedAtURL>
+        <phylotastic_web_service:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">W3C_X_WWW_URLENCODE</phylotastic_web_service:name>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://phylotastic.org/owl/phylotastic_web_service.owl#XML -->
 
     <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#XML">
         <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#structureDataFormat"/>
+        <phylotastic_web_service:isDefinedBy rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#W3C_XML"/>
         <phylotastic_web_service:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XML</phylotastic_web_service:name>
     </owl:NamedIndividual>
     
@@ -956,6 +1114,19 @@
 
     <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#byte">
         <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Integer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_web_service.owl#country -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#country">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Fields"/>
+        <phylotastic_web_service:hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#PlainText"/>
+        <phylotastic_web_service:hasDataType rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#string"/>
+        <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_ByCountry_GET_Input"/>
+        <phylotastic_web_service:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">country</phylotastic_web_service:name>
+        <phylotastic_web_service:type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">string</phylotastic_web_service:type>
     </owl:NamedIndividual>
     
 
@@ -1001,6 +1172,15 @@
     
 
 
+    <!-- http://phylotastic.org/owl/phylotastic_web_service.owl#list_of_specie_name_object -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#list_of_specie_name_object">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#self-definedFormatList"/>
+        <phylotastic_web_service:hasElementDataType rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#specie_name"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://phylotastic.org/owl/phylotastic_web_service.owl#list_of_strings -->
 
     <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#list_of_strings">
@@ -1014,6 +1194,10 @@
 
     <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#match_type">
         <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Fields"/>
+        <phylotastic_web_service:hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#PlainText"/>
+        <phylotastic_web_service:hasDataType rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#string"/>
+        <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Phylotastic_OpenTree_ResolveName_Obj"/>
+        <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#resolvedName_obj"/>
         <phylotastic_web_service:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">match_type</phylotastic_web_service:name>
         <phylotastic_web_service:type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">string</phylotastic_web_service:type>
     </owl:NamedIndividual>
@@ -1024,6 +1208,10 @@
 
     <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#matched_name">
         <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Fields"/>
+        <phylotastic_web_service:hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#PlainText"/>
+        <phylotastic_web_service:hasDataType rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#string"/>
+        <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Phylotastic_OpenTree_ResolveName_Obj"/>
+        <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#resolvedName_obj"/>
         <phylotastic_web_service:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">matched_name</phylotastic_web_service:name>
         <phylotastic_web_service:type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">string</phylotastic_web_service:type>
     </owl:NamedIndividual>
@@ -1036,6 +1224,7 @@
         <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Fields"/>
         <phylotastic_web_service:hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#PlainText"/>
         <phylotastic_web_service:hasDataType rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#string"/>
+        <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_ByCountry_GET_Output"/>
         <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#GetPhylogeneticTreesFromOpenTree_GET_Output"/>
         <phylotastic_web_service:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">message</phylotastic_web_service:name>
         <phylotastic_web_service:type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">string</phylotastic_web_service:type>
@@ -1110,7 +1299,9 @@
         <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Fields"/>
         <phylotastic_web_service:hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#JSON"/>
         <phylotastic_web_service:hasDataType rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#list_of_resolvedName_object"/>
+        <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#GetPhylogeneticTreesFromOpenTree_POST_Input"/>
         <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#ResolveScientificNamesWithOpenTreeTNRS_GET_Output"/>
+        <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#ResolveScientificNamesWithOpenTreeTNRS_POST_Output"/>
         <phylotastic_web_service:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">resolvedNames</phylotastic_web_service:name>
     </owl:NamedIndividual>
     
@@ -1120,6 +1311,10 @@
 
     <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#resolver_name">
         <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Fields"/>
+        <phylotastic_web_service:hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#PlainText"/>
+        <phylotastic_web_service:hasDataType rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#string"/>
+        <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Phylotastic_OpenTree_ResolveName_Obj"/>
+        <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#resolvedName_obj"/>
         <phylotastic_web_service:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">resolver_name</phylotastic_web_service:name>
         <phylotastic_web_service:type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">string</phylotastic_web_service:type>
     </owl:NamedIndividual>
@@ -1134,6 +1329,7 @@
         <phylotastic_web_service:hasDataType rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#list_of_strings"/>
         <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#FindScientificNamesFromText_Output"/>
         <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#FindScientificNamesFromWebPage_Output"/>
+        <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#ResolveScientificNamesWithOpenTreeTNRS_POST_Input"/>
         <phylotastic_web_service:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scientificNames</phylotastic_web_service:name>
     </owl:NamedIndividual>
     
@@ -1143,8 +1339,36 @@
 
     <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#search_string">
         <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Fields"/>
+        <phylotastic_web_service:hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#PlainText"/>
+        <phylotastic_web_service:hasDataType rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#string"/>
+        <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Phylotastic_OpenTree_ResolveName_Obj"/>
+        <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#resolvedName_obj"/>
         <phylotastic_web_service:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">search_string</phylotastic_web_service:name>
         <phylotastic_web_service:type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">string</phylotastic_web_service:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_web_service.owl#specie_name -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#specie_name">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Fields"/>
+        <phylotastic_web_service:hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#PlainText"/>
+        <phylotastic_web_service:hasDataType rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#string"/>
+        <phylotastic_web_service:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">specie_name</phylotastic_web_service:name>
+        <phylotastic_web_service:type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">string</phylotastic_web_service:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://phylotastic.org/owl/phylotastic_web_service.owl#species -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#species">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Fields"/>
+        <phylotastic_web_service:hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#JSON"/>
+        <phylotastic_web_service:hasDataType rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#list_of_specie_name_object"/>
+        <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_ByCountry_GET_Output"/>
+        <phylotastic_web_service:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">species</phylotastic_web_service:name>
     </owl:NamedIndividual>
     
 
@@ -1155,7 +1379,13 @@
         <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Fields"/>
         <phylotastic_web_service:hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#PlainText"/>
         <phylotastic_web_service:hasDataType rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#integer"/>
+        <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#FindScientificNamesFromText_Output"/>
+        <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#FindScientificNamesFromWebPage_Output"/>
+        <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_ByCountry_GET_Output"/>
         <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#GetPhylogeneticTreesFromOpenTree_GET_Output"/>
+        <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#GetPhylogeneticTreesFromOpenTree_POST_Output"/>
+        <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#ResolveScientificNamesWithOpenTreeTNRS_GET_Output"/>
+        <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#ResolveScientificNamesWithOpenTreeTNRS_POST_Output"/>
         <phylotastic_web_service:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">status_code</phylotastic_web_service:name>
         <phylotastic_web_service:type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">integer</phylotastic_web_service:type>
     </owl:NamedIndividual>
@@ -1178,6 +1408,8 @@
         <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Fields"/>
         <phylotastic_web_service:hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#JSON"/>
         <phylotastic_web_service:hasDataType rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#list_of_strings"/>
+        <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Phylotastic_OpenTree_ResolveName_Obj"/>
+        <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#resolvedName_obj"/>
         <phylotastic_web_service:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">synonyms</phylotastic_web_service:name>
     </owl:NamedIndividual>
     
@@ -1195,10 +1427,29 @@
     
 
 
+    <!-- http://phylotastic.org/owl/phylotastic_web_service.owl#taxon -->
+
+    <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#taxon">
+        <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Fields"/>
+        <phylotastic_web_service:hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#PlainText"/>
+        <phylotastic_web_service:hasDataType rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#string"/>
+        <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_ByCountry_GET_Input"/>
+        <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_ByCountry_GET_Output"/>
+        <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#GetAllSpeciesFromATaxon_OpenTree_GET_Input"/>
+        <phylotastic_web_service:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">taxon</phylotastic_web_service:name>
+        <phylotastic_web_service:type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">string</phylotastic_web_service:type>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://phylotastic.org/owl/phylotastic_web_service.owl#taxon_id -->
 
     <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#taxon_id">
         <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Fields"/>
+        <phylotastic_web_service:hasDataFormat rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#PlainText"/>
+        <phylotastic_web_service:hasDataType rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#integer"/>
+        <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#Phylotastic_OpenTree_ResolveName_Obj"/>
+        <phylotastic_web_service:is_a_part_of rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#resolvedName_obj"/>
         <phylotastic_web_service:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">taxon_id</phylotastic_web_service:name>
         <phylotastic_web_service:type rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">integer</phylotastic_web_service:type>
     </owl:NamedIndividual>
@@ -1234,6 +1485,7 @@
 
     <owl:NamedIndividual rdf:about="http://phylotastic.org/owl/phylotastic_web_service.owl#x-www-urlencoded">
         <rdf:type rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#structureDataFormat"/>
+        <phylotastic_web_service:isDefinedBy rdf:resource="http://phylotastic.org/owl/phylotastic_web_service.owl#W3C_X_WWW_URLENCODE"/>
         <phylotastic_web_service:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X-WWW-URLENCODED</phylotastic_web_service:name>
     </owl:NamedIndividual>
 </rdf:RDF>
