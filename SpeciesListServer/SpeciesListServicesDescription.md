@@ -124,13 +124,13 @@ __Parameters:__
     + Data type: an array of strings
     + Description: names of the authors who prepared the new list
   + Property name: __list_date_published__
-    + Data type: string (format: *mm-dd-yyyy*)
+    + Data type: string (format: *yyyy-mm-dd*)
     + Description: date when the new list is being posted
   + Property name: __list_curator__
     + Data type: string
     + Description: name of the curator of the new list
   + Property name: __list_curation_date__
-    + Data type: string (format: *mm-dd-yyyy*)
+    + Data type: string (format: *yyyy-mm-dd*)
     + Description: date when the new list is being curated
   + Property name: __list_source__
     + Data type: string
