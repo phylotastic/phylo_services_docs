@@ -1,6 +1,6 @@
 # Phylotastic Species List Web Services Documentation
 
-#### Web Service 8.
+#### Web Service 10.
 
 __Service Name:__  	 	Get lists of species
 
@@ -88,7 +88,7 @@ __Service Quality:__
  
 ---
 
-#### Web Service 9.
+#### Web Service 11.
 
 __Service Name:__  	 	Post a new list of species
 
@@ -196,7 +196,7 @@ __Service Quality:__
  
 
 ---
-#### Web Service 10.
+#### Web Service 12.
 
 __Service Name:__  	 	Replace species of an existing list
 
@@ -251,7 +251,7 @@ __Service Quality:__
  
 ---
 
-#### Web Service 11.
+#### Web Service 13.
 
 __Service Name:__  	 	Remove an existing list
 
@@ -300,6 +300,5 @@ __Service Quality:__
  * *Uptime:* 
  
 ---
-
 
 
