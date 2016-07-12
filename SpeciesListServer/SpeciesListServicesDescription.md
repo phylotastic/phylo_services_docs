@@ -1,6 +1,6 @@
 # Phylotastic Species List Web Services Documentation
 
-#### Web Service 8.
+#### Web Service 10.
 
 __Service Name:__  	 	Get lists of species
 
@@ -88,7 +88,7 @@ __Service Quality:__
  
 ---
 
-#### Web Service 9.
+#### Web Service 11.
 
 __Service Name:__  	 	Post a new list of species
 
@@ -124,13 +124,13 @@ __Parameters:__
     + Data type: an array of strings
     + Description: names of the authors who prepared the new list
   + Property name: __list_date_published__
-    + Data type: string (format: *mm-dd-yyyy*)
+    + Data type: string (format: *yyyy-mm-dd*)
     + Description: date when the new list is being posted
   + Property name: __list_curator__
     + Data type: string
     + Description: name of the curator of the new list
   + Property name: __list_curation_date__
-    + Data type: string (format: *mm-dd-yyyy*)
+    + Data type: string (format: *yyyy-mm-dd*)
     + Description: date when the new list is being curated
   + Property name: __list_source__
     + Data type: string
@@ -196,7 +196,7 @@ __Service Quality:__
  
 
 ---
-#### Web Service 10.
+#### Web Service 12.
 
 __Service Name:__  	 	Replace species of an existing list
 
@@ -251,7 +251,7 @@ __Service Quality:__
  
 ---
 
-#### Web Service 11.
+#### Web Service 13.
 
 __Service Name:__  	 	Remove an existing list
 
@@ -300,6 +300,5 @@ __Service Quality:__
  * *Uptime:* 
  
 ---
-
 
 
