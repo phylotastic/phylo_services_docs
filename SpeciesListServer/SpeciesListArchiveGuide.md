@@ -9,7 +9,7 @@ A species list archive must consist of multiple files. The specific types of fil
 
 Each type of file is described below, with an example. 
 
-The metafile is not required if the archive consists only of a "species.csv" and "list.csv" file formatted exactly as described below. 
+The metafile is not required if the archive consists only of a "species.csv" and "list.csv" file in the standard format described below. 
 
 To create an archive, compress all files (species data, list data, descriptor metafile) into a single archive file. Compression formats include ZIP 18 and TAR.GZ/TGZ. This single, compressed file is the __Species List Archive__ file, which can be easily uploaded into the Phylotastic portal to publish an author's own species list.  As of July, 2016, the portal does not support custom archive formats.  
 
