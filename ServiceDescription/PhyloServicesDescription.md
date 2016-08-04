@@ -20,13 +20,19 @@ __Parameters:__
 * *Category:*  	mandatory
 * *Data Type:*  string 
 * *Description:*  	an encoded URL for a web page, PDF, Microsoft Office document, or image file 
+
+* *Name:* 	 	engine 
+* *Category:*  	optional
+* *Data Type:*  integer 
+* *Description:*  	a integer value to specify which search engine (TaxonFinder or NetiNeti) to use. By default it is 0 which means it will use both engines. Value 1 means TaxonFinder and 2 means NetiNeti   
+
  				
 __Examples:__ 
 ```
 http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/names_url?url=http://en.wikipedia.org/wiki/Ant
 ```
 ```
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/names_url?url=https://en.wikipedia.org/wiki/Plain_pigeon
+http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/names_url?url=https://en.wikipedia.org/wiki/Plain_pigeon&engine=1
 ```
 ```
 http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/names_url?url=http://www.fws.gov/westvirginiafieldoffice/PDF/beechridgehcp/Appendix_D_Table_D-1.pdf
@@ -65,10 +71,16 @@ __Parameters:__
 * *Category:*  	mandatory
 * *Data Type:*  string 
 * *Description:*  text content 
+
+* *Name:* 	 	engine 
+* *Category:*  	optional
+* *Data Type:*  integer 
+* *Description:*  	a integer value to specify which search engine (TaxonFinder or NetiNeti) to use. By default it is 0 which means it will use both engines. Value 1 means TaxonFinder and 2 means NetiNeti
+
  				
 __Examples:__ 
 ```
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/names_text?text=The lemon dove (Columba larvata) is a species of bird in the pigeon family Columbidae found in montane forests of sub-Saharan Africa.
+http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/names_text?text=The lemon dove (Columba larvata) is a species of bird in the pigeon family Columbidae found in montane forests of sub-Saharan Africa.&engine=2
 ```
 ```
 http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/names_text?text=Formica polyctena is a species of European red wood ant in the genus Formica. The pavement ant, Tetramorium caespitum is an ant native to Europe. Pseudomyrmex is a genus of stinging, wasp-like ants. Adetomyrma venatrix is an endangered species of ants endemic to Madagascar. Carebara diversa is a species of ants in the subfamily Formicinae. It is found in many Asian countries.
