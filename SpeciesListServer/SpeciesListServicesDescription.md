@@ -113,7 +113,7 @@ __Parameters:__
 * *Name:* 	 	__list__
 * *Category:*  	mandatory
 * *Data Type:*  complex json list object
-* *Description:*  All data and metadata related to the new list of species encapsulated in a complex json object. The complex json list object has the following properties:--
+* *Description:*  All data and metadata related to the new list of species encapsulated in a complex json object. <a name="jsonlist">The complex json list object</a> has the following properties:--
   + Property name: __list_title__ 
     + Data type: string
     + Description: title of the new list 
@@ -301,4 +301,64 @@ __Service Quality:__
  
 ---
 
+#### Web Service 15.
 
+__Service Name:__  	 	Update metadata of an existing list
+
+__Service Description:__ 	A service to update properties (metadata) of an existing list.
+
+__Resource URI:__  	<http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/update_list>
+
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		application/json
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__
+
+* *Name:* 	 	__user_id__
+* *Category:*  	mandatory
+* *Data Type:*  string
+* *Description:*  Unique id (valid gmail address) of a phylotastic web application user
+
+* *Name:* 	 	__access_token__
+* *Category:*  	mandatory
+* *Data Type:*  string
+* *Description:*  Access token for the user with *user_id* (valid gmail address)
+
+* *Name:* 	 	__list_id__
+* *Category:*  	mandatory
+* *Data Type:*  integer
+* *Description:*  Unique id of an existing list
+
+* *Name:* 	 	__list__
+* *Category:*  	mandatory
+* *Data Type:*  a [complex json list __sub-object__](#jsonlist) consisting of a subset of list properties
+* *Description:*  An object consisting of a subset of list properties (metadata) that need to be updated
+
+__Examples:__ 
+
+* To change the title and description of a list with ID 5:
+```
+curl -X POST http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/update_list -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "access_token": "ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA", "list_id": 5, "list": {"list_description": "The list contains information on the invasive plants of Virginia, with data on the Invasiveness Rank and region in which they occur", "list_title": "Virginia Invasive Plant Species List"}}'
+```
+
+* To change type of a list with ID 5 from "private" to "public":
+```
+curl -X POST http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/update_list -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "access_token": "ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA", "list_id": 5, "list": {"is_list_public": true}}'
+```
+
+__Citation:__
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*
+ * *Restrictions on scope:*
+ * *Expected response time:*  	__1s~3s__
+ * *Informative message:*
+   * when service is down --
+   * when malformed input is provided --
+ * *Uptime:* 
+ 
+---
