@@ -473,6 +473,63 @@ __Service Quality:__
 
 #### Web Service 10.
 
+__Service Name:__  	 	Get information urls of a list of species
+
+__Service Description:__ 	A service to get information urls of a list of species from EOL.
+
+__Resource URI:__  	<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/sl/eol/get_links>
+
+__HTTP Method:__ 		GET
+
+__Input Format:__ 		application/x-www-form-urlencoded
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__
+* *Name:* 	 	species
+* *Category:*  	mandatory
+* *Data Type:*  string 
+* *Description:*  list of species names delimited by pipe "|"
+ 				
+__Examples:__ 
+```
+http://phylo.cs.nmsu.edu:5004/phylotastic_ws/sl/eol/get_links?species=Panthera%20leo|Panthera%20onca|Panthera%20pardus
+```
+
+__Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/sl/eol/links>
+
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		application/json
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__  			
+* *Name:* 	 	species 
+* *Category:*  	mandatory
+* *Data Type:*  list of string
+* *Description:*  list of species names
+ 				
+__Examples:__ 
+```
+curl -X POST http://phylo.cs.nmsu.edu:5004/phylotastic_ws/sl/eol/links -H 'content-type:application/json' -d '{"species": ["Catopuma badia","Catopuma temminckii"]}'
+```
+__Citation:__  	 	http://eol.org/api
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*
+ * *Restrictions on scope:*
+ * *Expected response time:*  	__2s~6s__
+ * *Informative message:*
+   * when service is down --
+   * when malformed input is provided --
+ * *Uptime:* 
+
+---
+
+#### Web Service 11.
+
 __Service Name:__  	 	Get lists of species
 
 __Service Description:__ 	A service to get lists of species that a user of phylotastic web application has published
@@ -492,7 +549,7 @@ __Parameters:__
 * *Data Type:*  string 
 * *Description:*  Unique id (valid gmail address) of a phylotastic web application user
 
-> __Note__: *user_id* parameter is mandatory only if a user wants to view all the lists (public/private) owned by the *user_id*  **OR** if a user wants to view a specific private list owned by the *user_id* **OR** a specific public list owned by other user. 
+> __Note__: *user_id* parameter is mandatory only if a user wants to view all the lists (public/private) owned by the *user_id*  **OR** if a user wants to view a specific private list owned by the *user_id* 
 
 > *user_id* parameter is not needed if a user wants to view all available public lists
  
@@ -508,7 +565,7 @@ __Parameters:__
 * *Data Type:*  string
 * *Description:*  Access token for the user with *user_id* (valid gmail address)
 
-> __Note__: *access_token* parameter is used for authenticating the user with valid gmail address. It is mandatory only if a user wants to view all the lists (public/private) owned by the *user_id* **OR** if a user wants to view a specific private list identified by *list_id* and owned by the *user_id* **OR** if a user wants to view a specific public list identified by *list_id* and owned by other user
+> __Note__: *access_token* parameter is used for authenticating the user with valid gmail address. It is mandatory only if a user wants to view all the lists (public/private) owned by the *user_id* **OR** if a user wants to view a specific private list identified by *list_id* and owned by the *user_id*
 
 * *Name:* __verbose__
 * *Category:* optional
@@ -530,7 +587,7 @@ http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/get_list
 ```
 * To get a specific public list with ID 22:
 ```
-http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/get_list?user_id=hdail.laughinghouse@gmail.com&list_id=22&access_token=ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA
+http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/get_list?list_id=22
 ```
 * To get all lists of user with ID *hdail.laughinghouse@gmail.com*:
 ```
@@ -559,7 +616,7 @@ __Service Quality:__
  
 ---
 
-#### Web Service 11.
+#### Web Service 12.
 
 __Service Name:__  	 	Post a new list of species
 
@@ -667,7 +724,7 @@ __Service Quality:__
  
 
 ---
-#### Web Service 12.
+#### Web Service 13.
 
 __Service Name:__  	 	Replace species of an existing list
 
@@ -722,7 +779,7 @@ __Service Quality:__
  
 ---
 
-#### Web Service 13.
+#### Web Service 14.
 
 __Service Name:__  	 	Remove an existing list
 
@@ -772,9 +829,69 @@ __Service Quality:__
  
 ---
 
+#### Web Service 15.
 
+__Service Name:__  	 	Update metadata of an existing list
 
-#### Web Service 14.
+__Service Description:__ 	A service to update properties (metadata) of an existing list.
+
+__Resource URI:__  	<http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/update_list>
+
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		application/json
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__
+
+* *Name:* 	 	__user_id__
+* *Category:*  	mandatory
+* *Data Type:*  string
+* *Description:*  Unique id (valid gmail address) of a phylotastic web application user
+
+* *Name:* 	 	__access_token__
+* *Category:*  	mandatory
+* *Data Type:*  string
+* *Description:*  Access token for the user with *user_id* (valid gmail address)
+
+* *Name:* 	 	__list_id__
+* *Category:*  	mandatory
+* *Data Type:*  integer
+* *Description:*  Unique id of an existing list
+
+* *Name:* 	 	__list__
+* *Category:*  	mandatory
+* *Data Type:*  a [complex json list __sub-object__](#jsonlist) consisting of a subset of list properties
+* *Description:*  An object consisting of a subset of list properties (metadata) that need to be updated
+
+__Examples:__ 
+
+* To change the title and description of a list with ID 5:
+```
+curl -X POST http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/update_list -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "access_token": "ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA", "list_id": 5, "list": {"list_description": "The list contains information on the invasive plants of Virginia, with data on the Invasiveness Rank and region in which they occur", "list_title": "Virginia Invasive Plant Species List"}}'
+```
+
+* To change type of a list with ID 5 from "private" to "public":
+```
+curl -X POST http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/update_list -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "access_token": "ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA", "list_id": 5, "list": {"is_list_public": true}}'
+```
+
+__Citation:__
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*
+ * *Restrictions on scope:*
+ * *Expected response time:*  	__1s~3s__
+ * *Informative message:*
+   * when service is down --
+   * when malformed input is provided --
+ * *Uptime:* 
+ 
+---
+
+#### Web Service 16.
 
 __Service Name:__  	 	Compare Phylogenetic Trees
 
