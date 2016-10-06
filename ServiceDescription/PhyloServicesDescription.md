@@ -952,10 +952,10 @@ __Output Format:__ 		application/json
  				
 __Parameters:__
 1. 
-* *Name:* 	 	list 
-* *Category:*  	mandatory
-* *Data Type:*  string
-* *Description:*  pipe ("|") delimited list of OpenTree ids of taxon names or taxon names depending on the __list_type__ parameter value
+  * __Name:__ 	 	list 
+  * __Category:__  	mandatory
+  * __Data Type:__  string
+  * __Description:__  pipe ("|") delimited list of OpenTree ids of taxon names or taxon names depending on the __list_type__ parameter value
  				
 2. 
 * *Name:* 	 	list_type 
