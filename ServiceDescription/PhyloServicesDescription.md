@@ -958,11 +958,11 @@ __Parameters:__
   * __Data Type:__  string
   * __Description:__  pipe ("|") delimited list of OpenTree ids of taxon names or taxon names depending on the __list_type__ parameter value
  				
-2. 
-* *Name:* 	 	list_type 
-* *Category:*  	mandatory
-* *Data Type:*  string
-* *Description:*  a string value to specify which type (taxon names or OpenTree ids of taxon names) of list is provided as input. Valid values include __ottids__ or __taxa__. __ottids__ list type denotes a list which contains OpenTree ids of taxon names and __taxa__ list type denotes a list which contains taxon names
+2. Parameter details:
+  * __Name:__ 	 	list_type 
+  * __Category:__  	mandatory
+  * __Data Type:__  string
+  * __Description:__  a string value to specify which type (taxon names or OpenTree ids of taxon names) of list is provided as input. Valid values include __ottids__ or __taxa__. __ottids__ list type denotes a list which contains OpenTree ids of taxon names and __taxa__ list type denotes a list which contains taxon names
 
 __Example Commands:__ 
 ```
@@ -986,17 +986,18 @@ __Input Format:__ 		application/json
 __Output Format:__ 		application/json 
  				
 __Parameters:__
-1. 
-* *Name:* 	 	list 
-* *Category:*  	mandatory
-* *Data Type:*  list of string or integers depending on the __list_type__ parameter value
-* *Description:*  a list of OpenTree ids of taxon names or taxon names depending on the __list_type__ parameter value
+
+1. Parameter details:
+  * __Name:__ 	 	list 
+  * __Category:__  	mandatory
+  * __Data Type:__  list of string or integers depending on the __list_type__ parameter value
+  * __Description:__  a list of OpenTree ids of taxon names or taxon names depending on the __list_type__ parameter value
  				
-2. 
-* *Name:* 	 	list_type 
-* *Category:*  	mandatory
-* *Data Type:*  string
-* *Description:*  a string value to specify which type (taxon names or OpenTree ids of taxon names) of list is provided as input. Valid values include __ottids__ or __taxa__. __ottids__ list type denotes a list which contains OpenTree ids of taxon names and __taxa__ list type denotes a list which contains taxon names
+2. Parameter details:
+  * __Name:__ 	 	list_type 
+  * __Category:__  	mandatory
+  * __Data Type:__  string
+  * __Description:__  a string value to specify which type (taxon names or OpenTree ids of taxon names) of list is provided as input. Valid values include __ottids__ or __taxa__. __ottids__ list type denotes a list which contains OpenTree ids of taxon names and __taxa__ list type denotes a list which contains taxon names
 
 __Example Commands:__ 
 ```
