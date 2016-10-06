@@ -935,3 +935,93 @@ __Service Quality:__
  * *Uptime:* 
  
 ---
+
+#### Web Service 17.
+
+__Service Name:__  	 	Find supported studies of an induced tree
+
+__Service Description:__  A service	to get supported studies of an induced tree from OpenTreeOfLife.
+
+__Resource URI:__  		<http://phylo.cs.nmsu.edu:5006/phylotastic_ws/md/get_studies>
+
+__HTTP Method:__ 		GET
+
+__Input Format:__ 		application/x-www-form-urlencoded
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__
+1. 
+* *Name:* 	 	list 
+* *Category:*  	mandatory
+* *Data Type:*  string
+* *Description:*  pipe ("|") delimited list of OpenTree ids of taxon names or taxon names depending on the __list_type__ parameter value
+ 				
+2. 
+* *Name:* 	 	list_type 
+* *Category:*  	mandatory
+* *Data Type:*  string
+* *Description:*  a string value to specify which type (taxon names or OpenTree ids of taxon names) of list is provided as input. Valid values include __ottids__ or __taxa__. __ottids__ list type denotes a list which contains OpenTree ids of taxon names and __taxa__ list type denotes a list which contains taxon names
+
+__Example Commands:__ 
+```
+http://phylo.cs.nmsu.edu:5006/phylotastic_ws/md/get_studies?list=3597191|3597209|3597205|60236|3597195&list_type=ottids
+```
+```
+http://phylo.cs.nmsu.edu:5006/phylotastic_ws/md/get_studies?list=Setophaga striata|Setophaga magnolia|Setophaga angelae|Setophaga plumbea|Setophaga virens&list_type=taxa
+
+```
+__Example Results:__
+```
+{"execution_time": 0.69, "status_code": 200, "message": "Success", "studies": [{"PublicationYear": 2010, "FocalCladeTaxonName": "Parulidae", "Publication": "Lovette, Irby J., Jorge L. P\u00e9rez-Em\u00e1n, John P. Sullivan, Richard C. Banks, Isabella Fiorentino, Sergio C\u00f3rdoba-C\u00f3rdoba, Mar\u00eda Echeverry-Galvis, F. Keith Barker, Kevin J. Burns, John Klicka, Scott M. Lanyon, Eldredge Bermingham. 2010. A comprehensive multilocus phylogeny for the wood-warblers and a revised classification of the Parulidae (Aves). Molecular Phylogenetics and Evolution 57 (2): 753-770.", "CandidateTreeForSynthesis": "tree6024", "PublicationDOI": "http://dx.doi.org/10.1016/j.ympev.2010.07.018", "DataRepository": "", "Curator": "Joseph W. Brown", "PublicationIdentifier": "pg_2591"}]}
+```
+
+__Resource URI:__  		<http://phylo.cs.nmsu.edu:5006/phylotastic_ws/md/studies>
+
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		application/json
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__
+1. 
+* *Name:* 	 	list 
+* *Category:*  	mandatory
+* *Data Type:*  list of string or integers depending on the __list_type__ parameter value
+* *Description:*  a list of OpenTree ids of taxon names or taxon names depending on the __list_type__ parameter value
+ 				
+2. 
+* *Name:* 	 	list_type 
+* *Category:*  	mandatory
+* *Data Type:*  string
+* *Description:*  a string value to specify which type (taxon names or OpenTree ids of taxon names) of list is provided as input. Valid values include __ottids__ or __taxa__. __ottids__ list type denotes a list which contains OpenTree ids of taxon names and __taxa__ list type denotes a list which contains taxon names
+
+__Example Commands:__ 
+```
+curl -X POST http://phylo.cs.nmsu.edu:5006/phylotastic_ws/md/studies -H "content-type:application/json" -d '{"list":[1094064,860906,257323,698438,698406,187220,336231,124230], "list_type": "ottids"}'
+```
+```
+curl -X POST http://phylo.cs.nmsu.edu:5006/phylotastic_ws/md/studies -H "content-type:application/json" -d '{"list":["Delphinidae","Delphinus capensis","Delphinus delphis","Tursiops truncatus","Tursiops aduncus","Sotalia fluviatilis","Sousa chinensis"], "list_type": "taxa"}'
+```
+__Example Results:__
+```
+{"execution_time": 0.98, "status_code": 200, "message": "Success", "studies": [{"PublicationYear": 2009, "FocalCladeTaxonName": "Cetacea", "Publication": "McGowen, M., Spaulding M., and Gatesy J. 2009. Divergence date estimation and a comprehensive molecular tree of extant cetaceans. Molecular Phylogenetics and Evolution 53 (3): 891-906.", "CandidateTreeForSynthesis": "tree5998", "PublicationDOI": "http://dx.doi.org/10.1016/j.ympev.2009.08.018", "DataRepository": "http://purl.org/phylo/treebase/phylows/study/TB2:S10190", "Curator": "Chris Owen", "PublicationIdentifier": "pg_2587"}, {"PublicationYear": 2009, "FocalCladeTaxonName": "Cetacea", "Publication": "Steeman, M., Hebsgaard M., Fordyce R., Ho S., Rabosky D., Nielsen R., Rahbek C., Glenner H., S\u00f8rensen M., & Willerslev E. 2009. Radiation of Extant Cetaceans Driven by Restructuring of the Oceans. Systematic Biology 58 (6): 573-585.", "CandidateTreeForSynthesis": "tree6215", "PublicationDOI": "http://dx.doi.org/10.1093/sysbio/syp060", "DataRepository": "http://purl.org/phylo/treebase/phylows/study/TB2:S10124", "Curator": "Chris Owen", "PublicationIdentifier": "pg_1927"}]}
+```
+__Citation:__
+
+- https://github.com/OpenTreeOfLife/germinator/wiki/Synthetic-tree-API-v3#node_info
+- https://github.com/OpenTreeOfLife/germinator/wiki/TNRS-API-v3#match_names
+- https://github.com/OpenTreeOfLife/germinator/wiki/Studies-API-v3#find_studies
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*
+ * *Restrictions on scope:*
+ * *Expected response time:*  	__1s~3s__
+ * *Informative message:*
+   * when service is down --
+   * when malformed input is provided --
+ * *Uptime:* 
+ 
+---
