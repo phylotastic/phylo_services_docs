@@ -951,7 +951,8 @@ __Input Format:__ 		application/x-www-form-urlencoded
 __Output Format:__ 		application/json 
  				
 __Parameters:__
-1. 
+
+1. Parameter details:
   * __Name:__ 	 	list 
   * __Category:__  	mandatory
   * __Data Type:__  string
