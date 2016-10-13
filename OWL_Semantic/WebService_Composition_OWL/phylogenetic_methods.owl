@@ -433,35 +433,6 @@
     
 
 
-    <!-- http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#FindScientificNamesFromFreeText -->
-
-    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#FindScientificNamesFromFreeText">
-        <rdf:type rdf:resource="http://www.mygrid.org.uk/mygrid-moby-service#operation"/>
-        <has_input rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#FindScientificNames_FromText_In"/>
-        <has_output rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#FindScientificNames_FromText_Out"/>
-        <is_a rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#NameResolution_Operation"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#FindScientificNames_FromText_In -->
-
-    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#FindScientificNames_FromText_In">
-        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#phylotastic_parameters"/>
-        <hasDataFormat rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#x-www-urlencoded"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#FindScientificNames_FromText_Out -->
-
-    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#FindScientificNames_FromText_Out">
-        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#phylotastic_parameters"/>
-        <hasDataFormat rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#JSON"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#FreeText -->
 
     <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#FreeText">
@@ -484,12 +455,6 @@
         <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#genetic_algorithm"/>
         <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#maximum_likelihood_algorithm"/>
     </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#NameResolution_Operation -->
-
-    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#NameResolution_Operation"/>
     
 
 

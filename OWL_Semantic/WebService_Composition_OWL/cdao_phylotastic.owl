@@ -1949,6 +1949,14 @@
     
 
 
+    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#NameResolution_Operation -->
+
+    <owl:Class rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#NameResolution_Operation">
+        <rdfs:subClassOf rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#names_operation"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#Network -->
 
     <owl:Class rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#Network">
@@ -2363,6 +2371,14 @@
     
 
 
+    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#TaxonimicNameResolution_Operation -->
+
+    <owl:Class rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#TaxonimicNameResolution_Operation">
+        <rdfs:subClassOf rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#names_operation"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#TaxonomicLink -->
 
     <owl:Class rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#TaxonomicLink">
@@ -2564,14 +2580,6 @@
     
 
 
-    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#find_names_operation -->
-
-    <owl:Class rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#find_names_operation">
-        <rdfs:subClassOf rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#list_operation"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#geneDuplication -->
 
     <owl:Class rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#geneDuplication">
@@ -2633,6 +2641,14 @@
 
     <owl:Class rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#molecularRecombination">
         <rdfs:subClassOf rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#recombination"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#names_operation -->
+
+    <owl:Class rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#names_operation">
+        <rdfs:subClassOf rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#list_operation"/>
     </owl:Class>
     
 
@@ -3011,115 +3027,6 @@
     
 
 
-    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#CDAO_Species_Tree -->
-
-    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#CDAO_Species_Tree">
-        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_resources"/>
-        <phylogenetic_methods:is_a rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#SpeciesTree"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#FindScientificNamesFromWebPage -->
-
-    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#FindScientificNamesFromWebPage">
-        <rdf:type rdf:resource="http://www.mygrid.org.uk/mygrid-moby-service#operation"/>
-        <phylogenetic_methods:has_input rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#FindScientificNames_FromWebPage_In"/>
-        <phylogenetic_methods:has_output rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#FindScientificNames_FromWebPage_Out"/>
-        <phylogenetic_methods:is_a rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#NameResolution_Operation"/>
-        <mygrid-moby-service:hasOperationNameText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FindScienticNamesFromWebPage</mygrid-moby-service:hasOperationNameText>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#FindScientificNames_FromWebPage_In -->
-
-    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#FindScientificNames_FromWebPage_In">
-        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#phylotastic_parameters"/>
-        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_url"/>
-        <phylogenetic_methods:hasDataFormat rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#x-www-urlencoded"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#FindScientificNames_FromWebPage_Out -->
-
-    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#FindScientificNames_FromWebPage_Out">
-        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#phylotastic_parameters"/>
-        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_execution_time"/>
-        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_scientific_names_json"/>
-        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_status_code"/>
-        <phylogenetic_methods:hasDataFormat rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#JSON"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#GetPhylogeneticTree_OT_GET -->
-
-    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#GetPhylogeneticTree_OT_GET">
-        <rdf:type rdf:resource="http://www.mygrid.org.uk/mygrid-moby-service#operation"/>
-        <phylogenetic_methods:has_input rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#GetPhylogeneticTree_OT_GET_In"/>
-        <phylogenetic_methods:has_output rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#GetPhylogeneticTree_OT_GET_Out"/>
-        <phylogenetic_methods:is_a rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#Tree_Generation_Operation"/>
-        <mygrid-moby-service:hasParameterNameText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Get Phylogenetic Tree Open Tree</mygrid-moby-service:hasParameterNameText>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#GetPhylogeneticTree_OT_GET_In -->
-
-    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#GetPhylogeneticTree_OT_GET_In">
-        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#phylotastic_parameters"/>
-        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_taxa"/>
-        <phylogenetic_methods:hasDataFormat rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#x-www-urlencoded"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#GetPhylogeneticTree_OT_GET_Out -->
-
-    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#GetPhylogeneticTree_OT_GET_Out">
-        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#phylotastic_parameters"/>
-        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_species_tree"/>
-        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_status_code"/>
-        <phylogenetic_methods:hasDataFormat rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#JSON"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#GetPhylogeneticTree_OT_POST -->
-
-    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#GetPhylogeneticTree_OT_POST">
-        <rdf:type rdf:resource="http://www.mygrid.org.uk/mygrid-moby-service#operation"/>
-        <phylogenetic_methods:has_input rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#GetPhylogeneticTree_OT_POST_In"/>
-        <phylogenetic_methods:has_input rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#GetPhylogeneticTree_OT_POST_Out"/>
-        <phylogenetic_methods:is_a rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#Tree_Generation_Operation"/>
-        <mygrid-moby-service:hasOperationNameText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Get Phylogenetic Tree POST method from Open tree</mygrid-moby-service:hasOperationNameText>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#GetPhylogeneticTree_OT_POST_In -->
-
-    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#GetPhylogeneticTree_OT_POST_In">
-        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#phylotastic_parameters"/>
-        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_resolved_names"/>
-        <phylogenetic_methods:hasDataFormat rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#JSON"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#GetPhylogeneticTree_OT_POST_Out -->
-
-    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#GetPhylogeneticTree_OT_POST_Out">
-        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#phylotastic_parameters"/>
-        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_species_tree"/>
-        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_status_code"/>
-        <phylogenetic_methods:hasDataFormat rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#JSON"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#NewickTree -->
 
     <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#NewickTree">
@@ -3128,77 +3035,10 @@
     
 
 
-    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#ResolveScientificNames_OT_TNRS_GET_In -->
-
-    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#ResolveScientificNames_OT_TNRS_GET_In">
-        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#phylotastic_parameters"/>
-        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_names"/>
-        <phylogenetic_methods:hasDataFormat rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#x-www-urlencoded"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#ResolveScientificNames_OT_TNRS_GET_Out -->
-
-    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#ResolveScientificNames_OT_TNRS_GET_Out">
-        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#phylotastic_parameters"/>
-        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_resolved_names"/>
-        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_status_code"/>
-        <phylogenetic_methods:hasDataFormat rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#JSON"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#ResolveScientificNames_TNRS_GET -->
-
-    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#ResolveScientificNames_TNRS_GET">
-        <rdf:type rdf:resource="http://www.mygrid.org.uk/mygrid-moby-service#operation"/>
-        <phylogenetic_methods:has_input rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#ResolveScientificNames_OT_TNRS_GET_In"/>
-        <phylogenetic_methods:has_output rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#ResolveScientificNames_OT_TNRS_GET_Out"/>
-        <phylogenetic_methods:is_a rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#TaxonomicNameResolution_Operation"/>
-        <mygrid-moby-service:hasParameterNameText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ResolveScientificNames Open Tree TNRS</mygrid-moby-service:hasParameterNameText>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#SpeciesTree -->
 
     <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#SpeciesTree">
         <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#SpeciesTree"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#TNRS_Resolved_Name -->
-
-    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#TNRS_Resolved_Name">
-        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_resources"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#TNRS_Resolved_Names -->
-
-    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#TNRS_Resolved_Names">
-        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_resources"/>
-        <has_Element rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#TNRS_Resolved_Name"/>
-        <phylogenetic_methods:hasDataType rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#list_of_objects"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#TaxonomicNameResolution_Operation -->
-
-    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#TaxonomicNameResolution_Operation">
-        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#find_names_operation"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#Tree_Generation_Operation -->
-
-    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#Tree_Generation_Operation">
-        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#tree_generation"/>
     </owl:NamedIndividual>
     
 
@@ -3235,6 +3075,15 @@
 
     <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#boolean">
         <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#phylotastic_data_type"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#cdao_species_tree -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#cdao_species_tree">
+        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_resources"/>
+        <phylogenetic_methods:is_a rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#SpeciesTree"/>
     </owl:NamedIndividual>
     
 
@@ -3384,7 +3233,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_names">
         <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#phylotastic_components"/>
-        <phylogenetic_methods:is_a rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#scientific_names"/>
+        <phylogenetic_methods:is_a rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_scientific_names"/>
         <mygrid-moby-service:hasParameterNameText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">names</mygrid-moby-service:hasParameterNameText>
     </owl:NamedIndividual>
     
@@ -3394,8 +3243,9 @@
 
     <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_resolved_names">
         <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#phylotastic_components"/>
-        <phylogenetic_methods:is_a rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#TNRS_Resolved_Names"/>
+        <phylogenetic_methods:hasDataFormat rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#JSON"/>
         <phylogenetic_methods:is_a rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#bio_taxa"/>
+        <phylogenetic_methods:is_a rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_TNRS_resolved_names"/>
         <mygrid-moby-service:hasParameterNameText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">resolvedNames</mygrid-moby-service:hasParameterNameText>
     </owl:NamedIndividual>
     
@@ -3407,7 +3257,7 @@
         <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#phylotastic_components"/>
         <phylogenetic_methods:hasDataFormat rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#JSON"/>
         <phylogenetic_methods:is_a rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#bio_taxa"/>
-        <phylogenetic_methods:is_a rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#scientific_names"/>
+        <phylogenetic_methods:is_a rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_scientific_names"/>
         <mygrid-moby-service:hasParameterNameText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scientificNames</mygrid-moby-service:hasParameterNameText>
     </owl:NamedIndividual>
     
@@ -3418,7 +3268,7 @@
     <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_species_tree">
         <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#phylotastic_components"/>
         <has_Annotation rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#NewickTree"/>
-        <phylogenetic_methods:is_a rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#CDAO_Species_Tree"/>
+        <phylogenetic_methods:is_a rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#cdao_species_tree"/>
         <mygrid-moby-service:hasParameterNameText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">newick</mygrid-moby-service:hasParameterNameText>
     </owl:NamedIndividual>
     
@@ -3448,6 +3298,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_text">
         <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#phylotastic_components"/>
+        <phylogenetic_methods:hasDataFormat rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#FreeText"/>
         <phylogenetic_methods:is_a rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#free_text"/>
         <mygrid-moby-service:hasParameterNameText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">text</mygrid-moby-service:hasParameterNameText>
     </owl:NamedIndividual>
@@ -3464,20 +3315,205 @@
     
 
 
-    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#scientific_name -->
+    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_FindScientificNamesFromFreeText_GNRD_GET -->
 
-    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#scientific_name">
+    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_FindScientificNamesFromFreeText_GNRD_GET">
+        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#NameResolution_Operation"/>
+        <rdf:type rdf:resource="http://www.mygrid.org.uk/mygrid-moby-service#operation"/>
+        <phylogenetic_methods:has_input rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_FindScientificNames_FromText_GNRD_GET_In"/>
+        <phylogenetic_methods:has_output rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_FindScientificNames_FromText_GNRD_GET_Out"/>
+        <mygrid-moby-service:hasOperationNameText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FindScientificNamesFromFreeText_GNRD_GET</mygrid-moby-service:hasOperationNameText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_FindScientificNamesFromWeb_GNRD_GET -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_FindScientificNamesFromWeb_GNRD_GET">
+        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#NameResolution_Operation"/>
+        <rdf:type rdf:resource="http://www.mygrid.org.uk/mygrid-moby-service#operation"/>
+        <phylogenetic_methods:has_input rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_FindScientificNames_Web_GNRD_GET_IN"/>
+        <phylogenetic_methods:has_output rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_FindScientificNames_Web_GNRD_GET_Out"/>
+        <mygrid-moby-service:hasOperationNameText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FindScienticNamesFromWebPage_GNRD_GET</mygrid-moby-service:hasOperationNameText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_FindScientificNames_FromText_GNRD_GET_In -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_FindScientificNames_FromText_GNRD_GET_In">
+        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#phylotastic_parameters"/>
+        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_text"/>
+        <phylogenetic_methods:hasDataFormat rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#x-www-urlencoded"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_FindScientificNames_FromText_GNRD_GET_Out -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_FindScientificNames_FromText_GNRD_GET_Out">
+        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#phylotastic_parameters"/>
+        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_execution_time"/>
+        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_scientific_names_json"/>
+        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_status_code"/>
+        <phylogenetic_methods:hasDataFormat rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#JSON"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_FindScientificNames_Web_GNRD_GET_IN -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_FindScientificNames_Web_GNRD_GET_IN">
+        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#phylotastic_parameters"/>
+        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_url"/>
+        <phylogenetic_methods:hasDataFormat rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#x-www-urlencoded"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_FindScientificNames_Web_GNRD_GET_Out -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_FindScientificNames_Web_GNRD_GET_Out">
+        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#phylotastic_parameters"/>
+        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_execution_time"/>
+        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_scientific_names_json"/>
+        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_status_code"/>
+        <phylogenetic_methods:hasDataFormat rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#JSON"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_GetPhylogeneticTree_OT_GET -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_GetPhylogeneticTree_OT_GET">
+        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#tree_generation"/>
+        <rdf:type rdf:resource="http://www.mygrid.org.uk/mygrid-moby-service#operation"/>
+        <phylogenetic_methods:has_input rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_GetPhylogeneticTree_OT_GET_In"/>
+        <phylogenetic_methods:has_output rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_GetPhylogeneticTree_OT_GET_Out"/>
+        <mygrid-moby-service:hasOperationNameText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GetPhylogeneticTree_OT_GET</mygrid-moby-service:hasOperationNameText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_GetPhylogeneticTree_OT_GET_In -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_GetPhylogeneticTree_OT_GET_In">
+        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#phylotastic_parameters"/>
+        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_taxa"/>
+        <phylogenetic_methods:hasDataFormat rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#x-www-urlencoded"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_GetPhylogeneticTree_OT_GET_Out -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_GetPhylogeneticTree_OT_GET_Out">
+        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#phylotastic_parameters"/>
+        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_species_tree"/>
+        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_status_code"/>
+        <phylogenetic_methods:hasDataFormat rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#JSON"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_GetPhylogeneticTree_OT_POST -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_GetPhylogeneticTree_OT_POST">
+        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#tree_generation"/>
+        <rdf:type rdf:resource="http://www.mygrid.org.uk/mygrid-moby-service#operation"/>
+        <phylogenetic_methods:has_input rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_GetPhylogeneticTree_OT_POST_In"/>
+        <phylogenetic_methods:has_output rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_GetPhylogeneticTree_OT_POST_Out"/>
+        <mygrid-moby-service:hasOperationNameText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GetPhylogeneticTree_OT_POST</mygrid-moby-service:hasOperationNameText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_GetPhylogeneticTree_OT_POST_In -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_GetPhylogeneticTree_OT_POST_In">
+        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#phylotastic_parameters"/>
+        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_resolved_names"/>
+        <phylogenetic_methods:hasDataFormat rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#JSON"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_GetPhylogeneticTree_OT_POST_Out -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_GetPhylogeneticTree_OT_POST_Out">
+        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#phylotastic_parameters"/>
+        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_species_tree"/>
+        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_status_code"/>
+        <phylogenetic_methods:hasDataFormat rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#JSON"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_ResolvedScientificNames_OT_TNRS_GET -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_ResolvedScientificNames_OT_TNRS_GET">
+        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#TaxonimicNameResolution_Operation"/>
+        <rdf:type rdf:resource="http://www.mygrid.org.uk/mygrid-moby-service#operation"/>
+        <phylogenetic_methods:has_input rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_ResolvedScientificNames_OT_TNRS_GET_In"/>
+        <phylogenetic_methods:has_output rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_ResolvedScientificNames_OT_TNRS_GET_Out"/>
+        <mygrid-moby-service:hasOperationNameText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ResolvedScientificNames_OT_TNRS_GET</mygrid-moby-service:hasOperationNameText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_ResolvedScientificNames_OT_TNRS_GET_In -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_ResolvedScientificNames_OT_TNRS_GET_In">
+        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#phylotastic_parameters"/>
+        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_names"/>
+        <phylogenetic_methods:hasDataFormat rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#x-www-urlencoded"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_ResolvedScientificNames_OT_TNRS_GET_Out -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_ResolvedScientificNames_OT_TNRS_GET_Out">
+        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#phylotastic_parameters"/>
+        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_resolved_names"/>
+        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_status_code"/>
+        <phylogenetic_methods:hasDataFormat rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#JSON"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_TNRS_resolved_name -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_TNRS_resolved_name">
+        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_resources"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_TNRS_resolved_names -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_TNRS_resolved_names">
+        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_resources"/>
+        <has_Element rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_TNRS_resolved_name"/>
+        <phylogenetic_methods:hasDataType rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#list_of_objects"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_scientific_name -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_scientific_name">
         <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_resources"/>
         <phylogenetic_methods:hasDataType rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#string"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#scientific_names -->
+    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_scientific_names -->
 
-    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#scientific_names">
+    <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_scientific_names">
         <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_resources"/>
-        <has_Element rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#scientific_name"/>
+        <has_Element rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_scientific_name"/>
         <phylogenetic_methods:hasDataType rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#list_of_objects"/>
     </owl:NamedIndividual>
     
@@ -3497,40 +3533,6 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
         <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#Generic_State"/>
     </owl:Thing>
-    
-
-
-    <!-- http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#FindScientificNamesFromFreeText -->
-
-    <rdf:Description rdf:about="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#FindScientificNamesFromFreeText">
-        <mygrid-moby-service:hasOperationNameText>FindScientificNamesFromFreeText</mygrid-moby-service:hasOperationNameText>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#FindScientificNames_FromText_In -->
-
-    <rdf:Description rdf:about="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#FindScientificNames_FromText_In">
-        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_text"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#FindScientificNames_FromText_Out -->
-
-    <rdf:Description rdf:about="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#FindScientificNames_FromText_Out">
-        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_execution_time"/>
-        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_scientific_names_json"/>
-        <has_Component rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#param_status_code"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#NameResolution_Operation -->
-
-    <rdf:Description rdf:about="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#NameResolution_Operation">
-        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#find_names_operation"/>
-    </rdf:Description>
     
 
 
