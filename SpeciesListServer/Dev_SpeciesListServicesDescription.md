@@ -385,7 +385,8 @@ __Service Quality:__
 
 # How to get Access Token to use in Species List Web Services:
 <a name="accesstoken">
-1. Go to [Google developers guide](https://developers.google.com/adwords/api/docs/guides/authentication#oauth2_playground)
+
+Go to [Google developers guide](https://developers.google.com/adwords/api/docs/guides/authentication#oauth2_playground)
 
 2. In __OAuth2 Playground__ section of the document follow the steps in __Get a client ID and client secret__ to get your client ID and client secret.
 
