@@ -21,7 +21,9 @@ __Parameters:__
   * __Category:__  	  mandatory/optional
   * __Data Type:__    string 
   * __Description:__  Unique id (valid gmail address) of a phylotastic web application user
+
 > __Note__: *user_id* parameter is mandatory only if a user wants to view all the lists (public/private) owned by the *user_id*  **OR** if a user wants to view a specific private list owned by the *user_id* 
+
 > *user_id* parameter is not needed if a user wants to view all available public lists
  
 2. Parameter2 details:
@@ -29,6 +31,7 @@ __Parameters:__
   * __Category:__  	mandatory/optional
   * __Data Type:__  integer
   * __Description:__  List id of a specific list
+
 > __Note__: *list_id* parameter is mandatory only if a user wants to view a specific private list identified by *list_id* and owned by the *user_id* **OR** if a user wants to view a specific public list identified by *list_id* and owned by other user
 
 3. Parameter3 details:
@@ -36,6 +39,7 @@ __Parameters:__
   * __Category:__  	mandatory/optional
   * __Data Type:__  string
   * __Description:__  Access token for the user with *user_id* (valid gmail address)
+
 > __Note__: [*access_token*](#accesstoken) parameter is used for authenticating the user with valid gmail address. It is mandatory only if a user wants to view all the lists (public/private) owned by the *user_id* **OR** if a user wants to view a specific private list identified by *list_id* and owned by the *user_id*
 
 4. Parameter4 details:
@@ -381,6 +385,7 @@ __Service Quality:__
 
 # How to get Access Token to use in Species List Web Services:
 <a name="accesstoken">
+
 1. Go to [Google developers guide](https://developers.google.com/adwords/api/docs/guides/authentication#oauth2_playground)
 
 2. In __OAuth2 Playground__ section of the document follow the steps in __Get a client ID and client secret__ to get your client ID and client secret.
