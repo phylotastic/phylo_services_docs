@@ -2264,6 +2264,14 @@
     
 
 
+    <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#SetOfObjects -->
+
+    <owl:Class rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#SetOfObjects">
+        <rdfs:subClassOf rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#SetOfThings"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#SetOfThings -->
 
     <owl:Class rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#SetOfThings">
@@ -3082,6 +3090,7 @@
     <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#cdao_species_tree -->
 
     <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#cdao_species_tree">
+        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#SpeciesTree"/>
         <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_resources"/>
         <phylogenetic_methods:is_a rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#SpeciesTree"/>
     </owl:NamedIndividual>
@@ -3203,6 +3212,7 @@
     <!-- http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#list_of_objects -->
 
     <owl:NamedIndividual rdf:about="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#list_of_objects">
+        <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#SetOfObjects"/>
         <rdf:type rdf:resource="http://www.cs.nmsu.edu/~epontell/Ontologies/phylogenetic_methods.owl#phylotastic_data_structure"/>
         <has_Element rdf:resource="http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#defined_object"/>
     </owl:NamedIndividual>
