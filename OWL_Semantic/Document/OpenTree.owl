@@ -1,0 +1,648 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<!DOCTYPE uridef[
+  <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns">
+  <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema">
+  <!ENTITY owl "http://www.w3.org/2002/07/owl">
+  <!ENTITY xsd "http://www.w3.org/2001/XMLSchema">
+  <!ENTITY CDAO "http://purl.obolibrary.org/obo">
+]>
+
+<rdf:RDF
+  xmlns:rdf = "&rdf;#"
+  xmlns:rdfs ="&rdfs;#"
+  xmlns:owl ="&owl;#"
+  xmlns:xsd ="&xsd;#"
+  xmlns ="http://www.daml.org/services/owl-s/AmazonWS/1.1/ShoppingCart.owl#"
+ >
+
+<owl:Ontology rdf:about="">
+ <owl:versionInfo>1.0</owl:versionInfo>
+ <rdfs:comment>OpenTree Othology</rdfs:comment>
+ <owl:imports rdf:resource="&owl;"/>
+</owl:Ontology>
+
+<!-- Created: Tue Aug 24 10:34:11 2015 -->
+<!-- ################################# -->
+<!--     Open Tree Of Life Services    -->
+<!-- ################################# -->
+
+<!-- For Open Tree - API About - Request -->
+<owl:Class rdf:ID="OpenTreeAbout_Request">
+  <rdfs:comment>Return information about the current draft tree itself</rdfs:comment>
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="endpoint_address">
+  <rdfs:domain rdf:resource="#OpenTreeAbout_Request"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="whttp:location">
+  <rdfs:domain rdf:resource="#OpenTreeAbout_Request"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="whttp:method">
+  <rdfs:domain rdf:resource="#OpenTreeAbout_Request"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="whttp:contentEncodingDefault">
+  <rdfs:domain rdf:resource="#OpenTreeAbout_Request"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:ObjectProperty rdf:ID="OpenTreeAbout_Input">
+  <rdfs:domain rdf:resource="#OpenTreeAbout_Request"/>
+  <rdfs:range rdf:resource="#OpenTreeAbout_Request_Object"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:ID="OpenTreeAbout_Request_Object">
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="study_list">
+  <rdfs:domain rdf:resource="#OpenTreeAbout_Request_Object"/>
+  <rdfs:range rdf:resource="&xsd;#boolean"/>
+</owl:DatatypeProperty>
+
+
+<!-- For Open Tree - API About - Response -->
+<owl:Class rdf:ID="OpenTreeAbout_Response">
+   <rdfs:comment>Return information about the current draft tree itself</rdfs:comment>
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="whttp:contentEncodingDefault">
+  <rdfs:domain rdf:resource="#OpenTreeAbout_Response"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:ObjectProperty rdf:ID="OpenTreeAbout_Output">
+  <rdfs:domain rdf:resource="#OpenTreeAbout_Response"/>
+  <rdfs:range  rdf:resource="#OpenTreeAbout_Response_Object"/>
+  
+</owl:ObjectProperty>
+
+<owl:Class rdf:ID="OpenTreeAbout_Response_Object">
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="date">
+  <rdfs:domain rdf:resource="#OpenTreeAbout_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="tree_id">
+  <rdfs:domain rdf:resource="#OpenTreeAbout_Response_Object"/>
+  <!-- <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000081"/> -->
+  <rdfs:range rdf:resource="&xsd;#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="taxonomy_version">
+  <rdfs:domain rdf:resource="#OpenTreeAbout_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="num_tips">
+  <rdfs:domain rdf:resource="#OpenTreeAbout_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#nonNegativeInteger"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="root_taxon_name">
+  <rdfs:domain rdf:resource="#OpenTreeAbout_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="num_source_studies">
+  <rdfs:domain rdf:resource="#OpenTreeAbout_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#nonNegativeInteger"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="root_node_id">
+  <rdfs:domain rdf:resource="#OpenTreeAbout_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#nonNegativeInteger"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="root_ott_id">
+  <rdfs:domain rdf:resource="#OpenTreeAbout_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#nonNegativeInteger"/>
+</owl:DatatypeProperty>
+
+<!-- ################################# -->
+<!-- For Open Tree - API mrca - Request -->
+
+<owl:Class rdf:ID="OpenTree_MRCA_Request">
+  <rdfs:comment>Return the most recent common ancestor of a set of nodes in the draft tree.</rdfs:comment>
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="endpoint_address">
+  <rdfs:domain rdf:resource="#OpenTree_MRCA_Request"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="whttp:location">
+  <rdfs:domain rdf:resource="#OpenTree_MRCA_Request"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="whttp:method">
+  <rdfs:domain rdf:resource="#OpenTree_MRCA_Request"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="whttp:contentEncodingDefault">
+  <rdfs:domain rdf:resource="#OpenTree_MRCA_Request"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:ObjectProperty rdf:ID="OpenTree_MRCA_Input">
+  <rdfs:domain rdf:resource="#OpenTree_MRCA_Request"/>
+  <rdfs:range rdf:resource="#OpenTree_MRCA_Request_Object"/>
+  <rdfs:isDefinedBy rdf:resource="#OpenTree_MRCA_Request_Object"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:ID="OpenTree_MRCA_Request_Object">
+</owl:Class>
+<owl:ObjectProperty rdf:ID="node_ids">
+  <rdfs:domain rdf:resource="#OpenTree_MRCA_Request_Object"/>
+  <rdfs:range rdf:resource="#OpenTree_Object_ListOf_IDs_long"/>
+  <rdfs:isDefinedBy rdf:resource="#OpenTree_Object_ListOf_IDs_long"/>
+  <rdfs:comment>A set of node ids</rdfs:comment>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:ID="ott_ids">
+  <rdfs:domain rdf:resource="#OpenTree_MRCA_Request_Object"/>
+  <rdfs:range rdf:resource="#OpenTree_Object_ListOf_IDs_long"/>
+  <rdfs:isDefinedBy rdf:resource="#OpenTree_Object_ListOf_IDs_long"/>
+  <rdfs:comment>A set of ott ids</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:Class rdf:ID="OpenTree_Object_ListOf_IDs_long">
+  <owl:intersectionOf rdf:parseType="owl:collection">
+    <owl:Class rdf:about="&owl;#List"/>
+    <owl:Restriction>
+      <owl:toClass rdf:resource="&xsd;#nonNegativeInteger"/>
+    </owl:Restriction>
+  </owl:intersectionOf>
+</owl:Class>
+
+<!-- For Open Tree - API mrca - Response -->
+
+<owl:Class rdf:ID="OpenTree_MRCA_Response">
+   <rdfs:comment>Return the most recent common ancestor of a set of nodes in the draft tree.</rdfs:comment>
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="whttp:contentEncodingDefault">
+  <rdfs:domain rdf:resource="#OpenTree_MRCA_Response"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:ObjectProperty rdf:ID="OpenTree_MRCA_Output">
+  <rdfs:domain rdf:resource="#OpenTree_MRCA_Response"/>
+  <rdfs:range  rdf:resource="#OpenTree_MRCA_Response_Object"/>
+  <rdfs:isDefinedBy rdf:resource="#OpenTree_MRCA_Response_Object"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:ID="OpenTree_MRCA_Response_Object">
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="mrca_rank">
+  <rdfs:domain rdf:resource="#OpenTree_MRCA_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="mrca_name">
+  <rdfs:domain rdf:resource="#OpenTree_MRCA_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="nearest_taxon_mrca_node_id">
+  <rdfs:domain rdf:resource="#OpenTree_MRCA_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#nonNegativeInteger"/>
+</owl:DatatypeProperty>
+<owl:ObjectProperty rdf:ID="invalid_node_ids">
+  <rdfs:domain rdf:resource="#OpenTree_MRCA_Response_Object"/>
+  <rdfs:range rdf:resource="#OpenTree_Object_ListOf_IDs_long"/>
+  <rdfs:isDefinedBy rdf:resource="#OpenTree_Object_ListOf_IDs_long"/>
+</owl:ObjectProperty>
+<owl:DatatypeProperty rdf:ID="tree_id">
+  <rdfs:domain rdf:resource="#OpenTree_MRCA_Response_Object"/>
+  <!-- <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000081"/> -->
+  <rdfs:range rdf:resource="&xsd;#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="ott_id">
+  <rdfs:domain rdf:resource="#OpenTree_MRCA_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#nonNegativeInteger"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="mrca_unique_name">
+  <rdfs:domain rdf:resource="#OpenTree_MRCA_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#string"/>
+</owl:DatatypeProperty>
+<owl:ObjectProperty rdf:ID="node_ids_not_in_tree">
+  <rdfs:domain rdf:resource="#OpenTree_MRCA_Response_Object"/>
+  <rdfs:range rdf:resource="#OpenTree_Object_ListOf_IDs_long"/>
+  <rdfs:isDefinedBy rdf:resource="#OpenTree_Object_ListOf_IDs_long"/>
+</owl:ObjectProperty>
+<owl:DatatypeProperty rdf:ID="nearest_taxon_mrca_unique_name">
+  <rdfs:domain rdf:resource="#OpenTree_MRCA_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="nearest_taxon_mrca_ott_id">
+  <rdfs:domain rdf:resource="#OpenTree_MRCA_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#nonNegativeInteger"/>
+</owl:DatatypeProperty>
+<owl:ObjectProperty rdf:ID="ott_ids_not_in_tree">
+  <rdfs:domain rdf:resource="#OpenTree_MRCA_Response_Object"/>
+  <rdfs:range rdf:resource="#OpenTree_Object_ListOf_IDs_long"/>
+  <rdfs:isDefinedBy rdf:resource="#OpenTree_Object_ListOf_IDs_long"/>
+</owl:ObjectProperty>
+<owl:DatatypeProperty rdf:ID="nearest_taxon_mrca_name">
+  <rdfs:domain rdf:resource="#OpenTree_MRCA_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#string"/>
+</owl:DatatypeProperty>
+<owl:ObjectProperty rdf:ID="invalid_ott_ids">
+  <rdfs:domain rdf:resource="#OpenTree_MRCA_Response_Object"/>
+  <rdfs:range rdf:resource="#OpenTree_Object_ListOf_IDs_long"/>
+  <rdfs:isDefinedBy rdf:resource="#OpenTree_Object_ListOf_IDs_long"/>
+</owl:ObjectProperty>
+<owl:DatatypeProperty rdf:ID="mrca_node_id">
+  <rdfs:domain rdf:resource="#OpenTree_MRCA_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#nonNegativeInteger"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="nearest_taxon_mrca_rank">
+  <rdfs:domain rdf:resource="#OpenTree_MRCA_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#string"/>
+</owl:DatatypeProperty>
+
+
+<!-- ################################# -->
+<!-- For Open Tree - API Subtree - Request -->
+
+<owl:Class rdf:ID="OpenTree_SubTree_Request">
+  <rdfs:comment>Return the complete subtree below a given node.</rdfs:comment>
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="endpoint_address">
+  <rdfs:domain rdf:resource="#OpenTree_SubTree_Request"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="whttp:location">
+  <rdfs:domain rdf:resource="#OpenTree_SubTree_Request"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="whttp:method">
+  <rdfs:domain rdf:resource="#OpenTree_SubTree_Request"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="whttp:contentEncodingDefault">
+  <rdfs:domain rdf:resource="#OpenTree_SubTree_Request"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:ObjectProperty rdf:ID="OpenTree_SubTree_Input">
+  <rdfs:domain rdf:resource="#OpenTree_SubTree_Request"/>
+  <rdfs:range rdf:resource="#OpenTree_SubTree_Request_Object"/>
+  <rdfs:isDefinedBy rdf:resource="#OpenTree_SubTree_Request_Object"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:ID="OpenTree_SubTree_Request_Object">
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="node_id">
+  <rdfs:domain rdf:resource="#OpenTree_SubTree_Request_Object"/>
+  <rdfs:range rdf:resource="&xsd;#nonNegativeInteger"/>
+  <rdfs:comment>The node id of the node in the tree that should serve as the root of the tree returned. This argument may not be used in combination with ott_id</rdfs:comment>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="ott_id">
+  <rdfs:domain rdf:resource="#OpenTree_SubTree_Request_Object"/>
+  <rdfs:range rdf:resource="&xsd;#nonNegativeInteger"/>
+  <rdfs:comment>The ott id of the node in the tree that should serve as the root of the tree returned. This argument may not be used in combination with node_id</rdfs:comment>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="tree_id">
+  <rdfs:domain rdf:resource="#OpenTree_SubTree_Request_Object"/>
+  <rdfs:range rdf:resource="&xsd;#string"/>
+  <rdfs:comment>The identifier for the synthesis tree. We currently only support a single draft tree in the db at a time, so this argument is superfluous and may be safely ignored.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- For Open Tree - API SubTree - Response -->
+
+<owl:Class rdf:ID="OpenTree_SubTree_Response">
+   <rdfs:comment>Return the complete subtree below a given node.</rdfs:comment>
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="whttp:contentEncodingDefault">
+  <rdfs:domain rdf:resource="#OpenTree_SubTree_Response"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:ObjectProperty rdf:ID="OpenTree_SubTree_Output">
+  <rdfs:domain rdf:resource="#OpenTree_SubTree_Response"/>
+  <rdfs:range  rdf:resource="#OpenTree_SubTree_Response_Object"/>
+  <rdfs:isDefinedBy rdf:resource="#OpenTree_MRCA_Response_Object"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:ID="OpenTree_SubTree_Response_Object">
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="tree_id">
+  <rdfs:domain rdf:resource="#OpenTree_SubTree_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="newick">
+  <rdfs:domain rdf:resource="#OpenTree_SubTree_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#string"/>
+</owl:DatatypeProperty>
+
+<!-- ################################# -->
+<!-- For Open Tree - API Induced_Subtree - Request -->
+
+<owl:Class rdf:ID="OpenTree_Induced_Subtree_Request">
+  <rdfs:comment>Return the induced subtree on the draft tree that relates a set of nodes.</rdfs:comment>
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="endpoint_address">
+  <rdfs:domain rdf:resource="#OpenTree_Induced_Subtree_Request"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="whttp:location">
+  <rdfs:domain rdf:resource="#OpenTree_Induced_Subtree_Request"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="whttp:method">
+  <rdfs:domain rdf:resource="#OpenTree_Induced_Subtree_Request"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="whttp:contentEncodingDefault">
+  <rdfs:domain rdf:resource="#OpenTree_Induced_Subtree_Request"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:ObjectProperty rdf:ID="OpenTree_Induced_Subtree_Input">
+  <rdfs:domain rdf:resource="#OpenTree_Induced_Subtree_Request"/>
+  <rdfs:range rdf:resource="#OpenTree_Induced_Subtree_Request_Object"/>
+  <rdfs:isDefinedBy rdf:resource="#OpenTree_Induced_Subtree_Request_Object"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:ID="OpenTree_Induced_Subtree_Request_Object">
+</owl:Class>
+<owl:ObjectProperty rdf:ID="node_ids">
+  <rdfs:domain rdf:resource="#OpenTree_Induced_Subtree_Request_Object"/>
+  <rdfs:range rdf:resource="#OpenTree_Object_ListOf_IDs_long"/>
+  <rdfs:isDefinedBy rdf:resource="#OpenTree_Object_ListOf_IDs_long"/>
+  <rdfs:comment>A set of node ids</rdfs:comment>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:ID="ott_ids">
+  <rdfs:domain rdf:resource="#OpenTree_Induced_Subtree_Request_Object"/>
+  <rdfs:range rdf:resource="#OpenTree_Object_ListOf_IDs_long"/>
+  <rdfs:isDefinedBy rdf:resource="#OpenTree_Object_ListOf_IDs_long"/>
+  <rdfs:comment>A set of ott ids</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- For Open Tree - API Induced_Subtree - Response -->
+
+<owl:Class rdf:ID="OpenTree_Induced_Subtree_Response">
+   <rdfs:comment>Return the induced subtree on the draft tree that relates a set of nodes.</rdfs:comment>
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="whttp:contentEncodingDefault">
+  <rdfs:domain rdf:resource="#OpenTree_Induced_Subtree_Response"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:ObjectProperty rdf:ID="OpenTree_Induced_Subtree_Output">
+  <rdfs:domain rdf:resource="#OpenTree_Induced_Subtree_Response"/>
+  <rdfs:range  rdf:resource="#OpenTree_Induced_Subtree_Response_Object"/>
+  <rdfs:isDefinedBy rdf:resource="#OpenTree_Induced_Subtree_Response_Object"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:ID="OpenTree_Induced_Subtree_Response_Object">
+</owl:Class>
+<owl:ObjectProperty rdf:ID="node_ids_not_in_tree">
+  <rdfs:domain rdf:resource="#OpenTree_Induced_Subtree_Response_Object"/>
+  <rdfs:range rdf:resource="#OpenTree_Object_ListOf_IDs_long"/>
+  <rdfs:isDefinedBy rdf:resource="#OpenTree_Object_ListOf_IDs_long"/>
+</owl:ObjectProperty>
+<owl:DatatypeProperty rdf:ID="subtree">
+  <rdfs:domain rdf:resource="#OpenTree_Induced_Subtree_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#string"/>
+</owl:DatatypeProperty>
+<owl:ObjectProperty rdf:ID="node_ids_not_in_graph">
+  <rdfs:domain rdf:resource="#OpenTree_Induced_Subtree_Response_Object"/>
+  <rdfs:range rdf:resource="#OpenTree_Object_ListOf_IDs_long"/>
+  <rdfs:isDefinedBy rdf:resource="#OpenTree_Object_ListOf_IDs_long"/>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:ID="ott_ids_not_in_tree">
+  <rdfs:domain rdf:resource="#OpenTree_Induced_Subtree_Response_Object"/>
+  <rdfs:range rdf:resource="#OpenTree_Object_ListOf_IDs_long"/>
+  <rdfs:isDefinedBy rdf:resource="#OpenTree_Object_ListOf_IDs_long"/>
+</owl:ObjectProperty>
+<owl:DatatypeProperty rdf:ID="tree_id">
+  <rdfs:domain rdf:resource="#OpenTree_Induced_Subtree_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#string"/>
+</owl:DatatypeProperty>
+<owl:ObjectProperty rdf:ID="ott_ids_not_in_graph">
+  <rdfs:domain rdf:resource="#OpenTree_Induced_Subtree_Response_Object"/>
+  <rdfs:range rdf:resource="#OpenTree_Object_ListOf_IDs_long"/>
+  <rdfs:isDefinedBy rdf:resource="#OpenTree_Object_ListOf_IDs_long"/>
+</owl:ObjectProperty>
+
+<!-- ################################# -->
+<!--     Open Tree Graph Service    -->
+<!-- ################################# -->
+
+<!-- For Open Tree - Graph - API About - Request -->
+
+<owl:Class rdf:ID="Graph_About_Request">
+  <rdfs:comment>Get information about the graph of life itself.</rdfs:comment>
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="endpoint_address">
+  <rdfs:domain rdf:resource="#Graph_About_Request"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="whttp:location">
+  <rdfs:domain rdf:resource="#Graph_About_Request"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="whttp:method">
+  <rdfs:domain rdf:resource="#Graph_About_Request"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="whttp:contentEncodingDefault">
+  <rdfs:domain rdf:resource="#Graph_About_Request"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<!-- For Open Tree - Graph - API About - Response -->
+
+<owl:Class rdf:ID="Graph_About_Response">
+   <rdfs:comment>Get information about the graph of life itself.</rdfs:comment>
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="whttp:contentEncodingDefault">
+  <rdfs:domain rdf:resource="#Graph_About_Response"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:ObjectProperty rdf:ID="Graph_About_Output">
+  <rdfs:domain rdf:resource="#Graph_About_Response"/>
+  <rdfs:range  rdf:resource="#Graph_About_Response_Object"/>
+  <rdfs:isDefinedBy rdf:resource="#Graph_About_Response_Object"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:ID="Graph_About_Response_Object">
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="graph_root_ott_id">
+  <rdfs:domain rdf:resource="#Graph_About_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#nonNegativeInteger"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="graph_taxonomy_version">
+  <rdfs:domain rdf:resource="#Graph_About_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="graph_root_name">
+  <rdfs:domain rdf:resource="#Graph_About_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="graph_root_node_id">
+  <rdfs:domain rdf:resource="#Graph_About_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#nonNegativeInteger"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="graph_num_tips">
+  <rdfs:domain rdf:resource="#Graph_About_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#nonNegativeInteger"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="graph_num_source_trees">
+  <rdfs:domain rdf:resource="#Graph_About_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#nonNegativeInteger"/>
+</owl:DatatypeProperty>
+
+<!-- ################################# -->
+
+<!-- For Open Tree - Graph - API NodeInfo - Request -->
+
+<owl:Class rdf:ID="Graph_NodeInfo_Request">
+  <rdfs:comment>Get information about a node in the graph of life.</rdfs:comment>
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="endpoint_address">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Request"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="whttp:location">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Request"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="whttp:method">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Request"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="whttp:contentEncodingDefault">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Request"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:ObjectProperty rdf:ID="Graph_NodeInfo_Input">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Request"/>
+  <rdfs:range rdf:resource="#Graph_NodeInfo_Request_Object"/>
+  <rdfs:isDefinedBy rdf:resource="#Graph_NodeInfo_Request_Object"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:ID="Graph_NodeInfo_Request_Object">
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="node_id">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Request_Object"/>
+  <rdfs:range rdf:resource="&xsd;#nonNegativeInteger"/>
+  <rdfs:comment>The node id of the node of interest. This argument may not be combined with ott_id.</rdfs:comment>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="ott_id">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Request_Object"/>
+  <rdfs:range rdf:resource="&xsd;#nonNegativeInteger"/>
+  <rdfs:comment>The ott id of the node of interest. This argument may not be combined with node_id.</rdfs:comment>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="include_lineage">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Request_Object"/>
+  <rdfs:range rdf:resource="&xsd;#boolean"/>
+  <rdfs:comment>Include the ancestral lineage of the node in the draft tree. If this argument is true, then a list of all the ancestors of this node in the draft tree, down to the root of the tree itself, will be included in the results. Higher list indices correspond to more incluive (i.e. deeper) ancestors, with the immediate parent of the specified node occupying position 0 in the list.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<!-- For Open Tree - Graph - API NodeInfo - Response -->
+
+<owl:Class rdf:ID="Graph_NodeInfo_Response">
+  <rdfs:comment>Get information about a node in the graph of life.</rdfs:comment>
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="whttp:contentEncodingDefault">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Response"/>
+  <rdfs:range  rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:ObjectProperty rdf:ID="Graph_NodeInfo_Output">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Response"/>
+  <rdfs:range  rdf:resource="#Graph_NodeInfo_Response_Object"/>
+  <rdfs:isDefinedBy rdf:resource="#Graph_NodeInfo_Response_Object"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:ID="Graph_NodeInfo_Response_Object">
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="in_graph">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#boolean"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="tree_id">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="name">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="rank">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="ott_id">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#nonNegativeInteger"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="num_tips">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#nonNegativeInteger"/>
+</owl:DatatypeProperty>
+<owl:ObjectProperty rdf:ID="tree_sources">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Response_Object"/>
+  <rdfs:range  rdf:resource="#Graph_NodeInfo_Response_Tree_Sources_List"/>
+  <rdfs:isDefinedBy rdf:resource="#Graph_NodeInfo_Response_Tree_Sources_List"/>
+</owl:ObjectProperty>
+<owl:DatatypeProperty rdf:ID="tax_source">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#string"/>
+</owl:DatatypeProperty>
+<owl:ObjectProperty rdf:ID="synth_sources">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Response_Object"/>
+  <rdfs:range  rdf:resource="#Graph_NodeInfo_Response_Synth_Sources_List"/>
+  <rdfs:isDefinedBy rdf:resource="#Graph_NodeInfo_Response_Synth_Sources_List"/>
+</owl:ObjectProperty>
+<owl:DatatypeProperty rdf:ID="node_id">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#nonNegativeInteger"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="in_synth_tree">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#boolean"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="num_synth_children">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Response_Object"/>
+  <rdfs:range rdf:resource="&xsd;#nonNegativeInteger"/>
+</owl:DatatypeProperty>
+
+
+<owl:Class rdf:ID="Graph_NodeInfo_Response_Tree_Sources_List">
+  <owl:intersectionOf rdf:parseType="owl:collection">
+    <owl:Class rdf:about="&owl;#List"/>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="&owl;#item"/>
+      <owl:toClass rdf:resource="#Graph_NodeInfo_Response_Tree_Source_Object"/>
+    </owl:Restriction>
+  </owl:intersectionOf>
+</owl:Class>
+
+
+<owl:Class rdf:ID="Graph_NodeInfo_Response_Synth_Sources_List">
+  <owl:intersectionOf rdf:parseType="owl:collection">
+    <owl:Class rdf:about="&owl;#List"/>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="&owl;#item"/>
+      <owl:toClass rdf:resource="#Graph_NodeInfo_Response_Synth_Source_Object"/>
+    </owl:Restriction>
+  </owl:intersectionOf>
+</owl:Class>
+
+
+<owl:Class rdf:ID="Graph_NodeInfo_Response_Tree_Source_Object">
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="git_sha">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Response_Tree_Source_Object"/>
+  <rdfs:range rdf:resource="&xsd;#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="tree_id">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Response_Tree_Source_Object"/>
+  <rdfs:range rdf:resource="&xsd;#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="study_id">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Response_Tree_Source_Object"/>
+  <rdfs:range rdf:resource="&xsd;#string"/>
+</owl:DatatypeProperty>
+
+
+<owl:Class rdf:ID="Graph_NodeInfo_Response_Synth_Source_Object">
+</owl:Class>
+<owl:DatatypeProperty rdf:ID="git_sha">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Response_Synth_Source_Object"/>
+  <rdfs:range rdf:resource="&xsd;#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="tree_id">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Response_Synth_Source_Object"/>
+  <rdfs:range rdf:resource="&xsd;#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="study_id">
+  <rdfs:domain rdf:resource="#Graph_NodeInfo_Response_Synth_Source_Object"/>
+  <rdfs:range rdf:resource="&xsd;#string"/>
+</owl:DatatypeProperty>
+
+</rdf:RDF>
+
+
