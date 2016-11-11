@@ -210,7 +210,7 @@ component_is_a_resource(param_execution_time,http_response_time).
 component_is_a_resource(param_names,phylotastic_scientific_names).
 component_is_a_resource(param_resolved_names,bio_taxa).
 component_is_a_resource(param_resolved_names,phylotastic_TNRS_resolved_names).
-component_is_a_resource(param_scientific_names_json,bio_taxa).
+%component_is_a_resource(param_scientific_names_json,bio_taxa).
 component_is_a_resource(param_scientific_names_json,phylotastic_scientific_names).
 component_is_a_resource(param_species_tree,cdao_species_tree).
 component_is_a_resource(param_status_code,http_status_code_int).
@@ -232,6 +232,9 @@ component_hasParameterNameText(param_url,"url").
 %Define particular Object Property for some params
 component_has_Annotation_CDAOAnnotation(param_species_tree,newickTree). 
 component_has_data_format(param_species_tree,newickTree).
+component_has_data_format(param_scientific_names_json,application_json).
+component_has_data_format(param_text,freeText).
+component_has_data_format(param_url,uri).
 %=======================================================================
 %Define instances for phylotastic data format
 %=======================================================================
@@ -239,11 +242,13 @@ instance(freeText).
 instance(application_json).
 instance(x_www_urlencoded).
 instance(application_xml).
+instance(uri).
 
 isInstanceOf(freeText,phylotastic_data_format).
 isInstanceOf(application_json,phylotastic_data_format).
-isInstanceOf(x_www_urlencoded,phylotastic_data_format).
+isInstanceOf(application_x_www_urlencoded,phylotastic_data_format).
 isInstanceOf(application_xml,phylotastic_data_format).
+isInstanceOf(uri,phylotastic_data_format).
 
 %=======================================================================
 %Define instances for data structure
@@ -266,11 +271,13 @@ instance(boolean).
 instance(double).
 instance(integer).
 instance(string).
+instance(uri).
 
 isInstanceOf(boolean,phylotastic_data_type).
 isInstanceOf(double,phylotastic_data_type).
 isInstanceOf(integer,phylotastic_data_type).
 isInstanceOf(string,phylotastic_data_type).
+isInstanceOf(uri,phylotastic_data_type).
 
 %=======================================================================
 %Define instances for phylotastic parameters class
@@ -360,7 +367,40 @@ resource(Re) :- instance(Re), isInstanceOf(Re,phylotastic_resources).
 operation(X) :- instance(X), isInstanceOf(X,Y), class(Y), subClass(Y,operationClassification).
 input_parameter(IN) :- operation(OP), operation_has_Input_Parameter(OP,IN).
 output_parameter(OUT) :- operation(OP), operation_has_Output_Parameter(OP,OUT).
-has_Output_Parameter_Component(OUT,OUT_COM) :- output_parameter(OUT), parameter_has_Component(OUT,OUT_COM).
-has_Input_Parameter_Component(IN,IN_COM) :- input_parameter(IN), parameter_has_Component(IN,IN_COM).
-has_Output_Parameter_Component_Semantic(OUT,OUT_COM_SEM) :- has_Output_Parameter_Component(OUT,OUT_COM), component_is_a_resource(OUT_COM,OUT_COM_SEM).
-has_Input_Parameter_Component_Semantic(IN,IN_COM_SEM) :- has_Input_Parameter_Component(IN,IN_COM), component_is_a_resource(IN_COM,IN_COM_SEM).
+has_Input_Parameter(OP,IN) :- operation_has_Input_Parameter(OP,IN).
+has_Output_Parameter(OP,OUT) :- operation_has_Output_Parameter(OP,OUT).
+
+has_Output_Parameter_Component(OUT,OUT_COM_SEM) :- output_parameter(OUT), parameter_has_Component(OUT,OUT_COM), component_is_a_resource(OUT_COM,OUT_COM_SEM).
+has_Input_Parameter_Component(IN,IN_COM_SEM) :- input_parameter(IN), parameter_has_Component(IN,IN_COM), component_is_a_resource(IN_COM,IN_COM_SEM).
+input_parameter_component(IN_COM_SEM) :- has_Input_Parameter_Component(IN,IN_COM_SEM).
+output_parameter_component(OUT_COM_SEM) :- has_Output_Parameter_Component(OUT, OUT_COM_SEM).
+
+data_type(X) :- instance(X), isInstanceOf(X,phylotastic_data_type).
+data_type(X) :- instance(X), isInstanceOf(X,phylotastic_data_structure).
+data_format(X) :- instance(X), isInstanceOf(X,phylotastic_data_format).
+
+has_Data_Type(COM_RES,DT) :- resource_has_data_type(COM_RES,DT), data_type(DT), resource(COM_RES).
+has_Data_Type(RES,DT) :- resource(RES), isInstanceOf(RES,DT), class(DT), subClass(DT,tree).
+
+has_Data_Format(RES,DF) :- resource(RES), data_format(X), component_has_data_format(COM,DF), component_is_a_resource(COM,RES).
+has_Data_Format(RES,DF) :- resource(RES), class(DF), subClass(DF,cDAOAnnotation), component_has_data_format(COM,DF), component_is_a_resource(COM,RES).
+
+%VERY IMPORTANT : STATIC CAUSAL LAWS - PRECONDITION ====
+%  2 important parts :
+%    PART 1 : Satisfy all compoentns of input => Satisfty Input (DOne - USe Translate program to write rules
+%    Part 2 : Satisfy output => Satisfy all compoenents of output (DONE in planning body)
+
+
+
+ 
+%For some particular defiend
+% Define Web Service
+web_service(phylotastic_ws).
+has_WSDL(phylotastic_ws, "http://128.123.177.13/WSRegistry/sites/default/files/wsdl/Phylotastic_WS.wsdl").
+has_Operation(phylotastic_ws, phylotastic_FindScientificNamesFromFreeText_GNRD_GET).
+has_Operation(phylotastic_ws, phylotastic_FindScientificNamesFromWeb_GNRD_GET).
+has_Operation(phylotastic_ws, phylotastic_ResolvedScientificNames_OT_TNRS_GET).
+has_Operation(phylotastic_ws, phylotastic_GetPhylogeneticTree_OT_GET).
+has_Operation(phylotastic_ws, phylotastic_GetPhylogeneticTree_OT_POST).
+
+
