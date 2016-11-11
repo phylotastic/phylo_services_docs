@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl2:description xmlns:wsdl2="http://www.w3.org/ns/wsdl" xmlns:tns="http://axis2.apache.org" xmlns:wsoap="http://www.w3.org/ns/wsdl/soap" xmlns:wrpc="http://www.w3.org/ns/wsdl/rpc" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdlx="http://www.w3.org/ns/wsdl-extensions" xmlns:ns="http://axis2.apache.org" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:whttp="http://www.w3.org/ns/wsdl/http" targetNamespace="http://axis2.apache.org">
+    <wsdl2:types>
+        <xs:schema xmlns:ax21="http://axis2.apache.org" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://axis2.apache.org">    
+            <!-- Input -->
+			
+			<xs:element name="gene_tree_data" nillable="false" type="xs:string" />
+			<xs:element name="format" nillable="true" type="xs:string" />
+			 
+			<!-- Output -->
+			<xs:complexType name="gene_tree_Class">
+			  <xs:sequence>
+			    <xs:element name="newick_format" type="xs:anyURI"/>
+			    <xs:element name="phyloxml_format" type="xs:anyURI"/>
+			  </xs:sequence>
+			</xs:complexType>
+			
+			<xs:complexType name="species_tree_Class">
+			  <xs:sequence>
+			    <xs:element name="newick_format" type="xs:anyURI"/>
+			    <xs:element name="phyloxml_format" type="xs:anyURI"/>
+			  </xs:sequence>
+			</xs:complexType>
+			
+			<xs:complexType name="gene_species_tree_reconciliation_Class">
+			  <xs:sequence>
+			    <xs:element name="newick_format" type="xs:anyURI"/>
+			    <xs:element name="phyloxml_format" type="xs:anyURI"/>
+			  </xs:sequence>
+			</xs:complexType>
+				
+			<xs:complexType name="materialClass">
+			  <xs:sequence>
+			    <xs:element name="gene_tree" type="gene_tree_Class"/>
+			    <xs:element name="species_tree" type="species_tree_Class"/>
+				<xs:element name="gene_species_tree_reconciliation" type="gene_species_tree_reconciliation_Class"/>
+			  </xs:sequence>
+			</xs:complexType>
+			
+            <xs:complexType name="PhylotasticWS_GeneSpecies_Reconciliation_Response_Class">
+                <xs:sequence>
+                    <xs:element  name="ws_name" nillable="false" type="xs:string"/>
+					<xs:element  name="ws_operation" nillable="false" type="xs:string"/>
+					<xs:element  name="ws_id" nillable="false" type="xs:string"/>
+					<xs:element  name="gene_tree_newick_format" nillable="false" type="xs:anyURI"/>
+					<xs:element  name="material" nillable="false" type="materialClass"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="PhylotasticWS_GeneSpecies_Reconciliation_Response" type="PhylotasticWS_GeneSpecies_Reconciliation_Response_Class"/>
+        </xs:schema>
+    </wsdl2:types>
+    <wsdl2:interface name="PhylotasticWS_ServiceInterface">
+        <wsdl2:operation name="PhylotasticWS_Get_GeneSpeciesReconciliationTree_by_gene_tree_WF1" pattern="http://www.w3.org/ns/wsdl/in-out">
+            <wsdl2:input element="ns:gene_tree_data" wsaw:Action="urn:gene_tree_data"/>
+			<wsdl2:input element="ns:format" wsaw:Action="urn:format"/>
+            <wsdl2:output element="ns:PhylotasticWS_GeneSpecies_Reconciliation_Response" wsaw:Action="urn:PhylotasticWS_GeneSpecies_Reconciliation_Response"/>
+        </wsdl2:operation>
+    </wsdl2:interface>
+    <wsdl2:binding name="PhylotasticWS_HttpBinding" interface="tns:PhylotasticWS_ServiceInterface" type="http://www.w3.org/ns/wsdl/http">
+        <wsdl2:operation ref="tns:PhylotasticWS_Get_GeneSpeciesReconciliationTree_by_gene_tree_WF1" whttp:location="phylotastic_ws/generateGeneSpeciesReconciliationTree/work_flow_1" whttp:method="POST" whttp:contentEncodingDefault="application/x-www-form-urlencoded" whttp:inputSerialization="application/x-www-form-urlencoded" whttp:outputSerialization="application/json" whttp:queryParameterSeparator=""/> 
+    </wsdl2:binding>
+    <wsdl2:service name="PhylotasticWS_Service" interface="tns:PhylotasticWS_ServiceInterface">
+        <wsdl2:endpoint name="PhylotasticWS_Service_HttpEndpoint" binding="tns:PhylotasticWS_HttpBinding" address="http://128.123.177.21:5002/"/>
+    </wsdl2:service>
+</wsdl2:description>

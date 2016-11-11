@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl2:description xmlns:wsdl2="http://www.w3.org/ns/wsdl" xmlns:tns="http://axis2.apache.org" xmlns:wsoap="http://www.w3.org/ns/wsdl/soap" xmlns:wrpc="http://www.w3.org/ns/wsdl/rpc" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdlx="http://www.w3.org/ns/wsdl-extensions" xmlns:ns="http://axis2.apache.org" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:whttp="http://www.w3.org/ns/wsdl/http" targetNamespace="http://axis2.apache.org">
+    <wsdl2:types>
+        <xs:schema xmlns:ax21="http://axis2.apache.org" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://axis2.apache.org">    
+            <xs:element name="gene_tree_data" nillable="false" type="xs:string" />
+			<xs:element name="format" nillable="true" type="xs:string" />
+            <xs:element name="species_tree_data" nillable="false" type="xs:string" />
+			<xs:element name="ws_id" nillable="false" type="xs:string" />
+			<xs:element name="ForesterWS_GetSpeciesList_By_GeneTree_Response" nillable="true" type="xs:string" />
+			<xs:element name="ForesterWS_GetReconciliationTree_Response" nillable="true" type="xs:string" />
+        </xs:schema>
+    </wsdl2:types>
+    <wsdl2:interface name="ForesterWS_ServiceInterface">
+        <wsdl2:operation name="ForesterWS_GetSpeciesList_By_GeneTree" pattern="http://www.w3.org/ns/wsdl/in-out">
+            <wsdl2:input element="ns:gene_tree_data" wsaw:Action="urn:gene_tree_data"/>
+			<wsdl2:input element="ns:format" wsaw:Action="urn:format"/>
+            <wsdl2:output element="ns:ForesterWS_GetSpeciesList_By_GeneTree_Response" wsaw:Action="urn:ForesterWS_GetSpeciesList_By_GeneTree_Response"/>
+        </wsdl2:operation>
+        <wsdl2:operation name="ForesterWS_GetReconciliationTree" pattern="http://www.w3.org/ns/wsdl/in-out">
+		    <wsdl2:input element="ns:ws_id" wsaw:Action="urn:ws_id"/>
+            <wsdl2:input element="ns:species_tree_data" wsaw:Action="urn:species_tree_data"/>	
+            <wsdl2:output element="ns:ForesterWS_GetReconciliationTree_Response" wsaw:Action="urn:ForesterWS_GetReconciliationTree_Response"/>
+        </wsdl2:operation>
+    </wsdl2:interface>
+    <wsdl2:binding name="ForesterWS_HttpBinding" interface="tns:ForesterWS_ServiceInterface" type="http://www.w3.org/ns/wsdl/http">
+        <wsdl2:operation ref="tns:ForesterWS_GetSpeciesList_By_GeneTree" whttp:location="forester_ws/querySpeciesList" whttp:method="POST" whttp:contentEncodingDefault="application/x-www-form-urlencoded" whttp:inputSerialization="application/x-www-form-urlencoded" whttp:outputSerialization="application/json" whttp:queryParameterSeparator=""/> 
+		<wsdl2:operation ref="tns:ForesterWS_GetReconciliationTree" whttp:location="forester_ws/queryReconciliationTree" whttp:method="POST" whttp:contentEncodingDefault="application/x-www-form-urlencoded" whttp:inputSerialization="application/x-www-form-urlencoded" whttp:outputSerialization="application/json" whttp:queryParameterSeparator=""/>
+    </wsdl2:binding>
+    <wsdl2:service name="Forester_Service" interface="tns:ForesterWS_ServiceInterface">
+        <wsdl2:endpoint name="Forester_Service_HttpEndpoint" binding="tns:ForesterWS_HttpBinding" address="http://128.123.177.21:5001/"/>
+    </wsdl2:service>
+</wsdl2:description>
