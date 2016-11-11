@@ -66,10 +66,17 @@ is_Input_Parameter_Of(phylotastic_FindScientificNamesFromWebPage_GNRD_GET_In,phy
 has_Parameter_Format(phylotastic_FindScientificNamesFromWebPage_GNRD_GET_In, application_x_www_form_urlencoded).
 has_Input_Parameter_Component(phylotastic_FindScientificNamesFromWebPage_GNRD_GET_In, http_URL).
 
+<<<<<<< HEAD
 input_parameter(phylotastic_ResolvedScientificNames_OT_TNRS_GET_In).
 is_Input_Parameter_Of(phylotastic_ResolvedScientificNames_OT_TNRS_GET_In,phylotastic_ResolvedScientificNames_OT_TNRS_GET).
 has_Parameter_Format(phylotastic_ResolvedScientificNames_OT_TNRS_GET_In, application_x_www_form_urlencoded).
 has_Input_Parameter_Component(phylotastic_ResolvedScientificNames_OT_TNRS_GET_In, phylotastic_scientific_names).
+=======
+input_parameter(phylotastic_ResolveScientificNames_OT_TNRS_GET_In).
+is_Input_Parameter_Of(phylotastic_ResolveScientificNames_OT_TNRS_GET_In,phylotastic_ResolveScientificNames_OT_TNRS_GET).
+has_Parameter_Format(phylotastic_ResolveScientificNames_OT_TNRS_GET_In, application_x_www_form_urlencoded).
+has_Input_Parameter_Component(phylotastic_ResolveScientificNames_OT_TNRS_GET_In, phylotastic_scientific_names).
+>>>>>>> 18b759681fee11bb1ff4a0b569d33e47f5e84048
 
 input_parameter(phylotastic_GetPhylogeneticTree_OT_GET_In).
 is_Input_Parameter_Of(phylotastic_GetPhylogeneticTree_OT_GET_In,phylotastic_GetPhylogeneticTree_OT_GET).
@@ -92,11 +99,19 @@ has_Output_Parameter_Component(phylotastic_FindScientificNamesFromWebPage_GNRD_G
 has_Output_Parameter_Component(phylotastic_FindScientificNamesFromWebPage_GNRD_GET_Out, http_response_time).
 has_Output_Parameter_Component(phylotastic_FindScientificNamesFromWebPage_GNRD_GET_Out, phylotastic_scientific_names).
 
+<<<<<<< HEAD
 output_parameter(phylotastic_ResolvedScientificNames_OT_TNRS_GET_Out).
 is_Output_Parameter_Of(phylotastic_ResolvedScientificNames_OT_TNRS_GET_Out,phylotastic_ResolvedScientificNames_OT_TNRS_GET).
 has_Parameter_Format(phylotastic_ResolvedScientificNames_OT_TNRS_GET_Out, application_json).
 has_Output_Parameter_Component(phylotastic_ResolvedScientificNames_OT_TNRS_GET_Out, http_status_code_int).
 has_Output_Parameter_Component(phylotastic_ResolvedScientificNames_OT_TNRS_GET_Out, phylotastic_TNRS_resolved_names).
+=======
+output_parameter(phylotastic_ResolveScientificNames_OT_TNRS_GET_Out).
+is_Output_Parameter_Of(phylotastic_ResolveScientificNames_OT_TNRS_GET_Out,phylotastic_ResolveScientificNames_OT_TNRS_GET).
+has_Parameter_Format(phylotastic_ResolveScientificNames_OT_TNRS_GET_Out, application_json).
+has_Output_Parameter_Component(phylotastic_ResolveScientificNames_OT_TNRS_GET_Out, http_status_code_int).
+has_Output_Parameter_Component(phylotastic_ResolveScientificNames_OT_TNRS_GET_Out, phylotastic_TNRS_resolved_names).
+>>>>>>> 18b759681fee11bb1ff4a0b569d33e47f5e84048
 
 output_parameter(phylotastic_GetPhylogeneticTree_OT_GET_Out).
 is_Output_Parameter_Of(phylotastic_GetPhylogeneticTree_OT_GET_Out,phylotastic_GetPhylogeneticTree_OT_GET).
@@ -119,7 +134,11 @@ is_Input_Parameter_Component_Of(http_URL,phylotastic_FindScientificNamesFromWebP
 input_parameter_component(phylotastic_scientific_names).
 has_Data_Type(phylotastic_scientific_names,xs_string).
 has_Data_Format(phylotastic_scientific_names,waitForSemantics).
+<<<<<<< HEAD
 is_Input_Parameter_Component_Of(phylotastic_scientific_names,phylotastic_ResolvedScientificNames_OT_TNRS_GET_In).
+=======
+is_Input_Parameter_Component_Of(phylotastic_scientific_names,phylotastic_ResolveScientificNames_OT_TNRS_GET_In).
+>>>>>>> 18b759681fee11bb1ff4a0b569d33e47f5e84048
 
 input_parameter_component(bio_taxa).
 has_Data_Type(bio_taxa,xs_string).
@@ -144,11 +163,19 @@ is_Output_Parameter_Component_Of(http_status_code_int,phylotastic_FindScientific
 is_Output_Parameter_Component_Of(http_response_time,phylotastic_FindScientificNamesFromWebPage_GNRD_GET_Out).
 is_Output_Parameter_Component_Of(phylotastic_scientific_names,phylotastic_FindScientificNamesFromWebPage_GNRD_GET_Out).
 
+<<<<<<< HEAD
 is_Output_Parameter_Component_Of(http_status_code_int,phylotastic_ResolvedScientificNames_OT_TNRS_GET_Out).
 output_parameter_component(phylotastic_TNRS_resolved_names).
 has_Data_Type(phylotastic_TNRS_resolved_names,list_of_resolved_names).
 has_Data_Format(phylotastic_TNRS_resolved_names,waitForSemantics).
 is_Output_Parameter_Component_Of(phylotastic_TNRS_resolved_names,phylotastic_ResolvedScientificNames_OT_TNRS_GET_Out).
+=======
+is_Output_Parameter_Component_Of(http_status_code_int,phylotastic_ResolveScientificNames_OT_TNRS_GET_Out).
+output_parameter_component(phylotastic_TNRS_resolved_names).
+has_Data_Type(phylotastic_TNRS_resolved_names,list_of_resolved_names).
+has_Data_Format(phylotastic_TNRS_resolved_names,waitForSemantics).
+is_Output_Parameter_Component_Of(phylotastic_TNRS_resolved_names,phylotastic_ResolveScientificNames_OT_TNRS_GET_Out).
+>>>>>>> 18b759681fee11bb1ff4a0b569d33e47f5e84048
 
 is_Output_Parameter_Component_Of(http_status_code_int,phylotastic_GetPhylogeneticTree_OT_GET_Out).
 output_parameter_component(cdao_species_tree).
@@ -162,7 +189,11 @@ is_Output_Parameter_Component_Of(cdao_species_tree,phylotastic_GetPhylogeneticTr
 %------------------------------------------------------------------------
 holds(satisfy_precondition(phylotastic_FindScientificNamesFromFreeText_GNRD_GET_In),Loop) :- holds(planningHasComponent(free_text),Loop), not -holds(planningHasInput(phylotastic_WebServices,phylotastic_FindScientificNamesFromFreeText_GNRD_GET,phylotastic_FindScientificNamesFromFreeText_GNRD_GET_In),Loop), step(Loop).
 holds(satisfy_precondition(phylotastic_FindScientificNamesFromWebPage_GNRD_GET_In),Loop) :- holds(planningHasComponent(http_URL),Loop), not -holds(planningHasInput(phylotastic_WebServices,phylotastic_FindScientificNamesFromWebPage_GNRD_GET,phylotastic_FindScientificNamesFromWebPage_GNRD_GET_In),Loop), step(Loop).
+<<<<<<< HEAD
 holds(satisfy_precondition(phylotastic_ResolvedScientificNames_OT_TNRS_GET_In),Loop) :- holds(planningHasComponent(phylotastic_scientific_names),Loop), not -holds(planningHasInput(phylotastic_WebServices,phylotastic_ResolvedScientificNames_OT_TNRS_GET,phylotastic_ResolvedScientificNames_OT_TNRS_GET_In),Loop), step(Loop).
+=======
+holds(satisfy_precondition(phylotastic_ResolveScientificNames_OT_TNRS_GET_In),Loop) :- holds(planningHasComponent(phylotastic_scientific_names),Loop), not -holds(planningHasInput(phylotastic_WebServices,phylotastic_ResolveScientificNames_OT_TNRS_GET,phylotastic_ResolveScientificNames_OT_TNRS_GET_In),Loop), step(Loop).
+>>>>>>> 18b759681fee11bb1ff4a0b569d33e47f5e84048
 holds(satisfy_precondition(phylotastic_GetPhylogeneticTree_OT_GET_In),Loop) :- holds(planningHasComponent(bio_taxa),Loop), not -holds(planningHasInput(phylotastic_WebServices,phylotastic_GetPhylogeneticTree_OT_GET,phylotastic_GetPhylogeneticTree_OT_GET_In),Loop), step(Loop).
 
 
