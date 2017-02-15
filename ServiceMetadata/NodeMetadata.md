@@ -1,11 +1,13 @@
-# Node Metadata Example
-## Species list:
+## Node Metadata Example
+
+### Species list:
  - Mareca strepera
  - Aix sponsa
  - Columba livia
  - Aramus guarauna
  - Megaceryle alcyon
-## Tree (newick format)
+
+### Tree (newick format)
 
 > ((Mareca strepera, Aix sponsa),(Columba livia,(Aramus guarauna, Megaceryle alcyon))) Neognathae;
   
