@@ -123,3 +123,25 @@ The Workflow Description Language is a domain specific language for describing t
   }  
 }
 ```
+### Example
+```
+{
+    "$schema": "Phylotastic",
+    "contentVersion": "0.1",
+    "parameters": {
+        "free_text" : {
+            "type" : "http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#free_text",
+            "defaultValue": "",
+            "allowedValues": [all],
+            "metadata" : { "key": { "name": "value"} }
+        }
+    },
+    "actions": [ FindScientificNamesFromText ],
+    "outputs": {  
+      "scientificNames": {  
+        "value": "scientificNames",  
+        "type" : "http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_scientific_names"  
+     }  
+}
+  }
+```
