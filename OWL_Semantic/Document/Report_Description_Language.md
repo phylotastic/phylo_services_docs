@@ -103,7 +103,7 @@ The Workflow Description Language is a domain specific language for describing t
     "outputs": { <output-of-definition> }
   }
   ```
-### Parameters
+### Parameters - Input
 ```
 "parameters": {
     "<parameter-name>" : {
@@ -112,5 +112,14 @@ The Workflow Description Language is a domain specific language for describing t
         "allowedValues": [ <array-of-allowed-values> ],
         "metadata" : { "key": { "name": "value"} }
     }
+}
+```
+### Output
+```
+"outputs": {  
+  "key1": {  
+    "value": "value1",  
+    "type" : "<type-of-value>"  
+  }  
 }
 ```
