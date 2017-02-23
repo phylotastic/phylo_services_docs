@@ -92,6 +92,8 @@ The Workflow Description Language is a domain specific language for describing t
     }
 ```
 ## 2. Microsoft Workflow Description language:
+#### Web site : 
+https://docs.microsoft.com/en-us/rest/api/logic/definition-language
 #### Structure:
   ```   
   {
