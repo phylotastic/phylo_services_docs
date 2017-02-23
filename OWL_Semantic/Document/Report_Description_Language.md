@@ -62,4 +62,33 @@ The Workflow Description Language is a domain specific language for describing t
       }
     }
 ```
+### Phylotastic Example:
+```    
+    task findScientificNamesfromText {
+      <http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#free_text> free_text
+      command {
+        FindScientificNamesfromText
+      }
+      output {
+        <http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_scientific_names> scientificNames
+      }
+    }
+    task buildTreeFromScientificNames {
+      <http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_scientific_names> scientificNames
+      command {
+        BuildTreeFromScientificNames
+      }
+      output {
+        <http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#cdao_species_tree> species_tree
+      }
+    }
+    workflow build_tree {
+      call findScientificNamesfromText {
+        input: free_text
+      }
+      call buildTreeFromScientificNames {
+        input: scientificName=findScientificNamesfromText.scientificNames
+      }
+    }
+```
 ## 2. WDL - Workflow Description language:
