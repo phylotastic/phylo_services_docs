@@ -143,5 +143,23 @@ The Workflow Description Language is a domain specific language for describing t
         "type" : "http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_scientific_names"  
      }  
 }
-  }
+
+{
+    "$schema": "Phylotastic",
+    "contentVersion": "0.1",
+    "parameters": {
+        "scientificNames" : {
+            "type" : "http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_scientific_names",
+            "defaultValue": "[]",
+            "allowedValues": [all],
+            "metadata" : { "key": { "name": "value"} }
+        }
+    },
+    "actions": [ BuildTreeFromScientificNames ],
+    "outputs": {  
+      "speciesTree": {  
+        "value": "speciesTree",  
+        "type" : "http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#cdao_species_tree"  
+     }  
+}
 ```
