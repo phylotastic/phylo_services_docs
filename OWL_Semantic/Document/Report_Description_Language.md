@@ -143,7 +143,8 @@ https://docs.microsoft.com/en-us/rest/api/logic/definition-language
       "scientificNames": {  
         "value": "scientificNames",  
         "type" : "http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#phylotastic_scientific_names"  
-     }  
+       }
+    }   
 }
 
 {
@@ -162,6 +163,7 @@ https://docs.microsoft.com/en-us/rest/api/logic/definition-language
       "speciesTree": {  
         "value": "speciesTree",  
         "type" : "http://www.cs.nmsu.edu/~epontell/CDAO/cdao.owl#cdao_species_tree"  
-     }  
+       } 
+    }
 }
 ```
