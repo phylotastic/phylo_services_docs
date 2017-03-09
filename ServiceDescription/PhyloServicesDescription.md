@@ -699,6 +699,9 @@ __Parameters:__
 + Property name: __order__
     + Data type: string
     + Description: the taxonomic rank order where the species belongs to
++ Property name: __class__
+    + Data type: string
+    + Description: the taxonomic rank class where the species belongs to
 + Property name: __phylum__
     + Data type: string
     + Description: the taxonomic rank phylum where the species belongs to
@@ -708,7 +711,7 @@ __Parameters:__
 
 __Examples:__ 
 ```
-curl -X POST http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/insert_list -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "list": {"list_extra_info": "", "list_description": "A list on the bird species add their endangered, threatened or invasive status", "list_keywords": ["bird", "endangered species", "Everglades"], "list_curator": "HD Laughinghouse", "list_origin": "webapp", "list_curation_date": "02-24-2016", "list_source": "Des", "list_focal_clade": "Aves", "list_title": "Bird Species List for Everglades National Park", "list_author": ["Bass", "O. & Cunningham", "R."], "list_date_published": "01-01-2006", "is_list_public": true, "list_species": [{"family": "", "scientific_name": "Aix sponsa", "scientific_name_authorship": "", "vernacular_name": "Wood Duck", "phylum": "", "nomenclature_code": "ICZN", "order": "Anseriformes"}, {"family": "", "scientific_name": "Anas strepera", "scientific_name_authorship": "", "vernacular_name": "Gadwall", "phylum": "", "nomenclature_code": "ICZN", "order": "Anseriformes"}, {"family": "", "scientific_name": "Caprimulgus vociferus", "scientific_name_authorship": "", "vernacular_name": "Whip-poor-will", "phylum": "", "nomenclature_code": "ICZN", "order": "Caprimulgiformes"}, {"family": "", "scientific_name": "Columba livia", "scientific_name_authorship": "", "vernacular_name": "Rock Dove", "phylum": "", "nomenclature_code": "ICZN", "order": "Columbiformes"}, {"family": "", "scientific_name": "Ceryle alcyon", "scientific_name_authorship": "", "vernacular_name": "Belted Kingfisher", "phylum": "", "nomenclature_code": "ICZN", "order": "Coraciiformes"}, {"family": "", "scientific_name": "Aramus guarauna", "scientific_name_authorship": "", "vernacular_name": "Limpkin", "phylum": "", "nomenclature_code": "ICZN", "order": "Gruiformes"}]}}'
+curl -X POST http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/insert_list -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "list": {"list_extra_info": "", "list_description": "A list on the bird species add their endangered, threatened or invasive status", "list_keywords": ["bird", "endangered species", "Everglades"], "list_curator": "HD Laughinghouse", "list_origin": "webapp", "list_curation_date": "02-24-2016", "list_source": "Des", "list_focal_clade": "Aves", "list_title": "Bird Species List for Everglades National Park", "list_author": ["Bass", "O. & Cunningham", "R."], "list_date_published": "01-01-2006", "is_list_public": true, "list_species": [{"family": "", "scientific_name": "Aix sponsa", "scientific_name_authorship": "", "vernacular_name": "Wood Duck", "phylum": "", "nomenclature_code": "ICZN", "order": "Anseriformes", "class":""}, {"family": "", "scientific_name": "Anas strepera", "scientific_name_authorship": "", "vernacular_name": "Gadwall", "phylum": "", "nomenclature_code": "ICZN", "order": "Anseriformes", "class":""}, {"family": "", "scientific_name": "Caprimulgus vociferus", "scientific_name_authorship": "", "vernacular_name": "Whip-poor-will", "phylum": "", "nomenclature_code": "ICZN", "order": "Caprimulgiformes", "class":""}, {"family": "", "scientific_name": "Columba livia", "scientific_name_authorship": "", "vernacular_name": "Rock Dove", "phylum": "", "nomenclature_code": "ICZN", "order": "Columbiformes", "class":""}, {"family": "", "scientific_name": "Ceryle alcyon", "scientific_name_authorship": "", "vernacular_name": "Belted Kingfisher", "phylum": "", "nomenclature_code": "ICZN", "order": "Coraciiformes", "class": ""}, {"family": "", "scientific_name": "Aramus guarauna", "scientific_name_authorship": "", "vernacular_name": "Limpkin", "phylum": "", "nomenclature_code": "ICZN", "order": "Gruiformes", "class": ""}]}}'
 ```
 __Citation:__
 
@@ -970,7 +973,6 @@ http://phylo.cs.nmsu.edu:5006/phylotastic_ws/md/get_studies?list=3597191|3597209
 ```
 ```
 http://phylo.cs.nmsu.edu:5006/phylotastic_ws/md/get_studies?list=Setophaga striata|Setophaga magnolia|Setophaga angelae|Setophaga plumbea|Setophaga virens&list_type=taxa
-
 ```
 __Example Results:__
 ```
@@ -1027,3 +1029,116 @@ __Service Quality:__
  * *Uptime:* 
  
 ---
+
+#### Web Service 18.
+
+__Service Name:__  	 	Get Phylogenetic Trees from phylomatic
+
+__Service Description:__ 	A service to get Phylogenetic Trees from phylomatic.
+
+__Resource URI:__  	<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pm/get_tree>
+
+__HTTP Method:__ 		GET
+
+__Input Format:__ 		application/x-www-form-urlencoded
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__  			
+* *Name:* 	 	taxa
+* *Category:*  	mandatory
+* *Data Type:*  string 
+* *Description:*  list of resolved scientific names delimited by pipe "|"
+ 				
+__Examples:__ 
+```
+http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pm/get_tree?taxa=Setophaga striata|Setophaga magnolia|Setophaga angelae|Setophaga plumbea|Setophaga virens
+```
+
+__Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pm/tree>
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		application/json
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__  			
+* *Name:* 	 	resolvedNames 
+* *Category:*  	mandatory
+* *Data Type:*  list of string
+* *Description:*  list of resolved scientific names
+ 				
+__Examples:__ 
+```
+curl -X POST "http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pm/tree" -H "content-type:application/json" -d '{"resolvedNames": ["Setophaga striata", "Setophaga magnolia", "Setophaga angelae", "Setophaga plumbea", "Setophaga virens"]}'
+```
+__Citation:__  	 	http://phylodiversity.net/phylomatic/
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*
+ * *Restrictions on scope:*
+ * *Expected response time:*  	__3s~10s__
+ * *Informative message:*
+   * when service is down --
+   * when malformed input is provided --
+ * *Uptime:* 
+ 
+---
+
+#### Web Service 18.
+
+__Service Name:__  	 	Get Phylogenetic Trees from phyloT
+
+__Service Description:__ 	A service to get Phylogenetic Trees from phyloT.
+
+__Resource URI:__  	<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pt/get_tree>
+
+__HTTP Method:__ 		GET
+
+__Input Format:__ 		application/x-www-form-urlencoded
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__  			
+* *Name:* 	 	taxa
+* *Category:*  	mandatory
+* *Data Type:*  string 
+* *Description:*  list of resolved scientific names delimited by pipe "|"
+ 				
+__Examples:__ 
+```
+http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pt/get_tree?taxa=Setophaga striata|Setophaga magnolia|Setophaga angelae|Setophaga plumbea|Setophaga virens
+```
+
+__Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pt/tree>
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		application/json
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__  			
+* *Name:* 	 	resolvedNames 
+* *Category:*  	mandatory
+* *Data Type:*  list of string
+* *Description:*  list of resolved scientific names
+ 				
+__Examples:__ 
+```
+curl -X POST "http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pt/tree" -H "content-type:application/json" -d '{"resolvedNames": ["Setophaga striata", "Setophaga magnolia", "Setophaga angelae", "Setophaga plumbea", "Setophaga virens"]}'
+```
+__Citation:__  	 	http://phylot.biobyte.de/
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*
+ * *Restrictions on scope:*
+ * *Expected response time:*  	__3s~10s__
+ * *Informative message:*
+   * when service is down --
+   * when malformed input is provided --
+ * *Uptime:* 
+ 
+---
+
