@@ -1056,6 +1056,7 @@ http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pm/get_tree?taxa=Setophaga stria
 ```
 
 __Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pm/tree>
+
 __HTTP Method:__ 		POST
 
 __Input Format:__ 		application/json
@@ -1111,6 +1112,7 @@ http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pt/get_tree?taxa=Setophaga stria
 ```
 
 __Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pt/tree>
+
 __HTTP Method:__ 		POST
 
 __Input Format:__ 		application/json
