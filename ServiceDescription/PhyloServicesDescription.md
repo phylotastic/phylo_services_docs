@@ -1086,8 +1086,7 @@ __Service Quality:__
  
 ---
 
-#### Web Service 18.
-
+#### Web Service 19
 __Service Name:__  	 	Get Phylogenetic Trees from phyloT
 
 __Service Description:__ 	A service to get Phylogenetic Trees from phyloT.
