@@ -1052,7 +1052,7 @@ __Parameters:__
  				
 __Examples:__ 
 ```
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pm/get_tree?taxa=Setophaga striata|Setophaga magnolia|Setophaga angelae|Setophaga plumbea|Setophaga virens
+http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pm/get_tree?taxa=Panthera leo|Panthera onca|Panthera tigris|Panthera uncia
 ```
 
 __Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pm/tree>
