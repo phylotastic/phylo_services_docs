@@ -1054,6 +1054,9 @@ __Examples:__
 ```
 http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pm/get_tree?taxa=Setophaga striata|Setophaga magnolia|Setophaga angelae|Setophaga plumbea|Setophaga virens
 ```
+```
+http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pm/get_tree?taxa=Helianthus%20annuus|Passiflora%20edulis|Rosa%20arkansana|Saccharomyces%20cerevisiae
+```
 
 __Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pm/tree>
 
@@ -1072,6 +1075,9 @@ __Parameters:__
 __Examples:__ 
 ```
 curl -X POST "http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pm/tree" -H "content-type:application/json" -d '{"resolvedNames": ["Setophaga striata", "Setophaga magnolia", "Setophaga angelae", "Setophaga plumbea", "Setophaga virens"]}'
+```
+```
+curl -X POST "http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pm/tree" -H "content-type:application/json" -d '{"resolvedNames": ["Helianthus annuus","Passiflora edulis", "Rosa arkansana", "Saccharomyces cerevisiae"]}'
 ```
 __Citation:__  	 	http://phylodiversity.net/phylomatic/
 
