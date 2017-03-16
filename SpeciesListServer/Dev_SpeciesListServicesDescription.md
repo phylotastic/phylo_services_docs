@@ -386,10 +386,11 @@ __Service Quality:__
 # How to get Access Token to use in Species List Web Services:
 <a name="accesstoken">
 
-Go to [Google developers guide](https://developers.google.com/adwords/api/docs/guides/authentication#oauth2_playground)
-
-2. In __OAuth2 Playground__ section of the document follow the steps in __Get a client ID and client secret__ to get your client ID and client secret.
-
-3. Again in __OAuth2 Playground__ section of the document follow the 9 steps in __Generate tokens__ subsection to get your *Access token*. 
-> In step 5 of __Generate tokens__ use this url *https://www.googleapis.com/auth/userinfo.email* in the textbox beside the __Authorize APIs__ button instead of using this url *https://www.googleapis.com/auth/adwords*
+1. Go to [Google developers guide](https://developers.google.com/adwords/api/docs/guides/authentication#oauth2_playground)
+1. Follow the steps in __Get a client ID and client secret__ to get your client ID and client secret.  These instructions direct you to the __OAuth2 Playground__.  Name the web application something like "Phylotastic List Server".  
+1. Now, in the same developers guide, go to the __Generate tokens__ subsection.  This will again direct you to the __OAuth2 Playground__.  Don't be confused by the fact that the developer's guide lists 10 steps, whereas the OAuth2 Playground has an accordion with windows labeled "Step 1", "Step 2" and "Step 3".  To get your *Access token*, follow the first 9 steps with some slight modifications
+   * In step 5 of __Generate tokens__ use this url *https://www.googleapis.com/auth/userinfo.email* in the textbox beside the __Authorize APIs__ button instead of using this url *https://www.googleapis.com/auth/adwords*
+   * When you are prompted to give access to your account information, this will not refer to adwords but to the application you named above. 
+   * Note that in the OAuth2 Playground the "Step 2" accordion will close and you have to click it open again to get your info.  
+1. (Now, explain exactly what to do with this.  Provide a specific example using one of the list services).  
 </a>
