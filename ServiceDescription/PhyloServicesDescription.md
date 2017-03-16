@@ -1096,7 +1096,7 @@ __Service Quality:__
 #### Web Service 19
 __Service Name:__  	 	Get Phylogenetic Trees from phyloT
 
-__Service Description:__ 	A service to get Phylogenetic Trees from phyloT.
+__Service Description:__ 	A service to get a taxonomic tree from the NCBI taxonomy using phyloT (http://phylot.biobyte.de/).
 
 __Resource URI:__  	<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pt/get_tree>
 
