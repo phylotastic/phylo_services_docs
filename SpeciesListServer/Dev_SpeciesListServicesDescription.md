@@ -386,7 +386,6 @@ __Service Quality:__
 # How to get Access Token to use in Species List Web Services:
 <a name="accesstoken">
 
-<<<<<<< HEAD
 Getting an Access Token involves mainly two steps. First, users need to acquire a client ID and client secret for his/her gmail account. Second, generate the access token using the client ID and the client secret. The two steps are described in detail below.
 
 ### Get a client ID and client secret:
@@ -403,7 +402,7 @@ Getting an Access Token involves mainly two steps. First, users need to acquire 
 
 8. Go to the [OAuth2 Playground](https://developers.google.com/oauthplayground/#step1&scopes=https%3A//www.googleapis.com/auth/adwords&url=https%3A//&content_type=application/json&http_method=GET&useDefaultOauthCred=checked&oauthEndpointSelect=Google&oauthAuthEndpointValue=https%3A//accounts.google.com/o/oauth2/auth&oauthTokenEndpointValue=https%3A//www.googleapis.com/oauth2/v3/token&includeCredentials=unchecked&accessTokenType=bearer&autoRefreshToken=unchecked&accessType=offline&forceAprovalPrompt=checked&response_type=code).
 
-9. Click the gear icon ![gear icon](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "gear icon")
+9. Click the gear icon ![gear icon](https://developers.google.com/adwords/api/images/playground-gear.png "gear icon")
 in the upper right corner and check the box labeled __Use your own OAuth credentials__ (if it isn't already checked). *Access token*. 
 
 ![OAuth 2.0 configuration](https://developers.google.com/adwords/api/images/playground-settings.png "OAuth 2.0 configuration")
@@ -422,14 +421,9 @@ https://www.googleapis.com/auth/userinfo.email
 
 14. In the section labeled __Step 2 - Exchange authorization code for tokens__, you should now see an __Authorization code__. Click __Exchange authorization code for tokens__.
 
+![Exchange authorization code for tokens](https://developers.google.com/adwords/api/images/playground-authcode.png " Exchange authorization code for tokens")
+
 15. A value will appear in the __Access token__ field. This value is your desired access token for this gmail account.
-=======
-1. Go to [Google developers guide](https://developers.google.com/adwords/api/docs/guides/authentication#oauth2_playground)
-1. Follow the steps in __Get a client ID and client secret__ to get your client ID and client secret.  These instructions direct you to the __OAuth2 Playground__.  Name the web application something like "Phylotastic List Server".  
-1. Now, in the same developers guide, go to the __Generate tokens__ subsection.  This will again direct you to the __OAuth2 Playground__.  Don't be confused by the fact that the developer's guide lists 10 steps, whereas the OAuth2 Playground has an accordion with windows labeled "Step 1", "Step 2" and "Step 3".  To get your *Access token*, follow the first 9 steps with some slight modifications
-   * In step 5 of __Generate tokens__ use this url *https://www.googleapis.com/auth/userinfo.email* in the textbox beside the __Authorize APIs__ button instead of using this url *https://www.googleapis.com/auth/adwords*
-   * When you are prompted to give access to your account information, this will not refer to adwords but to the application you named above. 
-   * Note that in the OAuth2 Playground the "Step 2" accordion will close and you have to click it open again to get your info.  
-1. (Now, explain exactly what to do with this.  Provide a specific example using one of the list services).  
->>>>>>> 003a9e8faa9aa5c7196633153e5775b1e74fc3af
+
+> Note that your *Access Token* will expire after certain time limit. In that case you can generate a new access token by clicking on the __Refresh access token__ button. 
 </a>
