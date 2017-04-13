@@ -409,8 +409,8 @@ in the upper right corner and check the box labeled __Use your own OAuth credent
 
 10. Make sure that:
 
-..* OAuth flow is set to __Server-side__.
-..* __Access type__ is set to __Offline__ (this ensures you get a refresh token and an access token, instead of just an access token).
+ * __OAuth flow__ is set to __Server-side__.
+ * __Access type__ is set to __Offline__ (this ensures you get a refresh token and an access token, instead of just an access token).
 
 11. Enter the __OAuth2 client ID__ and __OAuth2 client secret__ you obtained above. 
 
