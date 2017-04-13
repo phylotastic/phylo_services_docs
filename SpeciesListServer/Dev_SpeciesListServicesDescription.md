@@ -403,12 +403,13 @@ Getting an Access Token involves mainly two steps. First, users need to acquire 
 8. Go to the [OAuth2 Playground](https://developers.google.com/oauthplayground/#step1&scopes=https%3A//www.googleapis.com/auth/adwords&url=https%3A//&content_type=application/json&http_method=GET&useDefaultOauthCred=checked&oauthEndpointSelect=Google&oauthAuthEndpointValue=https%3A//accounts.google.com/o/oauth2/auth&oauthTokenEndpointValue=https%3A//www.googleapis.com/oauth2/v3/token&includeCredentials=unchecked&accessTokenType=bearer&autoRefreshToken=unchecked&accessType=offline&forceAprovalPrompt=checked&response_type=code).
 
 9. Click the gear icon ![gear icon](https://developers.google.com/adwords/api/images/playground-gear.png "gear icon")
-in the upper right corner and check the box labeled __Use your own OAuth credentials__ (if it isn't already checked). *Access token*. 
+in the upper right corner and check the box labeled __Use your own OAuth credentials__ (if it isn't already checked). 
 
 ![OAuth 2.0 configuration](https://developers.google.com/adwords/api/images/playground-settings.png "OAuth 2.0 configuration")
 
 10. Make sure that:
-..* __OAuth flow__ is set to __Server-side__.
+
+..* OAuth flow is set to __Server-side__.
 ..* __Access type__ is set to __Offline__ (this ensures you get a refresh token and an access token, instead of just an access token).
 
 11. Enter the __OAuth2 client ID__ and __OAuth2 client secret__ you obtained above. 
@@ -417,6 +418,10 @@ in the upper right corner and check the box labeled __Use your own OAuth credent
 ```
 https://www.googleapis.com/auth/userinfo.email
 ```
+> Note that you need to use the above URL instead of using ```https://www.googleapis.com/auth/adwords``` that is shown in the picture below.
+
+![Authorize APIs](https://developers.google.com/adwords/api/images/playground-authorize-apis.png "Authorize APIs")
+
 13. If prompted, log in to your gmail account to grant access and authorization. Otherwise, confirm by clicking on __Allow__.
 
 14. In the section labeled __Step 2 - Exchange authorization code for tokens__, you should now see an __Authorization code__. Click __Exchange authorization code for tokens__.
