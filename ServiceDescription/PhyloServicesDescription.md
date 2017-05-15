@@ -1168,10 +1168,18 @@ __Parameters:__
 * *Data Type:*  string
 * *Description:*  tree in newick string format
  				
-__Examples:__ 
+__Example Commands:__  
+
 ```
 curl -X POST http://phylo.cs.nmsu.edu:5009/phylotastic_ws/sc/scale -H 'content-type:application/json' -d '{"newick": "((Zea mays,Oryza sativa),((Arabidopsis thaliana,(Glycine max,Medicago sativa)),Solanum lycopersicum)Pentapetalae);"}'
 ```
+
+__Example Results:__
+
+```
+{"execution_time": "2.65", "status_code": 200, "creation_time": "2017-05-15T00:04:36.820669", "scaled_tree": "((Oryza sativa:135.666203,Zea mays:135.666203):0.091835,(((Medicago sativa:118.578577,Glycine max:118.578577):0,Arabidopsis thaliana:118.578577):17.179461,Solanum lycopersicum:135.758038):0);", "input_tree": "((Zea mays,Oryza sativa),((Arabidopsis thaliana,(Glycine max,Medicago sativa)),Solanum lycopersicum)Pentapetalae);", "message": "Success", "service_documentation": "https://github.com/phylotastic/phylo_services_docs/blob/master/ServiceDescription/PhyloServicesDescription.md#web-service-20"}
+```
+
 __Citation:__  	 	http://datelife.org/
 
 __Service Quality:__
