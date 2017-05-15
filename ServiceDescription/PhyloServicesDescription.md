@@ -1149,3 +1149,40 @@ __Service Quality:__
  
 ---
 
+#### Web Service 20
+__Service Name:__  	 	Get Phylogenetic Trees with branch lengths
+
+__Service Description:__ 	A service to get chronograms (trees with branch lengths proportional to time).
+
+__Resource URI:__  		<http://phylo.cs.nmsu.edu:5009/phylotastic_ws/sc/scale>
+
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		application/json
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__  			
+* *Name:* 	 	newick 
+* *Category:*  	mandatory
+* *Data Type:*  string
+* *Description:*  tree in newick string format
+ 				
+__Examples:__ 
+```
+curl -X POST http://phylo.cs.nmsu.edu:5009/phylotastic_ws/sc/scale -H 'content-type:application/json' -d '{"newick": "((Zea mays,Oryza sativa),((Arabidopsis thaliana,(Glycine max,Medicago sativa)),Solanum lycopersicum)Pentapetalae);"}'
+```
+__Citation:__  	 	http://datelife.org/
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*
+ * *Restrictions on scope:*
+ * *Expected response time:*  	__3s~10s__
+ * *Informative message:*
+   * when service is down --
+   * when malformed input is provided --
+ * *Uptime:* 
+ 
+---
+
