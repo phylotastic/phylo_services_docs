@@ -579,7 +579,7 @@ __Parameters:__
 
 __Examples:__
 
-> __Note__: *access_token* values presented below is just used as an example. Testing the urls in the examples using these tokens may not work. The user has to provide a valid unexpired access token for his/her gmail adderss. 
+> __Note__: *access_token* values presented below is just used as an example. Testing the urls in the examples using these tokens may not work. The user has to provide a valid unexpired access token for his/her gmail adderss. The procedure for getting an *access_token* can be found [here](https://github.com/phylotastic/phylo_services_docs/blob/master/SpeciesListServer/AccessToken.md#how-to-get-access-token-to-use-in-species-list-web-services).
 
 * To get all the public lists available:
 ```
