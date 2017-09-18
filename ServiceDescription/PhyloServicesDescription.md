@@ -1212,3 +1212,52 @@ __Service Quality:__
  
 ---
 
+#### Web Service 21
+__Service Name:__  	 	Get metadata for a output chronogram 
+
+__Service Description:__ 	A service to get metadata information (citations) for chronograms retrieved by datelife.
+
+__Resource URI:__  		<http://phylo.cs.nmsu.edu:5009/phylotastic_ws/sc/metadata_scale>
+
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		application/json
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	newick 
+  * __Category:__  	mandatory
+  * __Data Type:__  string
+  * __Description:__  tree in newick string format
+ 				
+ 				
+__Example Commands:__
+
+1. 
+```
+curl -X POST http://phylo.cs.nmsu.edu:5009/phylotastic_ws/sc/metadata_scale -H 'content-type:application/json' -d '{"newick": "((Zea mays,Oryza sativa),((Arabidopsis thaliana,(Glycine max,Medicago sativa)),Solanum lycopersicum)Pentapetalae);"}'
+```
+
+__Example Results:__
+
+1. 
+```
+{"metadata_tree_scaling": ["Hedges, S. Blair, Julie Marin, Michael Suleski, Madeline Paymer, Sudhir Kumar. 2015. Tree of life reveals clock-like speciation and diversification. Molecular Biology and Evolution 32 (4): 835-845", "Magall\u00f3n, Susana, Sandra G\u00f3mez-Acevedo, Luna L. S\u00e1nchez-Reyes, Tania Hern\u00e1ndez-Hern\u00e1ndez. 2015. A metacalibrated time-tree documents the early rise of flowering plant phylogenetic diversity. New Phytologist 207 (2): 437-453", "Magall\u00f3n, Susana, Sandra G\u00f3mez-Acevedo, Luna L. S\u00e1nchez-Reyes, Tania Hern\u00e1ndez-Hern\u00e1ndez. 2015. A metacalibrated time-tree documents the early rise of flowering plant phylogenetic diversity. New Phytologist 207 (2): 437-453"], "execution_time": "1.83", "status_code": 200, "creation_time": "2017-09-17T21:19:03.397009", "input_tree": "((Zea mays,Oryza sativa),((Arabidopsis thaliana,(Glycine max,Medicago sativa)),Solanum lycopersicum)Pentapetalae);", "message": "Success", "service_documentation": "https://github.com/phylotastic/phylo_services_docs/blob/master/ServiceDescription/PhyloServicesDescription.md#web-service-21"}
+```
+
+__Citation:__  	 	http://datelife.org/
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*
+ * *Restrictions on scope:*
+ * *Expected response time:*  	__3s~10s__
+ * *Informative message:*
+   * when service is down --
+   * when malformed input is provided --
+ * *Uptime:* 
+---
+
