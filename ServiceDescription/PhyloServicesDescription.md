@@ -1261,3 +1261,61 @@ __Service Quality:__
  * *Uptime:* 
 ---
 
+#### Web Service 22
+__Service Name:__  	 	Get scientific name of a species from its common name 
+
+__Service Description:__ 	A service to get scientific name of a species from its common name.
+
+__Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/cs/ncbi/get_scientific_name>
+
+__HTTP Method:__ 		GET
+
+__Input Format:__ 		application/x-www-form-urlencoded
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	common 
+  * __Category:__  	mandatory
+  * __Data Type:__  string
+  * __Description:__  a common name for which to find scientific name
+ 				
+ 				
+__Example Commands:__
+
+1. 
+```
+http://phylo.cs.nmsu.edu:5004/phylotastic_ws/cs/ncbi/get_scientific_name?common=dog
+```
+
+2. 
+```
+http://phylo.cs.nmsu.edu:5004/phylotastic_ws/cs/ncbi/get_scientific_name?common=tiger
+```
+__Example Results:__
+
+1. 
+```
+{"ncbi_info_url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=9615","scientific_name": "Canis lupus familiaris","status_code": 200,"common_name": "dog","message": "Success","extra_info": {"genbank_common_name": "dog","inherited_blast_name": " carnivores","rank": "subspecies"},"metadata": {"execution_time": "1.09","creation_time": "2017-10-12T07:04:43.459298","source_urls": ["https://www.ncbi.nlm.nih.gov/taxonomy"]}}
+```
+
+2. 
+```
+{"ncbi_info_url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=9694","scientific_name": "Panthera tigris","status_code": 200,
+"common_name": "tiger","message": "Success","extra_info": {"genbank_common_name": "tiger","inherited_blast_name": " carnivores","rank": " species"},"metadata": {"execution_time": "1.08","creation_time": "2017-10-12T07:06:17.925418","source_urls": ["https://www.ncbi.nlm.nih.gov/taxonomy"]}}
+```
+
+__Citation:__  	 	https://www.ncbi.nlm.nih.gov/taxonomy
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*
+ * *Restrictions on scope:*
+ * *Expected response time:*  	__3s~5s__
+ * *Informative message:*
+   * when service is down --
+   * when malformed input is provided --
+ * *Uptime:* 
+---
