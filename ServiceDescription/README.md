@@ -292,14 +292,7 @@ __Service Quality:__
  * *Restrictions on scope:*     __accepts only valid URL inputs__ 
  * *Expected response time:*  	__1s~10s__
  * *Informative message/status:*
-   | Case   | HTTP status code   | Message
-   | ---------------------------------------------------|:---------------:| -------------:|
-   | Successful   | 200   | Success |
-   | Missing value of mandatory parameter   | 400   | Error: '_parameter name_' parameter must have a valid value |
-   | Invalid name of mandatory parameter (e.g. ulr)   | 400   | Error: Missing parameter '_parameter name_' |
-   | Invalid method name in resource URI (e.g. /nme_url)   | 404   | Error: Could not find the requested resource URI |
-   | Internal server error   | 500   |   |
-
+   
    | Case | HTTP status code | Message | 
    | :----------- | :------: | ------------: | 
    | Successful       | 200   | Success        | 
