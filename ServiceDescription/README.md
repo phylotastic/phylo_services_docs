@@ -300,13 +300,10 @@ __Service Quality:__
    | Invalid method name in resource URI (e.g. /nme_url)   | 404   | Error: Could not find the requested resource URI |
    | Internal server error   | 500   |   |
 
-   | URL                                        | Verb   | Summary                |
-| -------------------------------------------|--------|------------------------|
-|[`/studies/find_studies`](#find_studies) | POST | Return a list of studies that match a given property. If no property provided, returns a list of all studies. |
-|[`/studies/find_trees`](#find_trees) | POST | Return a list of trees (and the studies that contain them) that match a given property. |
-|[`/studies/properties`](#properties) | POST | Return a list of properties that can be used to search studies and trees. |
-|[`/study/{STUDY_ID}`](#study) | GET | Return a study. |
-|[`/study/{STUDY_ID}/tree/{TREE_ID}`](#tree) | GET | Return a tree from within a study. |
+| Left Aligned | Centered | Right Aligned | Left Aligned | Centered | Right Aligned |
+| :----------- | :------: | ------------: | :----------- | :------: | ------------: |
+| Cell 1       | Cell 2   | Cell 3        | Cell 4       | Cell 5   | Cell 6        |
+| Cell 7       | Cell 8   | Cell 9        | Cell 10      | Cell 11  | Cell 12       |
 
 
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_scientific_names_) will be an empty list.
