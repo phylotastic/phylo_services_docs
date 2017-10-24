@@ -80,7 +80,7 @@ __Example Results:__
 		]
 	},
 	"total_names": 9,
-	"scientific_names": [
+	"scientificNames": [
 		"Patagioenas inornata wetmorei",
 		"Animalia",
 		"Chordata",
@@ -116,7 +116,7 @@ __Example Results:__
 		]
 	},
 	"total_names": 153,
-	"scientific_names": [
+	"scientificNames": [
 		"Menziesia pilosa",
 		"Fagus grandifolia",
 		"Sorbus americana",
@@ -288,7 +288,7 @@ __Citation/Source:__  	 		http://gnrd.globalnames.org/
 
 __Service Quality:__
 
- * *Restrictions on capacity:*  __unknown__
+ * *Restrictions on capacity:*  __unknown__ (_depends on the source web service_)
  * *Restrictions on scope:*     __accepts only valid URL inputs__ 
  * *Expected response time:*  	__1s~10s__
  * *Informative message/status:*
@@ -301,7 +301,7 @@ __Service Quality:__
    | Invalid method name in resource URI (e.g. /nme_url)       | 404   | Error: Could not find the requested resource URI        | 
    | Internal server error       | 500   |         |
 
-  > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_scientific_names_) will be an empty list.
+  > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_scientificNames_) will be an empty list.
 
 ---
 
@@ -356,7 +356,7 @@ __Example Results:__
 		]
 	},
 	"total_names": 2,
-	"scientific_names": [
+	"scientificNames": [
 		"Columba larvata",
 		"Columbidae"
 	],
@@ -386,7 +386,7 @@ __Example Results:__
 		]
 	},
 	"total_names": 6,
-	"scientific_names": [
+	"scientificNames": [
 		"Formica polyctena",
 		"Tetramorium caespitum",
 		"Pseudomyrmex",
@@ -412,19 +412,20 @@ __Citation/Source:__  	 		http://gnrd.globalnames.org/
 
 __Service Quality:__
 
- * *Restrictions on capacity:*  __unknown__
+ * *Restrictions on capacity:*  __unknown__ (_depends on the source web service_)
  * *Restrictions on scope:*     __accepts english text content as input__ 
  * *Expected response time:*  	__0.5s~10s__
  * *Informative message/status:*
-   | Case                                               | HTTP status code| Message
-   | ---------------------------------------------------|:---------------:| -------------:|
-   | Successful                                         | 200             | Success       |
-   | Missing value of mandatory parameter               | 400             | Error: '_parameter name_' parameter must have a valid value |
-   | Invalid name of mandatory parameter (e.g. txt)     | 400             | Error: Missing parameter '_parameter name_' |
-   | Invalid method name in resource URI (e.g. /nme_txt)| 404             | Error: Could not find the requested resource URI |
-   | Internal server error                              | 500             |  |
+  
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. txt)       | 400   | Error: Missing parameter '_parameter name_'        | 
+   | Invalid method name in resource URI (e.g. /nme_txt)       | 404   | Error: Could not find the requested resource URI        | 
+   | Internal server error       | 500   |         |
 
-  > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_scientific_names_) will be an empty list.
+  > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_scientificNames_) will be an empty list.
 
 ---
 
@@ -485,7 +486,7 @@ __Example Results:__
 		"Formica pecefica"
 	],
 	"status_code": 200,
-	"resolved_names": [
+	"resolvedNames": [
 		{
 			"matched_results": [
 				{
@@ -539,7 +540,7 @@ __Example Results:__
 		"Meli officinalis"
 	],
 	"status_code": 200,
-	"resolved_names": [
+	"resolvedNames": [
 		{
 			"matched_results": [
 				{
@@ -698,7 +699,7 @@ __Output Format:__ 		application/json
 __Parameters:__
 
 1. Parameter details:
-  * __Name:__ 	 	<span style="color:blue">scientific_names</span> 
+  * __Name:__ 	 	<span style="color:blue">scientificNames</span> 
   * __Category:__  	mandatory
   * __Data Type:__  list of strings
   * __Description:__  list of scientific names to be resolved.
@@ -735,7 +736,7 @@ __Example Results:__
 		"Setophaga virens"
 	],
 	"status_code": 200,
-	"resolved_names": [
+	"resolvedNames": [
 		{
 			"matched_results": [
 				{
@@ -843,20 +844,21 @@ __Citation/Source:__  	 		https://github.com/OpenTreeOfLife/opentree/wiki/Open-T
 
 __Service Quality:__
 
- * *Restrictions on capacity:*  __maximum `1000` names allowed__
- * *Restrictions on scope:*     __unknown__ 
+ * *Restrictions on capacity:*  __maximum `1000` names allowed__ 
  * *Expected response time:*  	__1s~30s__
  * *Informative message/status:*
-   | Case                                               | HTTP status code| Message
-   | ---------------------------------------------------|:---------------:| -------------:|
-   | Successful                                         | 200             | Success       |
-   | Missing value of mandatory parameter               | 400             | Error: '_parameter name_' parameter must have a valid value |
-   | Invalid name of mandatory parameter (e.g. sc_name) | 400             | Error: Missing parameter '_parameter name_' |
-   | Invalid method name in resource URI (e.g. /name)   | 404             | Error: Could not find the requested resource URI |
-   | Reached maximum input limit                        | 403             | Error: Currently more than 1000 names is not supported |
-   | Internal server error                              | 500             |  |
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. sc_name)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Reached maximum input limit       | 403   | Error: Currently more than 1000 names is not supported        |
+   | Invalid method name in resource URI (e.g. /name)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
 
-  > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_resolved_names_) will be an empty list.
+
+  > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_resolvedNames_) will be an empty list.
 
 ---
 
@@ -3596,3 +3598,283 @@ __Service Quality:__
 
 ---
 
+## <a name='misc'></a>Miscellaneous
+
+__Service Name:__  	 	OToL_supported_studies
+
+__Service Description:__ 	A service to get supported studies of an induced tree from OpenTreeOfLife.
+
+__Resource URI:__  		<http://phylo.cs.nmsu.edu:5006/phylotastic_ws/md/get_studies>
+
+__HTTP Method:__ 		GET or POST
+
+__Input Format:__ 		application/x-www-form-urlencoded
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">list</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  string
+  * __Description:__  pipe ("|") delimited list of OpenTree ids of taxon names or taxon names depending on the __list_type__ parameter value.
+ 				
+2. Parameter details:
+  * __Name:__ 	 	list_type 
+  * __Category:__  	mandatory
+  * __Data Type:__  string
+  * __Description:__  a string value to specify which type (taxon names or OpenTree ids of taxon names) of list is provided as input. Valid values include __ottids__ or __taxa__. __ottids__ list type denotes a list which contains OpenTree ids of taxon names and __taxa__ list type denotes a list which contains taxon names.
+  
+__Example Commands/Requests:__ 
+
+1. 
+```
+http://phylo.cs.nmsu.edu:5006/phylotastic_ws/md/get_studies?list=532117|42322|42324|563151|42314&list_type=ottids
+```
+
+2. 
+```
+http://phylo.cs.nmsu.edu:5006/phylotastic_ws/md/get_studies?list=Setophaga striata|Setophaga magnolia|Setophaga angelae|Setophaga plumbea|Setophaga virens&list_type=taxa
+```
+
+
+__Example Results:__
+
+1. 
+```json
+{
+	"status_code": 200,
+	"message": "Success",
+	"meta_data": {
+		"execution_time": 1.16,
+		"creation_time": "2017-10-23T23:14:32.224069",
+		"source_urls": [
+			"https://github.com/OpenTreeOfLife/opentree/wiki/Open-Tree-of-Life-APIs#studies"
+		]
+	},
+	"studies": [
+		{
+			"PublicationYear": 2006,
+			"FocalCladeTaxonName": "Felidae",
+			"Publication": "Johnson, W.E., Eizirik E., Pecon-slattery J., Murphy W., Antunes A., Teeling E., & O'brien S. 2006. The late Miocene radiation of modern Felidae: a genetic assessment. Science 311(5757): 73-77.",
+			"CandidateTreeForSynthesis": "tree4052",
+			"PublicationDOI": "http://dx.doi.org/10.1126/science.1122277",
+			"DataRepository": "http://purl.org/phylo/treebase/phylows/study/TB2:S11931",
+			"Curator": "Chris Owen",
+			"PublicationIdentifier": "pg_1981"
+		}
+	]
+}
+```
+ 
+2. 
+```json
+{
+	"status_code": 200,
+	"message": "Success",
+	"meta_data": {
+		"execution_time": 7.54,
+		"creation_time": "2017-10-23T23:13:37.216688",
+		"source_urls": [
+			"https://github.com/OpenTreeOfLife/opentree/wiki/Open-Tree-of-Life-APIs#studies"
+		]
+	},
+	"studies": [
+		{
+			"PublicationYear": 2010,
+			"FocalCladeTaxonName": "Parulidae",
+			"Publication": "Lovette, Irby J., Jorge L. Pérez-Emán, John P. Sullivan, Richard C. Banks, Isabella Fiorentino, Sergio Córdoba-Córdoba, María Echeverry-Galvis, F. Keith Barker, Kevin J. Burns, John Klicka, Scott M. Lanyon, Eldredge Bermingham. 2010. A comprehensive multilocus phylogeny for the wood-warblers and a revised classification of the Parulidae (Aves). Molecular Phylogenetics and Evolution 57 (2): 753-770.",
+			"CandidateTreeForSynthesis": "tree6024",
+			"PublicationDOI": "http://dx.doi.org/10.1016/j.ympev.2010.07.018",
+			"DataRepository": "",
+			"Curator": "Joseph W. Brown",
+			"PublicationIdentifier": "pg_2591"
+		},
+		{
+			"PublicationYear": 2015,
+			"FocalCladeTaxonName": "Passeriformes",
+			"Publication": "Barker, F. Keith, Kevin J. Burns, John Klicka, Scott M. Lanyon, Irby J. Lovette. 2015. New insights into New World biogeography: An integrated view from the phylogeny of blackbirds, cardinals, sparrows, tanagers, warblers, and allies. The Auk 132 (2): 333-348.",
+			"CandidateTreeForSynthesis": "tree1",
+			"PublicationDOI": "http://dx.doi.org/10.1642/auk-14-110.1",
+			"DataRepository": "http://datadryad.org/resource/doi:10.5061/dryad.pb787",
+			"Curator": "Joseph W. Brown",
+			"PublicationIdentifier": "ot_770"
+		}
+	]
+}
+```
+
+__Alternative Resource URI:__  		<http://phylo.cs.nmsu.edu:5006/phylotastic_ws/md/studies>
+
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		application/json
+
+__Output Format:__ 		application/json 
+
+
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">list</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  list of string or integers depending on the __list_type__ parameter value
+  * __Description:__  a list of OpenTree ids of taxon names or taxon names depending on the __list_type__ parameter value
+ 				
+2. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">list_type</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  string
+  * __Description:__  a string value to specify which type (taxon names or OpenTree ids of taxon names) of list is provided as input. Valid values include __ottids__ or __taxa__. __ottids__ list type denotes a list which contains OpenTree ids of taxon names and __taxa__ list type denotes a list which contains taxon names 				
+ 				
+__Example Commands/Requests:__
+
+1. 
+```bash
+curl -X POST http://phylo.cs.nmsu.edu:5006/phylotastic_ws/md/studies -H "content-type:application/json" -d '{"list":[1094064,860906,257323,698438,698406,187220,336231,124230], "list_type": "ottids"}'
+```
+
+2. 
+```bash
+curl -X POST http://phylo.cs.nmsu.edu:5006/phylotastic_ws/md/studies -H "content-type:application/json" -d '{"list":["Delphinidae","Delphinus capensis","Delphinus delphis","Tursiops truncatus","Tursiops aduncus","Sotalia fluviatilis","Sousa chinensis"], "list_type": "taxa"}'
+```
+
+__Example Results:__
+
+1. 
+
+```json
+{
+	"status_code": 200,
+	"message": "Success",
+	"meta_data": {
+		"execution_time": 6.78,
+		"creation_time": "2017-10-23T23:17:28.117181",
+		"source_urls": [
+			"https://github.com/OpenTreeOfLife/opentree/wiki/Open-Tree-of-Life-APIs#studies"
+		]
+	},
+	"studies": [
+		{
+			"PublicationYear": 2009,
+			"FocalCladeTaxonName": "Cetacea",
+			"Publication": "McGowen, M., Spaulding M., and Gatesy J. 2009. Divergence date estimation and a comprehensive molecular tree of extant cetaceans. Molecular Phylogenetics and Evolution 53 (3): 891-906.",
+			"CandidateTreeForSynthesis": "tree5998",
+			"PublicationDOI": "http://dx.doi.org/10.1016/j.ympev.2009.08.018",
+			"DataRepository": "http://purl.org/phylo/treebase/phylows/study/TB2:S10190",
+			"Curator": "Chris Owen",
+			"PublicationIdentifier": "pg_2587"
+		},
+		{
+			"PublicationYear": 2009,
+			"FocalCladeTaxonName": "Cetacea",
+			"Publication": "Steeman, M., Hebsgaard M., Fordyce R., Ho S., Rabosky D., Nielsen R., Rahbek C., Glenner H., Sørensen M., & Willerslev E. 2009. Radiation of Extant Cetaceans Driven by Restructuring of the Oceans. Systematic Biology 58 (6): 573-585.",
+			"CandidateTreeForSynthesis": "tree6215",
+			"PublicationDOI": "http://dx.doi.org/10.1093/sysbio/syp060",
+			"DataRepository": "http://purl.org/phylo/treebase/phylows/study/TB2:S10124",
+			"Curator": "Chris Owen",
+			"PublicationIdentifier": "pg_1927"
+		}
+	]
+}
+```
+
+2. 
+```json
+{
+	"status_code": 200,
+	"message": "Success",
+	"meta_data": {
+		"execution_time": 3.14,
+		"creation_time": "2017-10-23T23:18:13.463556",
+		"source_urls": [
+			"https://github.com/OpenTreeOfLife/opentree/wiki/Open-Tree-of-Life-APIs#studies"
+		]
+	},
+	"studies": [
+		{
+			"PublicationYear": 2009,
+			"FocalCladeTaxonName": "Cetacea",
+			"Publication": "McGowen, M., Spaulding M., and Gatesy J. 2009. Divergence date estimation and a comprehensive molecular tree of extant cetaceans. Molecular Phylogenetics and Evolution 53 (3): 891-906.",
+			"CandidateTreeForSynthesis": "tree5998",
+			"PublicationDOI": "http://dx.doi.org/10.1016/j.ympev.2009.08.018",
+			"DataRepository": "http://purl.org/phylo/treebase/phylows/study/TB2:S10190",
+			"Curator": "Chris Owen",
+			"PublicationIdentifier": "pg_2587"
+		},
+		{
+			"PublicationYear": 2009,
+			"FocalCladeTaxonName": "Cetacea",
+			"Publication": "Steeman, M., Hebsgaard M., Fordyce R., Ho S., Rabosky D., Nielsen R., Rahbek C., Glenner H., Sørensen M., & Willerslev E. 2009. Radiation of Extant Cetaceans Driven by Restructuring of the Oceans. Systematic Biology 58 (6): 573-585.",
+			"CandidateTreeForSynthesis": "tree6215",
+			"PublicationDOI": "http://dx.doi.org/10.1093/sysbio/syp060",
+			"DataRepository": "http://purl.org/phylo/treebase/phylows/study/TB2:S10124",
+			"Curator": "Chris Owen",
+			"PublicationIdentifier": "pg_1927"
+		}
+	]
+}
+```
+
+__Citation/Source:__    https://github.com/OpenTreeOfLife/opentree/wiki/Open-Tree-of-Life-APIs#studies
+
+
+
+---
+
+__Service Name:__  	 	Compare_trees
+
+__Service Description:__ 	A service to compare two Phylogenetic Trees symmetrically.
+
+__Resource URI:__  		<http://phylo.cs.nmsu.edu:5006/phylotastic_ws/compare_trees>
+
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		application/json
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">tree1_nwk</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  string
+  * __Description:__  first tree in newick string format.
+ 				
+2. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">tree2_nwk</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  string
+  * __Description:__  second tree in newick string format.
+
+
+__Example Commands/Requests:__
+
+1. 
+```bash
+curl -X POST "http://phylo.cs.nmsu.edu:5006/phylotastic_ws/compare_trees" -H "content-type:application/json" -d '{"tree1_nwk": "(((((((EU368025_Uncult_marine_euk_FS14JA72_30Mar05_5m:0.00329,EU368020_Uncult_marine_euk_FS04GA95_01Aug05_5m:-0.00002):0.00002,EU368013_Uncult_marine_euk_FS01D014_01Aug05_65m:-0.00002):0.00010,(EU368034_Uncult_marine_euk_OC413NSS_Q007_15m:-0.00000,(EU368007_Uncult_marine_euk_FS01B026_30Mar05_5m:-0.00001,EU368004_Uncult_marine_euk_FS01AA94_01Aug05_5m:0.00328):0.00000):0.00317):0.00725,(EU368005_Uncult_marine_euk_FS01B033_30Mar05_5m:-0.00002,(EF172850_Uncult_euk_SSRPB47:-0.00003,EU368022_Uncult_marine_euk_FS04H169_01Aug05_89m:0.00166):0.00002):0.00597):0.00202,((DQ060523_Uncult_marine_euk_NOR46.29:0.01559,(HQ868826_Uncult_euk_SHAX1073:0.00155,EU368038_Uncult_marine_euk_EN351CTD040_4mN11:0.00172):0.00429):0.00017,(EU368023_Uncult_marine_euk_FS04H153_01Aug05_89m:0.00504,(DQ222879_Uncult_photo_euk_RA000907.18:0.00166,HM858468_Uncult_marine_euk_MO.011.5m.00036:-0.00003):0.00152):0.00566):0.00662):0.00941,(HQ868882_Uncult_euk_SHAX1135:0.00170,HQ868810_Uncult_euk_SHAX1056:-0.00007):0.02449):0.00648,(EU368021_Uncult_marine_euk_FS04GA46_01Aug05_5m:0.02285,(HQ869075_Uncult_euk_SHAX587:0.00000,HQ869035_Uncult_euk_SHAX540:0.00000):0.04720):0.01029,HQ156863_Uncult_marine_ciliate_170609_08:0.17059);", "tree2_nwk": "((HQ869075_Uncult_euk_SHAX587:0.00000,HQ869035_Uncult_euk_SHAX540:0.00000):0.04484,(EU368021_Uncult_marine_euk_FS04GA46_01Aug05_5m:0.02285,(((((EU368005_Uncult_marine_euk_FS01B033_30Mar05_5m:-0.00002,(EF172850_Uncult_euk_SSRPB47:-0.00003,EU368022_Uncult_marine_euk_FS04H169_01Aug05_89m:0.00166):0.00002):0.00597,(((EU368025_Uncult_marine_euk_FS14JA72_30Mar05_5m:0.00329,EU368020_Uncult_marine_euk_FS04GA95_01Aug05_5m:-0.00002):0.00002,EU368013_Uncult_marine_euk_FS01D014_01Aug05_65m:-0.00002):0.00010,(EU368034_Uncult_marine_euk_OC413NSS_Q007_15m:-0.00000,(EU368007_Uncult_marine_euk_FS01B026_30Mar05_5m:-0.00001,EU368004_Uncult_marine_euk_FS01AA94_01Aug05_5m:0.00328):0.00000):0.00317):0.00725):0.00202,((DQ060523_Uncult_marine_euk_NOR46.29:0.01559,(HQ868826_Uncult_euk_SHAX1073:0.00155,EU368038_Uncult_marine_euk_EN351CTD040_4mN11:0.00172):0.00429):0.00017,(EU368023_Uncult_marine_euk_FS04H153_01Aug05_89m:0.00504,(DQ222879_Uncult_photo_euk_RA000907.18:0.00166,HM858468_Uncult_marine_euk_MO.011.5m.00036:-0.00003):0.00152):0.00566):0.00662):0.00941,(HQ868882_Uncult_euk_SHAX1135:0.00170,HQ868810_Uncult_euk_SHAX1056:-0.00007):0.02449):0.00648,HQ156863_Uncult_marine_ciliate_170609_08:0.17059):0.01029):0.00236);"}'
+```
+
+__Example Results:__
+
+1. 
+```json
+{
+	"status_code": 200,
+	"message": "Success",
+	"meta_data": {
+		"execution_time": 0.03,
+		"creation_time": "2017-10-23T23:34:59.618597",
+		"source_urls": [
+			"http://dendropy.org/library/treecompare.html#module-dendropy.calculate.treecompare"
+		]
+	},
+	"are_same_tree": true
+}
+```
+
+---
+
+  _
