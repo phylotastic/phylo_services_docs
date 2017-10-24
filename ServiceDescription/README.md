@@ -3626,7 +3626,7 @@ __Parameters:__
   * __Name:__ 	 	list_type 
   * __Category:__  	mandatory
   * __Data Type:__  string
-  * __Description:__  a string value to specify which type (taxon names or OpenTree ids of taxon names) of list is provided as input. Valid values include __ottids__ or __taxa__. __ottids__ list type denotes a list which contains OpenTree ids of taxon names and __taxa__ list type denotes a list which contains taxon names.
+  * __Description:__  a string value to specify which type (taxon names or OpenTree ids of taxon names) of list is provided as input. Valid values include `ottids` or `taxa`. __ottids__ list type denotes a list which contains OpenTree ids of taxon names and __taxa__ list type denotes a list which contains taxon names.
   
 __Example Commands/Requests:__ 
 
@@ -3728,7 +3728,7 @@ __Parameters:__
   * __Name:__ 	 	<span style="color:blue">list_type</span> 
   * __Category:__  	mandatory
   * __Data Type:__  string
-  * __Description:__  a string value to specify which type (taxon names or OpenTree ids of taxon names) of list is provided as input. Valid values include __ottids__ or __taxa__. __ottids__ list type denotes a list which contains OpenTree ids of taxon names and __taxa__ list type denotes a list which contains taxon names 				
+  * __Description:__  a string value to specify which type (taxon names or OpenTree ids of taxon names) of list is provided as input. Valid values include `ottids` or `taxa`. __ottids__ list type denotes a list which contains OpenTree ids of taxon names and __taxa__ list type denotes a list which contains taxon names 				
  				
 __Example Commands/Requests:__
 
