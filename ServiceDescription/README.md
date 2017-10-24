@@ -2753,7 +2753,8 @@ __Parameters:__
   * __Data Type:__  list of strings
   * __Description:__ list of species names.
  				
- 				
+  > __Note__: The service expects already resolved species names as input to provide the correct output.
+
 __Example Commands/Requests:__
 
 1. 
@@ -3156,6 +3157,7 @@ http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/get_list?user_id=hdail.laughing
 5. To get a specific private list (including all metadata available) with ID 20 and owned by hdail.laughinghouse@gmail.com:
 ```
 http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/get_list?user_id=hdail.laughinghouse@gmail.com&list_id=20&verbose=true&access_token=ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA
+```
 
 __Example Results:__
 
