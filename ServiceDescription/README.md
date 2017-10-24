@@ -1,7 +1,7 @@
 # Phylotastic Web Services Documentation
  
 If you have a suggestion to improve this documentation or have found any errors in any of the web services, please submit an issue on the
-[repo](https://github.com/phylotastic/phylo_services_docs/issues).
+[repo](https://github.com/phylotastic/phylo_webservices).
 
 __Phylotastic Web Services__ are grouped into the following categories:
 
@@ -912,7 +912,7 @@ __Example Results:__
 		"Formica pecefica"
 	],
 	"status_code": 200,
-	"resolved_names": [
+	"resolvedNames": [
 		{
 			"matched_results": [
 				{
@@ -1106,7 +1106,7 @@ __Output Format:__ 		application/json
 __Parameters:__
 
 1. Parameter details:
-  * __Name:__ 	 	<span style="color:blue">scientific_names</span> 
+  * __Name:__ 	 	<span style="color:blue">scientificNames</span> 
   * __Category:__  	mandatory
   * __Data Type:__  list of strings
   * __Description:__  list of scientific names to be resolved.
@@ -1139,7 +1139,7 @@ __Example Results:__
 		"Rana Temporaria"
 	],
 	"status_code": 200,
-	"resolved_names": [
+	"resolvedNames": [
 		{
 			"matched_results": [
 				{
@@ -1182,19 +1182,19 @@ __Citation/Source:__		http://resolver.globalnames.org/
 __Service Quality:__
 
  * *Restrictions on capacity:*  __maximum `1000` names allowed__
- * *Restrictions on scope:*     __unknown__ 
  * *Expected response time:*  	__1s~30s__
  * *Informative message/status:*
-   | Case                                               | HTTP status code| Message
-   | ---------------------------------------------------|:---------------:| -------------:|
-   | Successful                                         | 200             | Success       |
-   | Missing value of mandatory parameter               | 400             | Error: '_parameter name_' parameter must have a valid value |
-   | Invalid name of mandatory parameter (e.g. sc_name) | 400             | Error: Missing parameter '_parameter name_' |
-   | Invalid method name in resource URI (e.g. /name)   | 404             | Error: Could not find the requested resource URI |
-   | Reached maximum input limit/capacity               | 403             | Error: Currently more than 1000 names is not supported |
-   | Internal server error                              | 500             |  |
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. sc_name)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Reached maximum input limit       | 403   | Error: Currently more than 1000 names is not supported        |
+   | Invalid method name in resource URI (e.g. /name)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
 
-  > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_resolved_names_) will be an empty list.
+  > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_resolvedNames_) will be an empty list.
 
 ---
 
@@ -1325,18 +1325,18 @@ __Citation/Source:__		https://github.com/OpenTreeOfLife/opentree/wiki/Open-Tree-
 
 __Service Quality:__
 
- * *Restrictions on capacity:*  __maximum `1000` taxa allowed__
- * *Restrictions on scope:*     __unknown__ 
+ * *Restrictions on capacity:*  __maximum `1000` taxa allowed__ 
  * *Expected response time:*  	__1s~30s__
  * *Informative message/status:*
-   | Case                                               | HTTP status code| Message
-   | ---------------------------------------------------|:---------------:| -------------:|
-   | Successful                                         | 200             | Success       |
-   | Missing value of mandatory parameter               | 400             | Error: '_parameter name_' parameter must have a valid value |
-   | Invalid name of mandatory parameter (e.g. tax)     | 400             | Error: Missing parameter '_parameter name_' |
-   | Invalid method name in resource URI (e.g. /get_tre)| 404             | Error: Could not find the requested resource URI |
-   | Reached maximum input limit                        | 403             | Error: Currently more than 1000 taxa is not supported |
-   | Internal server error                              | 500             |  |
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. tax)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Reached maximum input limit       | 403   | Error: Currently more than 1000 names is not supported        |
+   | Invalid method name in resource URI (e.g. /get_tre)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
 
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_newick_) will be an empty string.
 
@@ -1453,17 +1453,17 @@ __Citation/Source:__
 __Service Quality:__
 
  * *Restrictions on capacity:*  __maximum `1000` taxa allowed__
- * *Restrictions on scope:*     __unknown__ 
  * *Expected response time:*  	__1s~30s__
  * *Informative message/status:*
-   | Case                                               | HTTP status code| Message
-   | ---------------------------------------------------|:---------------:| -------------:|
-   | Successful                                         | 200             | Success       |
-   | Missing value of mandatory parameter               | 400             | Error: '_parameter name_' parameter must have a valid value |
-   | Invalid name of mandatory parameter (e.g. tax)     | 400             | Error: Missing parameter '_parameter name_' |
-   | Invalid method name in resource URI (e.g. /get_tre)| 404             | Error: Could not find the requested resource URI |
-   | Reached maximum input limit                        | 403             | Error: Currently more than 1000 taxa is not supported |
-   | Internal server error                              | 500             |  |
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. tax)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Reached maximum input limit       | 403   | Error: Currently more than 1000 names is not supported        |
+   | Invalid method name in resource URI (e.g. /get_tre)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
 
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_newick_) will be an empty string.
 
@@ -1581,17 +1581,18 @@ __Citation/Source:__		http://phylot.biobyte.de/
 
 __Service Quality:__
 
- * *Restrictions on capacity:*  __maximum `250` taxa allowed__ 
+ * *Restrictions on capacity:*  __maximum `30` taxa allowed__ 
  * *Expected response time:*  	__1s~30s__
  * *Informative message/status:*
-   | Case                                               | HTTP status code| Message
-   | ---------------------------------------------------|:---------------:| -------------:|
-   | Successful                                         | 200             | Success       |
-   | Missing value of mandatory parameter               | 400             | Error: '_parameter name_' parameter must have a valid value |
-   | Invalid name of mandatory parameter (e.g. tax)     | 400             | Error: Missing parameter '_parameter name_' |
-   | Invalid method name in resource URI (e.g. /get_tre)| 404             | Error: Could not find the requested resource URI |
-   | Reached maximum input limit                        | 403             | Error: Currently more than 250 taxa is not supported |
-   | Internal server error                              | 500             |  |
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. tax)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Reached maximum input limit       | 403   | Error: Currently more than 30 names is not supported        |
+   | Invalid method name in resource URI (e.g. /get_tre)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
 
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_newick_) will be an empty string.
 
@@ -1860,14 +1861,15 @@ __Service Quality:__
  * *Restrictions on capacity:*  __maximum taxonomic rank allowed: `family`__
  * *Expected response time:*  	__1s~20s__ (_might be longer depending on the rank of input taxon_)
  * *Informative message/status:*
-   | Case                                               | HTTP status code| Message
-   | ---------------------------------------------------|:---------------:| -------------:|
-   | Successful                                         | 200             | Success       |
-   | Missing value of mandatory parameter               | 400             | Error: '_parameter name_' parameter must have a valid value |
-   | Invalid name of mandatory parameter (e.g. tax)     | 400             | Error: Missing parameter '_parameter name_' |
-   | Invalid method name in resource URI (e.g. /all_sp) | 404             | Error: Could not find the requested resource URI |
-   | Reached maximum input limit                        | 403         | Error: Currently input taxon with '_rank name_' rank is not supported |
-   | Internal server error                              | 500             |  |
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. taxa)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Reached maximum input limit       | 403   | Error: Currently input taxon with '_rank name_' rank is not supported        |
+   | Invalid method name in resource URI (e.g. /all_sp)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
 
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_species_) will be an empty list.
 
@@ -1969,14 +1971,15 @@ __Service Quality:__
  * *Restrictions on capacity:*  __maximum taxonomic rank allowed: `family`__ 
  * *Expected response time:*  	__1s~30s__ (_might be longer depending on the rank of input taxon_)
  * *Informative message/status:*
-   | Case                                               | HTTP status code| Message
-   | ---------------------------------------------------|:---------------:| -------------:|
-   | Successful                                         | 200             | Success       |
-   | Missing value of mandatory parameter               | 400             | Error: '_parameter name_' parameter must have a valid value |
-   | Invalid name of mandatory parameter (e.g. tax)     | 400             | Error: Missing parameter '_parameter name_' |
-   | Invalid method name in resource URI (e.g. /coun_sp)| 404             | Error: Could not find the requested resource URI |
-   | Reached maximum input limit                        | 403         | Error: Currently input taxon with '_rank name_' rank is not supported |
-   | Internal server error                              | 500             |  |
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. taxa)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Reached maximum input limit       | 403   | Error: Currently input taxon with '_rank name_' rank is not supported        |
+   | Invalid method name in resource URI (e.g. /coun_sp)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
 
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_species_) will be an empty list.
 
@@ -2239,13 +2242,14 @@ __Service Quality:__
  * *Restrictions on capacity:*  __unknown__ (_depends on the source web service. Tested upto __class__ ranked taxon as input_) 
  * *Expected response time:*  	__1s~20s__ (_might be longer depending on the rank of taxon_)
  * *Informative message/status:*
-   | Case                                               | HTTP status code| Message
-   | ---------------------------------------------------|:---------------:| -------------:|
-   | Successful                                         | 200             | Success       |
-   | Missing value of mandatory parameter               | 400             | Error: '_parameter name_' parameter must have a valid value |
-   | Invalid name of mandatory parameter (e.g. tax)     | 400             | Error: Missing parameter '_parameter name_' |
-   | Invalid method name in resource URI (e.g. /gene_sp)| 404             | Error: Could not find the requested resource URI |
-   | Internal server error                              | 500             |  |
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. taxa)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Invalid method name in resource URI (e.g. /gene_sp)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
 
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_species_) will be an empty list.
 
@@ -2490,7 +2494,6 @@ __Input Format:__ 		application/json
 
 __Output Format:__ 		application/json 
 
-
 __Parameters:__
 
 1. Parameter details:
@@ -2499,7 +2502,8 @@ __Parameters:__
   * __Data Type:__  list of strings
   * __Description:__ list of species names.
  				
- 				
+  > __Note__: The service expects already resolved species names as input to provide the correct output.
+
 __Example Commands/Requests:__
 
 1. 
@@ -2636,22 +2640,22 @@ __Example Results:__
 }
 ```
 
-__Citation/Source:__  	 	
-- http://eol.org/api
+__Citation/Source:__  	 	http://eol.org/api
 
 __Service Quality:__
 
  * *Restrictions on capacity:*  __maximum 30 species allowed__
  * *Expected response time:*  	__1s~25s__
  * *Informative message/status:*
-   | Case                                               | HTTP status code| Message
-   | ---------------------------------------------------|:---------------:| -------------:|
-   | Successful                                         | 200             | Success       |
-   | Missing value of mandatory parameter               | 400             | Error: '_parameter name_' parameter must have a valid value |
-   | Invalid name of mandatory parameter (e.g. specis)  | 400             | Error: Missing parameter '_parameter name_' |
-   | Invalid method name in resource URI (e.g. /getimag)| 404             | Error: Could not find the requested resource URI |
-   | Reached maximum input limit                        | 403             | Error: Currently more than 30 species is not supported |
-   | Internal server error                              | 500             |  |
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. taxa)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Reached maximum input limit        | 403   | Error: Currently more than 30 species is not supported        |
+   | Invalid method name in resource URI (e.g. /gene_sp)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
 
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_species_) will be an empty list.
 
@@ -2792,22 +2796,22 @@ __Example Results:__
 }
 ```
 
-__Citation/Source:__  	 	
-- http://eol.org/api
+__Citation/Source:__  	 	http://eol.org/api
 
 __Service Quality:__
 
  * *Restrictions on capacity:*  __maximum 50 species allowed__
  * *Expected response time:*  	__1s~25s__
  * *Informative message/status:*
-   | Case                                               | HTTP status code| Message
-   | ---------------------------------------------------|:---------------:| -------------:|
-   | Successful                                         | 200             | Success       |
-   | Missing value of mandatory parameter               | 400             | Error: '_parameter name_' parameter must have a valid value |
-   | Invalid name of mandatory parameter (e.g. specis)  | 400             | Error: Missing parameter '_parameter name_' |
-   | Invalid method name in resource URI (e.g. /getlink)| 404             | Error: Could not find the requested resource URI |
-   | Reached maximum input limit                        | 403             | Error: Currently more than 50 species is not supported |
-   | Internal server error                              | 500             |  |
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. specis)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Reached maximum input limit        | 403   | Error: Currently more than 50 species is not supported        |
+   | Invalid method name in resource URI (e.g. /getlink)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
 
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_species_) will be an empty list.
 
@@ -2904,24 +2908,19 @@ __Service Quality:__
  * *Restrictions on capacity:*  __unknown__
  * *Expected response time:*  	__1s~15s__
  * *Informative message/status:*
-   | Case                                               | HTTP status code| Message
-   | ---------------------------------------------------|:---------------:| -------------:|
-   | Successful                                         | 200             | Success       |
-   | Missing value of mandatory parameter               | 400             | Error: '_parameter name_' parameter must have a valid value |
-   | Invalid name of mandatory parameter (e.g. common)  | 400             | Error: Missing parameter '_parameter name_' |
-   | Invalid method name in resource URI (e.g. /scname) | 404             | Error: Could not find the requested resource URI |
-   | Internal server error                              | 500             |  |
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. common)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Invalid method name in resource URI (e.g. /scname)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
 
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_scientific_name_) will be an empty string.
 
-
 ---
 
-**[Species List services](#specieslist)** :  services to publish/remove/update/access lists of species owned by a phylotastic web application/services user.
-
-
-
----
 
 ## <a name='specieslist'></a>Species List Manipulation
 
@@ -3065,16 +3064,17 @@ __Service Quality:__
  * *Restrictions on capacity:*  __none__
  * *Expected response time:*  	__1s~5s__
  * *Informative message/status:*
-   | Case                                               | HTTP status code| Message
-   | ---------------------------------------------------|:---------------:| -------------:|
-   | Successful                                         | 200             | Success       |
-   | Missing value of mandatory parameter               | 400             | Error: '_parameter name_' parameter must have a valid value |
-   | Invalid name of mandatory parameter (e.g. user)    | 400             | Error: Missing parameter '_parameter name_' |
-   | Invalid input JSON data                            | 400             | Invalid JSON document |
-   | Invalid method name in resource URI (e.g. /insert) | 404             | Error: Could not find the requested resource URI |
-   | Internal server error                              | 500             |  |
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. user)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Invalid input JSON data       | 400   | Invalid JSON document        |
+   | Invalid method name in resource URI (e.g. /insert)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
 
-  > __Note__: Validity of the user_id (_gmail address_) in the input request is not checked by the service. The user needs to provide a valid id to retrieve the list later using __list_id__ value returned by the service. 
+   > __Note__: Validity of the user_id (_gmail address_) in the input request is not checked by the service. The user needs to provide a valid id to retrieve the list later using __list_id__ value returned by the service. 
 
 
 ---
@@ -3181,17 +3181,17 @@ __Service Quality:__
  * *Restrictions on capacity:*  __none__
  * *Expected response time:*  	__1s~5s__
  * *Informative message/status:*
-   | Case                                               | HTTP status code| Message
-   | ---------------------------------------------------|:---------------:| -------------:|
-   | Successful                                         | 200             | Success       |
-   | Missing value of mandatory parameter               | 400             | Error: '_parameter name_' parameter must have a valid value |
-   | Invalid name of mandatory parameter (e.g. token)   | 400             | Error: Missing parameter '_parameter name_' |
-   | Invalid input JSON data                            | 400             | Invalid JSON document |
-   | Invalid or expired _access_token_ value            | 401             |  |
-   | Invalid method name in resource URI (e.g. /getlist)| 404             | Error: Could not find the requested resource URI |
-   | Nonexistent _user_id_ or _list_id_ value           | 409             |  |
-   | Internal server error                              | 500             |  |
-
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. token)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Invalid input JSON data       | 400   | Invalid JSON document        |
+   | Invalid or expired _access_token_ value       | 401   |         |
+   | Invalid method name in resource URI (e.g. /getlist)       | 404   | Error: Could not find the requested resource URI        |
+   | Nonexistent _user_id_ or _list_id_ value       | 409   |         |
+   | Internal server error       | 500   |         |
 
 ---
 
@@ -3324,17 +3324,17 @@ __Service Quality:__
  * *Restrictions on capacity:*  __none__
  * *Expected response time:*  	__1s~5s__
  * *Informative message/status:*
-   | Case                                               | HTTP status code| Message
-   | ---------------------------------------------------|:---------------:| -------------:|
-   | Successful                                         | 200             | Success       |
-   | Missing value of mandatory parameter               | 400             | Error: '_parameter name_' parameter must have a valid value |
-   | Invalid name of mandatory parameter (e.g. token)   | 400             | Error: Missing parameter '_parameter name_' |
-   | Invalid input JSON data                            | 400             | Invalid JSON document |
-   | Invalid or expired _access_token_ value            | 401             |  |
-   | Invalid method name in resource URI (e.g. /getlist)| 404             | Error: Could not find the requested resource URI |
-   | Nonexistent _user_id_ or _list_id_ value           | 409             |  |
-   | Internal server error                              | 500             |  |
-
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. token)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Invalid input JSON data       | 400   | Invalid JSON document        |
+   | Invalid or expired _access_token_ value       | 401   |         |
+   | Invalid method name in resource URI (e.g. /replace)       | 404   | Error: Could not find the requested resource URI        |
+   | Nonexistent _user_id_ or _list_id_ value       | 409   |         |
+   | Internal server error       | 500   |         |
 
 ---
 
@@ -3412,17 +3412,17 @@ __Service Quality:__
  * *Restrictions on capacity:*  __none__
  * *Expected response time:*  	__1s~5s__
  * *Informative message/status:*
-   | Case                                               | HTTP status code| Message
-   | ---------------------------------------------------|:---------------:| -------------:|
-   | Successful                                         | 200             | Success       |
-   | Missing value of mandatory parameter               | 400             | Error: '_parameter name_' parameter must have a valid value |
-   | Invalid name of mandatory parameter (e.g. token)   | 400             | Error: Missing parameter '_parameter name_' |
-   | Invalid input JSON data                            | 400             | Invalid JSON document |
-   | Invalid or expired _access_token_ value            | 401             |  |
-   | Invalid method name in resource URI (e.g. /getlist)| 404             | Error: Could not find the requested resource URI |
-   | Nonexistent _user_id_ or _list_id_ value           | 409             |  |
-   | Internal server error                              | 500             |  |
-
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. token)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Invalid input JSON data       | 400   | Invalid JSON document        |
+   | Invalid or expired _access_token_ value       | 401   |         |
+   | Invalid method name in resource URI (e.g. /update)       | 404   | Error: Could not find the requested resource URI        |
+   | Nonexistent _user_id_ or _list_id_ value       | 409   |         |
+   | Internal server error       | 500   |         |
 
 ---
 
@@ -3485,16 +3485,17 @@ __Service Quality:__
  * *Restrictions on capacity:*  __none__
  * *Expected response time:*  	__1s~5s__
  * *Informative message/status:*
-   | Case                                               | HTTP status code| Message
-   | ---------------------------------------------------|:---------------:| -------------:|
-   | Successful                                         | 200             | Success       |
-   | Missing value of mandatory parameter               | 400             | Error: '_parameter name_' parameter must have a valid value |
-   | Invalid name of mandatory parameter (e.g. token)   | 400             | Error: Missing parameter '_parameter name_' |
-   | Invalid input JSON data                            | 400             | Invalid JSON document |
-   | Invalid or expired _access_token_ value            | 401             |  |
-   | Invalid method name in resource URI (e.g. /getlist)| 404             | Error: Could not find the requested resource URI |
-   | Nonexistent _user_id_ or _list_id_ value           | 409             |  |
-   | Internal server error                              | 500             |  |
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. token)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Invalid input JSON data       | 400   | Invalid JSON document        |
+   | Invalid or expired _access_token_ value       | 401   |         |
+   | Invalid method name in resource URI (e.g. /deletelist)       | 404   | Error: Could not find the requested resource URI        |
+   | Nonexistent _user_id_ or _list_id_ value       | 409   |         |
+   | Internal server error       | 500   |         |
 
 ---
 
@@ -3549,7 +3550,7 @@ __Example Results:__
 	"status_code": 200,
 	"scaled_tree": "(Solanum lycopersicum:141.8861801,((Zea mays:106.2589771,Oryza sativa:106.2589771):35.62720301,(Arabidopsis thaliana:117.1887019,(Glycine max:97.3424611,Medicago sativa:97.3424611):19.84624085):24.69747818):0);",
 	"meta_data": {
-		"execution_time": "3.26",
+		"execution_time": 3.26,
 		"creation_time": "2017-10-23T07:49:51.503483",
 		"source_urls": [
 			"http://datelife.org/"
@@ -3567,7 +3568,7 @@ __Example Results:__
 	"status_code": 200,
 	"scaled_tree": "((((Homo sapiens:29.126382,Macaca mulatta:29.126382):69.773618,(((Panthera pardus:6.4,Panthera tigris:6.4):34.300001,Herpestes fuscus:40.700001):24.199999,(Canis lupus pallipes:16.775,Melursus ursinus:16.775):48.125):34):10.65,Elephas maximus:109.55):17.078571,Haliastur indus:126.628571);",
 	"meta_data": {
-		"execution_time": "3.16",
+		"execution_time": 3.16,
 		"creation_time": "2017-10-23T07:50:31.586571",
 		"source_urls": [
 			"http://datelife.org/"
@@ -3586,14 +3587,15 @@ __Service Quality:__
  * *Restrictions on capacity:*  __unknown__ (_depends on the source_)
  * *Expected response time:*  	__1s~10s__ (_might be longer depending on the input tree_)
  * *Informative message/status:*
-   | Case                                               | HTTP status code| Message
-   | ---------------------------------------------------|:---------------:| -------------:|
-   | Successful                                         | 200             | Success       |
-   | Missing value of mandatory parameter               | 400             | Error: '_parameter name_' parameter must have a valid value |
-   | Invalid name of mandatory parameter (e.g. newik)   | 400             | Error: Missing parameter '_parameter name_' |
-   | Invalid input JSON data                            | 400             | Invalid JSON document |
-   | Invalid method name in resource URI (e.g. /scal)   | 404             | Error: Could not find the requested resource URI |
-   | Internal server error                              | 500             |  |
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. newik)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Invalid input JSON data       | 400   | Invalid JSON document        |
+   | Invalid method name in resource URI (e.g. /scal)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
 
 
 ---
@@ -3819,6 +3821,20 @@ __Example Results:__
 
 __Citation/Source:__    https://github.com/OpenTreeOfLife/opentree/wiki/Open-Tree-of-Life-APIs#studies
 
+__Service Quality:__
+
+ * *Restrictions on capacity:*  __unknown__ (_depends on the source_)
+ * *Expected response time:*  	__1s~10s__ (_might be longer depending on the input tree_)
+ * *Informative message/status:*
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. lst)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Invalid input JSON data       | 400   | Invalid JSON document        |
+   | Invalid method name in resource URI (e.g. /study)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
 
 
 ---
@@ -3874,6 +3890,24 @@ __Example Results:__
 	"are_same_tree": true
 }
 ```
+
+__Citation/Source:__  http://dendropy.org/library/treecompare.html#module-dendropy.calculate.treecompare
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*  __unknown__ (_depends on the source_)
+ * *Expected response time:*  	__1s~10s__ (_might be longer depending on the input tree_)
+ * *Informative message/status:*
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. tree_new)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Invalid input JSON data       | 400   | Invalid JSON document        |
+   | Invalid method name in resource URI (e.g. /compar)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
+
 
 ---
 
