@@ -720,7 +720,7 @@ __Example Commands/Requests:__
 
 1. 
 ```bash
-curl -X POST "http://phylo.cs.nmsu.edu:5004/phylotastic_ws/tnrs/ot/names" -H "content-type:application/json" -d '{"scientific_names": ["Setophaga striata","Setophaga megnolia","Setophaga angilae","Setophaga plumbea","Setophaga virens"],"fuzzy_match":true}'
+curl -X POST "http://phylo.cs.nmsu.edu:5004/phylotastic_ws/tnrs/ot/names" -H "content-type:application/json" -d '{"scientificNames": ["Setophaga striata","Setophaga megnolia","Setophaga angilae","Setophaga plumbea","Setophaga virens"],"fuzzy_match":true}'
 ``` 
 
 __Example Results:__
@@ -1127,7 +1127,7 @@ __Example Commands/Requests:__
 
 1. 
 ```bash
-curl -X POST "http://phylo.cs.nmsu.edu:5004/phylotastic_ws/tnrs/gnr/names" -H "content-type:application/json" -d '{"scientific_names": ["Rana Temporaria"],"fuzzy_match":true, "multiple_match":false}'
+curl -X POST "http://phylo.cs.nmsu.edu:5004/phylotastic_ws/tnrs/gnr/names" -H "content-type:application/json" -d '{"scientificNames": ["Rana Temporaria"],"fuzzy_match":true, "multiple_match":false}'
 ``` 
 
 __Example Results:__
