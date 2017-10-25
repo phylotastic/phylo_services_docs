@@ -1296,8 +1296,8 @@ __Example Results:__
 	"status_code": 200,
 	"message": "Success",
 	"meta_data": {
-		"execution_time": 7.61,
-		"creation_time": "2017-10-18T22:57:19.406397",
+		"execution_time": 1.54,
+		"creation_time": "2017-10-24T22:47:06.721292",
 		"source_urls": [
 			"https://github.com/OpenTreeOfLife/opentree/wiki/Open-Tree-of-Life-APIs#tree_of_life"
 		]
@@ -1306,7 +1306,28 @@ __Example Results:__
 		"alignment_method": "NA",
 		"character_matrix": "NA",
 		"rooted": true,
-		"supporting_studies": [],
+		"supporting_studies": [
+			{
+				"PublicationYear": 2010,
+				"FocalCladeTaxonName": "Parulidae",
+				"Publication": "Lovette, Irby J., Jorge L. Pérez-Emán, John P. Sullivan, Richard C. Banks, Isabella Fiorentino, Sergio Córdoba-Córdoba, María Echeverry-Galvis, F. Keith Barker, Kevin J. Burns, John Klicka, Scott M. Lanyon, Eldredge Bermingham. 2010. A comprehensive multilocus phylogeny for the wood-warblers and a revised classification of the Parulidae (Aves). Molecular Phylogenetics and Evolution 57 (2): 753-770.",
+				"CandidateTreeForSynthesis": "tree6024",
+				"PublicationDOI": "http://dx.doi.org/10.1016/j.ympev.2010.07.018",
+				"DataRepository": "",
+				"Curator": "Joseph W. Brown",
+				"PublicationIdentifier": "pg_2591"
+			},
+			{
+				"PublicationYear": 2015,
+				"FocalCladeTaxonName": "Passeriformes",
+				"Publication": "Barker, F. Keith, Kevin J. Burns, John Klicka, Scott M. Lanyon, Irby J. Lovette. 2015. New insights into New World biogeography: An integrated view from the phylogeny of blackbirds, cardinals, sparrows, tanagers, warblers, and allies. The Auk 132 (2): 333-348.",
+				"CandidateTreeForSynthesis": "tree1",
+				"PublicationDOI": "http://dx.doi.org/10.1642/auk-14-110.1",
+				"DataRepository": "http://datadryad.org/resource/doi:10.5061/dryad.pb787",
+				"Curator": "Joseph W. Brown",
+				"PublicationIdentifier": "ot_770"
+			}
+		],
 		"anastomosing": false,
 		"branch_lengths_type": null,
 		"consensus_type": "NA",
