@@ -2759,7 +2759,7 @@ __Example Commands/Requests:__
 
 1. 
 ```bash
-curl -X POST http://phylo.cs.nmsu.edu:5004/phylotastic_ws/si/eol/images -H 'content-type:application/json' -d '{"species": ["Melanerpes erythrocephalus","Melanerpes uropygialis"]}'
+curl -X POST http://phylo.cs.nmsu.edu:5004/phylotastic_ws/si/eol/links -H 'content-type:application/json' -d '{"species": ["Melanerpes erythrocephalus","Melanerpes uropygialis"]}'
 ```
 
 __Example Results:__
