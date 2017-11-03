@@ -19,9 +19,8 @@ __Configure consent screen__. Type a name in __Product name shown to users__ fie
 ![Configure consent screen](https://github.com/phylotastic/phylo_services_docs/blob/master/SpeciesListServer/images/st5_configure_screen.png "Configure consent screen")
 8. Go back to the Credentials page and under __Application type__, choose __Web application__.
 ![Choose Application type](https://github.com/phylotastic/phylo_services_docs/blob/master/SpeciesListServer/images/st7_application_type.png "Choose Application type")
-9. Under __Authorized redirect URIs__, add a line with: ```https://developers.google.com/oauthplayground```. Leave other fields in this page empty.
-10. Click __Create__.
-11. On the page that appears next, take note of the __client ID__ and __client secret__. You'll need these in the next section.
+9. Under __Authorized redirect URIs__, add a line with: ```https://developers.google.com/oauthplayground```. Leave other fields in this page empty. Then click __Create__.
+10. On the page that appears next, take note of the __client ID__ and __client secret__. You'll need these in the next section.
 
 ### <a name='token'></a>Generate tokens:
 
