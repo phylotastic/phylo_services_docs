@@ -54,7 +54,7 @@ https://www.googleapis.com/auth/userinfo.email
 
 15. A value will appear in the __Access token__ field. This value is your desired access token for this gmail account.
 
-> Note that your *Access Token* will expire after certain time limit. In that case you can generate a new access token by clicking on the __Refresh access token__ button. 
+> __Note__ that your *Access Token* will expire after certain time limit. In that case you can generate a new access token by clicking on the __Refresh access token__ button. 
 
 __Citation:__ The above procedure to get access tokens was created using [google developers help guide.](https://developers.google.com/adwords/api/docs/guides/authentication#oauth2_playground)
 </a>
