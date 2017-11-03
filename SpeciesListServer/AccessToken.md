@@ -8,17 +8,17 @@ Getting an Access Token involves mainly two steps. First, users need to acquire 
 1. Open the [Google API Console Credentials page](https://console.developers.google.com/apis/credentials).
 2. Login using your gmail account.
 3. To view Credentials page, select an existing project or create a new one.
-![Select a project](../master/SpeciesListServer/images/st1_select_project.png "Select a project")
+![Select a project](https://github.com/phylotastic/phylo_services_docs/blob/master/SpeciesListServer/images/st1_select_project.png "Select a project")
 4. If you have selected a project, then go to next step. Otherwise, create a new project by giving a project name and clicking __Create__.
-![New project](../master/SpeciesListServer/images/st2_new_project.png "New project")
+![New project](https://github.com/phylotastic/phylo_services_docs/blob/master/SpeciesListServer/images/st2_new_project.png "New project")
 5. If you have already created credentials for an existing project that you selected in the previous step, then click on the name of the project. This will take you to a page where you can get the __client ID__ and __client secret__. Move on to [Generate tokens](#token) section. If you have created a new project then go to next step.
 6. On the Credentials page, select __Create credentials__, then select __OAuth client ID__.
-![Create credentials](../master/SpeciesListServer/images/st4_click_credentials.png "Create credentials")
+![Create credentials](https://github.com/phylotastic/phylo_services_docs/blob/master/SpeciesListServer/images/st4_click_credentials.png "Create credentials")
 7. Creating credentials for the first time for a new project might ask you to set a *product name* on the consent screen. Click on 
 __Configure consent screen__. Type a name in __Product name shown to users__ field and click __Save__.
-![Configure consent screen](../master/SpeciesListServer/images/st5_configure_screen.png "Configure consent screen")
+![Configure consent screen](https://github.com/phylotastic/phylo_services_docs/blob/master/SpeciesListServer/images/st5_configure_screen.png "Configure consent screen")
 8. Go back to the Credentials page and under __Application type__, choose __Web application__.
-![Choose Application type](../master/SpeciesListServer/images/st7_application_type.png "Choose Application type")
+![Choose Application type](https://github.com/phylotastic/phylo_services_docs/blob/master/SpeciesListServer/images/st7_application_type.png "Choose Application type")
 9. Under __Authorized redirect URIs__, add a line with: ```https://developers.google.com/oauthplayground```. Leave other fields in this page empty.
 10. Click __Create__.
 11. On the page that appears next, take note of the __client ID__ and __client secret__. You'll need these in the next section.
