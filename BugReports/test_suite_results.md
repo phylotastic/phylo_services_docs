@@ -1,4 +1,4 @@
-#### How to run the tests:
+### How to run the tests:
 
 1. First, generate the work directory by running the following command.
 
@@ -12,14 +12,14 @@ make work/requests.json
 python tests/test_fn_names_text.py --verbose
 ```
 
-#### Some errors that need to be fixed in case of failure in make command or running tests command:
+### Some errors that need to be fixed in case of failure in make command or running tests command:
 
 1. In line __55__ of __doc_examples.py__ file, there is an extra parenthesis. It needs to be removed to run the make command. 
 2. In line __17__ of __test_fn_names_text.py__ file, resource file name should be `test-sample.txt`. Need to replace `test-sample` with `test-sample.txt`.
 3. In line __4__ of __test_tnrs_gnr_names.py__ file, there is a SyntaxError: EOL while scanning string literal ; missing single quote in sys.path.append('./). Correct it by replacing ```sys.path.append('./)``` with ```sys.path.append('./')``` 
                        
 
-#### Test results: 
+### Test results: 
 
 Below are the results of tests run for individual web services.
 
@@ -1054,22 +1054,24 @@ FAILED (failures=2)
 ---
 
 
-#### Some Comments:
+### Some Comments:
 ----------
 1. test_example_42 in __test_gt_pm_tree.py__ is not the example in the documentation. Source web service fails to get a tree, but the test expected a tree. Source web services with same functionality may differ in output and error. OpenTree and Phylomatic are not same.
 
 2. Some cases where the service is ok, but test cases failed. 
-
-	a) test_bad_names in test_gt_ot_get_tree.py, line 85
-	b) test_some_bad in test_gt_ot_get_tree.py, line 99
-	c) test_bad_name in test_si_eol_get_images.py, line 58
-    d) test_no_parameter in test_sl_eol_get_links.py, line 27
-	e) test_example_17p in test_ts_country_species.py, line 70
-    f) test_example_22_post in test_ts_ncbi_genome_species.py, line 90, 
-		curl -X POST "http://phylo.cs.nmsu.edu:5004/phylotastic_ws/ts/ncbi/genome_species" -d "taxon=Rodentia" 
-		works.
-    g) test_no_parameter in test_tnrs_ot_resolve.py, line 49
-    h) test_no_parameters in tests/test_compare_trees.py" line 20,  
+  * test_bad_names in test_gt_ot_get_tree.py, line 85
+  *	test_some_bad in test_gt_ot_get_tree.py, line 99
+  *	test_bad_name in test_si_eol_get_images.py, line 58
+  * test_no_parameter in test_sl_eol_get_links.py, line 27
+  * test_example_17p in test_ts_country_species.py, line 70
+  * test_example_22_post in test_ts_ncbi_genome_species.py, line 90, 
+		
+   > The following works.
+   ```bash
+   curl -X POST "http://phylo.cs.nmsu.edu:5004/phylotastic_ws/ts/ncbi/genome_species" -d "taxon=Rodentia"
+   ``` 
+  * test_no_parameter in test_tnrs_ot_resolve.py, line 49
+  * test_no_parameters in tests/test_compare_trees.py" line 20,  
 
 3. Error in code : 
 
@@ -1082,10 +1084,5 @@ ImportError: No module named si_eol_get_images.SiEolImagesTester
 
 4. Here the test case expects `400`. But what if the database of the source service does not have a name? How to distinguish between misspelled name and nonexistent name? 
 
->FAIL: test_bad_name (__main__.TestTsAllSpecies)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "tests/test_ts_all_species.py", line 27, in test_bad_name
-    self.assertTrue(x.status_code >= 400, '%s: %s' % (x.status_code, m))
-AssertionError: 200: No Taxon matched with Nosuchtaxonia
+>FAIL: test_bad_name (__main__.TestTsAllSpecies)----------------------------------------------------------------------Traceback (most recent call last):File "tests/test_ts_all_species.py", line 27, in test_bad_name self.assertTrue(x.status_code >= 400, '%s: %s' % (x.status_code, m)) AssertionError: 200: No Taxon matched with Nosuchtaxonia
 
