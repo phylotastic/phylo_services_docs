@@ -1,4 +1,4 @@
-# Phylotastic Web Services Documentation (#servicesdocumentation)
+# [Phylotastic Web Services Documentation](#servicesdocumentation)
  
 If you have a suggestion to improve this documentation or have found any errors in any of the web services, please submit an issue on the
 [repo](https://github.com/phylotastic/phylo_webservices).
@@ -1751,7 +1751,7 @@ __Citation/Source:__		http://www.supersmart-project.org/
 __Service Quality:__
 
  * *Restrictions on capacity:*  __maximum `30` taxa allowed__ 
- * *Expected response time:*  	__10m~30m__
+ * *Expected response time:*  	__10m~30m__ (*might take longer depending on the job queue scheduling*)
  * *Informative message/status:*
    
    | Case | HTTP status code | Message | 
