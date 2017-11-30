@@ -1,4 +1,4 @@
-# Phylotastic Web Services Documentation
+# Phylotastic Web Services Documentation (#servicesdocumentation)
  
 If you have a suggestion to improve this documentation or have found any errors in any of the web services, please submit an issue on the
 [repo](https://github.com/phylotastic/phylo_webservices).
@@ -1616,6 +1616,156 @@ __Service Quality:__
    | Internal server error       | 500   |         |
 
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_newick_) will be an empty string.
+
+---
+
+__Service Name:__  	 		Supersmart_wrapper_Tree
+
+__Service Description:__ 	A service to get Phylogenetic Trees using SUPERSMART tool. SUPERSMART is a self-contained analytical environment for large-scale phylogenetic data mining, taxonomic name resolution, tree inference and fossil-based tree calibration. The SUPERSMART pipeline consists of a number of different steps that can be chained together to infer a phylogenetic tree. This service runs the supersmart commands (taxize, align, orthologize, bbmerge, bbinfer, bbreroot, consense) in a pipeline to get a phylogenetic tree from an input species list.
+
+__Resource URI:__  		<http://phylo.cs.nmsu.edu:5011/phylotastic_ws/gt/smrt/tree>
+
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		application/json
+
+__Output Format:__ 		application/json
+
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">species</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  list of strings
+  * __Description:__ list of scientific names.
+ 			
+ > __Note__: Because of the computationally expensive operations of SUPERSMART tool, this service has been designed as an Asynchronous web service. Upon request, the service API will trigger a long running job in the background and respond to the client immediately with a `202` status code indicating that the request has been accepted for processing, but the processing has not been completed. The response body will provide a __job_status_url__ for the client so that status of the job can be tracked. When the processing is done, the server will create the original tree resource. As soon as the client wants to fetch the status again, the server will return a `303` status code and redirect the user to the location of the actual tree resource.
+ 				
+__Example Commands/Requests:__
+
+1. 
+
+```bash
+curl -X POST http://phylo.cs.nmsu.edu:5011/phylotastic_ws/gt/smrt/tree -H "content-type:application/json" -d '{"species": ["Dendrocygna autumanlis", "Dendrocygna bicolor", "Anser brachyrhynchus", "Chen caerulescens", "Branta bernicula", "Branta leucopsis"]}'
+```
+
+__Example Results:__
+
+1. 
+```json
+{"status_code": 202, "job_status_url": "http://phylo.cs.nmsu.edu:5011/phylotastic_ws/gt/smrt/status?job_id=4fc6140e-833e-4530-bb1a-54e912ab48d1", "job_id": "4fc6140e-833e-4530-bb1a-54e912ab48d1", "job_submission_time": "2017-11-29T20:34:41.838873"}
+```
+
+__Status URI:__  		<http://phylo.cs.nmsu.edu:5011/phylotastic_ws/gt/smrt/status>
+
+__HTTP Method:__ 		GET or POST
+
+__Input Format:__ 		application/x-www-form-urlencoded
+
+__Output Format:__ 		application/json
+
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">job_id</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  string
+  * __Description:__ ID of the job submitted.
+
+
+__Example Commands/Requests:__
+
+1. 
+```
+http://phylo.cs.nmsu.edu:5011/phylotastic_ws/gt/smrt/status?job_id=4fc6140e-833e-4530-bb1a-54e912ab48d1
+```
+
+__Example Results:__
+
+1. 
+```json
+{
+"job_status": "ran smrt align command",
+"total_steps": 12,
+"status_code": 200,
+"job_state": "PROGRESS",
+"tree_id": "4fc61-11292017203441",
+"current_step": 5,
+"message": "Success"
+}
+```
+
+> __Note__: Once the actual tree resource is created, it will be permanently stored in the server and can be accessed using the following URI and `tree_id`.
+
+
+__Tree Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/smrt/trees/{tree_id}>
+
+__HTTP Method:__ 		GET
+
+__Input Format:__ 		application/x-www-form-urlencoded
+
+__Output Format:__ 		application/json 
+
+
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">tree_id</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  string
+  * __Description:__ an ID for the tree resource.
+ 				
+ 				
+__Example Commands/Requests:__
+
+1. 
+```bash
+http://phylo.cs.nmsu.edu:5011/phylotastic_ws/smrt/trees/4fc61-11292017203441
+``` 
+
+__Example Results:__
+
+1. 
+
+```json
+{
+"input_species": [
+"Dendrocygna autumanlis",
+"Dendrocygna bicolor",
+"Anser brachyrhynchus",
+"Chen caerulescens",
+"Branta bernicula",
+"Branta leucopsis"
+],
+"job_id": "4fc6140e-833e-4530-bb1a-54e912ab48d1",
+"execution_time": 2565.4749999,
+"status_code": 200,
+"newick_tree": "((Branta_leucopsis:0.04455,Dendrocygna_bicolor:0.37180):0.00000,(Anser_brachyrhynchus:0.02982,Anser_caerulescens:0.00604):0.04768):0.00000;",
+"tree_id": "4fc61-11292017203441",
+"message": "Success"
+}
+```
+
+__Citation/Source:__		http://www.supersmart-project.org/
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*  __maximum `30` taxa allowed__ 
+ * *Expected response time:*  	__10m~30m__
+ * *Informative message/status:*
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. tax)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Reached maximum input limit       | 403   | Error: Currently more than 30 names is not supported        |
+   | Invalid method name in resource URI (e.g. /get_tre)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
+
+  > __Note__: In case of error conditions in the supersmart tool, no specific HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_newick_tree_) will be an empty string.
+
+<a name='servicesdocumentation'></a>Go to __Top__ .
 
 ---
 
