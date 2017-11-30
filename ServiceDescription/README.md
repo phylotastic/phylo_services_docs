@@ -1,4 +1,4 @@
-# [Phylotastic Web Services Documentation](#servicesdocumentation)
+# <a name='servicesdocumentation'>Phylotastic Web Services Documentation</a>
  
 If you have a suggestion to improve this documentation or have found any errors in any of the web services, please submit an issue on the
 [repo](https://github.com/phylotastic/phylo_webservices).
@@ -1732,7 +1732,7 @@ __Example Results:__
 	"job_id": "4fc6140e-833e-4530-bb1a-54e912ab48d1",
 	"execution_time": 2565.4749999,
 	"status_code": 200,
-	"newick_tree": "((Branta_leucopsis:0.04455,Dendrocygna_bicolor:0.37180):0.00000,	(Anser_brachyrhynchus:0.02982,Anser_caerulescens:0.00604):0.04768):0.00000;",
+	"newick_tree": "((Branta_leucopsis:0.04455,Dendrocygna_bicolor:0.37180):0.00000,(Anser_brachyrhynchus:0.02982,Anser_caerulescens:0.00604):0.04768):0.00000;",
 	"tree_id": "4fc61-11292017203441",
 	"message": "Success"
 }
@@ -1757,7 +1757,7 @@ __Service Quality:__
 
   > __Note__: In case of error conditions in the supersmart tool, no specific HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_newick_tree_) will be an empty string.
 
-<a name='servicesdocumentation'></a>Go to __Top__ .
+Go to [__Top__](#servicesdocumentation).
 
 ---
 
