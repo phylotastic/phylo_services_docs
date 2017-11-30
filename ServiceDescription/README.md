@@ -1695,7 +1695,7 @@ __Example Results:__
 }
 ```
 
-> __Note__: Once the actual tree resource is created, it will be permanently stored in the server and can be accessed using the following URI and `tree_id`.
+> __Note__: Once the actual tree resource is created, it will be permanently stored in the server and can be accessed using the following URI. The `{tree_id}` in the URI must be replaced by a valid __tree_id__. 
 
 
 __Tree Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/smrt/trees/{tree_id}>
@@ -1707,14 +1707,6 @@ __Input Format:__ 		application/x-www-form-urlencoded
 __Output Format:__ 		application/json 
 
 
-__Parameters:__
-
-1. Parameter details:
-  * __Name:__ 	 	<span style="color:blue">tree_id</span> 
-  * __Category:__  	mandatory
-  * __Data Type:__  string
-  * __Description:__ an ID for the tree resource.
- 				
  				
 __Example Commands/Requests:__
 
