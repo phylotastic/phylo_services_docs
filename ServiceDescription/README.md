@@ -1685,13 +1685,13 @@ __Example Results:__
 1. 
 ```json
 {
-"job_status": "ran smrt align command",
-"total_steps": 12,
-"status_code": 200,
-"job_state": "PROGRESS",
-"tree_id": "4fc61-11292017203441",
-"current_step": 5,
-"message": "Success"
+	"job_status": "ran smrt align command",
+	"total_steps": 12,
+	"status_code": 200,
+	"job_state": "PROGRESS",
+	"tree_id": "4fc61-11292017203441",
+	"current_step": 5,
+	"message": "Success"
 }
 ```
 
@@ -1719,7 +1719,7 @@ __Parameters:__
 __Example Commands/Requests:__
 
 1. 
-```bash
+```
 http://phylo.cs.nmsu.edu:5011/phylotastic_ws/smrt/trees/4fc61-11292017203441
 ``` 
 
@@ -1729,20 +1729,20 @@ __Example Results:__
 
 ```json
 {
-"input_species": [
-"Dendrocygna autumanlis",
-"Dendrocygna bicolor",
-"Anser brachyrhynchus",
-"Chen caerulescens",
-"Branta bernicula",
-"Branta leucopsis"
-],
-"job_id": "4fc6140e-833e-4530-bb1a-54e912ab48d1",
-"execution_time": 2565.4749999,
-"status_code": 200,
-"newick_tree": "((Branta_leucopsis:0.04455,Dendrocygna_bicolor:0.37180):0.00000,(Anser_brachyrhynchus:0.02982,Anser_caerulescens:0.00604):0.04768):0.00000;",
-"tree_id": "4fc61-11292017203441",
-"message": "Success"
+	"input_species": [
+		"Dendrocygna autumanlis",
+		"Dendrocygna bicolor",
+		"Anser brachyrhynchus",
+		"Chen caerulescens",
+		"Branta bernicula",
+		"Branta leucopsis"
+	],
+	"job_id": "4fc6140e-833e-4530-bb1a-54e912ab48d1",
+	"execution_time": 2565.4749999,
+	"status_code": 200,
+	"newick_tree": "((Branta_leucopsis:0.04455,Dendrocygna_bicolor:0.37180):0.00000,	(Anser_brachyrhynchus:0.02982,Anser_caerulescens:0.00604):0.04768):0.00000;",
+	"tree_id": "4fc61-11292017203441",
+	"message": "Success"
 }
 ```
 
