@@ -236,3 +236,15 @@ if __name__ == '__main__':
 
   	call_service(inputData)
 ```
+
+__Example:__ *(Call a service to find scientific names from a file using GNRD)*
+
+```python
+import requests
+
+upload_url = 'http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/names_file'
+file_ = {'inputFile': ('hipmctn12481.pdf', open('./test_data/hipmctn12481.pdf', 'rb'))}
+r = requests.post(upload_url, data={'engine': 2},files=file_, headers={"Content-Encoding": "multipart/form-data"})
+
+print (r.text)
+```
