@@ -23,6 +23,8 @@ python tests/test_fn_names_text.py --verbose
 
 Below are the results of tests run for individual web services.
 
+#### GNRD_wrapper_text web service
+
 __Command__:
 
 ```bash
@@ -34,7 +36,7 @@ __Result__:
 Read 50 requests from work/requests.json
 No exhanges file: work/exchanges.json
 test_engines (__main__.TestFnNamesText)
-It looks like engines 6, 7, and 8 are all the same. ... ok
+It looks like engines 6, 7, and 8 are all the same. ... FAIL
 test_example_4 (__main__.TestFnNamesText) ... ok
 test_example_5 (__main__.TestFnNamesText) ... ok
 test_large_input (__main__.TestFnNamesText)
@@ -42,15 +44,31 @@ Test large input. ... ok
 test_no_parameter (__main__.TestFnNamesText)
 No parameters.  Should yield some kind of error. ... ok
 
-Slowest exchange for http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/names_text: 1.23893713951
+Slowest exchange for http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/names_text: 1.83883500099
+
+======================================================================
+FAIL: test_engines (__main__.TestFnNamesText)
+It looks like engines 6, 7, and 8 are all the same.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "tests/test_fn_names_text.py", line 58, in test_engines
+    self.assert_success(x)
+  File "./webapp.py", line 244, in assert_success
+    self.assert_response_status(x, 200, message)
+  File "./webapp.py", line 263, in assert_response_status
+    self.assertEqual(x.status_code, code, message)
+AssertionError: 400 Error: 'engine' parameter must have a valid value
 
 ----------------------------------------------------------------------
-Ran 5 tests in 10.844s
+Ran 5 tests in 7.368s
 
-OK
+FAILED (failures=1)
 ```
+> __Note__: Previously __engine__ parameter was not checked for valid values in the server side. Later it was fixed in the web service. But the test_case *test_engines* assumes values other than permitted ones to be valid. That's why it fails. The test case need to be rewritten.
 
 ---
+
+#### GNRD_wrapper_url web service
 
 __Command__:
 
@@ -86,7 +104,10 @@ Ran 8 tests in 259.482s
 
 OK
 ```
+
 --- 
+
+#### Phylomatic_wrapper_tree (GET) web service
 
 __Command__:
 
@@ -137,6 +158,8 @@ OK (skipped=7)
 ```
 
 ---
+
+#### Phylomatic_wrapper_tree (POST) web service
 
 __Command__:
 
@@ -222,7 +245,11 @@ FAILED (failures=3, skipped=7)
 =========================================================
 ```
 
+> __Note__: Test case *test_example_42* in __test_gt_pm_tree.py__ is not the example in the documentation. Source web service fails to get a tree, but the test expected a tree. Source web services with same functionality may differ in output and error messages. OpenTreeofLife and Phylomatic are not same. So test case need to be rewritten. The *test_some_bad* test case should be ok. But it fails. Probably bug in line 99 of __"test_gt_ot_get_tree.py"__ file.
+
 ---
+
+#### Image_species (GET) web service
 
 __Command__:
 
@@ -321,7 +348,66 @@ Ran 11 tests in 3.039s
 FAILED (failures=6, skipped=1)
 ```
 
+> __Note__: Test case *test_bad_method* should be ok now. It has been fixed in the web service to provide `405` status code in case of bad method. Still the test case fails. Probably bug in __"test_si_eol_get_images.py"__ file. Test case *test_bad_value_type* should only be tested for POST method, not GET method. So this test case need to be rewritten. Test case *test_bad_name* fails while the service returns expected behavior. Probably bug in line 58 of __"test_si_eol_get_images.py"__ file.
+
 ---
+
+#### Image_species (POST) web service
+
+__Command__:
+
+```bash
+python tests/test_si_eol_images.py --verbose
+```
+__Result__:
+
+Traceback (most recent call last): File "tests/test_si_eol_images.py", line 14, 
+  in <module> import si_eol_get_images.SiEolImagesTester
+     ImportError: No module named si_eol_get_images.SiEolImagesTester
+
+> __Note__: Error in test case code.Error in test case code.
+
+
+---
+
+#### Link_species (GET) web service
+
+__Command__:
+
+```bash
+python tests/test_sl_eol_get_links.py --verbose
+```
+__Result__:
+
+```
+Read 50 requests from work/requests.json
+No exhanges file: work/exchanges.json
+test_bad_parameter (__main__.SlEolGetLinksTester)
+What if the supplied parameter has the wrong name?  (Hoping for 400.) ... skipped "can't test superclass"
+test_bad_species (__main__.SlEolGetLinksTester)
+What if the species name is unknown? ... skipped "can't test superclass"
+test_no_parameter (__main__.SlEolGetLinksTester)
+What if no parameters are supplied?  (Hoping for 400.) ... skipped "can't test superclass"
+skipped "can't test superclass"
+test_bad_parameter (__main__.TestSlEolGetLinks)
+What if the supplied parameter has the wrong name?  (Hoping for 400.) ... ok
+test_bad_species (__main__.TestSlEolGetLinks)
+What if the species name is unknown? ... ok
+test_example_23 (__main__.TestSlEolGetLinks) ... ok
+test_no_parameter (__main__.TestSlEolGetLinks)
+What if no parameters are supplied?  (Hoping for 400.) ... ok
+
+Slowest exchange for http://phylo.cs.nmsu.edu:5004/phylotastic_ws/sl/eol/get_links: 0.726578950882
+
+----------------------------------------------------------------------
+Ran 7 tests in 1.422s
+
+OK (skipped=4)
+```
+
+---
+
+#### Link_species (POST) web service
 
 __Command__:
 
@@ -376,7 +462,11 @@ Ran 7 tests in 5.701s
 FAILED (failures=2, skipped=4)
 ```
 
+> __Note__: Test case *test_bad_species* has been fixed in the web service to provide `400` status code in case of bad species. The test case need to be rewritten. Test case *test_no_parameter* should be ok. But it fails. Probably bug in line 27 of __"test_sl_eol_get_links.py"__ file.
+
 ---
+
+#### Taxon_all_species web service
 
 __Command__:
 
@@ -418,7 +508,12 @@ Ran 6 tests in 4.093s
 
 FAILED (failures=1, skipped=1)
 ```
+
+> __Note__: Here the test case *test_bad_name* expects `400` status code. But the phylotastic service let the source web service match the input taxon name. If name is not found, it still returns `200` status code with an empty matched name string. This behavior is also observed in other web services (e.g. NCBI). One possible solution is to modify phylotastic service to do an extra check with a TNRS service to ensure the validity of the input taxon name and return `400` status code in case it could not resolve. But what if the database of the source service does not have the input taxon name? How to distinguish between misspelled or bad name and nonexistent name? May be rewriting the test case is better. 
+
 ---
+
+#### Taxon_country_species web service
 
 __Command__:
 
@@ -468,8 +563,12 @@ Ran 6 tests in 1.166s
 
 FAILED (failures=2, skipped=1)
 ```
+ 
+> __Note__: Test case *test_example_17p* should be ok. But it fails. Probably bug in line 70 of __"test_ts_country_species.py"__ file. Test case *test_bad_taxon* has the same issue as in *test_bad_name* case of taxon_all_species service.
 
 ---
+
+#### Taxon_genome_species web service
 
 __Command__:
 
@@ -483,7 +582,7 @@ __Result__:
 Read 50 requests from work/requests.json
 No exhanges file: work/exchanges.json
 test_bad_parameter_name (__main__.TestTsNcbiGenomeSpecies)
-What if we give it an unknown parameter name? ... FAIL
+What if we give it an unknown parameter name? ... ok
 test_bad_taxon (__main__.TestTsNcbiGenomeSpecies)
 What if the taxon is unknown? ... FAIL
 test_example_21 (__main__.TestTsNcbiGenomeSpecies) ... ok
@@ -492,16 +591,7 @@ test_example_22_post (__main__.TestTsNcbiGenomeSpecies) ... FAIL
 test_no_parameter (__main__.TestTsNcbiGenomeSpecies)
 What is we give the service no parameters?  Hoping for 400. ... ok
 
-Slowest exchange for http://phylo.cs.nmsu.edu:5004/phylotastic_ws/ts/ncbi/genome_species: 6.7264020443
-
-======================================================================
-FAIL: test_bad_parameter_name (__main__.TestTsNcbiGenomeSpecies)
-What if we give it an unknown parameter name?
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "tests/test_ts_ncbi_genome_species.py", line 41, in test_bad_parameter_name
-    self.assertEqual(x.status_code, 400, mess)
-AssertionError: Success
+Slowest exchange for http://phylo.cs.nmsu.edu:5004/phylotastic_ws/ts/ncbi/genome_species: 1.91208291054
 
 ======================================================================
 FAIL: test_bad_taxon (__main__.TestTsNcbiGenomeSpecies)
@@ -525,12 +615,16 @@ Traceback (most recent call last):
 AssertionError: 400 Error: Missing parameter 'taxon'
 
 ----------------------------------------------------------------------
-Ran 6 tests in 12.276s
+Ran 6 tests in 5.331s
 
-FAILED (failures=3)
+FAILED (failures=2)
 ```
 
+> __Note__: Test case *test_example_22_post* should be ok. But it fails. Probably bug in line 90 of __"test_ts_ncbi_genome_species.py"__ file. Test case *test_bad_taxon* has the same issue as in *test_bad_name* case of taxon_all_species service.
+
 ---
+
+#### TNRS_OT_wrapper (POST) web service
 
 __Command__:
 
@@ -586,7 +680,11 @@ Ran 12 tests in 2.557s
 FAILED (failures=1, skipped=7)
 ```
 
+> __Note__: Test case *test_no_parameter* should be ok. But it fails. Probably bug in line 49 of __"test_tnrs_ot_resolve.py"__ file.
+
 ---
+
+#### TNRS_OT_wrapper (GET) web service
 
 __Command__:
 
@@ -634,6 +732,8 @@ OK (skipped=7)
 
 ---
 
+#### TNRS_GNR_wrapper (GET) web service
+
 __Command__:
 
 ```bash
@@ -677,6 +777,27 @@ OK (skipped=7)
 ```
 
 ---
+
+#### TNRS_GNR_wrapper (POST) web service
+
+__Command__:
+
+```bash
+python tests/test_tnrs_gnr_names.py --verbose
+```
+
+__Result__:
+
+Traceback (most recent call last):
+  File "tests/test_tnrs_gnr_names.py", line 11, in <module>
+    class TestTnrsGnrNames(webapp.TnrsTester):
+AttributeError: 'module' object has no attribute 'TnrsTester'
+
+> __Note__: Error in test case code.
+
+---
+
+#### OToL_wrapper_tree (GET) web service
 
 __Command__:
 
@@ -726,6 +847,8 @@ OK (skipped=7)
 ```
 
 ---
+
+####  OToL_wrapper_Tree (POST) web service
 
 __Command__:
 
@@ -818,7 +941,11 @@ Ran 16 tests in 17.824s
 FAILED (failures=3, skipped=7)
 ```
 
+> __Note__: Test cases *test_bad_names* and *test_some_bad* should be ok. But they fails. Probably bug is test files.
+   
 ---
+
+####  PhyloT_wrapper_Tree (GET) web service
 
 __Command__:
 
@@ -869,6 +996,8 @@ OK (skipped=7)
 ```
 
 ---
+
+####  PhyloT_wrapper_Tree (POST) web service
 
 __Command__:
 
@@ -940,7 +1069,11 @@ Ran 15 tests in 16.284s
 FAILED (failures=2, skipped=7)
 ```
 
+> __Note__: Test cases *test_bad_names* and *test_some_bad* should be ok. But they fails. Probably bug is test files.
+
 ---
+
+#### Compare Trees web service
 
 __Command__:
 
@@ -954,14 +1087,14 @@ __Result__:
 Read 50 requests from work/requests.json
 No exhanges file: work/exchanges.json
 test_bogus_newick (__main__.TestCompareTrees)
-What if the Newick is bad? ... FAIL
+What if the Newick is bad? ... ok
 test_different (__main__.TestCompareTrees)
 Does it always say the trees are the same? (It shouldn't.) ... {
   "status_code": 200, 
   "message": "Success", 
   "meta_data": {
     "execution_time": 0.0, 
-    "creation_time": "2017-11-29T19:43:56.425160", 
+    "creation_time": "2017-12-05T17:46:29.517499", 
     "source_urls": [
       "http://dendropy.org/library/treecompare.html#module-dendropy.calculate.treecompare"
     ]
@@ -975,18 +1108,7 @@ test_no_parameters (__main__.TestCompareTrees)
 What if no parameters are supplied? ... FAIL
 test_no_parameters_2 (__main__.TestCompareTrees) ... ok
 
-Slowest exchange for http://phylo.cs.nmsu.edu:5006/phylotastic_ws/compare_trees: 0.223650217056
-
-======================================================================
-FAIL: test_bogus_newick (__main__.TestCompareTrees)
-What if the Newick is bad?
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "tests/test_compare_trees.py", line 40, in test_bogus_newick
-    self.assert_response_status(x, 400)
-  File "/home/tayeen/tryphy-master/webapp.py", line 263, in assert_response_status
-    self.assertEqual(x.status_code, code, message)
-AssertionError: 500 Error: global name 'Error' is not defined
+Slowest exchange for http://phylo.cs.nmsu.edu:5006/phylotastic_ws/compare_trees: 1.25832700729
 
 ======================================================================
 FAIL: test_no_parameters (__main__.TestCompareTrees)
@@ -995,17 +1117,20 @@ What if no parameters are supplied?
 Traceback (most recent call last):
   File "tests/test_compare_trees.py", line 20, in test_no_parameters
     self.assert_response_status(x, 400)
-  File "/home/tayeen/tryphy-master/webapp.py", line 263, in assert_response_status
+  File "./webapp.py", line 263, in assert_response_status
     self.assertEqual(x.status_code, code, message)
 AssertionError: 500 Error: 'NoneType' object has no attribute '__getitem__'
 
 ----------------------------------------------------------------------
 Ran 6 tests in 2.102s
 
-FAILED (failures=2)
+FAILED (failures=1)
 ```
+> __Note__: The service returns `400` status code in case of no parameters. The *test_no_parameters* test case should be ok. But it fails. Probably bug in __"tests/test_compare_trees.py"__ file.
 
 ---
+
+#### Tree Scale web service
 
 __Command__:
 
@@ -1024,17 +1149,15 @@ test_example_47 (__main__.TestScScale) ... ok
 test_no_parameters (__main__.TestScScale) ... FAIL
 test_no_parameters_2 (__main__.TestScScale) ... ok
 
-Slowest exchange for http://phylo.cs.nmsu.edu:5009/phylotastic_ws/sc/scale: 3.78632187843
+Slowest exchange for http://phylo.cs.nmsu.edu:5009/phylotastic_ws/sc/scale: 3.43599390984
 
 ======================================================================
 FAIL: test_bogus_newick (__main__.TestScScale)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "tests/test_sc_scale.py", line 34, in test_bogus_newick
-    self.assert_response_status(x, 400)
-  File "/home/tayeen/tryphy-master/webapp.py", line 263, in assert_response_status
-    self.assertEqual(x.status_code, code, message)
-AssertionError: 500 Error: Failed to scale from datelife R package
+  File "tests/test_sc_scale.py", line 39, in test_bogus_newick
+    self.assertTrue('yntax' in mess, mess)
+AssertionError: NewickReaderIncompleteTreeStatementError: Error parsing data source on line 1 at column 7: Incomplete or improperly-terminated tree statement (last character read was ')' instead of a semi-colon ';')
 
 ======================================================================
 FAIL: test_no_parameters (__main__.TestScScale)
@@ -1042,47 +1165,17 @@ FAIL: test_no_parameters (__main__.TestScScale)
 Traceback (most recent call last):
   File "tests/test_sc_scale.py", line 22, in test_no_parameters
     self.assert_response_status(x, 400, mess)
-  File "/home/tayeen/tryphy-master/webapp.py", line 263, in assert_response_status
+  File "./webapp.py", line 263, in assert_response_status
     self.assertEqual(x.status_code, code, message)
 AssertionError: Error: 'NoneType' object has no attribute '__getitem__'
 
 ----------------------------------------------------------------------
-Ran 5 tests in 5.616s
+Ran 5 tests in 7.319s
 
 FAILED (failures=2)
 ```
+
+> __Note__: The service returns `400` status code in case of no parameters. The *test_no_parameters* test case should be ok. But it fails. Probably bug in __"tests/test_sc_scale.py"__ file. Test case *test_bogus_newick* need to be rewritten.
+
 ---
-
-
-### Some Comments:
-----------
-1. test_example_42 in __test_gt_pm_tree.py__ is not the example in the documentation. Source web service fails to get a tree, but the test expected a tree. Source web services with same functionality may differ in output and error. OpenTree and Phylomatic are not same.
-
-2. Some cases where the service is ok, but test cases failed. 
-  * test_bad_names in test_gt_ot_get_tree.py, line 85
-  *	test_some_bad in test_gt_ot_get_tree.py, line 99
-  *	test_bad_name in test_si_eol_get_images.py, line 58
-  * test_no_parameter in test_sl_eol_get_links.py, line 27
-  * test_example_17p in test_ts_country_species.py, line 70
-  * test_example_22_post in test_ts_ncbi_genome_species.py, line 90, 
-		
-   > The following works.
-   ```bash
-   curl -X POST "http://phylo.cs.nmsu.edu:5004/phylotastic_ws/ts/ncbi/genome_species" -d "taxon=Rodentia"
-   ``` 
-  * test_no_parameter in test_tnrs_ot_resolve.py, line 49
-  * test_no_parameters in tests/test_compare_trees.py" line 20,  
-
-3. Error in code : 
-
-```bash
-python tests/test_si_eol_images.py --verbose
-``` 
-
-> Traceback (most recent call last): File "tests/test_si_eol_images.py", line 14, in <module> import si_eol_get_images.SiEolImagesTester
-ImportError: No module named si_eol_get_images.SiEolImagesTester
-
-4. Here the test case expects `400`. But what if the database of the source service does not have a name? How to distinguish between misspelled name and nonexistent name? 
-
->FAIL: test_bad_name (__main__.TestTsAllSpecies)----------------------------------------------------------------------Traceback (most recent call last):File "tests/test_ts_all_species.py", line 27, in test_bad_name self.assertTrue(x.status_code >= 400, '%s: %s' % (x.status_code, m)) AssertionError: 200: No Taxon matched with Nosuchtaxonia
 
