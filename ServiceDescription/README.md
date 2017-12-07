@@ -29,7 +29,7 @@ __Phylotastic Web Services__ are grouped into the following categories:
 
 __Service Name:__  	 	GNRD_wrapper_URL
 
-__Service Description:__ 	A service to extract scientific names from URL of a web page or a file(e.g. PDF, Microsoft Office documents, images) using Global Names Recognition and Discovery (GNRD) services.
+__Service Description:__ 	A service to extract scientific names from URL of a web page using Global Names Recognition and Discovery (GNRD) services.
 
 __Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/names_url>
 
@@ -416,6 +416,107 @@ __Service Quality:__
 
  * *Restrictions on capacity:*  __unknown__ (_depends on the source web service_)
  * *Restrictions on scope:*     __accepts english text content as input__ 
+ * *Expected response time:*  	__0.5s~10s__
+ * *Informative message/status:*
+  
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. txt)       | 400   | Error: Missing parameter '_parameter name_'        | 
+   | Invalid method name in resource URI (e.g. /nme_txt)       | 404   | Error: Could not find the requested resource URI        | 
+   | Internal server error       | 500   |         |
+
+  > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_scientificNames_) will be an empty list.
+
+Go to [__Top__](#servicesdocumentation).
+
+---
+
+__Service Name:__  	 	GNRD_wrapper_file
+
+__Service Description:__ 	A service to extract scientific names from a file(e.g. text, PDF, Microsoft Office documents, images) using Global Names Recognition and Discovery (GNRD) services.
+
+__Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/names_file>
+
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		Content-Encoding: "multipart/form-data"
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">inputFile</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  string
+  * __Description:__  path to the location of the file (e.g. @/to/local/file.txt)
+ 				
+2. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">engine</span> 
+  * __Category:__  	optional
+  * __Data Type:__  integer
+  * __Description:__  a integer value to specify which search engine (_TaxonFinder_ or _NetiNeti_) to use. By default it is `0` which means it will use both engines. Value `1` means TaxonFinder and value `2` means NetiNeti.
+ 				
+__Example Commands/Requests:__
+
+1. 
+```bash
+curl -X POST http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/names_file -F 'inputFile=@scnames.txt' -F 'engine=2'
+```
+
+2. 
+```bash
+curl -X POST http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/names_file -F 'inputFile=@hipmctn12481.pdf' -F 'engine=1'
+```
+
+__Example Results:__
+
+1. 
+```json
+{
+	"status_code": 200, 
+	"input_url": "http://phylo.cs.nmsu.edu:8080/upload/scnames.txt", 
+	"scientificNames": [
+		"Formicidae", 
+		"Solenopsis invicta", 
+		"Apoidea", 
+		"Sphecomyrma", 
+		"Sphecomyrminae", 
+		"Leptanillinae", 
+		"Martialinae"
+		], 	 	 
+	"meta_data": {
+		"execution_time": 0.57, 
+		"creation_time": "2017-12-07T09:55:35.779422", 
+		"source_urls": ["http://gnrd.globalnames.org/"]
+	}, 
+	"total_names": 7, 
+	"message": "Success", 
+	"gnrd_parameters": {
+		"engine": 2, 
+		"best_match_only": false, 
+		"data_source_ids": [], 
+		"detect_language": true, 
+		"preferred_data_sources": [], 
+		"all_data_sources": false, 
+		"return_content": false
+	}
+}
+``` 
+
+2. 
+```json
+{"status_code": 200, "input_url": "http://phylo.cs.nmsu.edu:8080/upload/hipmctn12481.pdf", "scientificNames": ["Acacia koa", "Acacia koaia", "Acacia mangium", "Acalypha", "Ajuga reptans", "Aleurites moluccana", "Alpinia zerumbet", "Arachis glabrata", "Arachis pintoi", "Araucaria columnaris", "Araucaria heterophylla", "Artocarpus altilis", "Artocarpus", "Atriplex semibaccata", "Avena sativa", "Axonopus affinis", "Axonopus fissifolius", "Axonopus compressus", "Azadirachta indica", "Bambusa", "Bougainvillea spectabilis", "Bromus inermis", "Bromus wildenowii", "Cajanus cajan", "Callitris", "Calophyllum inophyllum", "Canthium odoratum", "Psydrax odorata", "Caryota mitis", "Casuarina cunninghamiana", "Casuarina equisetifolia", "Cenchrus ciliaris", "Pennisetum ciliare", "Chenopodium oahuense", "Chloris gayana", "Chrysalidocarpus", "Chrysopogon zizanioides", "Vetiveria zizanioides", "Cibotium menziesii", "Citrus", "Cocos nucifera", "Codium variegatum", "Coix lachryma", "Cordia subcordata", "Cordyline fruticosa", "Crotalaria juncea", "Croton reflexifolius", "Cunninghamia lanceolata", "Cupressus lusitanica", "Cupressus macrocarpa", "Cupressus", "Cymbopogon citratus", "Cynodon dactylon", "Cynodon nlemfuensis", "Cyperus javanicus", "Cyperus polystachyos", "Dactylis glomerata", "Desmodium heterophyllum", "Desmodium intortum", "Desmodium aparines", "Desmodium triflorum", "Dichondra repens", "Digitaria eriantha", "Dimorphotheca sinuata", "Dodonaea viscosa", "Dracaena fragans", "Echinochloa colona", "Echinochloa crus-galli", "Eleocharis geniculata", "Eragrostis variabilis", "Eremochloa ophiuroides", "Erythrina sandwicensis", "Erythrina variegata", "Eucalyptus camaldulensis", "Eucalyptus dunnii", "Eucalyptus robusta", "Eucalyptus", "Fagopyrum esculentum", "Filicium decipiens", "Fimbristylis littoralis", "Flueggea flexuosa", "Fragaria chiloensis", "Gliricidia sepium", "Glycine max", "Gossypium tomentosum", "Hemarthria altissima", "Hemerocallis aurantiaca", "Hibiscus arnottianus", "Hibiscus rosa-sinensis", "Intsia bijuga", "Ipomea pes-caprae", "Ischaemum polystachyum", "Ischaemum digitatum", "Jacquemontia ovalifolia subsp. sandwicensis", "Juncus effusus", "Lablab purpureus", "Lippia nodiflora", "Lolium multiflorum", "Lolium perenne", "Lophostemon confertus", "Tristania conferta", "Lotus pedunculatus", "Lycium sandwicense", "Medicago sativa", "Metrosideros polymorpha", "Morinda citrifolia", "Myoporum sandwicense", "Nerium oleander", "Opuntia ficus-indica", "Oryza sativa", "Osteomeles anthyllidifolia", "Osteospermum fruticosum", "Pandanus tectorius", "Paspalum hieronymii", "Paspalum orbiculare", "Paspalum vaginatum", "Pennisetum purpureum", "Pennisetum glaucum", "Persea americana", "Piper methysticum", "Plumeria obtusa", "Podocarpus", "Polygonum minus var. procerum", "Polyscias guilfoylei", "Nothopanax guilfoylei", "Portulaca grandiflora", "Pouteria sandwicensis", "Premna obtusifolia", "Premna serratifolia", "Pritchardia", "Ptychosperma macarthurii", "Rumex acetosella", "Saccharum", "Samanea saman", "Albizia saman", "Sapindus saponaria", "Scaevola sericea", "Scirpus maritimus var. paludosus", "Scleria", "Secale cereale", "Senna guadichaudii", "Sesbania tomentosa", "Sesbania tomentosa f. arborea", "Setaria verticillata", "Sida fallax", "Sophora chrysophylla", "Sorghum bicolor", "Sporobolus virginicus", "Stenotaphrum", "Stylosanthes scabra", "Styphelia tameiameiae", "Swietenia macrophylla", "Swietenia mahagoni", "Syzygium paniculatum", "Eugenia myrtifolia", "Tabebuia heterophylla", "Tamarindus indica", "Terminalia catappa", "Thespesia populnea", "Tournefortia argentea", "Tradescantia spathacea", "Trifolium repens", "Triticum aestivum", "Urochloa brizantha", "Brachiaria brizantha", "Urochloa maxima", "Panicum maximum var. trichoglume", "Panicum maximum", "Vaccinium reticulatum", "Vicia villosa ssp. varia", "Vigna marina", "Vigna unguiculata", "Vitex rotundifolia", "Vitex ovata", "Vitex trifolia var. variegata", "Waltheria indica", "Wikstroemia uva-ursi", "Zea mays", "Zoysia japonica", "Canthium", "Aleurites molucana", "Artocarpus heterophyllum", "Casuarina", "Cibotium", "Coccoloba uvifera", "Dracaena fragrans", "Heteropogon contortus", "Hibiscus", "Melilotus", "Hala", "Scirpus maritimus var. paludosus makai", "S. bicolor", "Vigna"], "meta_data": {"execution_time": 2.79, "creation_time": "2017-12-07T09:54:33.876151", "source_urls": ["http://gnrd.globalnames.org/"]}, "total_names": 193, "message": "Success", "gnrd_parameters": {"engine": 1, "best_match_only": false, "data_source_ids": [], "detect_language": true, "preferred_data_sources": [], "all_data_sources": false, "return_content": false}}
+```
+
+__Citation/Source:__  	 		http://gnrd.globalnames.org/
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*  __unknown__ (_depends on the source web service_)
+ * *Restrictions on scope:*     __accepts files (text, pdf, images, doc) as input__ 
  * *Expected response time:*  	__0.5s~10s__
  * *Informative message/status:*
   
