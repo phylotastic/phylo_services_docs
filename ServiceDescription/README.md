@@ -578,7 +578,7 @@ __Example Results:__
 		]
 	},
 	"total_names": 53,
-	"scientific_names": [
+	"scientificNames": [
 		"Macaca sinica",
 		"Animalia",
 		"Chordata",
@@ -703,7 +703,7 @@ __Example Results:__
         ]
     },
     "total_names":3,
-    "scientific_names":[
+    "scientificNames":[
         "Chondrichthyes",
         "Etmopterus perryi",
         "Rhincodon"
