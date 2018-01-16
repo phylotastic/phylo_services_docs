@@ -536,7 +536,7 @@ Go to [__Top__](#servicesdocumentation).
 
 __Service Name:__  	 	TaxonFinder_wrapper_URL
 
-__Service Description:__ 	A service to extract scientific names from URL of a web page using Global Names Recognition and Discovery (GNRD) services.
+__Service Description:__ 	A service to extract scientific names from URL of a web page using TaxonFinder API.
 
 __Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/tf/names_url>
 
@@ -662,7 +662,7 @@ Go to [__Top__](#servicesdocumentation).
 
 __Service Name:__  	 	TaxonFinder_wrapper_text
 
-__Service Description:__ 	A service to extract scientific names on free-form text using Global Names Recognition and Discovery (GNRD) services.
+__Service Description:__ 	A service to extract scientific names on free-form text using TaxonFinder API.
 
 __Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/tf/names_text>
 
