@@ -1505,7 +1505,228 @@ __Service Quality:__
 
 Go to [__Top__](#servicesdocumentation).
 
+
 ---
+
+__Service Name:__  	 		iPlant_TNRS_wrapper
+
+__Service Description:__ 	A service which resolves scientific names (of plants) using iPlant Collaborative services.
+
+__Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/tnrs/ip/resolve>
+
+__HTTP Method:__ 		GET or POST
+
+__Input Format:__ 		application/x-www-form-urlencoded
+
+__Output Format:__ 		application/json
+
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">names</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  string
+  * __Description:__  one or more scientific names to be resolved delimited by pipe "|".
+ 				
+2. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">fuzzy_match</span> 
+  * __Category:__  	optional
+  * __Data Type:__  boolean
+  * __Description:__  a boolean value to specify whether to perform approximate string (a.k.a. "fuzzy") matching. By default, it is `false`. To turn on "fuzzy" matching `true` must be used. 
+
+3. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">multiple_match</span> 
+  * __Category:__  	optional
+  * __Data Type:__  boolean
+  * __Description:__  a boolean value to specify whether to return multiple match results when fuzzy matching is turned on. By default it is `false`. If fuzzy matching is turned on and _multiple_match_ is enabled (`true`), then the service will return results of matches with score more than `0.50`.
+ 				
+__Example Commands/Requests:__
+
+1. 
+
+```
+http://phylo.cs.nmsu.edu:5004/phylotastic_ws/tnrs/ip/resolve?names=Acanthophyllum albidum|Acanthostachys pitcairnioides|Acanthostyles buniifolius&fuzzy_match=true&multiple_match=false
+```
+
+__Example Results:__
+
+1. 
+
+```json
+{
+	"status_code": 200,
+	"message": "Success",
+	"meta_data": {
+		"execution_time": 0.39,
+		"creation_time": "2018-01-24T18:36:14.819772",
+		"source_urls": [
+			"http://tnrs.iplantcollaborative.org"
+		]
+	},
+	"total_names": 3,
+	"resolvedNames": [
+		{
+			"matched_results": [
+				{
+					"data_source": "Tropicos - Missouri Botanical Garden",
+					"match_type": "Exact",
+					"match_score": 1.0,
+					"matched_name": "Acanthophyllum albidum",
+					"search_string": "Acanthophyllum albidum",
+					"synonyms": [],
+					"taxon_id": "6302165"
+				}
+			],
+			"input_name": "Acanthophyllum albidum"
+		},
+		{
+			"matched_results": [
+				{
+					"data_source": "Tropicos - Missouri Botanical Garden",
+					"match_type": "Exact",
+					"match_score": 1.0,
+					"matched_name": "Acanthostachys pitcairnioides",
+					"search_string": "Acanthostachys pitcairnioides",
+					"synonyms": [],
+					"taxon_id": "50038733"
+				}
+			],
+			"input_name": "Acanthostachys pitcairnioides"
+		},
+		{
+			"matched_results": [
+				{
+					"data_source": "Tropicos - Missouri Botanical Garden",
+					"match_type": "Exact",
+					"match_score": 1.0,
+					"matched_name": "Acanthostyles buniifolius",
+					"search_string": "Acanthostyles buniifolius",
+					"synonyms": [],
+					"taxon_id": "2712077"
+				}
+			],
+			"input_name": "Acanthostyles buniifolius"
+		}
+	]
+}
+```
+
+__Alternative Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/tnrs/ip/names>
+
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		application/json
+
+__Output Format:__ 		application/json 
+
+
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">scientificNames</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  list of strings
+  * __Description:__  list of scientific names to be resolved.
+ 				
+2. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">fuzzy_match</span> 
+  * __Category:__  	optional
+  * __Data Type:__  boolean
+  * __Description:__  a boolean value to specify whether to perform approximate string (a.k.a. "fuzzy") matching. By default, it is `false`. To turn on "fuzzy" matching `true` must be used. 
+
+3. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">multiple_match</span> 
+  * __Category:__  	optional
+  * __Data Type:__  boolean
+  * __Description:__  a boolean value to specify whether to return multiple match results when fuzzy matching is turned on. By default it is `false`. If fuzzy matching is turned on and _multiple_match_ is enabled (`true`), then the service will return results of matches with score more than `0.50`.
+ 				
+__Example Commands/Requests:__
+
+1. 
+```bash
+curl -X POST "http://phylo.cs.nmsu.edu:5004/phylotastic_ws/tnrs/ip/names" -H "content-type:application/json" -d '{"scientificNames": ["Acianthera angusti","Acidoton lanceolatus"],"fuzzy_match":true, "multiple_match":true}'
+``` 
+
+__Example Results:__
+
+1. 
+```json
+{
+	"status_code": 200,
+	"message": "Success",
+	"meta_data": {
+		"execution_time": 1.04,
+		"creation_time": "2018-01-24T18:38:32.764067",
+		"source_urls": [
+			"http://tnrs.iplantcollaborative.org"
+		]
+	},
+	"total_names": 2,
+	"resolvedNames": [
+		{
+			"matched_results": [
+				{
+					"data_source": "Tropicos - Missouri Botanical Garden",
+					"match_type": "Fuzzy",
+					"match_score": 0.5,
+					"matched_name": "Acianthera",
+					"search_string": "Acianthera angusti",
+					"synonyms": [],
+					"taxon_id": "40030723"
+				},
+				{
+					"data_source": "Tropicos - Missouri Botanical Garden",
+					"match_type": "Fuzzy",
+					"match_score": 0.5,
+					"matched_name": "Acianthera",
+					"search_string": "Acianthera angusti",
+					"synonyms": [],
+					"taxon_id": "40030730"
+				}
+			],
+			"input_name": "Acianthera angusti"
+		},
+		{
+			"matched_results": [
+				{
+					"data_source": "Tropicos - Missouri Botanical Garden",
+					"match_type": "Exact",
+					"match_score": 1.0,
+					"matched_name": "Acidoton lanceolatus",
+					"search_string": "Acidoton lanceolatus",
+					"synonyms": [],
+					"taxon_id": "50168852"
+				}
+			],
+			"input_name": "Acidoton lanceolatus"
+		}
+	]
+}
+```
+
+__Citation/Source:__		http://tnrs.iplantcollaborative.org
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*  __maximum `500` names allowed__
+ * *Expected response time:*  	__1s~30s__
+ * *Informative message/status:*
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. sc_name)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Reached maximum input limit       | 403   | Error: Currently more than 500 names is not supported        |
+   | Invalid method name in resource URI (e.g. /name)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
+
+  > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_resolvedNames_) will be an empty list.
+
+Go to [__Top__](#servicesdocumentation).
+
+---
+
 
 ## <a name="treeretrieval"></a>Phylogenetic Tree Retrieval
 
