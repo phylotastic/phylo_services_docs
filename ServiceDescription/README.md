@@ -1902,6 +1902,7 @@ __Service Quality:__
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_newick_) will be an empty string.
 
 Go to [__Phylogenetic Tree Retrieval__](#treeretrieval).
+
 Go to [__Top__](#servicesdocumentation).
 
 ---
@@ -2032,6 +2033,7 @@ __Service Quality:__
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_newick_) will be an empty string.
 
 Go to [__Phylogenetic Tree Retrieval__](#treeretrieval).
+
 Go to [__Top__](#servicesdocumentation).
 
 ---
@@ -2164,6 +2166,7 @@ __Service Quality:__
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_newick_) will be an empty string.
 
 Go to [__Phylogenetic Tree Retrieval__](#treeretrieval).
+
 Go to [__Top__](#servicesdocumentation).
 
 ---
@@ -2262,6 +2265,7 @@ __Service Quality:__
 
 
 Go to [__Phylogenetic Tree Retrieval__](#treeretrieval).
+
 Go to [__Top__](#servicesdocumentation).
 
 ---
@@ -2405,6 +2409,7 @@ __Service Quality:__
   > __Note__: In case of error conditions in the supersmart tool, no specific HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_newick_tree_) will be an empty string.
 
 Go to [__Phylogenetic Tree Retrieval__](#treeretrieval).
+
 Go to [__Top__](#servicesdocumentation).
 
 ---
