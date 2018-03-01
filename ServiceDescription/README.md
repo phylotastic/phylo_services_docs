@@ -2149,6 +2149,100 @@ __Service Quality:__
 
 ---
 
+__Service Name:__  	 		Treebase_Tree
+
+__Service Description:__ 	A service to get Phylogenetic Trees from a list of taxa by constructung super-trees using source trees of TreeBase.
+
+
+__Alternative Resource URI:__  		<http://phylo.cs.nmsu.edu:5012/phylotastic_ws/gt/tb/tree>
+
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		application/json
+
+__Output Format:__ 		application/json 
+
+
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">taxa</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  list of strings
+  * __Description:__ list of scientific names.
+ 				
+ 				
+__Example Commands/Requests:__
+
+1. 
+```bash
+$ curl -X POST "http://phylo.cs.nmsu.edu:5012/phylotastic_ws/gt/tb/tree" -H "content-type:application/json" -d '{"taxa":["Panthera pardus", "Taxidea taxus", "Enhydra lutris", "Lutra lutra", "Canis latrans", "Canis lupus", "Mustela altaica", "Mustela eversmanni", "Martes americana", "Ictonyx striatus", "Canis anthus", "Lycalopex vetulus", "Lycalopex culpaeus", "Puma concolor", "Felis catus","Leopardus jacobita"]}'
+```
+
+2. 
+
+```bash
+$ curl -X POST "http://phylo.cs.nmsu.edu:5012/phylotastic_ws/gt/tb/tree" -H "content-type:application/json" -d '{"taxa":["Physcomitrella patens", "Solanum tuberosum", "Lactuca sativa","Vitis vinifera", "Glycine max", "Carica papaya", "Oryza sativa"]}'
+```
+
+__Example Results:__
+
+1. 
+
+```json
+{
+	"status_code": 200,
+	"message": "Success",
+	"meta_data": {
+		"execution_time": 0.0,
+		"creation_time": "2018-02-28T21:13:44.868532",
+		"source_urls": [
+			"https://github.com/TreeBASE/treebase/wiki/API"
+		]
+	},
+	"newick": "((((((Mustela_altaica,(Lutra_lutra,Enhydra_lutris),Ictonyx_striatus),Martes_americana),Taxidea_taxus),Felis_catus),Canis_latrans),(Canis_lupus,(Puma_concolor,Panthera_pardus)));"
+}```
+
+2. 
+
+```json
+{
+	"status_code": 200,
+	"message": "Success",
+	"meta_data": {
+		"execution_time": 281.02,
+		"creation_time": "2018-02-28T21:41:38.831829",
+		"source_urls": [
+			"https://github.com/TreeBASE/treebase/wiki/API"
+		]
+	},
+	"newick": "(((((Glycine_max,Carica_papaya),Vitis_vinifera),(Solanum_tuberosum,Lactuca_sativa)),Physcomitrella_patens),Oryza_sativa);"
+}
+```
+
+
+__Citation/Source:__		https://github.com/TreeBASE/treebase/wiki/API
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*  __maximum `30` taxa allowed__ 
+ * *Expected response time:*  	__1s~300s__ (*might take longer depending on the number of matching source trees*)
+ * *Informative message/status:*
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. tax)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Reached maximum input limit       | 403   | Error: Currently more than 30 names is not supported        |
+   | Invalid method name in resource URI (e.g. /get_tre)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
+
+  > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_newick_) will be an empty string.
+
+
+---
+
 __Service Name:__  	 		Supersmart_wrapper_Tree
 
 __Service Description:__ 	A service to get Phylogenetic Trees using SUPERSMART tool. SUPERSMART is a self-contained analytical environment for large-scale phylogenetic data mining, taxonomic name resolution, tree inference and fossil-based tree calibration. The SUPERSMART pipeline consists of a number of different steps that can be chained together to infer a phylogenetic tree. This service runs the supersmart commands (taxize, align, orthologize, bbmerge, bbinfer, bbreroot, consense) in a pipeline to get a phylogenetic tree from an input species list.
