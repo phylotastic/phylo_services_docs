@@ -1730,7 +1730,17 @@ Go to [__Top__](#servicesdocumentation).
 
 ## <a name="treeretrieval"></a>Phylogenetic Tree Retrieval
 
-__Service Name:__  	 		OToL_wrapper_Tree
+   | Service Name |  Summary | 
+   | :----------- | ---------: | 
+   | [OToL_wrapper_Tree](#ot) | Get Phylogenetic Trees from a list of taxa using Open Tree of Life's induced_subtree method.    | 
+   | [Phylomatic_wrapper_Tree](#pm)      | Get Phylogenetic Trees from a list of taxa using Phylomatic service.         |
+   | [PhyloT_wrapper_Tree](#pt)      | Get Phylogenetic Trees (based on NCBI taxonomy) from a list of taxa using phyloT.         |
+   | [Treebase_Tree](#tb)  | Get Phylogenetic Trees from a list of taxa by constructung super-trees using source trees of TreeBase.      |
+   | [Supersmart_wrapper_Tree](#smrt)      | Get Phylogenetic Trees using SUPERSMART tool        |
+   
+
+
+__Service Name:__  	 		<a name="ot"></a>OToL_wrapper_Tree
 
 __Service Description:__ 	A service to get Phylogenetic Trees from a list of taxa using Open Tree of Life's induced_subtree method.
 
@@ -1891,9 +1901,12 @@ __Service Quality:__
 
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_newick_) will be an empty string.
 
+Go to [__Phylogenetic Tree Retrieval__](#treeretrieval).
+Go to [__Top__](#servicesdocumentation).
+
 ---
 
-__Service Name:__  	 		Phylomatic_wrapper_Tree
+__Service Name:__  	 		<a name="pm"></a>Phylomatic_wrapper_Tree
 
 __Service Description:__ 	A service to get Phylogenetic Trees from a list of taxa using Phylomatic service.
 
@@ -2018,9 +2031,12 @@ __Service Quality:__
 
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_newick_) will be an empty string.
 
+Go to [__Phylogenetic Tree Retrieval__](#treeretrieval).
+Go to [__Top__](#servicesdocumentation).
+
 ---
 
-__Service Name:__  	 		PhyloT_wrapper_Tree
+__Service Name:__  	 		<a name="pt"></a>PhyloT_wrapper_Tree
 
 __Service Description:__ 	A service to get Phylogenetic Trees (based on NCBI taxonomy) from a list of taxa using phyloT.
 
@@ -2147,9 +2163,12 @@ __Service Quality:__
 
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_newick_) will be an empty string.
 
+Go to [__Phylogenetic Tree Retrieval__](#treeretrieval).
+Go to [__Top__](#servicesdocumentation).
+
 ---
 
-__Service Name:__  	 		Treebase_Tree
+__Service Name:__  	 		<a name="tb"></a>Treebase_Tree
 
 __Service Description:__ 	A service to get Phylogenetic Trees from a list of taxa by constructung super-trees using source trees of TreeBase.
 
@@ -2242,9 +2261,12 @@ __Service Quality:__
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_newick_) will be an empty string.
 
 
+Go to [__Phylogenetic Tree Retrieval__](#treeretrieval).
+Go to [__Top__](#servicesdocumentation).
+
 ---
 
-__Service Name:__  	 		Supersmart_wrapper_Tree
+__Service Name:__  	 		<a name="smrt"></a>Supersmart_wrapper_Tree
 
 __Service Description:__ 	A service to get Phylogenetic Trees using SUPERSMART tool. SUPERSMART is a self-contained analytical environment for large-scale phylogenetic data mining, taxonomic name resolution, tree inference and fossil-based tree calibration. The SUPERSMART pipeline consists of a number of different steps that can be chained together to infer a phylogenetic tree. This service runs the supersmart commands (taxize, align, orthologize, bbmerge, bbinfer, bbreroot, consense) in a pipeline to get a phylogenetic tree from an input species list.
 
@@ -2382,6 +2404,7 @@ __Service Quality:__
 
   > __Note__: In case of error conditions in the supersmart tool, no specific HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_newick_tree_) will be an empty string.
 
+Go to [__Phylogenetic Tree Retrieval__](#treeretrieval).
 Go to [__Top__](#servicesdocumentation).
 
 ---
