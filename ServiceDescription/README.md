@@ -3646,13 +3646,22 @@ Go to [__Top__](#servicesdocumentation).
 
 ## <a name='commonname'></a>Common Name to Scientific Name
 
-__Service Name:__  	 	NCBI_common_name
+   | Service Name |  Summary | 
+   | :----------- | ---------: | 
+   | [NCBI_common_name](#ncbicn) | Get scientific names of a list of species from its common name(vernacular name) using NCBI API. | 
+   | [ITIS_common_name](#itiscn) | Get scientific names of a list of species from its common name(vernacular name) using ITIS API. |
+   | [TROPICOS_commmon_name](#tpcscn) | Get scientific names of a list of species from its common name(vernacular name) using TROPICOS API. |
+   
 
-__Service Description:__ 	A service to get scientific name of a species from its common name(vernacular name) using NCBI services.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/cs/ncbi/get_scientific_name>
 
-__HTTP Method:__ 		GET or POST
+__Service Name:__  	 	<a name="ncbicn"></a>NCBI_common_name
+
+__Service Description:__ 	A service to get scientific name of a species from its common name(vernacular name) using NCBI API.
+
+__Resource URI:__  		<http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/ncbi/get_scientific_names>
+
+__HTTP Method:__ 		GET
 
 __Input Format:__ 		application/x-www-form-urlencoded
 
@@ -3661,22 +3670,27 @@ __Output Format:__ 		application/json
 __Parameters:__
 
 1. Parameter details:
-  * __Name:__ 	 	<span style="color:blue">common_name</span> 
+  * __Name:__ 	 	<span style="color:blue">commonnames</span> 
   * __Category:__  	mandatory
-  * __Data Type:__  string
-  * __Description:__  a common name for which to find scientific name.
+  * __Data Type:__  list of strings
+  * __Description:__  a list of common names for which to find scientific names.
  				
+2. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">multiple_match</span> 
+  * __Category:__  	optional
+  * __Data Type:__  boolean
+  * __Description:__  a boolean value to specify whether to return multiple match results. By default it is `false`. If _multiple_match_ is enabled (`true`), then the service will return multiple matches (if available) for each common name in the input list.
   
 __Example Commands/Requests:__
 
 1. 
 ```
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/cs/ncbi/get_scientific_name?common_name=dog
+http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/ncbi/get_scientific_names?commonnames=blue whale|swordfish|killer whale
 ```
 
 2. 
 ```
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/cs/ncbi/get_scientific_name?common_name=tiger
+http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/ncbi/get_scientific_names?commonnames=black bear&multiple_match=true
 ```
 
 
@@ -3685,22 +3699,52 @@ __Example Results:__
 1. 
 ```json
 {
-	"input_common_name": "dog",
-	"ncbi_info_url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=9615",
-	"scientific_name": "Canis lupus familiaris",
 	"status_code": 200,
-	"meta_data": {
-		"execution_time": 5.68,
-		"creation_time": "2017-10-21T12:17:59.713335",
+	"message": "Success",
+	"result": [
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Balaenoptera musculus",
+					"common_name": "Blue whale",
+					"identifier": "9771",
+					"source_info_url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=9771",
+					"rank": "species"
+				}
+			],
+			"searched_name": "blue whale"
+		},
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Xiphias gladius",
+					"common_name": "swordfish",
+					"identifier": "8245",
+					"source_info_url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=8245",
+					"rank": "species"
+				}
+			],
+			"searched_name": "swordfish"
+		},
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Orcinus orca",
+					"common_name": "killer whale",
+					"identifier": "9733",
+					"source_info_url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=9733",
+					"rank": "species"
+				}
+			],
+			"searched_name": "killer whale"
+		}
+	],
+	"metadata": {
+		"execution_time": "3.18",
+		"creation_time": "2018-03-27T18:04:33.050054",
 		"source_urls": [
 			"https://www.ncbi.nlm.nih.gov/taxonomy"
 		]
-	},
-	"message": "Success",
-	"extra_info": {
-		"genbank_common_name": "dog",
-		"inherited_blast_name": " carnivores",
-		"rank": " subspecies"
 	}
 }
 ```
@@ -3708,32 +3752,226 @@ __Example Results:__
 2. 
 ```json
 {
-	"input_common_name": "tiger",
-	"ncbi_info_url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=9694",
-	"scientific_name": "Panthera tigris",
 	"status_code": 200,
-	"meta_data": {
-		"execution_time": 4.58,
-		"creation_time": "2017-10-21T12:15:56.749299",
+	"message": "Success",
+	"result": [
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Ursus thibetanus formosanus",
+					"common_name": "Formosan black bear",
+					"identifier": "411875",
+					"source_info_url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=411875",
+					"rank": "subspecies"
+				},
+				{
+					"scientific_name": "Ursus thibetanus japonicus",
+					"common_name": "Japanese black bear",
+					"identifier": "378754",
+					"source_info_url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=378754",
+					"rank": "subspecies"
+				},
+				{
+					"scientific_name": "Ursus thibetanus ussuricus",
+					"common_name": "Manchurian black bear",
+					"identifier": "262111",
+					"source_info_url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=262111",
+					"rank": "subspecies"
+				},
+				{
+					"scientific_name": "Ursus americanus",
+					"common_name": "American black bear",
+					"identifier": "9643",
+					"source_info_url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=9643",
+					"rank": "species"
+				},
+				{
+					"scientific_name": "Ursus thibetanus",
+					"common_name": "Asiatic black bear",
+					"identifier": "9642",
+					"source_info_url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=9642",
+					"rank": "species"
+				}
+			],
+			"searched_name": "black bear"
+		}
+	],
+	"metadata": {
+		"execution_time": "1.04",
+		"creation_time": "2018-03-27T18:07:16.647440",
 		"source_urls": [
 			"https://www.ncbi.nlm.nih.gov/taxonomy"
 		]
-	},
-	"message": "Success",
-	"extra_info": {
-		"genbank_common_name": "tiger",
-		"inherited_blast_name": " carnivores",
-		"rank": " species"
 	}
 }
 ```
+
+__Alternative Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/tnrs/gnr/names>
+
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		application/json
+
+__Output Format:__ 		application/json 
+
+
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">commonnames</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  list of strings
+  * __Description:__  list of common names for which to find scientific names.
+ 				
+
+2. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">multiple_match</span> 
+  * __Category:__  	optional
+  * __Data Type:__  boolean
+  * __Description:__  a boolean value to specify whether to return multiple match results. By default it is `false`. If _multiple_match_ is enabled (`true`), then the service will return multiple matches (if available) for each common name in the input list.
+
+ 				
+__Example Commands/Requests:__
+
+1. 
+```bash
+curl -X POST "http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/ncbi/scientific_names" -H "content-type:application/json" -d '{"commonnames": ["cattle", "cat", "goat", "pig", "sheep", "duck", "chicken", "horse", "domestic dog"]}'
+``` 
+
+__Example Results:__
+
+1. 
+```json
+{
+	"status_code": 200,
+	"message": "Success",
+	"result": [
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Bos taurus",
+					"common_name": "cattle",
+					"identifier": "9913",
+					"source_info_url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=9913",
+					"rank": "species"
+				}
+			],
+			"searched_name": "cattle"
+		},
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Felis catus",
+					"common_name": "domestic cat",
+					"identifier": "9685",
+					"source_info_url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=9685",
+					"rank": "species"
+				}
+			],
+			"searched_name": "cat"
+		},
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Capra hircus",
+					"common_name": "goat",
+					"identifier": "9925",
+					"source_info_url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=9925",
+					"rank": "species"
+				}
+			],
+			"searched_name": "goat"
+		},
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Sus scrofa",
+					"common_name": "pig",
+					"identifier": "9823",
+					"source_info_url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=9823",
+					"rank": "species"
+				}
+			],
+			"searched_name": "pig"
+		},
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Ovis aries",
+					"common_name": "sheep",
+					"identifier": "9940",
+					"source_info_url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=9940",
+					"rank": "species"
+				}
+			],
+			"searched_name": "sheep"
+		},
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Anas platyrhynchos",
+					"common_name": "mallard",
+					"identifier": "8839",
+					"source_info_url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=8839",
+					"rank": "species"
+				}
+			],
+			"searched_name": "duck"
+		},
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Gallus gallus",
+					"common_name": "chicken",
+					"identifier": "9031",
+					"source_info_url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=9031",
+					"rank": "species"
+				}
+			],
+			"searched_name": "chicken"
+		},
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Equus caballus",
+					"common_name": "horse",
+					"identifier": "9796",
+					"source_info_url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=9796",
+					"rank": "species"
+				}
+			],
+			"searched_name": "horse"
+		},
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Canis lupus familiaris",
+					"common_name": "dog",
+					"identifier": "9615",
+					"source_info_url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=9615",
+					"rank": "subspecies"
+				}
+			],
+			"searched_name": "domestic dog"
+		}
+	],
+	"metadata": {
+		"execution_time": "14.11",
+		"creation_time": "2018-03-27T18:17:23.671703",
+		"source_urls": [
+			"https://www.ncbi.nlm.nih.gov/taxonomy"
+		]
+	}
+}
+```
+
 
 __Citation/Source:__         https://www.ncbi.nlm.nih.gov/taxonomy
 
 __Service Quality:__
 
- * *Restrictions on capacity:*  __unknown__
- * *Expected response time:*  	__1s~15s__
+ * *Restrictions on capacity:*  __maximum 30 species allowed__
+ * *Expected response time:*  	__1s~60s__ (_might be longer depending on the number of input common names_)
  * *Informative message/status:*
    
    | Case | HTTP status code | Message | 
@@ -3747,6 +3985,8 @@ __Service Quality:__
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_scientific_name_) will be an empty string.
 
 Go to [__Top__](#servicesdocumentation).
+
+Go to [Common Name to Scientific Name](#commonname).
 
 ---
 
