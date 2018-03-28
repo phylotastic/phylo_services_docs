@@ -4246,6 +4246,212 @@ Go to [__Top__](#servicesdocumentation).
 
 Go to [Common Name to Scientific Name](#commonname).
 
+---
+
+__Service Name:__  	 	<a name="tpcscn"></a>TROPICOS_common_name
+
+__Service Description:__ 	A service to get scientific name of a species from its common name(vernacular name) using TROPICOS API.
+
+__Resource URI:__  		<http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/tpcs/get_scientific_names>
+
+__HTTP Method:__ 		GET
+
+__Input Format:__ 		application/x-www-form-urlencoded
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">commonnames</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  list of strings
+  * __Description:__  a list of common names for which to find scientific names delimited by pipe "|".
+ 				
+2. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">multiple_match</span> 
+  * __Category:__  	optional
+  * __Data Type:__  boolean
+  * __Description:__  a boolean value to specify whether to return multiple match results. By default it is `false`. If _multiple_match_ is enabled (`true`), then the service will return multiple matches (if available) for each common name in the input list.
+  
+__Example Commands/Requests:__
+
+1. 
+```
+http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/tpcs/get_scientific_names?commonnames=Castor bean|Indian sandalwood|Annual blue grass
+```
+
+
+__Example Results:__
+
+1. 
+```json
+{
+	"status_code": 200,
+	"message": "Success",
+	"result": [
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Ricinus communis",
+					"identifier": 12800093,
+					"source_info_url": "http://www.tropicos.org/Name/12800093",
+					"rank": "species"
+				}
+			],
+			"searched_name": "Castor bean"
+		},
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Santalum album",
+					"identifier": 28500042,
+					"source_info_url": "http://www.tropicos.org/Name/28500042",
+					"rank": "species"
+				}
+			],
+			"searched_name": "Indian sandalwood"
+		},
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Poa annua",
+					"identifier": 25509881,
+					"source_info_url": "http://www.tropicos.org/Name/25509881",
+					"rank": "species"
+				}
+			],
+			"searched_name": "Annual blue grass"
+		}
+	],
+	"metadata": {
+		"execution_time": "2.68",
+		"creation_time": "2018-03-27T18:48:22.193809",
+		"source_urls": [
+			"http://services.tropicos.org/"
+		]
+	}
+}
+```
+
+
+__Alternative Resource URI:__  		<http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/tpcs/scientific_names>
+
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		application/json
+
+__Output Format:__ 		application/json 
+
+
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">commonnames</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  list of strings
+  * __Description:__  list of common names for which to find scientific names.
+ 				
+
+2. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">multiple_match</span> 
+  * __Category:__  	optional
+  * __Data Type:__  boolean
+  * __Description:__  a boolean value to specify whether to return multiple match results. By default it is `false`. If _multiple_match_ is enabled (`true`), then the service will return multiple matches (if available) for each common name in the input list.
+
+ 				
+__Example Commands/Requests:__
+
+1. 
+```bash
+curl -X POST "http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/tpcs/scientific_names" -H "content-type:application/json" -d '{"commonnames": ["cucumber", "tomato", "lettuce", "pea"]}'
+``` 
+
+__Example Results:__
+
+1. 
+```json
+{
+	"status_code": 200,
+	"message": "Success",
+	"result": [
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Cucumis sativus",
+					"identifier": 9200572,
+					"source_info_url": "http://www.tropicos.org/Name/9200572",
+					"rank": "species"
+				}
+			],
+			"searched_name": "cucumber"
+		},
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Lycopersicon esculentum",
+					"identifier": 29602513,
+					"source_info_url": "http://www.tropicos.org/Name/29602513",
+					"rank": "species"
+				}
+			],
+			"searched_name": "tomato"
+		},
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Lactuca sativa",
+					"identifier": 2710604,
+					"source_info_url": "http://www.tropicos.org/Name/2710604",
+					"rank": "species"
+				}
+			],
+			"searched_name": "lettuce"
+		},
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Pisum sativum",
+					"identifier": 13031856,
+					"source_info_url": "http://www.tropicos.org/Name/13031856",
+					"rank": "species"
+				}
+			],
+			"searched_name": "pea"
+		}
+	],
+	"metadata": {
+		"execution_time": "3.60",
+		"creation_time": "2018-03-27T18:50:56.838480",
+		"source_urls": [
+			"http://services.tropicos.org/"
+		]
+	}
+}
+```
+
+
+__Citation/Source:__         http://services.tropicos.org/
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*  __maximum 30 species allowed__
+ * *Expected response time:*  	__1s~60s__ (_might be longer depending on the number of input common names_)
+ * *Informative message/status:*
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. common)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Invalid method name in resource URI (e.g. /scname)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
+
+  > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_scientific_name_) will be an empty string.
+
+Go to [__Top__](#servicesdocumentation).
+
+Go to [Common Name to Scientific Name](#commonname).
 
 ---
 
