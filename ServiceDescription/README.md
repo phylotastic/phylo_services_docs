@@ -3646,6 +3646,7 @@ Go to [__Top__](#servicesdocumentation).
 
 ## <a name='commonname'></a>Common Name to Scientific Name
 
+
    | Service Name |  Summary | 
    | :----------- | ---------: | 
    | [NCBI_common_name](#ncbicn) | Get scientific names of a list of species from its common name(vernacular name) using NCBI API. | 
@@ -3673,7 +3674,7 @@ __Parameters:__
   * __Name:__ 	 	<span style="color:blue">commonnames</span> 
   * __Category:__  	mandatory
   * __Data Type:__  list of strings
-  * __Description:__  a list of common names for which to find scientific names.
+  * __Description:__  a list of common names for which to find scientific names delimited by pipe "|".
  				
 2. Parameter details:
   * __Name:__ 	 	<span style="color:blue">multiple_match</span> 
@@ -3806,7 +3807,7 @@ __Example Results:__
 }
 ```
 
-__Alternative Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/tnrs/gnr/names>
+__Alternative Resource URI:__  		<http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/ncbi/scientific_names>
 
 __HTTP Method:__ 		POST
 
@@ -3990,6 +3991,263 @@ Go to [Common Name to Scientific Name](#commonname).
 
 ---
 
+__Service Name:__  	 	<a name="itiscn"></a>ITIS_common_name
+
+__Service Description:__ 	A service to get scientific name of a species from its common name(vernacular name) using ITIS API.
+
+__Resource URI:__  		<http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/itis/get_scientific_names>
+
+__HTTP Method:__ 		GET
+
+__Input Format:__ 		application/x-www-form-urlencoded
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">commonnames</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  list of strings
+  * __Description:__  a list of common names for which to find scientific names delimited by pipe "|".
+ 				
+2. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">multiple_match</span> 
+  * __Category:__  	optional
+  * __Data Type:__  boolean
+  * __Description:__  a boolean value to specify whether to return multiple match results. By default it is `false`. If _multiple_match_ is enabled (`true`), then the service will return multiple matches (if available) for each common name in the input list.
+  
+__Example Commands/Requests:__
+
+1. 
+```
+http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/itis/get_scientific_names?commonnames=Brown bear|Gray wolf
+```
+
+2. 
+```
+http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/itis/get_scientific_names?commonnames=Christmas fern&multiple_match=true
+```
+
+
+__Example Results:__
+
+1. 
+```json
+{
+	"status_code": 200,
+	"message": "Success",
+	"result": [
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Ursus arctos arctos",
+					"common_name": "brown bear",
+					"identifier": "202383",
+					"source_info_url": "https://www.itis.gov/ITISWebService/jsonservice/ITISService/getFullRecordFromTSN?tsn=202383"
+				}
+			],
+			"searched_name": "Brown bear"
+		},
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Canis lupus",
+					"common_name": "Gray Wolf",
+					"identifier": "180596",
+					"source_info_url": "https://www.itis.gov/ITISWebService/jsonservice/ITISService/getFullRecordFromTSN?tsn=180596"
+				}
+			],
+			"searched_name": "Gray wolf"
+		}
+	],
+	"metadata": {
+		"execution_time": "1.49",
+		"creation_time": "2018-03-27T18:30:59.691914",
+		"source_urls": [
+			"https://www.itis.gov/ws_description.html"
+		]
+	}
+}
+```
+
+2. 
+```json
+{
+	"status_code": 200,
+	"message": "Success",
+	"result": [
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Polystichum",
+					"common_name": "Christmas fern",
+					"identifier": "17674",
+					"source_info_url": "https://www.itis.gov/ITISWebService/jsonservice/ITISService/getFullRecordFromTSN?tsn=17674"
+				},
+				{
+					"scientific_name": "Polystichum acrostichoides var. lonchitoides",
+					"common_name": "Christmas fern",
+					"identifier": "529800",
+					"source_info_url": "https://www.itis.gov/ITISWebService/jsonservice/ITISService/getFullRecordFromTSN?tsn=529800"
+				},
+				{
+					"scientific_name": "Polystichum acrostichoides var. acrostichoides",
+					"common_name": "Christmas fern",
+					"identifier": "529799",
+					"source_info_url": "https://www.itis.gov/ITISWebService/jsonservice/ITISService/getFullRecordFromTSN?tsn=529799"
+				},
+				{
+					"scientific_name": "Polystichum acrostichoides",
+					"common_name": "Christmas fern",
+					"identifier": "17675",
+					"source_info_url": "https://www.itis.gov/ITISWebService/jsonservice/ITISService/getFullRecordFromTSN?tsn=17675"
+				}
+			],
+			"searched_name": "Christmas fern"
+		}
+	],
+	"metadata": {
+		"execution_time": "1.75",
+		"creation_time": "2018-03-27T18:36:53.194863",
+		"source_urls": [
+			"https://www.itis.gov/ws_description.html"
+		]
+	}
+}
+```
+
+__Alternative Resource URI:__  		<http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/itis/scientific_names>
+
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		application/json
+
+__Output Format:__ 		application/json 
+
+
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">commonnames</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  list of strings
+  * __Description:__  list of common names for which to find scientific names.
+ 				
+
+2. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">multiple_match</span> 
+  * __Category:__  	optional
+  * __Data Type:__  boolean
+  * __Description:__  a boolean value to specify whether to return multiple match results. By default it is `false`. If _multiple_match_ is enabled (`true`), then the service will return multiple matches (if available) for each common name in the input list.
+
+ 				
+__Example Commands/Requests:__
+
+1. 
+```bash
+curl -X POST "http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/itis/scientific_names" -H "content-type:application/json" -d '{"commonnames": ["Flowering dogwood", "White oak", "Oregon pine", "Button mangrove", "Yellow mombin"]}'
+``` 
+
+__Example Results:__
+
+1. 
+```json
+{
+	"status_code": 200,
+	"message": "Success",
+	"result": [
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Cornus florida",
+					"common_name": "flowering dogwood",
+					"identifier": "27806",
+					"source_info_url": "https://www.itis.gov/ITISWebService/jsonservice/ITISService/getFullRecordFromTSN?tsn=27806"
+				}
+			],
+			"searched_name": "Flowering dogwood"
+		},
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Quercus alba",
+					"common_name": "white oak",
+					"identifier": "19290",
+					"source_info_url": "https://www.itis.gov/ITISWebService/jsonservice/ITISService/getFullRecordFromTSN?tsn=19290"
+				}
+			],
+			"searched_name": "White oak"
+		},
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Pseudotsuga menziesii",
+					"common_name": "Oregon pine",
+					"identifier": "183424",
+					"source_info_url": "https://www.itis.gov/ITISWebService/jsonservice/ITISService/getFullRecordFromTSN?tsn=183424"
+				}
+			],
+			"searched_name": "Oregon pine"
+		},
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Conocarpus erectus",
+					"common_name": "button mangrove",
+					"identifier": "27766",
+					"source_info_url": "https://www.itis.gov/ITISWebService/jsonservice/ITISService/getFullRecordFromTSN?tsn=27766"
+				}
+			],
+			"searched_name": "Button mangrove"
+		},
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Spondias mombin",
+					"common_name": "yellow mombin",
+					"identifier": "28816",
+					"source_info_url": "https://www.itis.gov/ITISWebService/jsonservice/ITISService/getFullRecordFromTSN?tsn=28816"
+				}
+			],
+			"searched_name": "Yellow mombin"
+		}
+	],
+	"metadata": {
+		"execution_time": "3.59",
+		"creation_time": "2018-03-27T18:40:46.311511",
+		"source_urls": [
+			"https://www.itis.gov/ws_description.html"
+		]
+	}
+}
+```
+
+
+__Citation/Source:__         https://www.itis.gov/ws_description.html
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*  __maximum 30 species allowed__
+ * *Expected response time:*  	__1s~60s__ (_might be longer depending on the number of input common names_)
+ * *Informative message/status:*
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. common)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Invalid method name in resource URI (e.g. /scname)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
+
+  > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_scientific_name_) will be an empty string.
+
+Go to [__Top__](#servicesdocumentation).
+
+Go to [Common Name to Scientific Name](#commonname).
+
+
+---
 
 ## <a name='specieslist'></a>Species List Manipulation
 
