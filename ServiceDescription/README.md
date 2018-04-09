@@ -740,7 +740,7 @@ Go to [__Top__](#servicesdocumentation).
    | Service Name |  Summary | 
    | :----------- | ---------: | 
    | [OToL_TNRS_wrapper](#tnrsot) | Resolves scientific names using Open Tree of Life Taxonomic name resolution services. | 
-   | [GNR_TNRS_wrapper](#tnrsgnr) | resolves scientific names against known taxonomy sources using Global Names Resolution services. |
+   | [GNR_TNRS_wrapper](#tnrsgnr) | Resolves scientific names against known taxonomy sources using Global Names Resolution services. |
    | [iPlant_TNRS_wrapper](#tnrsip) | Resolves scientific names (of plants) using iPlant Collaborative services. |
 
 
@@ -1781,7 +1781,7 @@ __Example Commands/Requests:__
 1. 
 
 ```
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/ot/get_tree?taxa=Crabronidae|Ophiocordyceps|Megalyridae|Formica polyctena|Tetramorium caespitum|Pseudomyrmex|Carebara diversa|Formicinae
+http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/ot/get_tree?taxa=Panthera%20pardus|Taxidea%20taxus|Lutra%20lutra|Canis%20lupus|Mustela%20altaica
 ```
 
 __Example Results:__
@@ -1789,31 +1789,72 @@ __Example Results:__
 1. 
 ```json
 {
-	"status_code": 200,
-	"message": "Success",
-	"meta_data": {
-		"execution_time": 6.61,
-		"creation_time": "2017-10-18T22:11:59.502157",
-		"source_urls": [
-			"https://github.com/OpenTreeOfLife/opentree/wiki/Open-Tree-of-Life-APIs#tree_of_life"
-		]
-	},
-	"tree_metadata": {
-		"alignment_method": "NA",
-		"character_matrix": "NA",
-		"rooted": true,
-		"supporting_studies": [],
-		"anastomosing": false,
-		"branch_lengths_type": null,
-		"consensus_type": "NA",
-		"inference_method": "induced_subtree from synthetic tree with ID opentree9.1",
-		"branch_support_type": null,
-		"num_tips": 6,
-		"gene_or_species": "species",
-		"topology_id": "NA",
-		"synthetic_tree_id": "opentree9.1"
-	},
-	"newick": "((Crabronidae_ott372234,(((Formica_polyctena_ott815730)Formicinae_ott614614,(Tetramorium_caespitum_ott214421,Carebara_diversa_ott842045)),Pseudomyrmex_ott412943))Aculeata_ott206138,Megalyridae_ott840287);"
+    "status_code":200,
+    "message":"Success",
+    "meta_data":{
+        "execution_time":2.95,
+        "creation_time":"2018-04-08T21:30:28.236850",
+        "source_urls":[
+            "https://github.com/OpenTreeOfLife/opentree/wiki/Open-Tree-of-Life-APIs#tree_of_life"
+        ]
+    },
+    "tree_metadata":{
+        "alignment_method":"NA",
+        "character_matrix":"NA",
+        "rooted":true,
+        "supporting_studies":[
+            {
+                "PublicationYear":2013,
+                "FocalCladeTaxonName":"Mammalia",
+                "Publication":"O'Leary, M. A., J. I. Bloch, J. J. Flynn, T. J. Gaudin, A. Giallombardo, N. P. Giannini, S. L. Goldberg, B. P. Kraatz, Z.-X. Luo, J. Meng, X. Ni, M. J. Novacek, F. A. Perini, Z. S. Randall, G. W. Rougier, E. J. Sargis, M. T. Silcox, N. B. Simmons, M. Spaulding, P. M. Velazco, M. Weksler, J. R. Wible, A. L. Cirranello. 2013. The placental mammal ancestor and the post-K-Pg radiation of placentals. Science 339 (6120): 662-667.",
+                "CandidateTreeForSynthesis":"tree6169",
+                "PublicationDOI":"http://dx.doi.org/10.1126/science.1229237",
+                "DataRepository":"",
+                "Curator":"Joseph W. Brown",
+                "PublicationIdentifier":"pg_2647"
+            },
+            {
+                "PublicationYear":2012,
+                "FocalCladeTaxonName":"Mammalia",
+                "Publication":"Lartillot, Nicolas, Frédéric Delsuc. 2012. Joint reconstruction of divergence times and life-history evolution in placental mammals using a phylogenetic covariance model. Evolution 66 (6): 1773-1787.",
+                "CandidateTreeForSynthesis":"tree6545",
+                "PublicationDOI":"http://dx.doi.org/10.1111/j.1558-5646.2011.01558.x",
+                "DataRepository":"",
+                "Curator":"Joseph W. Brown",
+                "PublicationIdentifier":"pg_2812"
+            },
+            {
+                "PublicationYear":2008,
+                "FocalCladeTaxonName":"Mustelidae",
+                "Publication":"Koepfli, Klaus-Peter, Kerry A Deere, Graham J Slater, Colleen Begg, Keith Begg, Lon Grassman, Mauro Lucherini, Geraldine Veron, Robert K Wayne. 2008. Multigene phylogeny of the Mustelidae: Resolving relationships, tempo and biogeographic history of a mammalian adaptive radiation. BMC Biology 6 (1): 10.",
+                "CandidateTreeForSynthesis":"tree6235",
+                "PublicationDOI":"http://dx.doi.org/10.1186/1741-7007-6-10",
+                "DataRepository":"",
+                "Curator":"Joseph Brown",
+                "PublicationIdentifier":"pg_2685"
+            },
+            {
+                "PublicationYear":2011,
+                "FocalCladeTaxonName":"Mammalia",
+                "Publication":"Meredith, R.W., Janecka J., Gatesy J., Ryder O.A., Fisher C., Teeling E., Goodbla A., Eizirik E., Simao T., Stadler T., Rabosky D., Honeycutt R., Flynn J., Ingram C., Steiner C., Williams T., Robinson T., Herrick A., Westerman M., Ayoub N., Springer M., & Murphy W. 2011. Impacts of the Cretaceous Terrestrial Revolution and KPg Extinction on Mammal Diversification. Science 334 (6055): 521-524.",
+                "CandidateTreeForSynthesis":"tree2855",
+                "PublicationDOI":"http://dx.doi.org/10.1126/science.1211028",
+                "DataRepository":"http://purl.org/phylo/treebase/phylows/study/TB2:S11872",
+                "Curator":"Chris Owen",
+                "PublicationIdentifier":"pg_1428"
+            }
+        ],
+        "anastomosing":false,
+        "branch_lengths_type":null,
+        "consensus_type":"NA",
+        "inference_method":"induced_subtree from synthetic tree with ID opentree9.1",
+        "branch_support_type":null,
+        "num_tips":5,
+        "gene_or_species":"species",
+        "topology_id":"NA",
+        "synthetic_tree_id":"opentree9.1"
+    },
+    "newick":"((((Mustela_altaica_ott69264,Lutra_lutra_ott348036),Taxidea_taxus_ott754612)Mustelidae_ott348043,Canis_lupus_ott247341)Caniformia_ott827263,Panthera_pardus_ott42324)Carnivora_ott44565;"
 }
 ```
 
