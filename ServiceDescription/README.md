@@ -736,7 +736,17 @@ Go to [__Top__](#servicesdocumentation).
 
 ## <a name="tnrs"></a>Taxonomic Name Resolution
 
-__Service Name:__  	 		OToL_TNRS_wrapper
+
+   | Service Name |  Summary | 
+   | :----------- | ---------: | 
+   | [OToL_TNRS_wrapper](#tnrsot) | Resolves scientific names using Open Tree of Life Taxonomic name resolution services. | 
+   | [GNR_TNRS_wrapper](#tnrsgnr) | resolves scientific names against known taxonomy sources using Global Names Resolution services. |
+   | [iPlant_TNRS_wrapper](#tnrsip) | Resolves scientific names (of plants) using iPlant Collaborative services. |
+
+
+
+
+__Service Name:__  	 		<a name="tnrsot"></a>OToL_TNRS_wrapper
 
 __Service Description:__ 	A service which resolves scientific names using Open Tree of Life Taxonomic name resolution services.
 
@@ -1167,9 +1177,11 @@ __Service Quality:__
 
 Go to [__Top__](#servicesdocumentation).
 
+Go to [__Taxonomic Name Resolution__](#tnrs).
+
 ---
 
-__Service Name:__  	 		GNR_TNRS_wrapper
+__Service Name:__  	 		<a name="tnrsgnr"></a>GNR_TNRS_wrapper
 
 __Service Description:__ 	A service which resolves scientific names against known taxonomy sources using Global Names Resolution services.
 
@@ -1503,12 +1515,13 @@ __Service Quality:__
 
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_resolvedNames_) will be an empty list.
 
-Go to [__Top__](#servicesdocumentation).
+Go to [__Taxonomic Name Resolution__](#tnrs).
 
+Go to [__Top__](#servicesdocumentation).
 
 ---
 
-__Service Name:__  	 		iPlant_TNRS_wrapper
+__Service Name:__  	 		<a name="tnrsip"></a>iPlant_TNRS_wrapper
 
 __Service Description:__ 	A service which resolves scientific names (of plants) using iPlant Collaborative services.
 
@@ -1722,6 +1735,8 @@ __Service Quality:__
    | Internal server error       | 500   |         |
 
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_resolvedNames_) will be an empty list.
+
+Go to [__Taxonomic Name Resolution__](#tnrs).
 
 Go to [__Top__](#servicesdocumentation).
 
