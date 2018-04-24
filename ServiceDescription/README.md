@@ -23,6 +23,8 @@ __Phylotastic Web Services__ are grouped into the following categories:
 
 **[Miscellaneous services](#misc)** :  services for different use cases.
 
+**[Species data services](#speciesdata)** :  services for retrieving traits of species.
+
 ---
 
 ## <a name='nameextraction'></a>Scientific Name Extraction
@@ -5516,4 +5518,230 @@ __Service Quality:__
 
 ---
 
-  _
+## <a name='speciesdata'></a>Species data services
+
+__Service Name:__  	 	EOL_Habitat_Conservation
+
+__Service Description:__ 	A service to get habitat and conservation status of a list of species from EOL traitsbank.
+
+__Resource URI:__  		<http://phylo.cs.nmsu.edu:5013/phylotastic_ws/sd/get_habitat_conservation>
+
+__HTTP Method:__ 		GET or POST
+
+__Input Format:__ 		application/x-www-form-urlencoded
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">species</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  list of strings
+  * __Description:__  pipe ("|") delimited list of species.
+ 				
+  
+__Example Commands/Requests:__ 
+
+1. 
+```
+http://phylo.cs.nmsu.edu:5013/phylotastic_ws/sd/get_habitat_conservation?species=Thunnus%20alalunga|Delphinapterus%20leucas
+```
+
+
+
+__Example Results:__
+
+1. 
+```json
+{
+    "status_code":200,
+    "message":"Success",
+    "meta_data":{
+        "execution_time":1.19,
+        "creation_time":"2018-04-23T20:54:11.775394",
+        "source_urls":[
+            "http://eol.org/traitbank"
+        ]
+    },
+    "species":[
+        {
+            "habitats":[
+                "slope",
+                "temperate",
+                "marine biome",
+                "pelagic zone",
+                "oceanic zone",
+                "photic zone",
+                "saline water",
+                "marine habitat",
+                "aquatic habitat",
+                "island",
+                "sea floor",
+                "bay",
+                "subtropical",
+                "shore",
+                "mediterranean sea biome",
+                "sea",
+                "mesopelagic zone",
+                "surface water",
+                "ocean",
+                "tropical"
+            ],
+            "searched_name":"Thunnus alalunga",
+            "conservation_status":"near threatened",
+            "eol_id":205933,
+            "matched_name":"Thunnus alalunga (Bonnaterre, 1788)"
+        },
+        {
+            "habitats":[
+                "slope",
+                "estuary",
+                "ice shelf",
+                "aquatic habitat",
+                "brackish water",
+                "archipelago",
+                "fresh water",
+                "sea",
+                "ocean",
+                "canal",
+                "blowhole",
+                "ridge",
+                "inlet",
+                "Large river biome",
+                "carcass",
+                "terrestrial biome",
+                "fjord",
+                "sound",
+                "marine biome",
+                "continental shelf",
+                "saline water",
+                "marine habitat",
+                "mudflat",
+                "coast",
+                "aquarium",
+                "ocean basin",
+                "estuarine biome",
+                "coastal water body",
+                "pelagic zone",
+                "polynya",
+                "ice cap",
+                "sea ice",
+                "temperate",
+                "island",
+                "bay",
+                "ice sheet",
+                "drainage basin",
+                "river"
+            ],
+            "searched_name":"Delphinapterus leucas",
+            "conservation_status":"near threatened",
+            "eol_id":328541,
+            "matched_name":"Delphinapterus leucas (Pallas, 1776)"
+        }
+    ]
+}
+```
+ 
+
+__Alternative Resource URI:__  		<http://phylo.cs.nmsu.edu:5013/phylotastic_ws/sd/habitat_conservation>
+
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		application/json
+
+__Output Format:__ 		application/json 
+
+
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">species</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  list of strings
+  * __Description:__  a list of species
+ 				
+ 				
+__Example Commands/Requests:__
+
+1. 
+```bash
+curl -X POST http://phylo.cs.nmsu.edu:5013/phylotastic_ws/sd/habitat_conservation -H "content-type:application/json" -d '{"species": ["Ceratotherium simum", "Bison bison bison"]}'
+```
+
+
+__Example Results:__
+
+1. 
+
+```json
+{
+	"status_code": 200,
+	"message": "Success",
+	"meta_data": {
+		"execution_time": 1.01,
+		"creation_time": "2018-04-23T21:45:58.782763",
+		"source_urls": [
+			"http://eol.org/traitbank"
+		]
+	},
+	"species": [
+		{
+			"habitats": [
+				"savanna",
+				"cave",
+				"woodland",
+				"zoological garden",
+				"terrestrial biome",
+				"lake",
+				"swamp",
+				"national park",
+				"rift valley",
+				"grassland",
+				"terrestrial habitat",
+				"protected area",
+				"chaparral",
+				"forest"
+			],
+			"searched_name": "Ceratotherium simum",
+			"conservation_status": "near threatened",
+			"eol_id": 311503,
+			"matched_name": "Ceratotherium simum (Burchell, 1817)"
+		},
+		{
+			"habitats": [
+				"wood",
+				"national park",
+				"plain"
+			],
+			"searched_name": "Bison bison bison",
+			"conservation_status": null,
+			"eol_id": 1282459,
+			"matched_name": "Bison bison bison (Linnaeus, 1758)"
+		}
+	]
+}
+```
+
+
+__Citation/Source:__    http://eol.org/traitbank
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*  __unknown__ (_depends on the source_)
+ * *Expected response time:*  	__1s~15s__ (_might be longer depending on the size of the input list_)
+ * *Informative message/status:*
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. lst)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Invalid input JSON data       | 400   | Invalid JSON document        |
+   | Invalid method name in resource URI (e.g. /study)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
+
+
+Go to [__Top__](#servicesdocumentation).
+
+--- 
