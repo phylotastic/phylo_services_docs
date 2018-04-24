@@ -1,4 +1,7 @@
-# Phylotastic Web Services Documentation
+# Phylotastic Web Services OLD Documentation
+
+> This document is **obsolete**. Please check out the new [documentation](https://github.com/phylotastic/phylo_services_docs/tree/master/ServiceDescription#phylotastic-web-services-documentation)
+
 
 #### Web Service 1.
 
