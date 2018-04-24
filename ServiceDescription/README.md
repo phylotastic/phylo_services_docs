@@ -4519,7 +4519,7 @@ __Service Name:__  	 	Add_new_list
 
 __Service Description:__ 	A service to insert a new list of species into the phylotastic list server.
 
-__Resource URI:__  	<http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/insert_list>
+__Resource URI:__  	<http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/insert_list>
 
 __HTTP Method:__ 		POST
 
@@ -4635,7 +4635,7 @@ __Example Commands/Requests:__
 
 1. 
 ```bash
-curl -X POST http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/insert_list -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "list": {"list_extra_info": "", "list_description": "A list of the bird species and their endangered, threatened or invasive status", "list_keywords": ["Bird", "Endangered species", "Everglades"], "list_curator": "HD Laughinghouse", "list_origin": "script", "list_curation_date": "02-24-2016", "list_source": "Des", "list_focal_clade": "Aves", "list_title": "Bird Species List for Everglades National Park", "list_author": ["Bass, O.", "Cunningham, R."], "is_list_public": true, "list_species": [{"family": "Anatidae", "scientific_name": "Aix sponsa", "vernacular_name": "Wood Duck", "nomenclature_code": "ICZN", "order": "Anseriformes"}, {"family": "Anatidae", "scientific_name": "Anas strepera", "vernacular_name": "Gadwall", "nomenclature_code": "ICZN", "order": "Anseriformes"}, {"family": "Caprimulgidae", "scientific_name": "Caprimulgus vociferus", "scientific_name_authorship": "", "vernacular_name": "Whip-poor-will","nomenclature_code": "ICZN", "order": "Caprimulgiformes"}]}}'
+curl -X POST http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/insert_list -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "list": {"list_extra_info": "", "list_description": "A list of the bird species and their endangered, threatened or invasive status", "list_keywords": ["Bird", "Endangered species", "Everglades"], "list_curator": "HD Laughinghouse", "list_origin": "script", "list_curation_date": "02-24-2016", "list_source": "Des", "list_focal_clade": "Aves", "list_title": "Bird Species List for Everglades National Park", "list_author": ["Bass, O.", "Cunningham, R."], "is_list_public": true, "list_species": [{"family": "Anatidae", "scientific_name": "Aix sponsa", "vernacular_name": "Wood Duck", "nomenclature_code": "ICZN", "order": "Anseriformes"}, {"family": "Anatidae", "scientific_name": "Anas strepera", "vernacular_name": "Gadwall", "nomenclature_code": "ICZN", "order": "Anseriformes"}, {"family": "Caprimulgidae", "scientific_name": "Caprimulgus vociferus", "scientific_name_authorship": "", "vernacular_name": "Whip-poor-will","nomenclature_code": "ICZN", "order": "Caprimulgiformes"}]}}'
 ```
 
 __Example Results:__
@@ -4674,7 +4674,7 @@ __Service Name:__  	 	 Get_list
 
 __Service Description:__ 	A service to get public lists of species or private lists of species owned by a phylotastic web application/services user.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/get_list>
+__Resource URI:__  		<http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/get_list>
 
 __HTTP Method:__ 		GET or POST
 
@@ -4730,23 +4730,23 @@ __Example Commands/Requests:__
 
 1. To get all the public lists available:
 ```
-http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/get_list
+http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/get_list
 ```
 2. To get a specific public list with ID 24:
 ```
-http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/get_list?list_id=24
+http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/get_list?list_id=24
 ```
 3. To get all lists of user with ID *hdail.laughinghouse@gmail.com*:
 ```
-http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/get_list?user_id=hdail.laughinghouse@gmail.com&access_token=ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA
+http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/get_list?user_id=hdail.laughinghouse@gmail.com&access_token=ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA
 ```
 4. To get a specific private list with ID 20 and owned by hdail.laughinghouse@gmail.com:
 ```
-http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/get_list?user_id=hdail.laughinghouse@gmail.com&list_id=20&access_token=ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA
+http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/get_list?user_id=hdail.laughinghouse@gmail.com&list_id=20&access_token=ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA
 ```
 5. To get a specific private list (including all metadata available) with ID 20 and owned by hdail.laughinghouse@gmail.com:
 ```
-http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/get_list?user_id=hdail.laughinghouse@gmail.com&list_id=20&verbose=true&access_token=ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA
+http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/get_list?user_id=hdail.laughinghouse@gmail.com&list_id=20&verbose=true&access_token=ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA
 ```
 
 __Example Results:__
@@ -4794,7 +4794,7 @@ __Service Name:__  	 	 Replace_species_list
 
 __Service Description:__ 	A service to replace the [species objects](#jsonspecies) of an existing list with new species objects.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/replace_species>
+__Resource URI:__  		<http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/replace_species>
 
 __HTTP Method:__ 		POST
 
@@ -4833,7 +4833,7 @@ __Example Commands/Requests:__
 
 1. 
 ```bash
-curl -X POST http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/replace_species -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "access_token": "ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA", "list_id": 24, "species":[{"family": "Columbidae", "scientific_name": "Columba livia", "vernacular_name": "Rock Dove", "nomenclature_code": "ICZN", "order": "Columbiformes", "class": "Aves"}, {"family": "Alcedinidae", "scientific_name": "Megaceryle alcyon", "vernacular_name": "Belted Kingfisher", "phylum": "Chordata", "nomenclature_code": "ICZN", "order": "Coraciiformes"}, {"family": "Aramidae", "scientific_name": "Aramus guarauna", "vernacular_name": "Limpkin", "nomenclature_code": "ICZN", "order": "Gruiformes", "class": "Aves"}]}'
+curl -X POST http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/replace_species -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "access_token": "ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA", "list_id": 24, "species":[{"family": "Columbidae", "scientific_name": "Columba livia", "vernacular_name": "Rock Dove", "nomenclature_code": "ICZN", "order": "Columbiformes", "class": "Aves"}, {"family": "Alcedinidae", "scientific_name": "Megaceryle alcyon", "vernacular_name": "Belted Kingfisher", "phylum": "Chordata", "nomenclature_code": "ICZN", "order": "Coraciiformes"}, {"family": "Aramidae", "scientific_name": "Aramus guarauna", "vernacular_name": "Limpkin", "nomenclature_code": "ICZN", "order": "Gruiformes", "class": "Aves"}]}'
 ```
 
 __Example Results:__
@@ -4979,12 +4979,12 @@ __Example Commands/Requests:__
 
 1. To change the source and date_published of a list with ID 24.
 ```bash
-curl -X POST http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/update_list -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "access_token": "ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA", "list_id": 24, "list": {"list_source": "Bass, O. & Cunningham, R. (2006) Everglades National Park Bird Checklist. Miami: Everglades Association", "list_date_published": "05-02-2006"}}'
+curl -X POST http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/update_list -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "access_token": "ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA", "list_id": 24, "list": {"list_source": "Bass, O. & Cunningham, R. (2006) Everglades National Park Bird Checklist. Miami: Everglades Association", "list_date_published": "05-02-2006"}}'
 ```
 
 2. To change type of a list with ID 24 from "public" to "private":
 ```bash
-curl -X POST http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/update_list -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "access_token": "ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA", "list_id": 24, "list": {"is_list_public": false}}'
+curl -X POST http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/update_list -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "access_token": "ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA", "list_id": 24, "list": {"is_list_public": false}}'
 ```
 
 __Example Results:__
@@ -5030,7 +5030,7 @@ __Service Name:__  	 	 Remove_list
 
 __Service Description:__ 	A service to remove an existing list.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/remove_list>
+__Resource URI:__  		<http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/remove_list>
 
 __HTTP Method:__ 		GET or POST
 
@@ -5063,7 +5063,7 @@ __Example Commands/Requests:__
 
 1. 
 ```
-http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/remove_list?user_id=hdail.laughinghouse@gmail.com&list_id=24&access_token=ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA
+http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/remove_list?user_id=hdail.laughinghouse@gmail.com&list_id=24&access_token=ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA
 ```
 
 __Example Results:__
