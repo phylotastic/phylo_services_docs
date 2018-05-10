@@ -5524,9 +5524,9 @@ __Service Name:__  	 	EOL_Habitat_Conservation
 
 __Service Description:__ 	A service to get habitat and conservation status of a list of species from EOL traitsbank.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5013/phylotastic_ws/sd/get_habitat_conservation>
+__Resource URI:__  		<http://phylo.cs.nmsu.edu:5013/phylotastic_ws/sd/eol/get_habitat_conservation>
 
-__HTTP Method:__ 		GET or POST
+__HTTP Method:__ 		GET
 
 __Input Format:__ 		application/x-www-form-urlencoded
 
@@ -5545,7 +5545,7 @@ __Example Commands/Requests:__
 
 1. 
 ```
-http://phylo.cs.nmsu.edu:5013/phylotastic_ws/sd/get_habitat_conservation?species=Thunnus%20alalunga|Delphinapterus%20leucas
+http://phylo.cs.nmsu.edu:5013/phylotastic_ws/sd/eol/get_habitat_conservation?species=Thunnus%20alalunga|Delphinapterus%20leucas
 ```
 
 
@@ -5644,7 +5644,7 @@ __Example Results:__
 ```
  
 
-__Alternative Resource URI:__  		<http://phylo.cs.nmsu.edu:5013/phylotastic_ws/sd/habitat_conservation>
+__Alternative Resource URI:__  		<http://phylo.cs.nmsu.edu:5013/phylotastic_ws/sd/eol/habitat_conservation>
 
 __HTTP Method:__ 		POST
 
@@ -5666,7 +5666,7 @@ __Example Commands/Requests:__
 
 1. 
 ```bash
-curl -X POST http://phylo.cs.nmsu.edu:5013/phylotastic_ws/sd/habitat_conservation -H "content-type:application/json" -d '{"species": ["Ceratotherium simum", "Bison bison bison"]}'
+curl -X POST http://phylo.cs.nmsu.edu:5013/phylotastic_ws/sd/eol/habitat_conservation -H "content-type:application/json" -d '{"species": ["Ceratotherium simum", "Bison bison bison"]}'
 ```
 
 
@@ -5728,7 +5728,7 @@ __Citation/Source:__    http://eol.org/traitbank
 
 __Service Quality:__
 
- * *Restrictions on capacity:*  __unknown__ (_depends on the source_)
+ * *Restrictions on capacity:*  __maximum 30 species allowed__
  * *Expected response time:*  	__1s~15s__ (_might be longer depending on the size of the input list_)
  * *Informative message/status:*
    
@@ -5739,6 +5739,248 @@ __Service Quality:__
    | Invalid name of mandatory parameter (e.g. lst)       | 400   | Error: Missing parameter '_parameter name_'        |
    | Invalid input JSON data       | 400   | Invalid JSON document        |
    | Invalid method name in resource URI (e.g. /study)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
+
+
+Go to [__Top__](#servicesdocumentation).
+
+--- 
+
+__Service Name:__  	 	ECOS_Conservation
+
+__Service Description:__ 	A service to get conservation status of a list of species using ECOS services.
+
+__Resource URI:__  		<http://phylo.cs.nmsu.edu:5013/phylotastic_ws/sd/ecos/get_conservation>
+
+__HTTP Method:__ 		GET
+
+__Input Format:__ 		application/x-www-form-urlencoded
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">species</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  list of strings
+  * __Description:__  pipe ("|") delimited list of species.
+ 				
+  
+__Example Commands/Requests:__ 
+
+1. 
+```
+http://phylo.cs.nmsu.edu:5013/phylotastic_ws/sd/ecos/get_conservation?species=Pongo%20pygmaeu|Rhinoceros%20sondaicus|Panthera%20tigris|Pan%20troglodytes|Loxodonta%20africana
+```
+
+
+__Example Results:__
+
+1. 
+```json
+{
+    "status_code":200,
+    "message":"Success",
+    "meta_data":{
+        "execution_time":1.35,
+        "creation_time":"2018-05-09T20:59:09.900888",
+        "source_urls":[
+            "https://ecos.fws.gov/ecp/services"
+        ]
+    },
+    "species":[
+        {
+            "searched_name":"Pongo pygmaeu",
+            "matched_name":""
+        },
+        {
+            "searched_name":"Rhinoceros sondaicus",
+            "tsn_id":"625004",
+            "matched_name":"Rhinoceros sondaicus",
+            "conservation_status":"Endangered"
+        },
+        {
+            "searched_name":"Panthera tigris",
+            "tsn_id":"183805",
+            "matched_name":"Panthera tigris",
+            "conservation_status":"Endangered"
+        },
+        {
+            "searched_name":"Pan troglodytes",
+            "tsn_id":"573082",
+            "matched_name":"Pan troglodytes",
+            "conservation_status":"Endangered"
+        },
+        {
+            "searched_name":"Loxodonta africana",
+            "tsn_id":"584939",
+            "matched_name":"Loxodonta africana",
+            "conservation_status":"Threatened"
+        }
+    ]
+}
+```
+ 
+
+__Alternative Resource URI:__  		<http://phylo.cs.nmsu.edu:5013/phylotastic_ws/sd/ecos/conservation>
+
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		application/json
+
+__Output Format:__ 		application/json 
+
+
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">species</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  list of strings
+  * __Description:__  a list of species
+ 				
+ 				
+__Example Commands/Requests:__
+
+1. 
+```bash
+curl -X POST http://phylo.cs.nmsu.edu:5013/phylotastic_ws/sd/ecos/conservation -H "content-type:application/json" -d '{"species": ["Ursus maritimus", "Ailuropoda melanoleuca", "Vulpes lagopus", "Delphinapterus leucas", "Diceros bicornis", "Balaenoptera musculus", "Pan paniscus", "Balaena mysticetus", "Pan troglodytes", "Balaenoptera physalus", "Carcharodon carcharias", "Chelonia mydas", "Hippopotamus amphibius", "Orcaella brevirostris", "Panthera onca", "Dermochelys coriacea", "Ara ararauna", "Amblyrhynchus cristatus"]}'
+```
+
+
+__Example Results:__
+
+1. 
+
+```json
+{
+	"status_code": 200,
+	"message": "Success",
+	"meta_data": {
+		"execution_time": 4.89,
+		"creation_time": "2018-05-09T21:07:49.580018",
+		"source_urls": [
+			"https://ecos.fws.gov/ecp/services"
+		]
+	},
+	"species": [
+		{
+			"searched_name": "Ursus maritimus",
+			"tsn_id": "180542",
+			"matched_name": "Ursus maritimus",
+			"conservation_status": "Threatened"
+		},
+		{
+			"searched_name": "Ailuropoda melanoleuca",
+			"tsn_id": "621845",
+			"matched_name": "Ailuropoda melanoleuca",
+			"conservation_status": "Endangered"
+		},
+		{
+			"searched_name": "Vulpes lagopus",
+			"matched_name": ""
+		},
+		{
+			"searched_name": "Delphinapterus leucas",
+			"tsn_id": "180483",
+			"matched_name": "Delphinapterus leucas",
+			"conservation_status": "Endangered"
+		},
+		{
+			"searched_name": "Diceros bicornis",
+			"tsn_id": "625003",
+			"matched_name": "Diceros bicornis",
+			"conservation_status": "Endangered"
+		},
+		{
+			"searched_name": "Balaenoptera musculus",
+			"tsn_id": "180528",
+			"matched_name": "Balaenoptera musculus",
+			"conservation_status": "Endangered"
+		},
+		{
+			"searched_name": "Pan paniscus",
+			"tsn_id": "573081",
+			"matched_name": "Pan paniscus",
+			"conservation_status": "Endangered"
+		},
+		{
+			"searched_name": "Balaena mysticetus",
+			"tsn_id": "180533",
+			"matched_name": "Balaena mysticetus",
+			"conservation_status": "Endangered"
+		},
+		{
+			"searched_name": "Pan troglodytes",
+			"tsn_id": "573082",
+			"matched_name": "Pan troglodytes",
+			"conservation_status": "Endangered"
+		},
+		{
+			"searched_name": "Balaenoptera physalus",
+			"tsn_id": "180527",
+			"matched_name": "Balaenoptera physalus",
+			"conservation_status": "Endangered"
+		},
+		{
+			"searched_name": "Carcharodon carcharias",
+			"matched_name": ""
+		},
+		{
+			"searched_name": "Chelonia mydas",
+			"tsn_id": "173833",
+			"matched_name": "Chelonia mydas",
+			"conservation_status": "Endangered"
+		},
+		{
+			"searched_name": "Hippopotamus amphibius",
+			"matched_name": ""
+		},
+		{
+			"searched_name": "Orcaella brevirostris",
+			"matched_name": ""
+		},
+		{
+			"searched_name": "Panthera onca",
+			"tsn_id": "180593",
+			"matched_name": "Panthera onca",
+			"conservation_status": "Endangered"
+		},
+		{
+			"searched_name": "Dermochelys coriacea",
+			"tsn_id": "173843",
+			"matched_name": "Dermochelys coriacea",
+			"conservation_status": "Endangered"
+		},
+		{
+			"searched_name": "Ara ararauna",
+			"matched_name": ""
+		},
+		{
+			"searched_name": "Amblyrhynchus cristatus",
+			"matched_name": ""
+		}
+	]
+}
+```
+
+
+__Citation/Source:__    https://ecos.fws.gov/ecp/services
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*  __maximum 30 species allowed__
+ * *Expected response time:*  	__1s~15s__ (_might be longer depending on the size of the input list_)
+ * *Informative message/status:*
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. lst)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Invalid input JSON data       | 400   | Invalid JSON document        |
+   | Invalid method name in resource URI (e.g. /spec)       | 404   | Error: Could not find the requested resource URI        |
    | Internal server error       | 500   |         |
 
 
