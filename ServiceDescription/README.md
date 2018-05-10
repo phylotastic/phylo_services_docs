@@ -29,7 +29,17 @@ __Phylotastic Web Services__ are grouped into the following categories:
 
 ## <a name='nameextraction'></a>Scientific Name Extraction
 
-__Service Name:__  	 	GNRD_wrapper_URL
+   | Service Name |  Summary | 
+   | :----------- | ---------: | 
+   | [GNRD_wrapper_URL](#gnrdurl) | Extract scientific names from URL of a web page using Global Names Recognition and Discovery (GNRD) services. | 
+   | [GNRD_wrapper_text](#gnrdtext) | Extract scientific names on free-form text using Global Names Recognition and Discovery (GNRD) services. |
+   | [GNRD_wrapper_file](#gnrdfile) | Extract scientific names from a file(e.g. text, PDF, Microsoft Office documents, images) using Global Names Recognition and Discovery (GNRD) services. |
+   | [TaxonFinder_wrapper_URL](#taxonfindurl) | Extract scientific names from URL of a web page using TaxonFinder API. |
+   | [TaxonFinder_wrapper_text](#taxonfindtext) | A service to extract scientific names on free-form text using TaxonFinder API. |
+
+
+
+__Service Name:__  	 	<a name="gnrdurl"></a>GNRD_wrapper_URL
 
 __Service Description:__ 	A service to extract scientific names from URL of a web page using Global Names Recognition and Discovery (GNRD) services.
 
@@ -309,7 +319,7 @@ Go to [__Top__](#servicesdocumentation).
 
 ---
 
-__Service Name:__  	 	GNRD_wrapper_text
+__Service Name:__  	 	<a name="gnrdtext"></a>GNRD_wrapper_text
 
 __Service Description:__ 	A service to extract scientific names on free-form text using Global Names Recognition and Discovery (GNRD) services.
 
@@ -435,7 +445,7 @@ Go to [__Top__](#servicesdocumentation).
 
 ---
 
-__Service Name:__  	 	GNRD_wrapper_file
+__Service Name:__  	 	<a name="gnrdfile"></a>GNRD_wrapper_file
 
 __Service Description:__ 	A service to extract scientific names from a file(e.g. text, PDF, Microsoft Office documents, images) using Global Names Recognition and Discovery (GNRD) services.
 
@@ -536,7 +546,7 @@ Go to [__Top__](#servicesdocumentation).
 
 ---
 
-__Service Name:__  	 	TaxonFinder_wrapper_URL
+__Service Name:__  	 	<a name="taxonfindurl"></a>TaxonFinder_wrapper_URL
 
 __Service Description:__ 	A service to extract scientific names from URL of a web page using TaxonFinder API.
 
@@ -662,7 +672,7 @@ Go to [__Top__](#servicesdocumentation).
 
 ---
 
-__Service Name:__  	 	TaxonFinder_wrapper_text
+__Service Name:__  	 	<a name="taxonfindtext"></a>TaxonFinder_wrapper_text
 
 __Service Description:__ 	A service to extract scientific names on free-form text using TaxonFinder API.
 
