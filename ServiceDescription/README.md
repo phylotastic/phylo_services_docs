@@ -315,6 +315,8 @@ __Service Quality:__
 
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_scientificNames_) will be an empty list.
 
+Go to [__Scientific Name Extraction__](#nameextraction).
+
 Go to [__Top__](#servicesdocumentation).
 
 ---
@@ -441,6 +443,8 @@ __Service Quality:__
 
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_scientificNames_) will be an empty list.
 
+Go to [__Scientific Name Extraction__](#nameextraction).
+
 Go to [__Top__](#servicesdocumentation).
 
 ---
@@ -541,6 +545,8 @@ __Service Quality:__
    | Internal server error       | 500   |         |
 
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_scientificNames_) will be an empty list.
+
+Go to [__Scientific Name Extraction__](#nameextraction).
 
 Go to [__Top__](#servicesdocumentation).
 
@@ -668,6 +674,8 @@ __Service Quality:__
 
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_scientificNames_) will be an empty list.
 
+Go to [__Scientific Name Extraction__](#nameextraction).
+
 Go to [__Top__](#servicesdocumentation).
 
 ---
@@ -743,6 +751,8 @@ __Service Quality:__
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_scientificNames_) will be an empty list.
 
 Go to [__Top__](#servicesdocumentation).
+
+Go to [__Scientific Name Extraction__](#nameextraction).
 
 ---
 
@@ -2484,7 +2494,15 @@ Go to [__Top__](#servicesdocumentation).
 
 ## <a name='taxonspecies'></a>Taxon to Species
 
-__Service Name:__  	 	Taxon_all_species
+
+   | Service Name |  Summary | 
+   | :----------- | ---------: | 
+   | [Taxon_all_species](#taxonallsp) | Get all Species that belong to a particular Taxon using OToL API. | 
+   | [Taxon_country_species](#taxoncntysp) | Get a set of Species that belong to a particular Taxon and established in a particular country using INaturalist services. |
+   | [Taxon_genome_species](#taxongnmsp) | Get a set of Species that belong to a particular Taxon and have genome sequence in NCBI database. |
+   
+
+__Service Name:__  	 	<a name="taxonallsp"></a>Taxon_all_species
 
 __Service Description:__ 	A service to get all Species that belong to a particular Taxon.
 
@@ -2757,11 +2775,13 @@ __Service Quality:__
 
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_species_) will be an empty list.
 
+Go to [__Taxon to Species__](#taxonspecies).
+
 Go to [__Top__](#servicesdocumentation).
 
 ---
 
-__Service Name:__  	 	Taxon_country_species
+__Service Name:__  	 	<a name="taxoncntysp"></a>Taxon_country_species
 
 __Service Description:__ 	A service to get a set of Species that belong to a particular Taxon and established in a particular country using INaturalist services.
 
@@ -2869,12 +2889,14 @@ __Service Quality:__
 
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_species_) will be an empty list.
 
+Go to [__Taxon to Species__](#taxonspecies).
+
 Go to [__Top__](#servicesdocumentation).
 
 ---
 
 
-__Service Name:__  	 	Taxon_genome_species
+__Service Name:__  	 	<a name="taxongnmsp"></a>Taxon_genome_species
 
 __Service Description:__ 	A service to get a set of Species that belong to a particular Taxon and have genome sequence in NCBI database.
 
@@ -3140,6 +3162,8 @@ __Service Quality:__
    | Internal server error       | 500   |         |
 
   > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_species_) will be an empty list.
+
+Go to [__Taxon to Species__](#taxonspecies).
 
 Go to [__Top__](#servicesdocumentation).
 
