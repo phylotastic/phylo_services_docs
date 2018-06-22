@@ -5138,7 +5138,13 @@ Go to [__Top__](#servicesdocumentation).
 
 ## <a name='treescaling'></a>Tree Scaling
 
-__Service Name:__  	 	 Datelife_scale_tree 
+| Service Name |  Summary | 
+   | :----------- | ---------: | 
+   | [Datelife_scale_tree](#datelifescale) | Gets Phylogenetic Trees with branch lengths using Datelife R package. | 
+   | [TaxonFinder_wrapper_text](#taxonfindtext) | A service to extract scientific names on free-form text using TaxonFinder API. |
+
+
+__Service Name:__  	 	 <a name="datelifescale"></a>Datelife_scale_tree 
 
 __Service Description:__ 	A service to get Phylogenetic Trees with branch lengths using Datelife R package.
 
@@ -5234,6 +5240,79 @@ __Service Quality:__
    | Invalid method name in resource URI (e.g. /scal)       | 404   | Error: Could not find the requested resource URI        |
    | Internal server error       | 500   |         |
 
+
+Go to [__Tree Scaling__](#treescaling).
+
+Go to [__Top__](#servicesdocumentation).
+
+--- 
+
+__Service Name:__  	 	 <a name="otscale"></a>OToL_scale_tree 
+
+__Service Description:__ 	A service to get Phylogenetic Trees with branch lengths using Open Tree of Life API.
+
+__Resource URI:__  		<http://phylo.cs.nmsu.edu:5009/phylotastic_ws/sc/ot/scale>
+
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		application/json
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">newick</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  string
+  * __Description:__  tree in newick string format.
+
+
+__Example Commands/Requests:__ 
+
+1. 
+```bash
+curl -X POST http://phylo.cs.nmsu.edu:5009/phylotastic_ws/sc/ot/scale -H 'content-type:application/json' -d '{"newick": "(Aulacopone_relicta,(((Myrmecia_gulosa,(Aneuretus_simoni,Dolichoderus_mariae)),((Ectatomma_ruidum,Huberia_brounii),Formica_rufa)),Apomyrma_stygia),Martialis_heureka)Formicidae;"}'
+```
+
+
+__Example Results:__
+
+1. 
+```json
+{
+	"status_code": 200, 
+	"message": "Success", 
+	"meta_data": {
+		"execution_time": 0.5, 
+		"creation_time": "2018-06-21T19:28:39.183334", 
+		"source_urls": ["http://141.211.236.35:10999/"]
+	}, 
+	"scaled_tree": "(((((Dolichoderus mariae:111.297,Aneuretus simoni:111.295)1:3.36907,Myrmecia gulosa:114.667)1:7.64397,((Huberia brounii:110.002,Ectatomma ruidum:110)1:2.67009,Formica rufa:112.675)1:9.63354)1:27.6989,Apomyrma stygia:150)1:13.2012,Martialis heureka:163.2,Aulacopone relicta:163.2);", 
+	"input_tree": "(Aulacopone_relicta,(((Myrmecia_gulosa,(Aneuretus_simoni,Dolichoderus_mariae)),((Ectatomma_ruidum,Huberia_brounii),Formica_rufa)),Apomyrma_stygia),Martialis_heureka)Formicidae;",
+}
+```
+
+
+__Citation/Source:__  	 	http://141.211.236.35:10999/
+
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*  __unknown__ (_depends on the source_)
+ * *Expected response time:*  	__1s~10s__ (_might be longer depending on the input tree_)
+ * *Informative message/status:*
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. newik)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Invalid input JSON data       | 400   | Invalid JSON document        |
+   | Invalid method name in resource URI (e.g. /scal)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
+
+Go to [__Tree Scaling__](#treescaling).
 
 Go to [__Top__](#servicesdocumentation).
 
