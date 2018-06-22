@@ -5141,7 +5141,7 @@ Go to [__Top__](#servicesdocumentation).
 | Service Name |  Summary | 
    | :----------- | ---------: | 
    | [Datelife_scale_tree](#datelifescale) | Gets Phylogenetic Trees with branch lengths using Datelife R package. | 
-   | [TaxonFinder_wrapper_text](#taxonfindtext) | A service to extract scientific names on free-form text using TaxonFinder API. |
+   | [OToL_scale_tree](#otscale) | Gets Phylogenetic Trees with branch lengths using Open Tree of Life API. |
 
 
 __Service Name:__  	 	 <a name="datelifescale"></a>Datelife_scale_tree 
