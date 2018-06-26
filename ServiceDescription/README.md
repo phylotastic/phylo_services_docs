@@ -2500,6 +2500,7 @@ Go to [__Top__](#servicesdocumentation).
    | [Taxon_all_species](#taxonallsp) | Get all Species that belong to a particular Taxon using OToL API. | 
    | [Taxon_country_species](#taxoncntysp) | Get a set of Species that belong to a particular Taxon and established in a particular country using INaturalist services. |
    | [Taxon_genome_species](#taxongnmsp) | Get a set of Species that belong to a particular Taxon and have genome sequence in NCBI database. |
+   | [Taxon_popular_species](#taxonpopsp) | Get a set of Species that belong to a particular Taxon and ordered by popularity using OneZoom API |
    
 
 __Service Name:__  	 	<a name="taxonallsp"></a>Taxon_all_species
@@ -3166,6 +3167,290 @@ __Service Quality:__
 Go to [__Taxon to Species__](#taxonspecies).
 
 Go to [__Top__](#servicesdocumentation).
+
+---
+
+__Service Name:__  	 	<a name="taxonpopsp"></a>Taxon_popular_species
+
+__Service Description:__ 	A service to retrieve a set of Species that belong to a particular Taxon and ordered by popularity using OneZoom API.
+
+__Resource URI:__  		<http://phylo.cs.nmsu.edu:5006/phylotastic_ws/ts/popular_species>
+
+__HTTP Method:__ 		GET
+
+__Input Format:__ 		application/x-www-form-urlencoded
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">taxon</span> 
+  * __Category:__  	optional
+  * __Data Type:__  string
+  * __Description:__  name of a taxon. If no *taxon* parameter is provided, by default the service assumes ``biota`` and returns the top 20 popular species of __all life__. 
+ 				
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">num_species</span> 
+  * __Category:__  	optional
+  * __Data Type:__  int
+  * __Description:__  number of species to be returned in the result. If *num_species* parameter is not provided, by default the service will return top 20 species belonging to the particular input taxon. Maximum value allowed for this parameter is ``100``.
+
+
+ 				
+__Example Commands/Requests:__
+
+1. 
+```
+http://phylo.cs.nmsu.edu:5006/phylotastic_ws/ts/popular_species
+```
+
+2. 
+```
+http://phylo.cs.nmsu.edu:5006/phylotastic_ws/ts/popular_species?taxon=Felidae&num_species=10
+```
+
+__Example Results:__
+
+1. 
+```json
+{
+	{
+	"status_code": 200,
+	"message": "Success",
+	"popular_species": [
+		{
+			"score": 196374.30608726584,
+			"name": "Canis lupus",
+			"rank": 1,
+			"ott_id": 247341
+		},
+		{
+			"score": 178828.2085712895,
+			"name": "Pan paniscus",
+			"rank": 2,
+			"ott_id": 158484
+		},
+		{
+			"score": 178826.2342051032,
+			"name": "Ursus arctos",
+			"rank": 3,
+			"ott_id": 872567
+		},
+		{
+			"score": 171011.49558080095,
+			"name": "Pan troglodytes",
+			"rank": 4,
+			"ott_id": 417950
+		},
+		{
+			"score": 168271.1617403349,
+			"name": "Pongo pygmaeus",
+			"rank": 5,
+			"ott_id": 770302
+		},
+		{
+			"score": 167801.62340542427,
+			"name": "Pongo abelii",
+			"rank": 6,
+			"ott_id": 770295
+		},
+		{
+			"score": 167668.23973771726,
+			"name": "Gorilla gorilla",
+			"rank": 7,
+			"ott_id": 417965
+		},
+		{
+			"score": 167079.01855934266,
+			"name": "Gorilla beringei",
+			"rank": 8,
+			"ott_id": 351685
+		},
+		{
+			"score": 165843.45355376587,
+			"name": "Felis catus",
+			"rank": 9,
+			"ott_id": 563166
+		},
+		{
+			"score": 163219.74333495292,
+			"name": "Homo sapiens",
+			"rank": 10,
+			"ott_id": 770315
+		},
+		{
+			"score": 161614.6969089356,
+			"name": "Ailuropoda melanoleuca",
+			"rank": 11,
+			"ott_id": 872573
+		},
+		{
+			"score": 160763.53132654927,
+			"name": "Ursus maritimus",
+			"rank": 12,
+			"ott_id": 10732
+		},
+		{
+			"score": 159953.18179004636,
+			"name": "Panthera tigris",
+			"rank": 13,
+			"ott_id": 42314
+		},
+		{
+			"score": 159511.64281662516,
+			"name": "Panthera leo",
+			"rank": 14,
+			"ott_id": 563151
+		},
+		{
+			"score": 157440.2275277912,
+			"name": "Acinonyx jubatus",
+			"rank": 15,
+			"ott_id": 752759
+		},
+		{
+			"score": 155708.9418435346,
+			"name": "Canis latrans",
+			"rank": 16,
+			"ott_id": 247331
+		},
+		{
+			"score": 152781.90699956715,
+			"name": "Puma concolor",
+			"rank": 17,
+			"ott_id": 42307
+		},
+		{
+			"score": 152361.9993384306,
+			"name": "Ursus americanus",
+			"rank": 18,
+			"ott_id": 872577
+		},
+		{
+			"score": 152332.36939194548,
+			"name": "Balaenoptera musculus",
+			"rank": 19,
+			"ott_id": 226190
+		},
+		{
+			"score": 150934.27258940678,
+			"name": "Vulpes vulpes",
+			"rank": 20,
+			"ott_id": 821964
+		}
+	],
+	"input_taxon": "biota",
+	"meta_data": {
+		"execution_time": 2.24,
+		"creation_time": "2018-06-26T13:00:28.865865",
+		"source_urls": [
+			"http://beta.onezoom.org"
+		]
+	}
+}
+```
+2. 
+```json
+{
+	"status_code": 200,
+	"message": "Success",
+	"popular_species": [
+		{
+			"score": 165843.45355376587,
+			"name": "Felis catus",
+			"rank": 9,
+			"ott_id": 563166
+		},
+		{
+			"score": 159953.18179004636,
+			"name": "Panthera tigris",
+			"rank": 13,
+			"ott_id": 42314
+		},
+		{
+			"score": 159511.64281662516,
+			"name": "Panthera leo",
+			"rank": 14,
+			"ott_id": 563151
+		},
+		{
+			"score": 157440.2275277912,
+			"name": "Acinonyx jubatus",
+			"rank": 15,
+			"ott_id": 752759
+		},
+		{
+			"score": 152781.90699956715,
+			"name": "Puma concolor",
+			"rank": 17,
+			"ott_id": 42307
+		},
+		{
+			"score": 149880.2715078593,
+			"name": "Panthera onca",
+			"rank": 22,
+			"ott_id": 42322
+		},
+		{
+			"score": 148158.462947006,
+			"name": "Lynx rufus",
+			"rank": 27,
+			"ott_id": 507545
+		},
+		{
+			"score": 146006.27444194877,
+			"name": "Panthera pardus",
+			"rank": 38,
+			"ott_id": 42324
+		},
+		{
+			"score": 141159.69265771235,
+			"name": "Lynx lynx",
+			"rank": 85,
+			"ott_id": 886829
+		},
+		{
+			"score": 140886.87771628448,
+			"name": "Lynx pardinus",
+			"rank": 91,
+			"ott_id": 442049
+		}
+	],
+	"input_taxon": "Felidae",
+	"meta_data": {
+		"execution_time": 0.92,
+		"creation_time": "2018-06-26T13:05:58.880428",
+		"source_urls": [
+			"http://beta.onezoom.org"
+		]
+	}
+}
+```
+
+__Citation/Source:__  	 	http://beta.onezoom.org
+
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*  __unknown__ (depends on the source service)
+ * *Expected response time:*  	__1s~15s__ (_might be longer depending on the rank of input taxon_)
+ * *Informative message/status:*
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. taxa)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Reached maximum input limit       | 403   | Error: Currently input taxon with '_rank name_' rank is not supported        |
+   | Invalid method name in resource URI (e.g. /pop_sp)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
+
+  
+Go to [__Taxon to Species__](#taxonspecies).
+
+Go to [__Top__](#servicesdocumentation).
+
 
 ---
 
