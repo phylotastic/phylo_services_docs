@@ -3210,144 +3210,154 @@ http://phylo.cs.nmsu.edu:5006/phylotastic_ws/ts/popular_species
 http://phylo.cs.nmsu.edu:5006/phylotastic_ws/ts/popular_species?taxon=Felidae&num_species=10
 ```
 
+3. 
+```
+http://phylo.cs.nmsu.edu:5006/phylotastic_ws/ts/popular_species?taxon=Anura&num_species=5
+```
+
 __Example Results:__
 
 1. 
 ```json
 {
-	{
 	"status_code": 200,
 	"message": "Success",
-	"popular_species": [
-		{
-			"score": 196374.30608726584,
-			"name": "Canis lupus",
-			"rank": 1,
-			"ott_id": 247341
-		},
-		{
-			"score": 178828.2085712895,
-			"name": "Pan paniscus",
-			"rank": 2,
-			"ott_id": 158484
-		},
-		{
-			"score": 178826.2342051032,
-			"name": "Ursus arctos",
-			"rank": 3,
-			"ott_id": 872567
-		},
-		{
-			"score": 171011.49558080095,
-			"name": "Pan troglodytes",
-			"rank": 4,
-			"ott_id": 417950
-		},
-		{
-			"score": 168271.1617403349,
-			"name": "Pongo pygmaeus",
-			"rank": 5,
-			"ott_id": 770302
-		},
-		{
-			"score": 167801.62340542427,
-			"name": "Pongo abelii",
-			"rank": 6,
-			"ott_id": 770295
-		},
-		{
-			"score": 167668.23973771726,
-			"name": "Gorilla gorilla",
-			"rank": 7,
-			"ott_id": 417965
-		},
-		{
-			"score": 167079.01855934266,
-			"name": "Gorilla beringei",
-			"rank": 8,
-			"ott_id": 351685
-		},
-		{
-			"score": 165843.45355376587,
-			"name": "Felis catus",
-			"rank": 9,
-			"ott_id": 563166
-		},
-		{
-			"score": 163219.74333495292,
-			"name": "Homo sapiens",
-			"rank": 10,
-			"ott_id": 770315
-		},
-		{
-			"score": 161614.6969089356,
-			"name": "Ailuropoda melanoleuca",
-			"rank": 11,
-			"ott_id": 872573
-		},
-		{
-			"score": 160763.53132654927,
-			"name": "Ursus maritimus",
-			"rank": 12,
-			"ott_id": 10732
-		},
-		{
-			"score": 159953.18179004636,
-			"name": "Panthera tigris",
-			"rank": 13,
-			"ott_id": 42314
-		},
-		{
-			"score": 159511.64281662516,
-			"name": "Panthera leo",
-			"rank": 14,
-			"ott_id": 563151
-		},
-		{
-			"score": 157440.2275277912,
-			"name": "Acinonyx jubatus",
-			"rank": 15,
-			"ott_id": 752759
-		},
-		{
-			"score": 155708.9418435346,
-			"name": "Canis latrans",
-			"rank": 16,
-			"ott_id": 247331
-		},
-		{
-			"score": 152781.90699956715,
-			"name": "Puma concolor",
-			"rank": 17,
-			"ott_id": 42307
-		},
-		{
-			"score": 152361.9993384306,
-			"name": "Ursus americanus",
-			"rank": 18,
-			"ott_id": 872577
-		},
-		{
-			"score": 152332.36939194548,
-			"name": "Balaenoptera musculus",
-			"rank": 19,
-			"ott_id": 226190
-		},
-		{
-			"score": 150934.27258940678,
-			"name": "Vulpes vulpes",
-			"rank": 20,
-			"ott_id": 821964
-		}
-	],
-	"input_taxon": "biota",
 	"meta_data": {
-		"execution_time": 2.24,
-		"creation_time": "2018-06-26T13:00:28.865865",
+		"execution_time": 2.1,
+		"creation_time": "2018-06-28T08:41:01.118528",
 		"source_urls": [
 			"http://beta.onezoom.org"
 		]
-	}
+	},
+	"result": [
+		{
+			"popular_species": [
+				{
+					"score": 196374.30608726584,
+					"name": "Canis lupus",
+					"rank": 1,
+					"ott_id": 247341
+				},
+				{
+					"score": 178828.2085712895,
+					"name": "Pan paniscus",
+					"rank": 2,
+					"ott_id": 158484
+				},
+				{
+					"score": 178826.2342051032,
+					"name": "Ursus arctos",
+					"rank": 3,
+					"ott_id": 872567
+				},
+				{
+					"score": 171011.49558080095,
+					"name": "Pan troglodytes",
+					"rank": 4,
+					"ott_id": 417950
+				},
+				{
+					"score": 168271.1617403349,
+					"name": "Pongo pygmaeus",
+					"rank": 5,
+					"ott_id": 770302
+				},
+				{
+					"score": 167801.62340542427,
+					"name": "Pongo abelii",
+					"rank": 6,
+					"ott_id": 770295
+				},
+				{
+					"score": 167668.23973771726,
+					"name": "Gorilla gorilla",
+					"rank": 7,
+					"ott_id": 417965
+				},
+				{
+					"score": 167079.01855934266,
+					"name": "Gorilla beringei",
+					"rank": 8,
+					"ott_id": 351685
+				},
+				{
+					"score": 165843.45355376587,
+					"name": "Felis catus",
+					"rank": 9,
+					"ott_id": 563166
+				},
+				{
+					"score": 163219.74333495292,
+					"name": "Homo sapiens",
+					"rank": 10,
+					"ott_id": 770315
+				},
+				{
+					"score": 161614.6969089356,
+					"name": "Ailuropoda melanoleuca",
+					"rank": 11,
+					"ott_id": 872573
+				},
+				{
+					"score": 160763.53132654927,
+					"name": "Ursus maritimus",
+					"rank": 12,
+					"ott_id": 10732
+				},
+				{
+					"score": 159953.18179004636,
+					"name": "Panthera tigris",
+					"rank": 13,
+					"ott_id": 42314
+				},
+				{
+					"score": 159511.64281662516,
+					"name": "Panthera leo",
+					"rank": 14,
+					"ott_id": 563151
+				},
+				{
+					"score": 157440.2275277912,
+					"name": "Acinonyx jubatus",
+					"rank": 15,
+					"ott_id": 752759
+				},
+				{
+					"score": 155708.9418435346,
+					"name": "Canis latrans",
+					"rank": 16,
+					"ott_id": 247331
+				},
+				{
+					"score": 152781.90699956715,
+					"name": "Puma concolor",
+					"rank": 17,
+					"ott_id": 42307
+				},
+				{
+					"score": 152361.9993384306,
+					"name": "Ursus americanus",
+					"rank": 18,
+					"ott_id": 872577
+				},
+				{
+					"score": 152332.36939194548,
+					"name": "Balaenoptera musculus",
+					"rank": 19,
+					"ott_id": 226190
+				},
+				{
+					"score": 150934.27258940678,
+					"name": "Vulpes vulpes",
+					"rank": 20,
+					"ott_id": 821964
+				}
+			],
+			"matched_taxon": "cellular organisms",
+			"ott_id": 93302
+		}
+	],
+	"input_taxon": "biota"
 }
 ```
 2. 
@@ -3355,76 +3365,248 @@ __Example Results:__
 {
 	"status_code": 200,
 	"message": "Success",
-	"popular_species": [
-		{
-			"score": 165843.45355376587,
-			"name": "Felis catus",
-			"rank": 9,
-			"ott_id": 563166
-		},
-		{
-			"score": 159953.18179004636,
-			"name": "Panthera tigris",
-			"rank": 13,
-			"ott_id": 42314
-		},
-		{
-			"score": 159511.64281662516,
-			"name": "Panthera leo",
-			"rank": 14,
-			"ott_id": 563151
-		},
-		{
-			"score": 157440.2275277912,
-			"name": "Acinonyx jubatus",
-			"rank": 15,
-			"ott_id": 752759
-		},
-		{
-			"score": 152781.90699956715,
-			"name": "Puma concolor",
-			"rank": 17,
-			"ott_id": 42307
-		},
-		{
-			"score": 149880.2715078593,
-			"name": "Panthera onca",
-			"rank": 22,
-			"ott_id": 42322
-		},
-		{
-			"score": 148158.462947006,
-			"name": "Lynx rufus",
-			"rank": 27,
-			"ott_id": 507545
-		},
-		{
-			"score": 146006.27444194877,
-			"name": "Panthera pardus",
-			"rank": 38,
-			"ott_id": 42324
-		},
-		{
-			"score": 141159.69265771235,
-			"name": "Lynx lynx",
-			"rank": 85,
-			"ott_id": 886829
-		},
-		{
-			"score": 140886.87771628448,
-			"name": "Lynx pardinus",
-			"rank": 91,
-			"ott_id": 442049
-		}
-	],
-	"input_taxon": "Felidae",
 	"meta_data": {
-		"execution_time": 0.92,
-		"creation_time": "2018-06-26T13:05:58.880428",
+		"execution_time": 1.0,
+		"creation_time": "2018-06-28T08:39:07.212249",
 		"source_urls": [
 			"http://beta.onezoom.org"
 		]
-	}
+	},
+	"result": [
+		{
+			"popular_species": [
+				{
+					"score": 165843.45355376587,
+					"name": "Felis catus",
+					"rank": 9,
+					"ott_id": 563166
+				},
+				{
+					"score": 159953.18179004636,
+					"name": "Panthera tigris",
+					"rank": 13,
+					"ott_id": 42314
+				},
+				{
+					"score": 159511.64281662516,
+					"name": "Panthera leo",
+					"rank": 14,
+					"ott_id": 563151
+				},
+				{
+					"score": 157440.2275277912,
+					"name": "Acinonyx jubatus",
+					"rank": 15,
+					"ott_id": 752759
+				},
+				{
+					"score": 152781.90699956715,
+					"name": "Puma concolor",
+					"rank": 17,
+					"ott_id": 42307
+				},
+				{
+					"score": 149880.2715078593,
+					"name": "Panthera onca",
+					"rank": 22,
+					"ott_id": 42322
+				},
+				{
+					"score": 148158.462947006,
+					"name": "Lynx rufus",
+					"rank": 27,
+					"ott_id": 507545
+				},
+				{
+					"score": 146006.27444194877,
+					"name": "Panthera pardus",
+					"rank": 38,
+					"ott_id": 42324
+				},
+				{
+					"score": 141159.69265771235,
+					"name": "Lynx lynx",
+					"rank": 85,
+					"ott_id": 886829
+				},
+				{
+					"score": 140886.87771628448,
+					"name": "Lynx pardinus",
+					"rank": 91,
+					"ott_id": 442049
+				}
+			],
+			"matched_taxon": "Felidae",
+			"ott_id": 563159
+		}
+	],
+	"input_taxon": "Felidae"
+}
+```
+
+3. 
+```json
+{
+	"status_code": 200,
+	"message": "Success",
+	"meta_data": {
+		"execution_time": 3.31,
+		"creation_time": "2018-06-28T08:39:55.319491",
+		"source_urls": [
+			"http://beta.onezoom.org"
+		]
+	},
+	"result": [
+		{
+			"popular_species": [],
+			"matched_taxon": "Anura (genus in kingdom Archaeplastida)",
+			"ott_id": 4728082
+		},
+		{
+			"popular_species": [
+				{
+					"score": 120126.871261261,
+					"name": "Bombina pachypus",
+					"rank": 4969,
+					"ott_id": 558313
+				},
+				{
+					"score": 119544.16658687402,
+					"name": "Ascaphus truei",
+					"rank": 5232,
+					"ott_id": 485827
+				},
+				{
+					"score": 119544.16658687402,
+					"name": "Ascaphus montanus",
+					"rank": 5232,
+					"ott_id": 809935
+				},
+				{
+					"score": 119533.46173383704,
+					"name": "Barbourula kalimantanensis",
+					"rank": 5236,
+					"ott_id": 95656
+				},
+				{
+					"score": 119523.8761594891,
+					"name": "Barbourula busuangensis",
+					"rank": 5239,
+					"ott_id": 95643
+				}
+			],
+			"matched_taxon": "Anura (order in Opisthokonta)",
+			"ott_id": 991547
+		},
+		{
+			"popular_species": [
+				{
+					"score": 40754.49695426256,
+					"name": "Cousinia platylepis",
+					"rank": 1450303,
+					"ott_id": 167185
+				},
+				{
+					"score": 40754.49695426256,
+					"name": "Cousinia turcomanica",
+					"rank": 1450303,
+					"ott_id": 193795
+				},
+				{
+					"score": 40591.795731046244,
+					"name": "Cousinia longifolia",
+					"rank": 1454424,
+					"ott_id": 100314
+				},
+				{
+					"score": 40591.795731046244,
+					"name": "Cousinia scariosa",
+					"rank": 1454424,
+					"ott_id": 244924
+				},
+				{
+					"score": 40591.795731046244,
+					"name": "Cousinia tenella",
+					"rank": 1454424,
+					"ott_id": 741656
+				}
+			],
+			"matched_taxon": "Cousinia",
+			"ott_id": 597720
+		},
+		{
+			"popular_species": [],
+			"matched_taxon": "Pisanianura",
+			"ott_id": 2916683
+		},
+		{
+			"popular_species": [
+				{
+					"score": 127458.40045718732,
+					"name": "Anoura geoffroyi",
+					"rank": 1704,
+					"ott_id": 688667
+				},
+				{
+					"score": 126994.34046910117,
+					"name": "Anoura caudifer",
+					"rank": 1838,
+					"ott_id": 351792
+				},
+				{
+					"score": 126264.81032663805,
+					"name": "Anoura latidens",
+					"rank": 2110,
+					"ott_id": 130223
+				},
+				{
+					"score": 126223.51628932233,
+					"name": "Anoura cultrata",
+					"rank": 2130,
+					"ott_id": 485774
+				}
+			],
+			"matched_taxon": "Anoura",
+			"ott_id": 351791
+		},
+		{
+			"popular_species": [
+				{
+					"score": 60354.346699178095,
+					"name": "Neanura ambigua",
+					"rank": 1113002,
+					"ott_id": 5010759
+				},
+				{
+					"score": 60166.7057372178,
+					"name": "Neanura coronifera",
+					"rank": 1117340,
+					"ott_id": 5010767
+				},
+				{
+					"score": 59982.69032973983,
+					"name": "Neanura growae",
+					"rank": 1121515,
+					"ott_id": 5010746
+				},
+				{
+					"score": 59982.69032973983,
+					"name": "Neanura ili",
+					"rank": 1121515,
+					"ott_id": 5010747
+				},
+				{
+					"score": 59982.69032973983,
+					"name": "Neanura giselae",
+					"rank": 1121515,
+					"ott_id": 5010748
+				}
+			],
+			"matched_taxon": "Neanura",
+			"ott_id": 99848
+		}
+	],
+	"input_taxon": "Anura"
 }
 ```
 
