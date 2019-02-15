@@ -43,7 +43,7 @@ __Service Name:__  	 	<a name="gnrdurl"></a>GNRD_wrapper_URL
 
 __Service Description:__ 	A service to extract scientific names from URL of a web page using Global Names Recognition and Discovery (GNRD) services.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/names_url>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/fn/names_url>
 
 __HTTP Method:__ 		GET or POST
 
@@ -69,12 +69,12 @@ __Example Commands/Requests:__
 
 1. 
 ```
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/names_url?url=https://en.wikipedia.org/wiki/Plain_pigeon&engine=1
+https://phylo.cs.nmsu.edu/phylotastic_ws/fn/names_url?url=https://en.wikipedia.org/wiki/Plain_pigeon&engine=1
 ```
 
 2. 
 ```
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/names_url?url=http://www.fws.gov/westvirginiafieldoffice/PDF/beechridgehcp/Appendix_D_Table_D-1.pdf
+https://phylo.cs.nmsu.edu/phylotastic_ws/fn/names_url?url=https://www.fws.gov/westvirginiafieldoffice/PDF/beechridgehcp/Appendix_D_Table_D-1.pdf
 ```
 
 __Example Results:__
@@ -88,7 +88,7 @@ __Example Results:__
 		"execution_time": 1.33,
 		"creation_time": "2017-10-18T15:01:40.552183",
 		"source_urls": [
-			"http://gnrd.globalnames.org/"
+			"https://gnrd.globalnames.org/"
 		]
 	},
 	"total_names": 9,
@@ -119,12 +119,12 @@ __Example Results:__
 ```json
 {
 	"status_code": 200,
-	"input_url": "http://www.fws.gov/westvirginiafieldoffice/PDF/beechridgehcp/Appendix_D_Table_D-1.pdf",
+	"input_url": "https://www.fws.gov/westvirginiafieldoffice/PDF/beechridgehcp/Appendix_D_Table_D-1.pdf",
 	"meta_data": {
 		"execution_time": 1.95,
 		"creation_time": "2017-10-18T15:03:58.433858",
 		"source_urls": [
-			"http://gnrd.globalnames.org/"
+			"https://gnrd.globalnames.org/"
 		]
 	},
 	"total_names": 153,
@@ -296,7 +296,7 @@ __Example Results:__
 }
 ```
 
-__Citation/Source:__  	 		http://gnrd.globalnames.org/
+__Citation/Source:__  	 		https://gnrd.globalnames.org/
 
 __Service Quality:__
 
@@ -325,7 +325,7 @@ __Service Name:__  	 	<a name="gnrdtext"></a>GNRD_wrapper_text
 
 __Service Description:__ 	A service to extract scientific names on free-form text using Global Names Recognition and Discovery (GNRD) services.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/names_text>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/fn/names_text>
 
 __HTTP Method:__ 		GET or POST
 
@@ -351,11 +351,11 @@ __Example Commands/Requests:__
 
 1. 
 ```
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/names_text?text=The lemon dove (Columba larvata) is a species of bird in the pigeon family Columbidae found in montane forests of sub-Saharan Africa.&engine=2
+https://phylo.cs.nmsu.edu/phylotastic_ws/fn/names_text?text=The lemon dove (Columba larvata) is a species of bird in the pigeon family Columbidae found in montane forests of sub-Saharan Africa.&engine=2
 ```
 2. 
 ```
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/names_text?text=Formica polyctena is a species of European red wood ant in the genus Formica. The pavement ant, Tetramorium caespitum is an ant native to Europe. Pseudomyrmex is a genus of stinging, wasp-like ants. Adetomyrma venatrix is an endangered species of ants endemic to Madagascar. Carebara diversa is a species of ants in the subfamily Formicinae. It is found in many Asian countries.
+https://phylo.cs.nmsu.edu/phylotastic_ws/fn/names_text?text=Formica polyctena is a species of European red wood ant in the genus Formica. The pavement ant, Tetramorium caespitum is an ant native to Europe. Pseudomyrmex is a genus of stinging, wasp-like ants. Adetomyrma venatrix is an endangered species of ants endemic to Madagascar. Carebara diversa is a species of ants in the subfamily Formicinae. It is found in many Asian countries.
 ```
 
 __Example Results:__
@@ -368,7 +368,7 @@ __Example Results:__
 		"execution_time": 1.05,
 		"creation_time": "2017-10-18T17:48:09.949718",
 		"source_urls": [
-			"http://gnrd.globalnames.org/"
+			"https://gnrd.globalnames.org/"
 		]
 	},
 	"total_names": 2,
@@ -398,7 +398,7 @@ __Example Results:__
 		"execution_time": 0.93,
 		"creation_time": "2017-10-18T17:49:32.614705",
 		"source_urls": [
-			"http://gnrd.globalnames.org/"
+			"https://gnrd.globalnames.org/"
 		]
 	},
 	"total_names": 6,
@@ -424,7 +424,7 @@ __Example Results:__
 }
 ```
 
-__Citation/Source:__  	 		http://gnrd.globalnames.org/
+__Citation/Source:__  	 		https://gnrd.globalnames.org/
 
 __Service Quality:__
 
@@ -453,7 +453,7 @@ __Service Name:__  	 	<a name="gnrdfile"></a>GNRD_wrapper_file
 
 __Service Description:__ 	A service to extract scientific names from a file(e.g. text, PDF, Microsoft Office documents, images) using Global Names Recognition and Discovery (GNRD) services.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/names_file>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/fn/names_file>
 
 __HTTP Method:__ 		POST
 
@@ -479,12 +479,12 @@ __Example Commands/Requests:__
 
 1. 
 ```bash
-curl -X POST http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/names_file -F 'inputFile=@scnames.txt' -F 'engine=2'
+curl -X POST https://phylo.cs.nmsu.edu/phylotastic_ws/fn/names_file -F 'inputFile=@scnames.txt' -F 'engine=2'
 ```
 
 2. 
 ```bash
-curl -X POST http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/names_file -F 'inputFile=@hipmctn12481.pdf' -F 'engine=1'
+curl -X POST https://phylo.cs.nmsu.edu/phylotastic_ws/fn/names_file -F 'inputFile=@hipmctn12481.pdf' -F 'engine=1'
 ```
 
 __Example Results:__
@@ -493,7 +493,7 @@ __Example Results:__
 ```json
 {
 	"status_code": 200, 
-	"input_url": "http://phylo.cs.nmsu.edu:8080/upload/scnames.txt", 
+	"input_url": "https://phylo.cs.nmsu.edu:8080/upload/scnames.txt", 
 	"scientificNames": [
 		"Formicidae", 
 		"Solenopsis invicta", 
@@ -506,7 +506,7 @@ __Example Results:__
 	"meta_data": {
 		"execution_time": 0.57, 
 		"creation_time": "2017-12-07T09:55:35.779422", 
-		"source_urls": ["http://gnrd.globalnames.org/"]
+		"source_urls": ["https://gnrd.globalnames.org/"]
 	}, 
 	"total_names": 7, 
 	"message": "Success", 
@@ -524,10 +524,10 @@ __Example Results:__
 
 2. 
 ```json
-{"status_code": 200, "input_url": "http://phylo.cs.nmsu.edu:8080/upload/hipmctn12481.pdf", "scientificNames": ["Acacia koa", "Acacia koaia", "Acacia mangium", "Acalypha", "Ajuga reptans", "Aleurites moluccana", "Alpinia zerumbet", "Arachis glabrata", "Arachis pintoi", "Araucaria columnaris", "Araucaria heterophylla", "Artocarpus altilis", "Artocarpus", "Atriplex semibaccata", "Avena sativa", "Axonopus affinis", "Axonopus fissifolius", "Axonopus compressus", "Azadirachta indica", "Bambusa", "Bougainvillea spectabilis", "Bromus inermis", "Bromus wildenowii", "Cajanus cajan", "Callitris", "Calophyllum inophyllum", "Canthium odoratum", "Psydrax odorata", "Caryota mitis", "Casuarina cunninghamiana", "Casuarina equisetifolia", "Cenchrus ciliaris", "Pennisetum ciliare", "Chenopodium oahuense", "Chloris gayana", "Chrysalidocarpus", "Chrysopogon zizanioides", "Vetiveria zizanioides", "Cibotium menziesii", "Citrus", "Cocos nucifera", "Codium variegatum", "Coix lachryma", "Cordia subcordata", "Cordyline fruticosa", "Crotalaria juncea", "Croton reflexifolius", "Cunninghamia lanceolata", "Cupressus lusitanica", "Cupressus macrocarpa", "Cupressus", "Cymbopogon citratus", "Cynodon dactylon", "Cynodon nlemfuensis", "Cyperus javanicus", "Cyperus polystachyos", "Dactylis glomerata", "Desmodium heterophyllum", "Desmodium intortum", "Desmodium aparines", "Desmodium triflorum", "Dichondra repens", "Digitaria eriantha", "Dimorphotheca sinuata", "Dodonaea viscosa", "Dracaena fragans", "Echinochloa colona", "Echinochloa crus-galli", "Eleocharis geniculata", "Eragrostis variabilis", "Eremochloa ophiuroides", "Erythrina sandwicensis", "Erythrina variegata", "Eucalyptus camaldulensis", "Eucalyptus dunnii", "Eucalyptus robusta", "Eucalyptus", "Fagopyrum esculentum", "Filicium decipiens", "Fimbristylis littoralis", "Flueggea flexuosa", "Fragaria chiloensis", "Gliricidia sepium", "Glycine max", "Gossypium tomentosum", "Hemarthria altissima", "Hemerocallis aurantiaca", "Hibiscus arnottianus", "Hibiscus rosa-sinensis", "Intsia bijuga", "Ipomea pes-caprae", "Ischaemum polystachyum", "Ischaemum digitatum", "Jacquemontia ovalifolia subsp. sandwicensis", "Juncus effusus", "Lablab purpureus", "Lippia nodiflora", "Lolium multiflorum", "Lolium perenne", "Lophostemon confertus", "Tristania conferta", "Lotus pedunculatus", "Lycium sandwicense", "Medicago sativa", "Metrosideros polymorpha", "Morinda citrifolia", "Myoporum sandwicense", "Nerium oleander", "Opuntia ficus-indica", "Oryza sativa", "Osteomeles anthyllidifolia", "Osteospermum fruticosum", "Pandanus tectorius", "Paspalum hieronymii", "Paspalum orbiculare", "Paspalum vaginatum", "Pennisetum purpureum", "Pennisetum glaucum", "Persea americana", "Piper methysticum", "Plumeria obtusa", "Podocarpus", "Polygonum minus var. procerum", "Polyscias guilfoylei", "Nothopanax guilfoylei", "Portulaca grandiflora", "Pouteria sandwicensis", "Premna obtusifolia", "Premna serratifolia", "Pritchardia", "Ptychosperma macarthurii", "Rumex acetosella", "Saccharum", "Samanea saman", "Albizia saman", "Sapindus saponaria", "Scaevola sericea", "Scirpus maritimus var. paludosus", "Scleria", "Secale cereale", "Senna guadichaudii", "Sesbania tomentosa", "Sesbania tomentosa f. arborea", "Setaria verticillata", "Sida fallax", "Sophora chrysophylla", "Sorghum bicolor", "Sporobolus virginicus", "Stenotaphrum", "Stylosanthes scabra", "Styphelia tameiameiae", "Swietenia macrophylla", "Swietenia mahagoni", "Syzygium paniculatum", "Eugenia myrtifolia", "Tabebuia heterophylla", "Tamarindus indica", "Terminalia catappa", "Thespesia populnea", "Tournefortia argentea", "Tradescantia spathacea", "Trifolium repens", "Triticum aestivum", "Urochloa brizantha", "Brachiaria brizantha", "Urochloa maxima", "Panicum maximum var. trichoglume", "Panicum maximum", "Vaccinium reticulatum", "Vicia villosa ssp. varia", "Vigna marina", "Vigna unguiculata", "Vitex rotundifolia", "Vitex ovata", "Vitex trifolia var. variegata", "Waltheria indica", "Wikstroemia uva-ursi", "Zea mays", "Zoysia japonica", "Canthium", "Aleurites molucana", "Artocarpus heterophyllum", "Casuarina", "Cibotium", "Coccoloba uvifera", "Dracaena fragrans", "Heteropogon contortus", "Hibiscus", "Melilotus", "Hala", "Scirpus maritimus var. paludosus makai", "S. bicolor", "Vigna"], "meta_data": {"execution_time": 2.79, "creation_time": "2017-12-07T09:54:33.876151", "source_urls": ["http://gnrd.globalnames.org/"]}, "total_names": 193, "message": "Success", "gnrd_parameters": {"engine": 1, "best_match_only": false, "data_source_ids": [], "detect_language": true, "preferred_data_sources": [], "all_data_sources": false, "return_content": false}}
+{"status_code": 200, "input_url": "https://phylo.cs.nmsu.edu:8080/upload/hipmctn12481.pdf", "scientificNames": ["Acacia koa", "Acacia koaia", "Acacia mangium", "Acalypha", "Ajuga reptans", "Aleurites moluccana", "Alpinia zerumbet", "Arachis glabrata", "Arachis pintoi", "Araucaria columnaris", "Araucaria heterophylla", "Artocarpus altilis", "Artocarpus", "Atriplex semibaccata", "Avena sativa", "Axonopus affinis", "Axonopus fissifolius", "Axonopus compressus", "Azadirachta indica", "Bambusa", "Bougainvillea spectabilis", "Bromus inermis", "Bromus wildenowii", "Cajanus cajan", "Callitris", "Calophyllum inophyllum", "Canthium odoratum", "Psydrax odorata", "Caryota mitis", "Casuarina cunninghamiana", "Casuarina equisetifolia", "Cenchrus ciliaris", "Pennisetum ciliare", "Chenopodium oahuense", "Chloris gayana", "Chrysalidocarpus", "Chrysopogon zizanioides", "Vetiveria zizanioides", "Cibotium menziesii", "Citrus", "Cocos nucifera", "Codium variegatum", "Coix lachryma", "Cordia subcordata", "Cordyline fruticosa", "Crotalaria juncea", "Croton reflexifolius", "Cunninghamia lanceolata", "Cupressus lusitanica", "Cupressus macrocarpa", "Cupressus", "Cymbopogon citratus", "Cynodon dactylon", "Cynodon nlemfuensis", "Cyperus javanicus", "Cyperus polystachyos", "Dactylis glomerata", "Desmodium heterophyllum", "Desmodium intortum", "Desmodium aparines", "Desmodium triflorum", "Dichondra repens", "Digitaria eriantha", "Dimorphotheca sinuata", "Dodonaea viscosa", "Dracaena fragans", "Echinochloa colona", "Echinochloa crus-galli", "Eleocharis geniculata", "Eragrostis variabilis", "Eremochloa ophiuroides", "Erythrina sandwicensis", "Erythrina variegata", "Eucalyptus camaldulensis", "Eucalyptus dunnii", "Eucalyptus robusta", "Eucalyptus", "Fagopyrum esculentum", "Filicium decipiens", "Fimbristylis littoralis", "Flueggea flexuosa", "Fragaria chiloensis", "Gliricidia sepium", "Glycine max", "Gossypium tomentosum", "Hemarthria altissima", "Hemerocallis aurantiaca", "Hibiscus arnottianus", "Hibiscus rosa-sinensis", "Intsia bijuga", "Ipomea pes-caprae", "Ischaemum polystachyum", "Ischaemum digitatum", "Jacquemontia ovalifolia subsp. sandwicensis", "Juncus effusus", "Lablab purpureus", "Lippia nodiflora", "Lolium multiflorum", "Lolium perenne", "Lophostemon confertus", "Tristania conferta", "Lotus pedunculatus", "Lycium sandwicense", "Medicago sativa", "Metrosideros polymorpha", "Morinda citrifolia", "Myoporum sandwicense", "Nerium oleander", "Opuntia ficus-indica", "Oryza sativa", "Osteomeles anthyllidifolia", "Osteospermum fruticosum", "Pandanus tectorius", "Paspalum hieronymii", "Paspalum orbiculare", "Paspalum vaginatum", "Pennisetum purpureum", "Pennisetum glaucum", "Persea americana", "Piper methysticum", "Plumeria obtusa", "Podocarpus", "Polygonum minus var. procerum", "Polyscias guilfoylei", "Nothopanax guilfoylei", "Portulaca grandiflora", "Pouteria sandwicensis", "Premna obtusifolia", "Premna serratifolia", "Pritchardia", "Ptychosperma macarthurii", "Rumex acetosella", "Saccharum", "Samanea saman", "Albizia saman", "Sapindus saponaria", "Scaevola sericea", "Scirpus maritimus var. paludosus", "Scleria", "Secale cereale", "Senna guadichaudii", "Sesbania tomentosa", "Sesbania tomentosa f. arborea", "Setaria verticillata", "Sida fallax", "Sophora chrysophylla", "Sorghum bicolor", "Sporobolus virginicus", "Stenotaphrum", "Stylosanthes scabra", "Styphelia tameiameiae", "Swietenia macrophylla", "Swietenia mahagoni", "Syzygium paniculatum", "Eugenia myrtifolia", "Tabebuia heterophylla", "Tamarindus indica", "Terminalia catappa", "Thespesia populnea", "Tournefortia argentea", "Tradescantia spathacea", "Trifolium repens", "Triticum aestivum", "Urochloa brizantha", "Brachiaria brizantha", "Urochloa maxima", "Panicum maximum var. trichoglume", "Panicum maximum", "Vaccinium reticulatum", "Vicia villosa ssp. varia", "Vigna marina", "Vigna unguiculata", "Vitex rotundifolia", "Vitex ovata", "Vitex trifolia var. variegata", "Waltheria indica", "Wikstroemia uva-ursi", "Zea mays", "Zoysia japonica", "Canthium", "Aleurites molucana", "Artocarpus heterophyllum", "Casuarina", "Cibotium", "Coccoloba uvifera", "Dracaena fragrans", "Heteropogon contortus", "Hibiscus", "Melilotus", "Hala", "Scirpus maritimus var. paludosus makai", "S. bicolor", "Vigna"], "meta_data": {"execution_time": 2.79, "creation_time": "2017-12-07T09:54:33.876151", "source_urls": ["https://gnrd.globalnames.org/"]}, "total_names": 193, "message": "Success", "gnrd_parameters": {"engine": 1, "best_match_only": false, "data_source_ids": [], "detect_language": true, "preferred_data_sources": [], "all_data_sources": false, "return_content": false}}
 ```
 
-__Citation/Source:__  	 		http://gnrd.globalnames.org/
+__Citation/Source:__  	 		https://gnrd.globalnames.org/
 
 __Service Quality:__
 
@@ -556,7 +556,7 @@ __Service Name:__  	 	<a name="taxonfindurl"></a>TaxonFinder_wrapper_URL
 
 __Service Description:__ 	A service to extract scientific names from URL of a web page using TaxonFinder API.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/tf/names_url>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/fn/tf/names_url>
 
 __HTTP Method:__ 		GET or POST
 
@@ -577,7 +577,7 @@ __Example Commands/Requests:__
 
 1. 
 ```
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/tf/names_url?url=https://en.wikipedia.org/wiki/Monkey
+https://phylo.cs.nmsu.edu/phylotastic_ws/fn/tf/names_url?url=https://en.wikipedia.org/wiki/Monkey
 ```
 
 
@@ -592,7 +592,7 @@ __Example Results:__
 		"execution_time": 0.54,
 		"creation_time": "2018-01-15T18:10:22.052341",
 		"source_urls": [
-			"http://taxonfinder.org/"
+			"https://taxonfinder.org/"
 		]
 	},
 	"total_names": 53,
@@ -684,7 +684,7 @@ __Service Name:__  	 	<a name="taxonfindtext"></a>TaxonFinder_wrapper_text
 
 __Service Description:__ 	A service to extract scientific names on free-form text using TaxonFinder API.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/tf/names_text>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/fn/tf/names_text>
 
 __HTTP Method:__ 		GET or POST
 
@@ -705,7 +705,7 @@ __Example Commands/Requests:__
 
 1. 
 ```
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/fn/tf/names_text?text=Acanthodians are often referred to as spiny sharks,though they are not part of Chondrichthyes proper, they are a paraphyletic assemblage leading to cartilaginous fish as a whole. Since then, sharks have diversified into over 500 species. They range in size from the small dwarf lanternshark (Etmopterus perryi), a deep sea species of only 17 centimetres in length, to the whale shark Rhincodon typus, the largest fish in the world, which reaches approximately 12 metres in length. 
+https://phylo.cs.nmsu.edu/phylotastic_ws/fn/tf/names_text?text=Acanthodians are often referred to as spiny sharks,though they are not part of Chondrichthyes proper, they are a paraphyletic assemblage leading to cartilaginous fish as a whole. Since then, sharks have diversified into over 500 species. They range in size from the small dwarf lanternshark (Etmopterus perryi), a deep sea species of only 17 centimetres in length, to the whale shark Rhincodon typus, the largest fish in the world, which reaches approximately 12 metres in length. 
 ```
 
 __Example Results:__
@@ -719,7 +719,7 @@ __Example Results:__
         "execution_time":0.13,
         "creation_time":"2018-01-15T18:25:00.506087",
         "source_urls":[
-            "http://taxonfinder.org/"
+            "https://taxonfinder.org/"
         ]
     },
     "total_names":3,
@@ -772,7 +772,7 @@ __Service Name:__  	 		<a name="tnrsot"></a>OToL_TNRS_wrapper
 
 __Service Description:__ 	A service which resolves scientific names using Open Tree of Life Taxonomic name resolution services.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/tnrs/ot/resolve>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/tnrs/ot/resolve>
 
 __HTTP Method:__ 		GET or POST
 
@@ -805,11 +805,11 @@ __Example Commands/Requests:__
 1. 
 
 ```
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/tnrs/ot/resolve?names=Formica polyctena|Formica exsectoides|Formica pecefica
+https://phylo.cs.nmsu.edu/phylotastic_ws/tnrs/ot/resolve?names=Formica polyctena|Formica exsectoides|Formica pecefica
 ```
 2. 
 ```
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/tnrs/ot/resolve?names=Pinus resionosa|Meli officinalis&fuzzy_match=true&multiple_match=true
+https://phylo.cs.nmsu.edu/phylotastic_ws/tnrs/ot/resolve?names=Pinus resionosa|Meli officinalis&fuzzy_match=true&multiple_match=true
 ```
 
 __Example Results:__
@@ -1024,7 +1024,7 @@ __Example Results:__
 }
 ```
 
-__Alternative Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/tnrs/ot/names>
+__Alternative Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/tnrs/ot/names>
 
 __HTTP Method:__ 		POST
 
@@ -1057,7 +1057,7 @@ __Example Commands/Requests:__
 
 1. 
 ```bash
-curl -X POST "http://phylo.cs.nmsu.edu:5004/phylotastic_ws/tnrs/ot/names" -H "content-type:application/json" -d '{"scientificNames": ["Setophaga striata","Setophaga megnolia","Setophaga angilae","Setophaga plumbea","Setophaga virens"],"fuzzy_match":true}'
+curl -X POST "https://phylo.cs.nmsu.edu/phylotastic_ws/tnrs/ot/names" -H "content-type:application/json" -d '{"scientificNames": ["Setophaga striata","Setophaga megnolia","Setophaga angilae","Setophaga plumbea","Setophaga virens"],"fuzzy_match":true}'
 ``` 
 
 __Example Results:__
@@ -1207,7 +1207,7 @@ __Service Name:__  	 		<a name="tnrsgnr"></a>GNR_TNRS_wrapper
 
 __Service Description:__ 	A service which resolves scientific names against known taxonomy sources using Global Names Resolution services.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/tnrs/gnr/resolve>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/tnrs/gnr/resolve>
 
 __HTTP Method:__ 		GET or POST
 
@@ -1240,7 +1240,7 @@ __Example Commands/Requests:__
 1. 
 
 ```
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/tnrs/gnr/resolve?names=Formica%20pecefica&fuzzy_match=true&multiple_match=true
+https://phylo.cs.nmsu.edu/phylotastic_ws/tnrs/gnr/resolve?names=Formica%20pecefica&fuzzy_match=true&multiple_match=true
 ```
 
 __Example Results:__
@@ -1417,7 +1417,7 @@ __Example Results:__
 		"execution_time": 0.54,
 		"creation_time": "2017-10-18T21:25:32.366358",
 		"source_urls": [
-			"http://resolver.globalnames.org/"
+			"https://resolver.globalnames.org/"
 		]
 	},
 	"total_names": 1,
@@ -1435,7 +1435,7 @@ __Example Results:__
 }
 ```
 
-__Alternative Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/tnrs/gnr/names>
+__Alternative Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/tnrs/gnr/names>
 
 __HTTP Method:__ 		POST
 
@@ -1468,7 +1468,7 @@ __Example Commands/Requests:__
 
 1. 
 ```bash
-curl -X POST "http://phylo.cs.nmsu.edu:5004/phylotastic_ws/tnrs/gnr/names" -H "content-type:application/json" -d '{"scientificNames": ["Rana Temporaria"],"fuzzy_match":true, "multiple_match":false}'
+curl -X POST "https://phylo.cs.nmsu.edu/phylotastic_ws/tnrs/gnr/names" -H "content-type:application/json" -d '{"scientificNames": ["Rana Temporaria"],"fuzzy_match":true, "multiple_match":false}'
 ``` 
 
 __Example Results:__
@@ -1500,7 +1500,7 @@ __Example Results:__
 		"execution_time": 0.74,
 		"creation_time": "2017-10-18T21:51:58.633393",
 		"source_urls": [
-			"http://resolver.globalnames.org/"
+			"https://resolver.globalnames.org/"
 		]
 	},
 	"total_names": 1,
@@ -1518,7 +1518,7 @@ __Example Results:__
 }
 ```
 
-__Citation/Source:__		http://resolver.globalnames.org/
+__Citation/Source:__		https://resolver.globalnames.org/
 
 __Service Quality:__
 
@@ -1547,7 +1547,7 @@ __Service Name:__  	 		<a name="tnrsip"></a>iPlant_TNRS_wrapper
 
 __Service Description:__ 	A service which resolves scientific names (of plants) using iPlant Collaborative services.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/tnrs/ip/resolve>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/tnrs/ip/resolve>
 
 __HTTP Method:__ 		GET or POST
 
@@ -1580,7 +1580,7 @@ __Example Commands/Requests:__
 1. 
 
 ```
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/tnrs/ip/resolve?names=Acanthophyllum albidum|Acanthostachys pitcairnioides|Acanthostyles buniifolius&fuzzy_match=true&multiple_match=false
+https://phylo.cs.nmsu.edu/phylotastic_ws/tnrs/ip/resolve?names=Acanthophyllum albidum|Acanthostachys pitcairnioides|Acanthostyles buniifolius&fuzzy_match=true&multiple_match=false
 ```
 
 __Example Results:__
@@ -1595,7 +1595,7 @@ __Example Results:__
 		"execution_time": 0.39,
 		"creation_time": "2018-01-24T18:36:14.819772",
 		"source_urls": [
-			"http://tnrs.iplantcollaborative.org"
+			"https://tnrs.iplantcollaborative.org"
 		]
 	},
 	"total_names": 3,
@@ -1646,7 +1646,7 @@ __Example Results:__
 }
 ```
 
-__Alternative Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/tnrs/ip/names>
+__Alternative Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/tnrs/ip/names>
 
 __HTTP Method:__ 		POST
 
@@ -1679,7 +1679,7 @@ __Example Commands/Requests:__
 
 1. 
 ```bash
-curl -X POST "http://phylo.cs.nmsu.edu:5004/phylotastic_ws/tnrs/ip/names" -H "content-type:application/json" -d '{"scientificNames": ["Acianthera angusti","Acidoton lanceolatus"],"fuzzy_match":true, "multiple_match":true}'
+curl -X POST "https://phylo.cs.nmsu.edu/phylotastic_ws/tnrs/ip/names" -H "content-type:application/json" -d '{"scientificNames": ["Acianthera angusti","Acidoton lanceolatus"],"fuzzy_match":true, "multiple_match":true}'
 ``` 
 
 __Example Results:__
@@ -1693,7 +1693,7 @@ __Example Results:__
 		"execution_time": 1.04,
 		"creation_time": "2018-01-24T18:38:32.764067",
 		"source_urls": [
-			"http://tnrs.iplantcollaborative.org"
+			"https://tnrs.iplantcollaborative.org"
 		]
 	},
 	"total_names": 2,
@@ -1739,7 +1739,7 @@ __Example Results:__
 }
 ```
 
-__Citation/Source:__		http://tnrs.iplantcollaborative.org
+__Citation/Source:__		https://tnrs.iplantcollaborative.org
 
 __Service Quality:__
 
@@ -1771,7 +1771,6 @@ Go to [__Top__](#servicesdocumentation).
    | :----------- | ---------: | 
    | [OToL_wrapper_Tree](#ot) | Get Phylogenetic Trees from a list of taxa using Open Tree of Life's induced_subtree method.    | 
    | [Phylomatic_wrapper_Tree](#pm)      | Get Phylogenetic Trees from a list of taxa using Phylomatic service.         |
-   | [PhyloT_wrapper_Tree](#pt)      | Get Phylogenetic Trees (based on NCBI taxonomy) from a list of taxa using phyloT.         |
    | [Treebase_Tree](#tb)  | Get Phylogenetic Trees from a list of taxa by constructung super-trees using source trees of TreeBase.      |
    | [Supersmart_wrapper_Tree](#smrt)      | Get Phylogenetic Trees using SUPERSMART tool        |
    
@@ -1781,7 +1780,7 @@ __Service Name:__  	 		<a name="ot"></a>OToL_wrapper_Tree
 
 __Service Description:__ 	A service to get Phylogenetic Trees from a list of taxa using Open Tree of Life's induced_subtree method.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/ot/get_tree>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/gt/ot/get_tree>
 
 __HTTP Method:__ 		GET or POST
 
@@ -1803,7 +1802,7 @@ __Example Commands/Requests:__
 1. 
 
 ```
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/ot/get_tree?taxa=Panthera%20pardus|Taxidea%20taxus|Lutra%20lutra|Canis%20lupus|Mustela%20altaica
+https://phylo.cs.nmsu.edu/phylotastic_ws/gt/ot/get_tree?taxa=Panthera%20pardus|Taxidea%20taxus|Lutra%20lutra|Canis%20lupus|Mustela%20altaica
 ```
 
 __Example Results:__
@@ -1830,7 +1829,7 @@ __Example Results:__
                 "FocalCladeTaxonName":"Mammalia",
                 "Publication":"O'Leary, M. A., J. I. Bloch, J. J. Flynn, T. J. Gaudin, A. Giallombardo, N. P. Giannini, S. L. Goldberg, B. P. Kraatz, Z.-X. Luo, J. Meng, X. Ni, M. J. Novacek, F. A. Perini, Z. S. Randall, G. W. Rougier, E. J. Sargis, M. T. Silcox, N. B. Simmons, M. Spaulding, P. M. Velazco, M. Weksler, J. R. Wible, A. L. Cirranello. 2013. The placental mammal ancestor and the post-K-Pg radiation of placentals. Science 339 (6120): 662-667.",
                 "CandidateTreeForSynthesis":"tree6169",
-                "PublicationDOI":"http://dx.doi.org/10.1126/science.1229237",
+                "PublicationDOI":"https://dx.doi.org/10.1126/science.1229237",
                 "DataRepository":"",
                 "Curator":"Joseph W. Brown",
                 "PublicationIdentifier":"pg_2647"
@@ -1840,7 +1839,7 @@ __Example Results:__
                 "FocalCladeTaxonName":"Mammalia",
                 "Publication":"Lartillot, Nicolas, Frédéric Delsuc. 2012. Joint reconstruction of divergence times and life-history evolution in placental mammals using a phylogenetic covariance model. Evolution 66 (6): 1773-1787.",
                 "CandidateTreeForSynthesis":"tree6545",
-                "PublicationDOI":"http://dx.doi.org/10.1111/j.1558-5646.2011.01558.x",
+                "PublicationDOI":"https://dx.doi.org/10.1111/j.1558-5646.2011.01558.x",
                 "DataRepository":"",
                 "Curator":"Joseph W. Brown",
                 "PublicationIdentifier":"pg_2812"
@@ -1850,7 +1849,7 @@ __Example Results:__
                 "FocalCladeTaxonName":"Mustelidae",
                 "Publication":"Koepfli, Klaus-Peter, Kerry A Deere, Graham J Slater, Colleen Begg, Keith Begg, Lon Grassman, Mauro Lucherini, Geraldine Veron, Robert K Wayne. 2008. Multigene phylogeny of the Mustelidae: Resolving relationships, tempo and biogeographic history of a mammalian adaptive radiation. BMC Biology 6 (1): 10.",
                 "CandidateTreeForSynthesis":"tree6235",
-                "PublicationDOI":"http://dx.doi.org/10.1186/1741-7007-6-10",
+                "PublicationDOI":"https://dx.doi.org/10.1186/1741-7007-6-10",
                 "DataRepository":"",
                 "Curator":"Joseph Brown",
                 "PublicationIdentifier":"pg_2685"
@@ -1860,8 +1859,8 @@ __Example Results:__
                 "FocalCladeTaxonName":"Mammalia",
                 "Publication":"Meredith, R.W., Janecka J., Gatesy J., Ryder O.A., Fisher C., Teeling E., Goodbla A., Eizirik E., Simao T., Stadler T., Rabosky D., Honeycutt R., Flynn J., Ingram C., Steiner C., Williams T., Robinson T., Herrick A., Westerman M., Ayoub N., Springer M., & Murphy W. 2011. Impacts of the Cretaceous Terrestrial Revolution and KPg Extinction on Mammal Diversification. Science 334 (6055): 521-524.",
                 "CandidateTreeForSynthesis":"tree2855",
-                "PublicationDOI":"http://dx.doi.org/10.1126/science.1211028",
-                "DataRepository":"http://purl.org/phylo/treebase/phylows/study/TB2:S11872",
+                "PublicationDOI":"https://dx.doi.org/10.1126/science.1211028",
+                "DataRepository":"https://purl.org/phylo/treebase/phylows/study/TB2:S11872",
                 "Curator":"Chris Owen",
                 "PublicationIdentifier":"pg_1428"
             }
@@ -1880,7 +1879,7 @@ __Example Results:__
 }
 ```
 
-__Alternative Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/ot/tree>
+__Alternative Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/gt/ot/tree>
 
 __HTTP Method:__ 		POST
 
@@ -1902,7 +1901,7 @@ __Example Commands/Requests:__
 
 1. 
 ```bash
-curl -X POST "http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/ot/tree" -H "content-type:application/json" -d '{"taxa": ["Setophaga striata","Setophaga magnolia","Setophaga angelae","Setophaga plumbea","Setophaga virens"]}'
+curl -X POST "https://phylo.cs.nmsu.edu/phylotastic_ws/gt/ot/tree" -H "content-type:application/json" -d '{"taxa": ["Setophaga striata","Setophaga magnolia","Setophaga angelae","Setophaga plumbea","Setophaga virens"]}'
 ``` 
 
 __Example Results:__
@@ -1930,7 +1929,7 @@ __Example Results:__
 				"FocalCladeTaxonName": "Parulidae",
 				"Publication": "Lovette, Irby J., Jorge L. Pérez-Emán, John P. Sullivan, Richard C. Banks, Isabella Fiorentino, Sergio Córdoba-Córdoba, María Echeverry-Galvis, F. Keith Barker, Kevin J. Burns, John Klicka, Scott M. Lanyon, Eldredge Bermingham. 2010. A comprehensive multilocus phylogeny for the wood-warblers and a revised classification of the Parulidae (Aves). Molecular Phylogenetics and Evolution 57 (2): 753-770.",
 				"CandidateTreeForSynthesis": "tree6024",
-				"PublicationDOI": "http://dx.doi.org/10.1016/j.ympev.2010.07.018",
+				"PublicationDOI": "https://dx.doi.org/10.1016/j.ympev.2010.07.018",
 				"DataRepository": "",
 				"Curator": "Joseph W. Brown",
 				"PublicationIdentifier": "pg_2591"
@@ -1940,8 +1939,8 @@ __Example Results:__
 				"FocalCladeTaxonName": "Passeriformes",
 				"Publication": "Barker, F. Keith, Kevin J. Burns, John Klicka, Scott M. Lanyon, Irby J. Lovette. 2015. New insights into New World biogeography: An integrated view from the phylogeny of blackbirds, cardinals, sparrows, tanagers, warblers, and allies. The Auk 132 (2): 333-348.",
 				"CandidateTreeForSynthesis": "tree1",
-				"PublicationDOI": "http://dx.doi.org/10.1642/auk-14-110.1",
-				"DataRepository": "http://datadryad.org/resource/doi:10.5061/dryad.pb787",
+				"PublicationDOI": "https://dx.doi.org/10.1642/auk-14-110.1",
+				"DataRepository": "https://datadryad.org/resource/doi:10.5061/dryad.pb787",
 				"Curator": "Joseph W. Brown",
 				"PublicationIdentifier": "ot_770"
 			}
@@ -1989,7 +1988,7 @@ __Service Name:__  	 		<a name="pm"></a>Phylomatic_wrapper_Tree
 
 __Service Description:__ 	A service to get Phylogenetic Trees from a list of taxa using Phylomatic service.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pm/get_tree>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/gt/pm/get_tree>
 
 __HTTP Method:__ 		GET or POST
 
@@ -2011,7 +2010,7 @@ __Example Commands/Requests:__
 1. 
 
 ```
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pm/get_tree?taxa=Panthera leo|Panthera onca|Panthera tigris|Panthera uncia
+https://phylo.cs.nmsu.edu/phylotastic_ws/gt/pm/get_tree?taxa=Panthera leo|Panthera onca|Panthera tigris|Panthera uncia
 ```
 
 __Example Results:__
@@ -2025,7 +2024,7 @@ __Example Results:__
 		"execution_time": 4.81,
 		"creation_time": "2017-10-18T23:27:24.903835",
 		"source_urls": [
-			"http://phylodiversity.net/phylomatic/"
+			"https://phylodiversity.net/phylomatic/"
 		]
 	},
 	"input_taxa": [
@@ -2038,7 +2037,7 @@ __Example Results:__
 }
 ```
 
-__Alternative Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pm/tree>
+__Alternative Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/gt/pm/tree>
 
 __HTTP Method:__ 		POST
 
@@ -2060,7 +2059,7 @@ __Example Commands/Requests:__
 
 1. 
 ```bash
-curl -X POST "http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pm/tree" -H "content-type:application/json" -d '{"taxa": ["Helianthus annuus","Passiflora edulis", "Rosa arkansana", "Saccharomyces cerevisiae"]}'
+curl -X POST "https://phylo.cs.nmsu.edu/phylotastic_ws/gt/pm/tree" -H "content-type:application/json" -d '{"taxa": ["Helianthus annuus","Passiflora edulis", "Rosa arkansana", "Saccharomyces cerevisiae"]}'
 ``` 
 
 __Example Results:__
@@ -2075,7 +2074,7 @@ __Example Results:__
 		"execution_time": 3.59,
 		"creation_time": "2017-10-18T23:29:51.576322",
 		"source_urls": [
-			"http://phylodiversity.net/phylomatic/"
+			"https://phylodiversity.net/phylomatic/"
 		]
 	},
 	"input_taxa": [
@@ -2090,7 +2089,7 @@ __Example Results:__
 
 __Citation/Source:__		
 
-- http://phylodiversity.net/phylomatic/
+- https://phylodiversity.net/phylomatic/
 - https://github.com/OpenTreeOfLife/opentree/wiki/Open-Tree-of-Life-APIs#taxonomy
 
 __Service Quality:__
@@ -2116,145 +2115,12 @@ Go to [__Top__](#servicesdocumentation).
 
 ---
 
-__Service Name:__  	 		<a name="pt"></a>PhyloT_wrapper_Tree
-
-__Service Description:__ 	A service to get Phylogenetic Trees (based on NCBI taxonomy) from a list of taxa using phyloT.
-
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pt/get_tree>
-
-__HTTP Method:__ 		GET or POST
-
-__Input Format:__ 		application/x-www-form-urlencoded
-
-__Output Format:__ 		application/json
-
-__Parameters:__
-
-1. Parameter details:
-  * __Name:__ 	 	<span style="color:blue">taxa</span> 
-  * __Category:__  	mandatory
-  * __Data Type:__  string
-  * __Description:__  one or more scientific names delimited by pipe "|".
- 				
- 				
-__Example Commands/Requests:__
-
-1. 
-
-```
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pt/get_tree?taxa=Setophaga striata|Setophaga magnolia|Setophaga angelae|Setophaga plumbea|Setophaga virens
-```
-
-__Example Results:__
-
-1. 
-```json
-{
-	"status_code": 200,
-	"message": "Success",
-	"meta_data": {
-		"execution_time": 9.08,
-		"creation_time": "2017-10-18T23:37:03.449076",
-		"source_urls": [
-			"http://phylot.biobyte.de/"
-		]
-	},
-	"input_taxa": [
-		"Setophaga striata",
-		"Setophaga magnolia",
-		"Setophaga angelae",
-		"Setophaga plumbea",
-		"Setophaga virens"
-	],
-	"newick": "(Setophaga_virens,Setophaga_angelae,Setophaga_plumbea,Setophaga_striata,Setophaga_magnolia);"
-}
-```
-
-__Alternative Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pt/tree>
-
-__HTTP Method:__ 		POST
-
-__Input Format:__ 		application/json
-
-__Output Format:__ 		application/json 
-
-
-__Parameters:__
-
-1. Parameter details:
-  * __Name:__ 	 	<span style="color:blue">taxa</span> 
-  * __Category:__  	mandatory
-  * __Data Type:__  list of strings
-  * __Description:__ list of scientific names.
- 				
- 				
-__Example Commands/Requests:__
-
-1. 
-```bash
-curl -X POST "http://phylo.cs.nmsu.edu:5004/phylotastic_ws/gt/pt/tree" -H "content-type:application/json" -d '{"taxa": ["Aix sponsa", "Anas acuta", "Anas americana", "Aythya americana", "Branta canadensis","Bucephala albeola", "Dendrocygna autumnalis", "Dendrocygna bicolor"]}'
-``` 
-
-__Example Results:__
-
-1. 
-
-```
-{
-	"status_code": 200,
-	"message": "Success",
-	"meta_data": {
-		"execution_time": 9.60,
-		"creation_time": "2017-10-18T23:45:45.493155",
-		"source_urls": [
-			"http://phylot.biobyte.de/"
-		]
-	},
-	"input_taxa": [
-		"Aix sponsa",
-		"Anas acuta",
-		"Anas americana",
-		"Aythya americana",
-		"Branta canadensis",
-		"Bucephala albeola",
-		"Dendrocygna autumnalis",
-		"Dendrocygna bicolor"
-	],
-	"newick": "((Bucephala_albeola),(Aythya_americana),(Aix_sponsa),(Branta_canadensis),(Anas_acuta),(Anas_americana),(Dendrocygna_autumnalis,Dendrocygna_bicolor));"
-}
-```
-
-__Citation/Source:__		http://phylot.biobyte.de/
-
-__Service Quality:__
-
- * *Restrictions on capacity:*  __maximum `30` taxa allowed__ 
- * *Expected response time:*  	__1s~30s__
- * *Informative message/status:*
-   
-   | Case | HTTP status code | Message | 
-   | :----------- | :------: | ------------: | 
-   | Successful       | 200   | Success        | 
-   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
-   | Invalid name of mandatory parameter (e.g. tax)       | 400   | Error: Missing parameter '_parameter name_'        |
-   | Reached maximum input limit       | 403   | Error: Currently more than 30 names is not supported        |
-   | Invalid method name in resource URI (e.g. /get_tre)       | 404   | Error: Could not find the requested resource URI        |
-   | Internal server error       | 500   |         |
-
-  > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_newick_) will be an empty string.
-
-Go to [__Phylogenetic Tree Retrieval__](#treeretrieval).
-
-Go to [__Top__](#servicesdocumentation).
-
----
-
 __Service Name:__  	 		<a name="tb"></a>Treebase_Tree
 
 __Service Description:__ 	A service to get Phylogenetic Trees from a list of taxa by constructung super-trees using source trees of TreeBase.
 
 
-__Alternative Resource URI:__  		<http://phylo.cs.nmsu.edu:5012/phylotastic_ws/gt/tb/tree>
+__Alternative Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/gt/tb/tree>
 
 __HTTP Method:__ 		POST
 
@@ -2276,13 +2142,13 @@ __Example Commands/Requests:__
 
 1. 
 ```bash
-$ curl -X POST "http://phylo.cs.nmsu.edu:5012/phylotastic_ws/gt/tb/tree" -H "content-type:application/json" -d '{"taxa":["Panthera pardus", "Taxidea taxus", "Enhydra lutris", "Lutra lutra", "Canis latrans", "Canis lupus", "Mustela altaica", "Mustela eversmanni", "Martes americana", "Ictonyx striatus", "Canis anthus", "Lycalopex vetulus", "Lycalopex culpaeus", "Puma concolor", "Felis catus","Leopardus jacobita"]}'
+$ curl -X POST "https://phylo.cs.nmsu.edu/phylotastic_ws/gt/tb/tree" -H "content-type:application/json" -d '{"taxa":["Panthera pardus", "Taxidea taxus", "Enhydra lutris", "Lutra lutra", "Canis latrans", "Canis lupus", "Mustela altaica", "Mustela eversmanni", "Martes americana", "Ictonyx striatus", "Canis anthus", "Lycalopex vetulus", "Lycalopex culpaeus", "Puma concolor", "Felis catus","Leopardus jacobita"]}'
 ```
 
 2. 
 
 ```bash
-$ curl -X POST "http://phylo.cs.nmsu.edu:5012/phylotastic_ws/gt/tb/tree" -H "content-type:application/json" -d '{"taxa":["Physcomitrella patens", "Solanum tuberosum", "Lactuca sativa","Vitis vinifera", "Glycine max", "Carica papaya", "Oryza sativa"]}'
+$ curl -X POST "https://phylo.cs.nmsu.edu/phylotastic_ws/gt/tb/tree" -H "content-type:application/json" -d '{"taxa":["Physcomitrella patens", "Solanum tuberosum", "Lactuca sativa","Vitis vinifera", "Glycine max", "Carica papaya", "Oryza sativa"]}'
 ```
 
 __Example Results:__
@@ -2352,7 +2218,7 @@ __Service Name:__  	 		<a name="smrt"></a>Supersmart_wrapper_Tree
 
 __Service Description:__ 	A service to get Phylogenetic Trees using SUPERSMART tool. SUPERSMART is a self-contained analytical environment for large-scale phylogenetic data mining, taxonomic name resolution, tree inference and fossil-based tree calibration. The SUPERSMART pipeline consists of a number of different steps that can be chained together to infer a phylogenetic tree. This service runs the supersmart commands (taxize, align, orthologize, bbmerge, bbinfer, bbreroot, consense) in a pipeline to get a phylogenetic tree from an input species list.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5011/phylotastic_ws/gt/smrt/tree>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/gt/smrt/tree>
 
 __HTTP Method:__ 		POST
 
@@ -2375,17 +2241,17 @@ __Example Commands/Requests:__
 1. 
 
 ```bash
-curl -X POST "http://phylo.cs.nmsu.edu:5011/phylotastic_ws/gt/smrt/tree" -H "content-type:application/json" -d '{"species": ["Dendrocygna autumanlis", "Dendrocygna bicolor", "Anser brachyrhynchus", "Chen caerulescens", "Branta bernicula", "Branta leucopsis"]}'
+curl -X POST "https://phylo.cs.nmsu.edu/phylotastic_ws/gt/smrt/tree" -H "content-type:application/json" -d '{"species": ["Dendrocygna autumanlis", "Dendrocygna bicolor", "Anser brachyrhynchus", "Chen caerulescens", "Branta bernicula", "Branta leucopsis"]}'
 ```
 
 __Example Results:__
 
 1. 
 ```json
-{"status_code": 202, "job_status_url": "http://phylo.cs.nmsu.edu:5011/phylotastic_ws/gt/smrt/status?job_id=4fc6140e-833e-4530-bb1a-54e912ab48d1", "job_id": "4fc6140e-833e-4530-bb1a-54e912ab48d1", "job_submission_time": "2017-11-29T20:34:41.838873"}
+{"status_code": 202, "job_status_url": "https://phylo.cs.nmsu.edu/phylotastic_ws/gt/smrt/status?job_id=4fc6140e-833e-4530-bb1a-54e912ab48d1", "job_id": "4fc6140e-833e-4530-bb1a-54e912ab48d1", "job_submission_time": "2017-11-29T20:34:41.838873"}
 ```
 
-__Status URI:__  		<http://phylo.cs.nmsu.edu:5011/phylotastic_ws/gt/smrt/status>
+__Status URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/gt/smrt/status>
 
 __HTTP Method:__ 		GET or POST
 
@@ -2406,7 +2272,7 @@ __Example Commands/Requests:__
 
 1. 
 ```
-http://phylo.cs.nmsu.edu:5011/phylotastic_ws/gt/smrt/status?job_id=4fc6140e-833e-4530-bb1a-54e912ab48d1
+https://phylo.cs.nmsu.edu/phylotastic_ws/gt/smrt/status?job_id=4fc6140e-833e-4530-bb1a-54e912ab48d1
 ```
 
 __Example Results:__
@@ -2427,7 +2293,7 @@ __Example Results:__
 > __Note__: Once the actual tree resource is created, it will be permanently stored in the server and can be accessed using the following URI. The `{tree_id}` in the URI must be replaced by a valid __tree_id__. 
 
 
-__Tree Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/smrt/trees/{tree_id}>
+__Tree Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/gt/smrt/trees/{tree_id}>
 
 __HTTP Method:__ 		GET
 
@@ -2441,7 +2307,7 @@ __Example Commands/Requests:__
 
 1. 
 ```
-http://phylo.cs.nmsu.edu:5011/phylotastic_ws/smrt/trees/4fc61-11292017203441
+https://phylo.cs.nmsu.edu/phylotastic_ws/gt/smrt/trees/4fc61-11292017203441
 ``` 
 
 __Example Results:__
@@ -2467,7 +2333,7 @@ __Example Results:__
 }
 ```
 
-__Citation/Source:__		http://www.supersmart-project.org/
+__Citation/Source:__		https://www.supersmart-project.org/
 
 __Service Quality:__
 
@@ -2507,7 +2373,7 @@ __Service Name:__  	 	<a name="taxonallsp"></a>Taxon_all_species
 
 __Service Description:__ 	A service to get all Species that belong to a particular Taxon.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/ts/all_species>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/ts/ot/all_species>
 
 __HTTP Method:__ 		GET or POST
 
@@ -2528,12 +2394,12 @@ __Example Commands/Requests:__
 
 1. 
 ```
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/ts/all_species?taxon=Vulpes
+https://phylo.cs.nmsu.edu/phylotastic_ws/ts/ot/all_species?taxon=Vulpes
 ```
 
 2. 
 ```
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/ts/all_species?taxon=Canidae
+https://phylo.cs.nmsu.edu/phylotastic_ws/ts/ot/all_species?taxon=Canidae
 ```
 
 __Example Results:__
@@ -2786,7 +2652,7 @@ __Service Name:__  	 	<a name="taxoncntysp"></a>Taxon_country_species
 
 __Service Description:__ 	A service to get a set of Species that belong to a particular Taxon and established in a particular country using INaturalist services.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/ts/country_species>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/ts/ot/country_species>
 
 __HTTP Method:__ 		GET or POST
 
@@ -2813,11 +2679,11 @@ __Example Commands/Requests:__
 
 1. 
 ```json
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/ts/country_species?taxon=Panthera&country=Bangladesh
+https://phylo.cs.nmsu.edu/phylotastic_ws/ts/ot/country_species?taxon=Panthera&country=Bangladesh
 ```
 2. 
 ```json
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/ts/country_species?taxon=Vulpes&country=Nepal
+https://phylo.cs.nmsu.edu/phylotastic_ws/ts/ot/country_species?taxon=Vulpes&country=Nepal
 ```
 
 __Example Results:__
@@ -2870,7 +2736,7 @@ __Example Results:__
 __Citation/Source:__  	 	
 
 - https://github.com/OpenTreeOfLife/opentree/wiki/Open-Tree-of-Life-APIs#taxonomy
-- http://www.inaturalist.org/pages/api+reference#get-places
+- https://www.inaturalist.org/pages/api+reference#get-places
 
 
 __Service Quality:__
@@ -2901,7 +2767,7 @@ __Service Name:__  	 	<a name="taxongnmsp"></a>Taxon_genome_species
 
 __Service Description:__ 	A service to get a set of Species that belong to a particular Taxon and have genome sequence in NCBI database.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/ts/ncbi/genome_species>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/ts/ncbi/genome_species>
 
 __HTTP Method:__ 		GET or POST
 
@@ -2922,15 +2788,15 @@ __Example Commands/Requests:__
 
 1. 
 ```
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/ts/ncbi/genome_species?taxon=Rodentia
+https://phylo.cs.nmsu.edu/phylotastic_ws/ts/ncbi/genome_species?taxon=Rodentia
 ```
 2. 
 ```
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/ts/ncbi/genome_species?taxon=Columbidae
+https://phylo.cs.nmsu.edu/phylotastic_ws/ts/ncbi/genome_species?taxon=Columbidae
 ```
 3. 
 ```
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/ts/ncbi/genome_species?taxon=Aves
+https://phylo.cs.nmsu.edu/phylotastic_ws/ts/ncbi/genome_species?taxon=Aves
 ```
 
 __Example Results:__
@@ -3145,7 +3011,7 @@ __Citation/Source:__
 
 - https://www.ncbi.nlm.nih.gov/taxonomy
 - https://www.ncbi.nlm.nih.gov/genome
-- http://www.ncbi.nlm.nih.gov/books/NBK25500/#chapter1.Finding_Related_Data_Through_En
+- https://www.ncbi.nlm.nih.gov/books/NBK25500/#chapter1.Finding_Related_Data_Through_En
 
 
 __Service Quality:__
@@ -3174,7 +3040,7 @@ __Service Name:__  	 	<a name="taxonpopsp"></a>Taxon_popular_species
 
 __Service Description:__ 	A service to retrieve a set of Species that belong to a particular Taxon and ordered by popularity using OneZoom API.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5006/phylotastic_ws/ts/popular_species>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/ts/oz/popular_species>
 
 __HTTP Method:__ 		GET
 
@@ -3202,17 +3068,17 @@ __Example Commands/Requests:__
 
 1. 
 ```
-http://phylo.cs.nmsu.edu:5006/phylotastic_ws/ts/popular_species
+https://phylo.cs.nmsu.edu/phylotastic_ws/ts/oz/popular_species
 ```
 
 2. 
 ```
-http://phylo.cs.nmsu.edu:5006/phylotastic_ws/ts/popular_species?taxon=Felidae&num_species=10
+https://phylo.cs.nmsu.edu/phylotastic_ws/ts/oz/popular_species?taxon=Felidae&num_species=10
 ```
 
 3. 
 ```
-http://phylo.cs.nmsu.edu:5006/phylotastic_ws/ts/popular_species?taxon=Anura&num_species=5
+https://phylo.cs.nmsu.edu/phylotastic_ws/ts/oz/popular_species?taxon=Anura&num_species=5
 ```
 
 __Example Results:__
@@ -3226,7 +3092,7 @@ __Example Results:__
 		"execution_time": 2.1,
 		"creation_time": "2018-06-28T08:41:01.118528",
 		"source_urls": [
-			"http://beta.onezoom.org"
+			"https://beta.onezoom.org"
 		]
 	},
 	"result": [
@@ -3369,7 +3235,7 @@ __Example Results:__
 		"execution_time": 1.0,
 		"creation_time": "2018-06-28T08:39:07.212249",
 		"source_urls": [
-			"http://beta.onezoom.org"
+			"https://beta.onezoom.org"
 		]
 	},
 	"result": [
@@ -3453,7 +3319,7 @@ __Example Results:__
 		"execution_time": 3.31,
 		"creation_time": "2018-06-28T08:39:55.319491",
 		"source_urls": [
-			"http://beta.onezoom.org"
+			"https://beta.onezoom.org"
 		]
 	},
 	"result": [
@@ -3610,7 +3476,7 @@ __Example Results:__
 }
 ```
 
-__Citation/Source:__  	 	http://beta.onezoom.org
+__Citation/Source:__  	 	https://beta.onezoom.org
 
 
 __Service Quality:__
@@ -3642,7 +3508,7 @@ __Service Name:__  	 	Image_url_species
 
 __Service Description:__ 	A service to get image urls and corresponding license information of a list of species using EOL services.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/si/eol/get_images>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/si/eol/get_images>
 
 __HTTP Method:__ 		GET or POST
 
@@ -3665,7 +3531,7 @@ __Example Commands/Requests:__
 1. 
 
 ```
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/si/eol/get_images?species=Panthera%20leo|Panthera%20onca|Panthera%20pardus
+https://phylo.cs.nmsu.edu/phylotastic_ws/si/eol/get_images?species=Panthera%20leo|Panthera%20onca|Panthera%20pardus
 ```
 
 
@@ -3685,60 +3551,60 @@ __Example Results:__
 		"execution_time": 3.12,
 		"creation_time": "2017-10-21T08:58:51.049382",
 		"source_urls": [
-			"http://eol.org"
+			"https://eol.org"
 		]
 	},
 	"species": [
 		{
 			"images": [
 				{
-					"license": "http://creativecommons.org/licenses/by-sa/2.0/",
-					"mediaURL": "http://upload.wikimedia.org/wikipedia/commons/e/ec/Lion_cub_with_mother.jpg",
-					"eolMediaURL": "http://media.eol.org/content/2015/11/13/05/46343_orig.jpg",
+					"license": "https://creativecommons.org/licenses/by-sa/2.0/",
+					"mediaURL": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Lion_cub_with_mother.jpg",
+					"eolMediaURL": "https://media.eol.org/content/2015/11/13/05/46343_orig.jpg",
 					"rightsHolder": "",
 					"vettedStatus": "Trusted",
-					"source": "http://commons.wikimedia.org/wiki/File:Lion_cub_with_mother.jpg",
-					"eolThumbnailURL": "http://media.eol.org/content/2015/11/13/05/46343_98_68.jpg",
+					"source": "https://commons.wikimedia.org/wiki/File:Lion_cub_with_mother.jpg",
+					"eolThumbnailURL": "https://media.eol.org/content/2015/11/13/05/46343_98_68.jpg",
 					"dataRating": 4.83333
 				},
 				{
-					"license": "http://creativecommons.org/publicdomain/mark/1.0/",
-					"mediaURL": "http://upload.wikimedia.org/wikipedia/commons/a/ae/Lion_Yawning.jpg",
-					"eolMediaURL": "http://media.eol.org/content/2016/04/26/05/84896_orig.jpg",
+					"license": "https://creativecommons.org/publicdomain/mark/1.0/",
+					"mediaURL": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Lion_Yawning.jpg",
+					"eolMediaURL": "https://media.eol.org/content/2016/04/26/05/84896_orig.jpg",
 					"rightsHolder": "",
 					"vettedStatus": "Trusted",
-					"source": "http://commons.wikimedia.org/wiki/File:Lion_Yawning.jpg",
-					"eolThumbnailURL": "http://media.eol.org/content/2016/04/26/05/84896_98_68.jpg",
+					"source": "https://commons.wikimedia.org/wiki/File:Lion_Yawning.jpg",
+					"eolThumbnailURL": "https://media.eol.org/content/2016/04/26/05/84896_98_68.jpg",
 					"dataRating": 4.5
 				},
 				{
-					"license": "http://creativecommons.org/licenses/by-nc-sa/2.0/",
+					"license": "https://creativecommons.org/licenses/by-nc-sa/2.0/",
 					"mediaURL": "https://farm5.staticflickr.com/4093/4888050484_fba7e481cd_o.jpg",
-					"eolMediaURL": "http://media.eol.org/content/2015/04/30/12/90034_orig.jpg",
+					"eolMediaURL": "https://media.eol.org/content/2015/04/30/12/90034_orig.jpg",
 					"rightsHolder": "David d'O",
 					"vettedStatus": "Trusted",
 					"source": "https://www.flickr.com/photos/david_o/4888050484/",
-					"eolThumbnailURL": "http://media.eol.org/content/2015/04/30/12/90034_98_68.jpg",
+					"eolThumbnailURL": "https://media.eol.org/content/2015/04/30/12/90034_98_68.jpg",
 					"dataRating": 4.44444
 				},
 				{
-					"license": "http://creativecommons.org/licenses/by-nc-sa/2.0/",
-					"mediaURL": "http://farm5.staticflickr.com/4093/4888050484_fba7e481cd_o.jpg",
-					"eolMediaURL": "http://media.eol.org/content/2013/03/03/00/50308_orig.jpg",
+					"license": "https://creativecommons.org/licenses/by-nc-sa/2.0/",
+					"mediaURL": "https://farm5.staticflickr.com/4093/4888050484_fba7e481cd_o.jpg",
+					"eolMediaURL": "https://media.eol.org/content/2013/03/03/00/50308_orig.jpg",
 					"rightsHolder": "David d'O",
 					"vettedStatus": "Trusted",
-					"source": "http://www.flickr.com/photos/david_o/4888050484/",
-					"eolThumbnailURL": "http://media.eol.org/content/2013/03/03/00/50308_98_68.jpg",
+					"source": "https://www.flickr.com/photos/david_o/4888050484/",
+					"eolThumbnailURL": "https://media.eol.org/content/2013/03/03/00/50308_98_68.jpg",
 					"dataRating": 4.44444
 				},
 				{
-					"license": "http://creativecommons.org/licenses/by-nc-sa/2.0/",
+					"license": "https://creativecommons.org/licenses/by-nc-sa/2.0/",
 					"mediaURL": "https://farm5.staticflickr.com/4093/4887455027_dae2d6ce69_o.jpg",
-					"eolMediaURL": "http://media.eol.org/content/2015/04/30/12/35649_orig.jpg",
+					"eolMediaURL": "https://media.eol.org/content/2015/04/30/12/35649_orig.jpg",
 					"rightsHolder": "David d'O",
 					"vettedStatus": "Trusted",
 					"source": "https://www.flickr.com/photos/david_o/4887455027/",
-					"eolThumbnailURL": "http://media.eol.org/content/2015/04/30/12/35649_98_68.jpg",
+					"eolThumbnailURL": "https://media.eol.org/content/2015/04/30/12/35649_98_68.jpg",
 					"dataRating": 4.375
 				}
 			],
@@ -3750,53 +3616,53 @@ __Example Results:__
 		{
 			"images": [
 				{
-					"license": "http://creativecommons.org/licenses/by-nc-sa/2.0/",
+					"license": "https://creativecommons.org/licenses/by-nc-sa/2.0/",
 					"mediaURL": "https://farm5.staticflickr.com/4085/5177235312_9f03063e0d_o.jpg",
-					"eolMediaURL": "http://media.eol.org/content/2015/04/30/02/29576_orig.jpg",
+					"eolMediaURL": "https://media.eol.org/content/2015/04/30/02/29576_orig.jpg",
 					"rightsHolder": "Smithsonian Wild",
 					"vettedStatus": "Trusted",
 					"source": "https://www.flickr.com/photos/smithsonianwild/5177235312/",
-					"eolThumbnailURL": "http://media.eol.org/content/2015/04/30/02/29576_98_68.jpg",
+					"eolThumbnailURL": "https://media.eol.org/content/2015/04/30/02/29576_98_68.jpg",
 					"dataRating": 4.30769
 				},
 				{
-					"license": "http://creativecommons.org/licenses/by-nc-sa/2.0/",
-					"mediaURL": "http://farm5.staticflickr.com/4085/5177235312_9f03063e0d_o.jpg",
-					"eolMediaURL": "http://media.eol.org/content/2013/07/05/09/54909_orig.jpg",
+					"license": "https://creativecommons.org/licenses/by-nc-sa/2.0/",
+					"mediaURL": "https://farm5.staticflickr.com/4085/5177235312_9f03063e0d_o.jpg",
+					"eolMediaURL": "https://media.eol.org/content/2013/07/05/09/54909_orig.jpg",
 					"rightsHolder": "Smithsonian Wild",
 					"vettedStatus": "Trusted",
-					"source": "http://www.flickr.com/photos/smithsonianwild/5177235312/",
-					"eolThumbnailURL": "http://media.eol.org/content/2013/07/05/09/54909_98_68.jpg",
+					"source": "https://www.flickr.com/photos/smithsonianwild/5177235312/",
+					"eolThumbnailURL": "https://media.eol.org/content/2013/07/05/09/54909_98_68.jpg",
 					"dataRating": 4.30769
 				},
 				{
-					"license": "http://creativecommons.org/licenses/by/3.0/",
-					"mediaURL": "http://calphotos.berkeley.edu/imgs/512x768/0000_0000/0115/1280.jpeg",
-					"eolMediaURL": "http://media.eol.org/content/2015/01/12/16/02016_orig.jpg",
+					"license": "https://creativecommons.org/licenses/by/3.0/",
+					"mediaURL": "https://calphotos.berkeley.edu/imgs/512x768/0000_0000/0115/1280.jpeg",
+					"eolMediaURL": "https://media.eol.org/content/2015/01/12/16/02016_orig.jpg",
 					"rightsHolder": "2015 Carlos Henrique Luz Nunes de Almeida",
 					"vettedStatus": "Trusted",
-					"source": "http://calphotos.berkeley.edu/cgi/img_query?seq_num=628370&one=T",
-					"eolThumbnailURL": "http://media.eol.org/content/2015/01/12/16/02016_98_68.jpg",
+					"source": "https://calphotos.berkeley.edu/cgi/img_query?seq_num=628370&one=T",
+					"eolThumbnailURL": "https://media.eol.org/content/2015/01/12/16/02016_98_68.jpg",
 					"dataRating": 4.0
 				},
 				{
-					"license": "http://creativecommons.org/publicdomain/mark/1.0/",
-					"mediaURL": "http://upload.wikimedia.org/wikipedia/commons/2/2c/Obscured_jaguar.jpg",
-					"eolMediaURL": "http://media.eol.org/content/2012/06/13/03/77074_orig.jpg",
+					"license": "https://creativecommons.org/publicdomain/mark/1.0/",
+					"mediaURL": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Obscured_jaguar.jpg",
+					"eolMediaURL": "https://media.eol.org/content/2012/06/13/03/77074_orig.jpg",
 					"rightsHolder": "",
 					"vettedStatus": "Trusted",
-					"source": "http://commons.wikimedia.org/wiki/File:Obscured_jaguar.jpg",
-					"eolThumbnailURL": "http://media.eol.org/content/2012/06/13/03/77074_98_68.jpg",
+					"source": "https://commons.wikimedia.org/wiki/File:Obscured_jaguar.jpg",
+					"eolThumbnailURL": "https://media.eol.org/content/2012/06/13/03/77074_98_68.jpg",
 					"dataRating": 3.8
 				},
 				{
-					"license": "http://creativecommons.org/licenses/by-nc/3.0/",
-					"mediaURL": "http://www.planetscott.com/img/6355/large/jaguar-(panthera-onca).jpg",
-					"eolMediaURL": "http://media.eol.org/content/2012/05/18/10/43723_orig.jpg",
+					"license": "https://creativecommons.org/licenses/by-nc/3.0/",
+					"mediaURL": "https://www.planetscott.com/img/6355/large/jaguar-(panthera-onca).jpg",
+					"eolMediaURL": "https://media.eol.org/content/2012/05/18/10/43723_orig.jpg",
 					"rightsHolder": "Scott Bowers",
 					"vettedStatus": "Trusted",
-					"source": "http://www.planetscott.com/speciesdetail/10063/jaguar-(panthera-onca)-",
-					"eolThumbnailURL": "http://media.eol.org/content/2012/05/18/10/43723_98_68.jpg",
+					"source": "https://www.planetscott.com/speciesdetail/10063/jaguar-(panthera-onca)-",
+					"eolThumbnailURL": "https://media.eol.org/content/2012/05/18/10/43723_98_68.jpg",
 					"dataRating": 3.0
 				}
 			],
@@ -3808,53 +3674,53 @@ __Example Results:__
 		{
 			"images": [
 				{
-					"license": "http://creativecommons.org/licenses/by-sa/2.0/",
+					"license": "https://creativecommons.org/licenses/by-sa/2.0/",
 					"mediaURL": "https://farm7.staticflickr.com/6011/6001436301_ff45749a74_o.jpg",
-					"eolMediaURL": "http://media.eol.org/content/2017/03/03/16/37289_orig.jpg",
+					"eolMediaURL": "https://media.eol.org/content/2017/03/03/16/37289_orig.jpg",
 					"rightsHolder": "Bernard DUPONT",
 					"vettedStatus": "Trusted",
 					"source": "https://www.flickr.com/photos/berniedup/6001436301/",
-					"eolThumbnailURL": "http://media.eol.org/content/2017/03/03/16/37289_98_68.jpg",
+					"eolThumbnailURL": "https://media.eol.org/content/2017/03/03/16/37289_98_68.jpg",
 					"dataRating": 4.375
 				},
 				{
-					"license": "http://creativecommons.org/licenses/by-nc-sa/2.0/",
+					"license": "https://creativecommons.org/licenses/by-nc-sa/2.0/",
 					"mediaURL": "https://farm7.staticflickr.com/6011/6001436301_ff45749a74_o.jpg",
-					"eolMediaURL": "http://media.eol.org/content/2014/10/11/05/59143_orig.jpg",
+					"eolMediaURL": "https://media.eol.org/content/2014/10/11/05/59143_orig.jpg",
 					"rightsHolder": "Bernard DUPONT",
 					"vettedStatus": "Trusted",
 					"source": "https://www.flickr.com/photos/berniedup/6001436301/",
-					"eolThumbnailURL": "http://media.eol.org/content/2014/10/11/05/59143_98_68.jpg",
+					"eolThumbnailURL": "https://media.eol.org/content/2014/10/11/05/59143_98_68.jpg",
 					"dataRating": 4.375
 				},
 				{
-					"license": "http://creativecommons.org/licenses/by-sa/3.0/",
-					"mediaURL": "http://upload.wikimedia.org/wikipedia/commons/5/5f/Great_male_Leopard_in_South_Afrika.JPG",
-					"eolMediaURL": "http://media.eol.org/content/2012/06/15/10/36939_orig.jpg",
+					"license": "https://creativecommons.org/licenses/by-sa/3.0/",
+					"mediaURL": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Great_male_Leopard_in_South_Afrika.JPG",
+					"eolMediaURL": "https://media.eol.org/content/2012/06/15/10/36939_orig.jpg",
 					"rightsHolder": "",
 					"vettedStatus": "Trusted",
-					"source": "http://commons.wikimedia.org/wiki/File:Great_male_Leopard_in_South_Afrika.JPG",
-					"eolThumbnailURL": "http://media.eol.org/content/2012/06/15/10/36939_98_68.jpg",
+					"source": "https://commons.wikimedia.org/wiki/File:Great_male_Leopard_in_South_Afrika.JPG",
+					"eolThumbnailURL": "https://media.eol.org/content/2012/06/15/10/36939_98_68.jpg",
 					"dataRating": 4.16667
 				},
 				{
-					"license": "http://creativecommons.org/licenses/by-sa/2.0/",
+					"license": "https://creativecommons.org/licenses/by-sa/2.0/",
 					"mediaURL": "https://farm8.staticflickr.com/7197/6861336273_4e231b57df_o.jpg",
-					"eolMediaURL": "http://media.eol.org/content/2015/03/11/01/76782_orig.jpg",
+					"eolMediaURL": "https://media.eol.org/content/2015/03/11/01/76782_orig.jpg",
 					"rightsHolder": "Bernard DUPONT",
 					"vettedStatus": "Trusted",
 					"source": "https://www.flickr.com/photos/berniedup/6861336273/",
-					"eolThumbnailURL": "http://media.eol.org/content/2015/03/11/01/76782_98_68.jpg",
+					"eolThumbnailURL": "https://media.eol.org/content/2015/03/11/01/76782_98_68.jpg",
 					"dataRating": 4.0
 				},
 				{
-					"license": "http://creativecommons.org/licenses/by-nc-sa/2.0/",
+					"license": "https://creativecommons.org/licenses/by-nc-sa/2.0/",
 					"mediaURL": "https://farm8.staticflickr.com/7197/6861336273_4e231b57df_o.jpg",
-					"eolMediaURL": "http://media.eol.org/content/2015/03/11/01/76782_orig.jpg",
+					"eolMediaURL": "https://media.eol.org/content/2015/03/11/01/76782_orig.jpg",
 					"rightsHolder": "Bernard DUPONT",
 					"vettedStatus": "Trusted",
 					"source": "https://www.flickr.com/photos/berniedup/6861336273/",
-					"eolThumbnailURL": "http://media.eol.org/content/2015/03/11/01/76782_98_68.jpg",
+					"eolThumbnailURL": "https://media.eol.org/content/2015/03/11/01/76782_98_68.jpg",
 					"dataRating": 4.0
 				}
 			],
@@ -3867,7 +3733,7 @@ __Example Results:__
 }
 ```
 
-__Alternative Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/si/eol/images>
+__Alternative Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/si/eol/images>
 
 __HTTP Method:__ 		POST
 
@@ -3889,7 +3755,7 @@ __Example Commands/Requests:__
 
 1. 
 ```bash
-curl -X POST http://phylo.cs.nmsu.edu:5004/phylotastic_ws/si/eol/images -H 'content-type:application/json' -d '{"species": ["Catopuma badia","Catopuma temminckii"]}'
+curl -X POST https://phylo.cs.nmsu.edu/phylotastic_ws/si/eol/images -H 'content-type:application/json' -d '{"species": ["Catopuma badia","Catopuma temminckii"]}'
 ```
 
 __Example Results:__
@@ -3907,50 +3773,50 @@ __Example Results:__
 		"execution_time": 4.93,
 		"creation_time": "2017-10-21T09:03:00.978899",
 		"source_urls": [
-			"http://eol.org"
+			"https://eol.org"
 		]
 	},
 	"species": [
 		{
 			"images": [
 				{
-					"license": "http://creativecommons.org/publicdomain/mark/1.0/",
-					"mediaURL": "http://upload.wikimedia.org/wikipedia/commons/b/b7/Chat_Bai_1874.jpg",
-					"eolMediaURL": "http://media.eol.org/content/2014/01/04/04/58116_orig.jpg",
+					"license": "https://creativecommons.org/publicdomain/mark/1.0/",
+					"mediaURL": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Chat_Bai_1874.jpg",
+					"eolMediaURL": "https://media.eol.org/content/2014/01/04/04/58116_orig.jpg",
 					"rightsHolder": "",
 					"vettedStatus": "Trusted",
-					"source": "http://commons.wikimedia.org/wiki/File:Chat_Bai_1874.jpg",
-					"eolThumbnailURL": "http://media.eol.org/content/2014/01/04/04/58116_98_68.jpg",
+					"source": "https://commons.wikimedia.org/wiki/File:Chat_Bai_1874.jpg",
+					"eolThumbnailURL": "https://media.eol.org/content/2014/01/04/04/58116_98_68.jpg",
 					"dataRating": 2.0
 				},
 				{
-					"license": "http://creativecommons.org/licenses/by-sa/3.0/",
-					"mediaURL": "http://upload.wikimedia.org/wikipedia/commons/1/1e/Bay_cat_1_Jim_Sanderson.jpg",
-					"eolMediaURL": "http://media.eol.org/content/2013/11/25/12/14465_orig.jpg",
+					"license": "https://creativecommons.org/licenses/by-sa/3.0/",
+					"mediaURL": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Bay_cat_1_Jim_Sanderson.jpg",
+					"eolMediaURL": "https://media.eol.org/content/2013/11/25/12/14465_orig.jpg",
 					"rightsHolder": "",
 					"vettedStatus": "Unreviewed",
-					"source": "http://commons.wikimedia.org/wiki/File:Bay_cat_1_Jim_Sanderson.jpg",
-					"eolThumbnailURL": "http://media.eol.org/content/2013/11/25/12/14465_98_68.jpg",
+					"source": "https://commons.wikimedia.org/wiki/File:Bay_cat_1_Jim_Sanderson.jpg",
+					"eolThumbnailURL": "https://media.eol.org/content/2013/11/25/12/14465_98_68.jpg",
 					"dataRating": 2.5
 				},
 				{
-					"license": "http://creativecommons.org/licenses/by-sa/3.0/",
-					"mediaURL": "http://upload.wikimedia.org/wikipedia/commons/b/ba/Bay_cat_1_Jim_Sanderson-cropped.jpg",
-					"eolMediaURL": "http://media.eol.org/content/2013/11/25/18/76434_orig.jpg",
+					"license": "https://creativecommons.org/licenses/by-sa/3.0/",
+					"mediaURL": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Bay_cat_1_Jim_Sanderson-cropped.jpg",
+					"eolMediaURL": "https://media.eol.org/content/2013/11/25/18/76434_orig.jpg",
 					"rightsHolder": "",
 					"vettedStatus": "Unreviewed",
-					"source": "http://commons.wikimedia.org/wiki/File:Bay_cat_1_Jim_Sanderson-cropped.jpg",
-					"eolThumbnailURL": "http://media.eol.org/content/2013/11/25/18/76434_98_68.jpg",
+					"source": "https://commons.wikimedia.org/wiki/File:Bay_cat_1_Jim_Sanderson-cropped.jpg",
+					"eolThumbnailURL": "https://media.eol.org/content/2013/11/25/18/76434_98_68.jpg",
 					"dataRating": 2.5
 				},
 				{
-					"license": "http://creativecommons.org/licenses/by-sa/3.0/",
-					"mediaURL": "http://upload.wikimedia.org/wikipedia/commons/a/aa/Catopuma_badia_John_Gray.jpg",
-					"eolMediaURL": "http://media.eol.org/content/2013/11/15/02/44565_orig.jpg",
+					"license": "https://creativecommons.org/licenses/by-sa/3.0/",
+					"mediaURL": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Catopuma_badia_John_Gray.jpg",
+					"eolMediaURL": "https://media.eol.org/content/2013/11/15/02/44565_orig.jpg",
 					"rightsHolder": "",
 					"vettedStatus": "Unreviewed",
-					"source": "http://commons.wikimedia.org/wiki/File:Catopuma_badia_John_Gray.jpg",
-					"eolThumbnailURL": "http://media.eol.org/content/2013/11/15/02/44565_98_68.jpg",
+					"source": "https://commons.wikimedia.org/wiki/File:Catopuma_badia_John_Gray.jpg",
+					"eolThumbnailURL": "https://media.eol.org/content/2013/11/15/02/44565_98_68.jpg",
 					"dataRating": 2.5
 				}
 			],
@@ -3962,53 +3828,53 @@ __Example Results:__
 		{
 			"images": [
 				{
-					"license": "http://creativecommons.org/licenses/by-sa/3.0/",
-					"mediaURL": "http://upload.wikimedia.org/wikipedia/commons/0/0f/Asiatische-Goldkatze-Catopuma-temminckii-tier-katze-0001_2.JPG",
-					"eolMediaURL": "http://media.eol.org/content/2012/06/15/04/63856_orig.jpg",
+					"license": "https://creativecommons.org/licenses/by-sa/3.0/",
+					"mediaURL": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Asiatische-Goldkatze-Catopuma-temminckii-tier-katze-0001_2.JPG",
+					"eolMediaURL": "https://media.eol.org/content/2012/06/15/04/63856_orig.jpg",
 					"rightsHolder": "",
 					"vettedStatus": "Trusted",
-					"source": "http://commons.wikimedia.org/wiki/File:Asiatische-Goldkatze-Catopuma-temminckii-tier-katze-0001_2.JPG",
-					"eolThumbnailURL": "http://media.eol.org/content/2012/06/15/04/63856_98_68.jpg",
+					"source": "https://commons.wikimedia.org/wiki/File:Asiatische-Goldkatze-Catopuma-temminckii-tier-katze-0001_2.JPG",
+					"eolThumbnailURL": "https://media.eol.org/content/2012/06/15/04/63856_98_68.jpg",
 					"dataRating": 2.71429
 				},
 				{
-					"license": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
-					"mediaURL": "http://csdb.ioz.ac.cn/images/Upload_images/Animalia/Chordata/Mammalia/CARNIVORA/Felidae/Catopuma/temminckii/7FCF470A-A4CF-4258-B673-8E0CD67DC607.jpg",
-					"eolMediaURL": "http://media.eol.org/content/2012/06/27/23/19948_orig.jpg",
+					"license": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
+					"mediaURL": "https://csdb.ioz.ac.cn/images/Upload_images/Animalia/Chordata/Mammalia/CARNIVORA/Felidae/Catopuma/temminckii/7FCF470A-A4CF-4258-B673-8E0CD67DC607.jpg",
+					"eolMediaURL": "https://media.eol.org/content/2012/06/27/23/19948_orig.jpg",
 					"rightsHolder": "上海科学技术出版社",
 					"vettedStatus": "Trusted",
 					"source": null,
-					"eolThumbnailURL": "http://media.eol.org/content/2012/06/27/23/19948_98_68.jpg",
+					"eolThumbnailURL": "https://media.eol.org/content/2012/06/27/23/19948_98_68.jpg",
 					"dataRating": 2.5
 				},
 				{
-					"license": "http://creativecommons.org/licenses/by/3.0/",
-					"mediaURL": "http://calphotos.berkeley.edu/imgs/512x768/0000_0000/0714/0105.jpeg",
-					"eolMediaURL": "http://media.eol.org/content/2014/07/07/00/87109_orig.jpg",
+					"license": "https://creativecommons.org/licenses/by/3.0/",
+					"mediaURL": "https://calphotos.berkeley.edu/imgs/512x768/0000_0000/0714/0105.jpeg",
+					"eolMediaURL": "https://media.eol.org/content/2014/07/07/00/87109_orig.jpg",
 					"rightsHolder": "2014 Simon J. Tonge",
 					"vettedStatus": "Trusted",
-					"source": "http://calphotos.berkeley.edu/cgi/img_query?seq_num=607590&one=T",
-					"eolThumbnailURL": "http://media.eol.org/content/2014/07/07/00/87109_98_68.jpg",
+					"source": "https://calphotos.berkeley.edu/cgi/img_query?seq_num=607590&one=T",
+					"eolThumbnailURL": "https://media.eol.org/content/2014/07/07/00/87109_98_68.jpg",
 					"dataRating": 2.5
 				},
 				{
-					"license": "http://creativecommons.org/licenses/by-nc/4.0/",
-					"mediaURL": "http://static.inaturalist.org/photos/1723499/original.JPG?1429042450",
-					"eolMediaURL": "http://media.eol.org/content/2016/07/24/13/02661_orig.jpg",
+					"license": "https://creativecommons.org/licenses/by-nc/4.0/",
+					"mediaURL": "https://static.inaturalist.org/photos/1723499/original.JPG?1429042450",
+					"eolMediaURL": "https://media.eol.org/content/2016/07/24/13/02661_orig.jpg",
 					"rightsHolder": "bangladeshpythonproject",
 					"vettedStatus": "Trusted",
-					"source": "http://www.inaturalist.org/photos/1723499",
-					"eolThumbnailURL": "http://media.eol.org/content/2016/07/24/13/02661_98_68.jpg",
+					"source": "https://www.inaturalist.org/photos/1723499",
+					"eolThumbnailURL": "https://media.eol.org/content/2016/07/24/13/02661_98_68.jpg",
 					"dataRating": 2.5
 				},
 				{
-					"license": "http://creativecommons.org/licenses/by-nc-sa/2.0/",
-					"mediaURL": "http://farm2.staticflickr.com/1314/5179859836_13027f2c30_o.jpg",
-					"eolMediaURL": "http://media.eol.org/content/2013/06/04/06/52233_orig.jpg",
+					"license": "https://creativecommons.org/licenses/by-nc-sa/2.0/",
+					"mediaURL": "https://farm2.staticflickr.com/1314/5179859836_13027f2c30_o.jpg",
+					"eolMediaURL": "https://media.eol.org/content/2013/06/04/06/52233_orig.jpg",
 					"rightsHolder": "Smithsonian Wild",
 					"vettedStatus": "Trusted",
-					"source": "http://www.flickr.com/photos/smithsonianwild/5179859836/",
-					"eolThumbnailURL": "http://media.eol.org/content/2013/06/04/06/52233_98_68.jpg",
+					"source": "https://www.flickr.com/photos/smithsonianwild/5179859836/",
+					"eolThumbnailURL": "https://media.eol.org/content/2013/06/04/06/52233_98_68.jpg",
 					"dataRating": 2.0
 				}
 			],
@@ -4021,7 +3887,7 @@ __Example Results:__
 }
 ```
 
-__Citation/Source:__  	 	http://eol.org/api
+__Citation/Source:__  	 	https://eol.org/api
 
 __Service Quality:__
 
@@ -4048,7 +3914,7 @@ __Service Name:__  	 	Info_url_species
 
 __Service Description:__ 	A service to get information urls of a list of species using EOL services.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/sl/eol/get_links>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/sl/eol/get_links>
 
 __HTTP Method:__ 		GET or POST
 
@@ -4072,7 +3938,7 @@ __Example Commands/Requests:__
 1. 
 
 ```
-http://phylo.cs.nmsu.edu:5004/phylotastic_ws/sl/eol/get_links?species=Dendrocygna bicolor|Anser albifrons|Cygnus buccinator
+https://phylo.cs.nmsu.edu/phylotastic_ws/sl/eol/get_links?species=Dendrocygna bicolor|Anser albifrons|Cygnus buccinator
 ```
 
 
@@ -4093,24 +3959,24 @@ __Example Results:__
 		"execution_time": 5.97,
 		"creation_time": "2017-10-21T09:27:32.037761",
 		"source_urls": [
-			"http://eol.org"
+			"https://eol.org"
 		]
 	},
 	"species": [
 		{
-			"species_info_link": "http://eol.org/914528?action=overview&controller=taxa",
+			"species_info_link": "https://eol.org/914528?action=overview&controller=taxa",
 			"searched_name": "Dendrocygna bicolor",
 			"eol_id": 914528,
 			"matched_name": "Dendrocygna bicolor (Vieillot, 1816)"
 		},
 		{
-			"species_info_link": "http://eol.org/1048438?action=overview&controller=taxa",
+			"species_info_link": "https://eol.org/1048438?action=overview&controller=taxa",
 			"searched_name": "Anser albifrons",
 			"eol_id": 1048438,
 			"matched_name": "Anser albifrons (Scopoli, 1769)"
 		},
 		{
-			"species_info_link": "http://eol.org/913233?action=overview&controller=taxa",
+			"species_info_link": "https://eol.org/913233?action=overview&controller=taxa",
 			"searched_name": "Cygnus buccinator",
 			"eol_id": 913233,
 			"matched_name": "Cygnus buccinator Richardson, 1831"
@@ -4119,7 +3985,7 @@ __Example Results:__
 }
 ```
 
-__Alternative Resource URI:__  		<http://phylo.cs.nmsu.edu:5004/phylotastic_ws/sl/eol/links>
+__Alternative Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/sl/eol/links>
 
 __HTTP Method:__ 		POST
 
@@ -4142,7 +4008,7 @@ __Example Commands/Requests:__
 
 1. 
 ```bash
-curl -X POST http://phylo.cs.nmsu.edu:5004/phylotastic_ws/sl/eol/links -H 'content-type:application/json' -d '{"species": ["Melanerpes erythrocephalus","Melanerpes uropygialis"]}'
+curl -X POST https://phylo.cs.nmsu.edu/phylotastic_ws/sl/eol/links -H 'content-type:application/json' -d '{"species": ["Melanerpes erythrocephalus","Melanerpes uropygialis"]}'
 ```
 
 __Example Results:__
@@ -4160,18 +4026,18 @@ __Example Results:__
 		"execution_time": 0.55,
 		"creation_time": "2017-10-21T09:33:21.431243",
 		"source_urls": [
-			"http://eol.org"
+			"https://eol.org"
 		]
 	},
 	"species": [
 		{
-			"species_info_link": "http://eol.org/917154?action=overview&controller=taxa",
+			"species_info_link": "https://eol.org/917154?action=overview&controller=taxa",
 			"searched_name": "Melanerpes erythrocephalus",
 			"eol_id": 917154,
 			"matched_name": "Melanerpes erythrocephalus (Linnaeus, 1758)"
 		},
 		{
-			"species_info_link": "http://eol.org/912554?action=overview&controller=taxa",
+			"species_info_link": "https://eol.org/912554?action=overview&controller=taxa",
 			"searched_name": "Melanerpes uropygialis",
 			"eol_id": 912554,
 			"matched_name": "Melanerpes uropygialis (S. F. Baird, 1854)"
@@ -4180,7 +4046,7 @@ __Example Results:__
 }
 ```
 
-__Citation/Source:__  	 	http://eol.org/api
+__Citation/Source:__  	 	https://eol.org/api
 
 __Service Quality:__
 
@@ -4219,7 +4085,7 @@ __Service Name:__  	 	<a name="ncbicn"></a>NCBI_common_name
 
 __Service Description:__ 	A service to get scientific name of a species from its common name(vernacular name) using NCBI API.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/ncbi/get_scientific_names>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/cs/ncbi/get_scientific_names>
 
 __HTTP Method:__ 		GET
 
@@ -4245,12 +4111,12 @@ __Example Commands/Requests:__
 
 1. 
 ```
-http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/ncbi/get_scientific_names?commonnames=blue whale|swordfish|killer whale
+https://phylo.cs.nmsu.edu/phylotastic_ws/cs/ncbi/get_scientific_names?commonnames=blue whale|swordfish|killer whale
 ```
 
 2. 
 ```
-http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/ncbi/get_scientific_names?commonnames=black bear&multiple_match=true
+https://phylo.cs.nmsu.edu/phylotastic_ws/cs/ncbi/get_scientific_names?commonnames=black bear&multiple_match=true
 ```
 
 
@@ -4366,7 +4232,7 @@ __Example Results:__
 }
 ```
 
-__Alternative Resource URI:__  		<http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/ncbi/scientific_names>
+__Alternative Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/cs/ncbi/scientific_names>
 
 __HTTP Method:__ 		POST
 
@@ -4395,7 +4261,7 @@ __Example Commands/Requests:__
 
 1. 
 ```bash
-curl -X POST "http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/ncbi/scientific_names" -H "content-type:application/json" -d '{"commonnames": ["cattle", "cat", "goat", "pig", "sheep", "duck", "chicken", "horse", "domestic dog"]}'
+curl -X POST "https://phylo.cs.nmsu.edu/phylotastic_ws/cs/ncbi/scientific_names" -H "content-type:application/json" -d '{"commonnames": ["cattle", "cat", "goat", "pig", "sheep", "duck", "chicken", "horse", "domestic dog"]}'
 ``` 
 
 __Example Results:__
@@ -4554,7 +4420,7 @@ __Service Name:__  	 	<a name="itiscn"></a>ITIS_common_name
 
 __Service Description:__ 	A service to get scientific name of a species from its common name(vernacular name) using ITIS API.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/itis/get_scientific_names>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/cs/itis/get_scientific_names>
 
 __HTTP Method:__ 		GET
 
@@ -4580,12 +4446,12 @@ __Example Commands/Requests:__
 
 1. 
 ```
-http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/itis/get_scientific_names?commonnames=Brown bear|Gray wolf
+https://phylo.cs.nmsu.edu/phylotastic_ws/cs/itis/get_scientific_names?commonnames=Brown bear|Gray wolf
 ```
 
 2. 
 ```
-http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/itis/get_scientific_names?commonnames=Christmas fern&multiple_match=true
+https://phylo.cs.nmsu.edu/phylotastic_ws/cs/itis/get_scientific_names?commonnames=Christmas fern&multiple_match=true
 ```
 
 
@@ -4676,7 +4542,7 @@ __Example Results:__
 }
 ```
 
-__Alternative Resource URI:__  		<http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/itis/scientific_names>
+__Alternative Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/cs/itis/scientific_names>
 
 __HTTP Method:__ 		POST
 
@@ -4705,7 +4571,7 @@ __Example Commands/Requests:__
 
 1. 
 ```bash
-curl -X POST "http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/itis/scientific_names" -H "content-type:application/json" -d '{"commonnames": ["Flowering dogwood", "White oak", "Oregon pine", "Button mangrove", "Yellow mombin"]}'
+curl -X POST "https://phylo.cs.nmsu.edu/phylotastic_ws/cs/itis/scientific_names" -H "content-type:application/json" -d '{"commonnames": ["Flowering dogwood", "White oak", "Oregon pine", "Button mangrove", "Yellow mombin"]}'
 ``` 
 
 __Example Results:__
@@ -4811,7 +4677,7 @@ __Service Name:__  	 	<a name="tpcscn"></a>TROPICOS_common_name
 
 __Service Description:__ 	A service to get scientific name of a species from its common name(vernacular name) using TROPICOS API.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/tpcs/get_scientific_names>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/cs/tpcs/get_scientific_names>
 
 __HTTP Method:__ 		GET
 
@@ -4837,7 +4703,7 @@ __Example Commands/Requests:__
 
 1. 
 ```
-http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/tpcs/get_scientific_names?commonnames=Castor bean|Indian sandalwood|Annual blue grass
+https://phylo.cs.nmsu.edu/phylotastic_ws/cs/tpcs/get_scientific_names?commonnames=Castor bean|Indian sandalwood|Annual blue grass
 ```
 
 
@@ -4854,7 +4720,7 @@ __Example Results:__
 				{
 					"scientific_name": "Ricinus communis",
 					"identifier": 12800093,
-					"source_info_url": "http://www.tropicos.org/Name/12800093",
+					"source_info_url": "https://www.tropicos.org/Name/12800093",
 					"rank": "species"
 				}
 			],
@@ -4865,7 +4731,7 @@ __Example Results:__
 				{
 					"scientific_name": "Santalum album",
 					"identifier": 28500042,
-					"source_info_url": "http://www.tropicos.org/Name/28500042",
+					"source_info_url": "https://www.tropicos.org/Name/28500042",
 					"rank": "species"
 				}
 			],
@@ -4876,7 +4742,7 @@ __Example Results:__
 				{
 					"scientific_name": "Poa annua",
 					"identifier": 25509881,
-					"source_info_url": "http://www.tropicos.org/Name/25509881",
+					"source_info_url": "https://www.tropicos.org/Name/25509881",
 					"rank": "species"
 				}
 			],
@@ -4887,14 +4753,14 @@ __Example Results:__
 		"execution_time": "2.68",
 		"creation_time": "2018-03-27T18:48:22.193809",
 		"source_urls": [
-			"http://services.tropicos.org/"
+			"https://services.tropicos.org/"
 		]
 	}
 }
 ```
 
 
-__Alternative Resource URI:__  		<http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/tpcs/scientific_names>
+__Alternative Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/cs/tpcs/scientific_names>
 
 __HTTP Method:__ 		POST
 
@@ -4923,7 +4789,7 @@ __Example Commands/Requests:__
 
 1. 
 ```bash
-curl -X POST "http://phylo.cs.nmsu.edu:5013/phylotastic_ws/cs/tpcs/scientific_names" -H "content-type:application/json" -d '{"commonnames": ["cucumber", "tomato", "lettuce", "pea"]}'
+curl -X POST "https://phylo.cs.nmsu.edu/phylotastic_ws/cs/tpcs/scientific_names" -H "content-type:application/json" -d '{"commonnames": ["cucumber", "tomato", "lettuce", "pea"]}'
 ``` 
 
 __Example Results:__
@@ -4939,7 +4805,7 @@ __Example Results:__
 				{
 					"scientific_name": "Cucumis sativus",
 					"identifier": 9200572,
-					"source_info_url": "http://www.tropicos.org/Name/9200572",
+					"source_info_url": "https://www.tropicos.org/Name/9200572",
 					"rank": "species"
 				}
 			],
@@ -4950,7 +4816,7 @@ __Example Results:__
 				{
 					"scientific_name": "Lycopersicon esculentum",
 					"identifier": 29602513,
-					"source_info_url": "http://www.tropicos.org/Name/29602513",
+					"source_info_url": "https://www.tropicos.org/Name/29602513",
 					"rank": "species"
 				}
 			],
@@ -4961,7 +4827,7 @@ __Example Results:__
 				{
 					"scientific_name": "Lactuca sativa",
 					"identifier": 2710604,
-					"source_info_url": "http://www.tropicos.org/Name/2710604",
+					"source_info_url": "https://www.tropicos.org/Name/2710604",
 					"rank": "species"
 				}
 			],
@@ -4972,7 +4838,7 @@ __Example Results:__
 				{
 					"scientific_name": "Pisum sativum",
 					"identifier": 13031856,
-					"source_info_url": "http://www.tropicos.org/Name/13031856",
+					"source_info_url": "https://www.tropicos.org/Name/13031856",
 					"rank": "species"
 				}
 			],
@@ -4983,14 +4849,14 @@ __Example Results:__
 		"execution_time": "3.60",
 		"creation_time": "2018-03-27T18:50:56.838480",
 		"source_urls": [
-			"http://services.tropicos.org/"
+			"https://services.tropicos.org/"
 		]
 	}
 }
 ```
 
 
-__Citation/Source:__         http://services.tropicos.org/
+__Citation/Source:__         https://services.tropicos.org/
 
 __Service Quality:__
 
@@ -5020,7 +4886,7 @@ __Service Name:__  	 	Add_new_list
 
 __Service Description:__ 	A service to insert a new list of species into the phylotastic list server.
 
-__Resource URI:__  	<http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/insert_list>
+__Resource URI:__  	<https://phylo.cs.nmsu.edu/phylotastic_ws/sls/insert_list>
 
 __HTTP Method:__ 		POST
 
@@ -5136,7 +5002,7 @@ __Example Commands/Requests:__
 
 1. 
 ```bash
-curl -X POST http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/insert_list -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "list": {"list_extra_info": "", "list_description": "A list of the bird species and their endangered, threatened or invasive status", "list_keywords": ["Bird", "Endangered species", "Everglades"], "list_curator": "HD Laughinghouse", "list_origin": "script", "list_curation_date": "02-24-2016", "list_source": "Des", "list_focal_clade": "Aves", "list_title": "Bird Species List for Everglades National Park", "list_author": ["Bass, O.", "Cunningham, R."], "is_list_public": true, "list_species": [{"family": "Anatidae", "scientific_name": "Aix sponsa", "vernacular_name": "Wood Duck", "nomenclature_code": "ICZN", "order": "Anseriformes"}, {"family": "Anatidae", "scientific_name": "Anas strepera", "vernacular_name": "Gadwall", "nomenclature_code": "ICZN", "order": "Anseriformes"}, {"family": "Caprimulgidae", "scientific_name": "Caprimulgus vociferus", "scientific_name_authorship": "", "vernacular_name": "Whip-poor-will","nomenclature_code": "ICZN", "order": "Caprimulgiformes"}]}}'
+curl -X POST https://phylo.cs.nmsu.edu/phylotastic_ws/sls/insert_list -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "list": {"list_extra_info": "", "list_description": "A list of the bird species and their endangered, threatened or invasive status", "list_keywords": ["Bird", "Endangered species", "Everglades"], "list_curator": "HD Laughinghouse", "list_origin": "script", "list_curation_date": "02-24-2016", "list_source": "Des", "list_focal_clade": "Aves", "list_title": "Bird Species List for Everglades National Park", "list_author": ["Bass, O.", "Cunningham, R."], "is_list_public": true, "list_species": [{"family": "Anatidae", "scientific_name": "Aix sponsa", "vernacular_name": "Wood Duck", "nomenclature_code": "ICZN", "order": "Anseriformes"}, {"family": "Anatidae", "scientific_name": "Anas strepera", "vernacular_name": "Gadwall", "nomenclature_code": "ICZN", "order": "Anseriformes"}, {"family": "Caprimulgidae", "scientific_name": "Caprimulgus vociferus", "scientific_name_authorship": "", "vernacular_name": "Whip-poor-will","nomenclature_code": "ICZN", "order": "Caprimulgiformes"}]}}'
 ```
 
 __Example Results:__
@@ -5175,7 +5041,7 @@ __Service Name:__  	 	 Get_list
 
 __Service Description:__ 	A service to get public lists of species or private lists of species owned by a phylotastic web application/services user.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/get_list>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/sls/get_list>
 
 __HTTP Method:__ 		GET or POST
 
@@ -5231,23 +5097,23 @@ __Example Commands/Requests:__
 
 1. To get all the public lists available:
 ```
-http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/get_list
+https://phylo.cs.nmsu.edu/phylotastic_ws/sls/get_list
 ```
 2. To get a specific public list with ID 24:
 ```
-http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/get_list?list_id=24
+https://phylo.cs.nmsu.edu/phylotastic_ws/sls/get_list?list_id=24
 ```
 3. To get all lists of user with ID *hdail.laughinghouse@gmail.com*:
 ```
-http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/get_list?user_id=hdail.laughinghouse@gmail.com&access_token=ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA
+https://phylo.cs.nmsu.edu/phylotastic_ws/sls/get_list?user_id=hdail.laughinghouse@gmail.com&access_token=ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA
 ```
 4. To get a specific private list with ID 20 and owned by hdail.laughinghouse@gmail.com:
 ```
-http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/get_list?user_id=hdail.laughinghouse@gmail.com&list_id=20&access_token=ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA
+https://phylo.cs.nmsu.edu/phylotastic_ws/sls/get_list?user_id=hdail.laughinghouse@gmail.com&list_id=20&access_token=ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA
 ```
 5. To get a specific private list (including all metadata available) with ID 20 and owned by hdail.laughinghouse@gmail.com:
 ```
-http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/get_list?user_id=hdail.laughinghouse@gmail.com&list_id=20&verbose=true&access_token=ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA
+https://phylo.cs.nmsu.edu/phylotastic_ws/sls/get_list?user_id=hdail.laughinghouse@gmail.com&list_id=20&verbose=true&access_token=ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA
 ```
 
 __Example Results:__
@@ -5295,7 +5161,7 @@ __Service Name:__  	 	 Replace_species_list
 
 __Service Description:__ 	A service to replace the [species objects](#jsonspecies) of an existing list with new species objects.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/replace_species>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/sls/replace_species>
 
 __HTTP Method:__ 		POST
 
@@ -5334,7 +5200,7 @@ __Example Commands/Requests:__
 
 1. 
 ```bash
-curl -X POST http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/replace_species -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "access_token": "ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA", "list_id": 24, "species":[{"family": "Columbidae", "scientific_name": "Columba livia", "vernacular_name": "Rock Dove", "nomenclature_code": "ICZN", "order": "Columbiformes", "class": "Aves"}, {"family": "Alcedinidae", "scientific_name": "Megaceryle alcyon", "vernacular_name": "Belted Kingfisher", "phylum": "Chordata", "nomenclature_code": "ICZN", "order": "Coraciiformes"}, {"family": "Aramidae", "scientific_name": "Aramus guarauna", "vernacular_name": "Limpkin", "nomenclature_code": "ICZN", "order": "Gruiformes", "class": "Aves"}]}'
+curl -X POST https://phylo.cs.nmsu.edu/phylotastic_ws/sls/replace_species -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "access_token": "ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA", "list_id": 24, "species":[{"family": "Columbidae", "scientific_name": "Columba livia", "vernacular_name": "Rock Dove", "nomenclature_code": "ICZN", "order": "Columbiformes", "class": "Aves"}, {"family": "Alcedinidae", "scientific_name": "Megaceryle alcyon", "vernacular_name": "Belted Kingfisher", "phylum": "Chordata", "nomenclature_code": "ICZN", "order": "Coraciiformes"}, {"family": "Aramidae", "scientific_name": "Aramus guarauna", "vernacular_name": "Limpkin", "nomenclature_code": "ICZN", "order": "Gruiformes", "class": "Aves"}]}'
 ```
 
 __Example Results:__
@@ -5441,7 +5307,7 @@ __Service Name:__  	 	 Update_metadata_list
 
 __Service Description:__ 	A service to update properties (metadata) of an existing list.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/update_list>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu:5005/phylotastic_ws/sls/update_list>
 
 __HTTP Method:__ 		POST
 
@@ -5480,12 +5346,12 @@ __Example Commands/Requests:__
 
 1. To change the source and date_published of a list with ID 24.
 ```bash
-curl -X POST http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/update_list -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "access_token": "ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA", "list_id": 24, "list": {"list_source": "Bass, O. & Cunningham, R. (2006) Everglades National Park Bird Checklist. Miami: Everglades Association", "list_date_published": "05-02-2006"}}'
+curl -X POST https://phylo.cs.nmsu.edu/phylotastic_ws/sls/update_list -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "access_token": "ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA", "list_id": 24, "list": {"list_source": "Bass, O. & Cunningham, R. (2006) Everglades National Park Bird Checklist. Miami: Everglades Association", "list_date_published": "05-02-2006"}}'
 ```
 
 2. To change type of a list with ID 24 from "public" to "private":
 ```bash
-curl -X POST http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/update_list -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "access_token": "ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA", "list_id": 24, "list": {"is_list_public": false}}'
+curl -X POST https://phylo.cs.nmsu.edu/phylotastic_ws/sls/update_list -H 'content-type:application/json' -d '{"user_id": "hdail.laughinghouse@gmail.com", "access_token": "ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA", "list_id": 24, "list": {"is_list_public": false}}'
 ```
 
 __Example Results:__
@@ -5531,7 +5397,7 @@ __Service Name:__  	 	 Remove_list
 
 __Service Description:__ 	A service to remove an existing list.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/remove_list>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/sls/remove_list>
 
 __HTTP Method:__ 		GET or POST
 
@@ -5564,7 +5430,7 @@ __Example Commands/Requests:__
 
 1. 
 ```
-http://phylo.cs.nmsu.edu:5007/phylotastic_ws/sls/remove_list?user_id=hdail.laughinghouse@gmail.com&list_id=24&access_token=ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA
+https://phylo.cs.nmsu.edu/phylotastic_ws/sls/remove_list?user_id=hdail.laughinghouse@gmail.com&list_id=24&access_token=ya29..zQLmLjbyujJjwV6RVSM2sy-mkeaKu-9_n7y7iB6uKuL-rHDGp3W2_hPWUSO5uX_OcA
 ```
 
 __Example Results:__
@@ -5615,7 +5481,7 @@ __Service Name:__  	 	 <a name="datelifescale"></a>Datelife_scale_tree
 
 __Service Description:__ 	A service to get Phylogenetic Trees with branch lengths using Datelife R package.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5009/phylotastic_ws/sc/scale>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/sc/scale>
 
 __HTTP Method:__ 		POST
 
@@ -5642,12 +5508,12 @@ __Example Commands/Requests:__
 
 1. 
 ```bash
-curl -X POST http://phylo.cs.nmsu.edu:5009/phylotastic_ws/sc/scale -H 'content-type:application/json' -d '{"newick": "((Zea mays,Oryza sativa),((Arabidopsis thaliana,(Glycine max,Medicago sativa)),Solanum lycopersicum)Pentapetalae);", "method": "sdm"}'
+curl -X POST https://phylo.cs.nmsu.edu/phylotastic_ws/sc/scale -H 'content-type:application/json' -d '{"newick": "((Zea mays,Oryza sativa),((Arabidopsis thaliana,(Glycine max,Medicago sativa)),Solanum lycopersicum)Pentapetalae);", "method": "sdm"}'
 ```
 
 2. 
 ```bash
-curl -X POST http://phylo.cs.nmsu.edu:5009/phylotastic_ws/sc/scale -H 'content-type:application/json' -d '{"newick": "(((((Canis lupus pallipes,Melursus ursinus)Caniformia,((Panthera tigris,Panthera pardus)Panthera,Herpestes fuscus))Carnivora,(Macaca mulatta,Homo sapiens)Catarrhini)Boreoeutheria,Elephas maximus)Eutheria,Haliastur indus)Amniota;"}'
+curl -X POST https://phylo.cs.nmsu.edu/phylotastic_ws/sc/scale -H 'content-type:application/json' -d '{"newick": "(((((Canis lupus pallipes,Melursus ursinus)Caniformia,((Panthera tigris,Panthera pardus)Panthera,Herpestes fuscus))Carnivora,(Macaca mulatta,Homo sapiens)Catarrhini)Boreoeutheria,Elephas maximus)Eutheria,Haliastur indus)Amniota;"}'
 ```
 
 
@@ -5663,7 +5529,7 @@ __Example Results:__
 		"execution_time": 3.26,
 		"creation_time": "2017-10-23T07:49:51.503483",
 		"source_urls": [
-			"http://datelife.org/"
+			"https://datelife.org/"
 		]
 	},
 	"input_tree": "((Zea mays,Oryza sativa),((Arabidopsis thaliana,(Glycine max,Medicago sativa)),Solanum lycopersicum)Pentapetalae);",
@@ -5681,7 +5547,7 @@ __Example Results:__
 		"execution_time": 3.16,
 		"creation_time": "2017-10-23T07:50:31.586571",
 		"source_urls": [
-			"http://datelife.org/"
+			"https://datelife.org/"
 		]
 	},
 	"input_tree": "(((((Canis lupus pallipes,Melursus ursinus)Caniformia,((Panthera tigris,Panthera pardus)Panthera,Herpestes fuscus))Carnivora,(Macaca mulatta,Homo sapiens)Catarrhini)Boreoeutheria,Elephas maximus)Eutheria,Haliastur indus)Amniota;",
@@ -5689,7 +5555,7 @@ __Example Results:__
 }
 ```
 
-__Citation/Source:__  	 	http://datelife.org/
+__Citation/Source:__  	 	https://datelife.org/
 
 
 __Service Quality:__
@@ -5718,7 +5584,7 @@ __Service Name:__  	 	 <a name="otscale"></a>OToL_scale_tree
 
 __Service Description:__ 	A service to get Phylogenetic Trees with branch lengths using Open Tree of Life API.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5009/phylotastic_ws/sc/ot/scale>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/sc/ot/scale>
 
 __HTTP Method:__ 		POST
 
@@ -5739,7 +5605,7 @@ __Example Commands/Requests:__
 
 1. 
 ```bash
-curl -X POST http://phylo.cs.nmsu.edu:5009/phylotastic_ws/sc/ot/scale -H 'content-type:application/json' -d '{"newick": "(Aulacopone_relicta,(((Myrmecia_gulosa,(Aneuretus_simoni,Dolichoderus_mariae)),((Ectatomma_ruidum,Huberia_brounii),Formica_rufa)),Apomyrma_stygia),Martialis_heureka)Formicidae;"}'
+curl -X POST https://phylo.cs.nmsu.edu/phylotastic_ws/sc/ot/scale -H 'content-type:application/json' -d '{"newick": "(Aulacopone_relicta,(((Myrmecia_gulosa,(Aneuretus_simoni,Dolichoderus_mariae)),((Ectatomma_ruidum,Huberia_brounii),Formica_rufa)),Apomyrma_stygia),Martialis_heureka)Formicidae;"}'
 ```
 
 
@@ -5753,7 +5619,7 @@ __Example Results:__
 	"meta_data": {
 		"execution_time": 0.5, 
 		"creation_time": "2018-06-21T19:28:39.183334", 
-		"source_urls": ["http://141.211.236.35:10999/"]
+		"source_urls": ["https://141.211.236.35:10999/"]
 	}, 
 	"scaled_tree": "(((((Dolichoderus mariae:111.297,Aneuretus simoni:111.295)1:3.36907,Myrmecia gulosa:114.667)1:7.64397,((Huberia brounii:110.002,Ectatomma ruidum:110)1:2.67009,Formica rufa:112.675)1:9.63354)1:27.6989,Apomyrma stygia:150)1:13.2012,Martialis heureka:163.2,Aulacopone relicta:163.2);", 
 	"input_tree": "(Aulacopone_relicta,(((Myrmecia_gulosa,(Aneuretus_simoni,Dolichoderus_mariae)),((Ectatomma_ruidum,Huberia_brounii),Formica_rufa)),Apomyrma_stygia),Martialis_heureka)Formicidae;",
@@ -5761,7 +5627,7 @@ __Example Results:__
 ```
 
 
-__Citation/Source:__  	 	http://141.211.236.35:10999/
+__Citation/Source:__  	 	https://141.211.236.35:10999/
 
 
 __Service Quality:__
@@ -5791,7 +5657,7 @@ __Service Name:__  	 	OToL_supported_studies
 
 __Service Description:__ 	A service to get supported studies of an induced tree from OpenTreeOfLife.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5006/phylotastic_ws/md/get_studies>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/md/get_studies>
 
 __HTTP Method:__ 		GET or POST
 
@@ -5817,12 +5683,12 @@ __Example Commands/Requests:__
 
 1. 
 ```
-http://phylo.cs.nmsu.edu:5006/phylotastic_ws/md/get_studies?list=532117|42322|42324|563151|42314&list_type=ottids
+https://phylo.cs.nmsu.edu/phylotastic_ws/md/get_studies?list=532117|42322|42324|563151|42314&list_type=ottids
 ```
 
 2. 
 ```
-http://phylo.cs.nmsu.edu:5006/phylotastic_ws/md/get_studies?list=Setophaga striata|Setophaga magnolia|Setophaga angelae|Setophaga plumbea|Setophaga virens&list_type=taxa
+https://phylo.cs.nmsu.edu/phylotastic_ws/md/get_studies?list=Setophaga striata|Setophaga magnolia|Setophaga angelae|Setophaga plumbea|Setophaga virens&list_type=taxa
 ```
 
 
@@ -5846,8 +5712,8 @@ __Example Results:__
 			"FocalCladeTaxonName": "Felidae",
 			"Publication": "Johnson, W.E., Eizirik E., Pecon-slattery J., Murphy W., Antunes A., Teeling E., & O'brien S. 2006. The late Miocene radiation of modern Felidae: a genetic assessment. Science 311(5757): 73-77.",
 			"CandidateTreeForSynthesis": "tree4052",
-			"PublicationDOI": "http://dx.doi.org/10.1126/science.1122277",
-			"DataRepository": "http://purl.org/phylo/treebase/phylows/study/TB2:S11931",
+			"PublicationDOI": "https://dx.doi.org/10.1126/science.1122277",
+			"DataRepository": "https://purl.org/phylo/treebase/phylows/study/TB2:S11931",
 			"Curator": "Chris Owen",
 			"PublicationIdentifier": "pg_1981"
 		}
@@ -5873,7 +5739,7 @@ __Example Results:__
 			"FocalCladeTaxonName": "Parulidae",
 			"Publication": "Lovette, Irby J., Jorge L. Pérez-Emán, John P. Sullivan, Richard C. Banks, Isabella Fiorentino, Sergio Córdoba-Córdoba, María Echeverry-Galvis, F. Keith Barker, Kevin J. Burns, John Klicka, Scott M. Lanyon, Eldredge Bermingham. 2010. A comprehensive multilocus phylogeny for the wood-warblers and a revised classification of the Parulidae (Aves). Molecular Phylogenetics and Evolution 57 (2): 753-770.",
 			"CandidateTreeForSynthesis": "tree6024",
-			"PublicationDOI": "http://dx.doi.org/10.1016/j.ympev.2010.07.018",
+			"PublicationDOI": "https://dx.doi.org/10.1016/j.ympev.2010.07.018",
 			"DataRepository": "",
 			"Curator": "Joseph W. Brown",
 			"PublicationIdentifier": "pg_2591"
@@ -5883,8 +5749,8 @@ __Example Results:__
 			"FocalCladeTaxonName": "Passeriformes",
 			"Publication": "Barker, F. Keith, Kevin J. Burns, John Klicka, Scott M. Lanyon, Irby J. Lovette. 2015. New insights into New World biogeography: An integrated view from the phylogeny of blackbirds, cardinals, sparrows, tanagers, warblers, and allies. The Auk 132 (2): 333-348.",
 			"CandidateTreeForSynthesis": "tree1",
-			"PublicationDOI": "http://dx.doi.org/10.1642/auk-14-110.1",
-			"DataRepository": "http://datadryad.org/resource/doi:10.5061/dryad.pb787",
+			"PublicationDOI": "https://dx.doi.org/10.1642/auk-14-110.1",
+			"DataRepository": "https://datadryad.org/resource/doi:10.5061/dryad.pb787",
 			"Curator": "Joseph W. Brown",
 			"PublicationIdentifier": "ot_770"
 		}
@@ -5892,7 +5758,7 @@ __Example Results:__
 }
 ```
 
-__Alternative Resource URI:__  		<http://phylo.cs.nmsu.edu:5006/phylotastic_ws/md/studies>
+__Alternative Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/md/studies>
 
 __HTTP Method:__ 		POST
 
@@ -5919,12 +5785,12 @@ __Example Commands/Requests:__
 
 1. 
 ```bash
-curl -X POST http://phylo.cs.nmsu.edu:5006/phylotastic_ws/md/studies -H "content-type:application/json" -d '{"list":[1094064,860906,257323,698438,698406,187220,336231,124230], "list_type": "ottids"}'
+curl -X POST https://phylo.cs.nmsu.edu/phylotastic_ws/md/studies -H "content-type:application/json" -d '{"list":[1094064,860906,257323,698438,698406,187220,336231,124230], "list_type": "ottids"}'
 ```
 
 2. 
 ```bash
-curl -X POST http://phylo.cs.nmsu.edu:5006/phylotastic_ws/md/studies -H "content-type:application/json" -d '{"list":["Delphinidae","Delphinus capensis","Delphinus delphis","Tursiops truncatus","Tursiops aduncus","Sotalia fluviatilis","Sousa chinensis"], "list_type": "taxa"}'
+curl -X POST https://phylo.cs.nmsu.edu/phylotastic_ws/md/studies -H "content-type:application/json" -d '{"list":["Delphinidae","Delphinus capensis","Delphinus delphis","Tursiops truncatus","Tursiops aduncus","Sotalia fluviatilis","Sousa chinensis"], "list_type": "taxa"}'
 ```
 
 __Example Results:__
@@ -5948,8 +5814,8 @@ __Example Results:__
 			"FocalCladeTaxonName": "Cetacea",
 			"Publication": "McGowen, M., Spaulding M., and Gatesy J. 2009. Divergence date estimation and a comprehensive molecular tree of extant cetaceans. Molecular Phylogenetics and Evolution 53 (3): 891-906.",
 			"CandidateTreeForSynthesis": "tree5998",
-			"PublicationDOI": "http://dx.doi.org/10.1016/j.ympev.2009.08.018",
-			"DataRepository": "http://purl.org/phylo/treebase/phylows/study/TB2:S10190",
+			"PublicationDOI": "https://dx.doi.org/10.1016/j.ympev.2009.08.018",
+			"DataRepository": "https://purl.org/phylo/treebase/phylows/study/TB2:S10190",
 			"Curator": "Chris Owen",
 			"PublicationIdentifier": "pg_2587"
 		},
@@ -5958,8 +5824,8 @@ __Example Results:__
 			"FocalCladeTaxonName": "Cetacea",
 			"Publication": "Steeman, M., Hebsgaard M., Fordyce R., Ho S., Rabosky D., Nielsen R., Rahbek C., Glenner H., Sørensen M., & Willerslev E. 2009. Radiation of Extant Cetaceans Driven by Restructuring of the Oceans. Systematic Biology 58 (6): 573-585.",
 			"CandidateTreeForSynthesis": "tree6215",
-			"PublicationDOI": "http://dx.doi.org/10.1093/sysbio/syp060",
-			"DataRepository": "http://purl.org/phylo/treebase/phylows/study/TB2:S10124",
+			"PublicationDOI": "https://dx.doi.org/10.1093/sysbio/syp060",
+			"DataRepository": "https://purl.org/phylo/treebase/phylows/study/TB2:S10124",
 			"Curator": "Chris Owen",
 			"PublicationIdentifier": "pg_1927"
 		}
@@ -5985,8 +5851,8 @@ __Example Results:__
 			"FocalCladeTaxonName": "Cetacea",
 			"Publication": "McGowen, M., Spaulding M., and Gatesy J. 2009. Divergence date estimation and a comprehensive molecular tree of extant cetaceans. Molecular Phylogenetics and Evolution 53 (3): 891-906.",
 			"CandidateTreeForSynthesis": "tree5998",
-			"PublicationDOI": "http://dx.doi.org/10.1016/j.ympev.2009.08.018",
-			"DataRepository": "http://purl.org/phylo/treebase/phylows/study/TB2:S10190",
+			"PublicationDOI": "https://dx.doi.org/10.1016/j.ympev.2009.08.018",
+			"DataRepository": "https://purl.org/phylo/treebase/phylows/study/TB2:S10190",
 			"Curator": "Chris Owen",
 			"PublicationIdentifier": "pg_2587"
 		},
@@ -5995,8 +5861,8 @@ __Example Results:__
 			"FocalCladeTaxonName": "Cetacea",
 			"Publication": "Steeman, M., Hebsgaard M., Fordyce R., Ho S., Rabosky D., Nielsen R., Rahbek C., Glenner H., Sørensen M., & Willerslev E. 2009. Radiation of Extant Cetaceans Driven by Restructuring of the Oceans. Systematic Biology 58 (6): 573-585.",
 			"CandidateTreeForSynthesis": "tree6215",
-			"PublicationDOI": "http://dx.doi.org/10.1093/sysbio/syp060",
-			"DataRepository": "http://purl.org/phylo/treebase/phylows/study/TB2:S10124",
+			"PublicationDOI": "https://dx.doi.org/10.1093/sysbio/syp060",
+			"DataRepository": "https://purl.org/phylo/treebase/phylows/study/TB2:S10124",
 			"Curator": "Chris Owen",
 			"PublicationIdentifier": "pg_1927"
 		}
@@ -6030,7 +5896,7 @@ __Service Name:__  	 	Compare_trees
 
 __Service Description:__ 	A service to compare two Phylogenetic Trees symmetrically.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5006/phylotastic_ws/compare_trees>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/md/dp/compare_trees>
 
 __HTTP Method:__ 		POST
 
@@ -6057,7 +5923,7 @@ __Example Commands/Requests:__
 
 1. 
 ```bash
-curl -X POST "http://phylo.cs.nmsu.edu:5006/phylotastic_ws/compare_trees" -H "content-type:application/json" -d '{"tree1_nwk": "(((((((EU368025_Uncult_marine_euk_FS14JA72_30Mar05_5m:0.00329,EU368020_Uncult_marine_euk_FS04GA95_01Aug05_5m:-0.00002):0.00002,EU368013_Uncult_marine_euk_FS01D014_01Aug05_65m:-0.00002):0.00010,(EU368034_Uncult_marine_euk_OC413NSS_Q007_15m:-0.00000,(EU368007_Uncult_marine_euk_FS01B026_30Mar05_5m:-0.00001,EU368004_Uncult_marine_euk_FS01AA94_01Aug05_5m:0.00328):0.00000):0.00317):0.00725,(EU368005_Uncult_marine_euk_FS01B033_30Mar05_5m:-0.00002,(EF172850_Uncult_euk_SSRPB47:-0.00003,EU368022_Uncult_marine_euk_FS04H169_01Aug05_89m:0.00166):0.00002):0.00597):0.00202,((DQ060523_Uncult_marine_euk_NOR46.29:0.01559,(HQ868826_Uncult_euk_SHAX1073:0.00155,EU368038_Uncult_marine_euk_EN351CTD040_4mN11:0.00172):0.00429):0.00017,(EU368023_Uncult_marine_euk_FS04H153_01Aug05_89m:0.00504,(DQ222879_Uncult_photo_euk_RA000907.18:0.00166,HM858468_Uncult_marine_euk_MO.011.5m.00036:-0.00003):0.00152):0.00566):0.00662):0.00941,(HQ868882_Uncult_euk_SHAX1135:0.00170,HQ868810_Uncult_euk_SHAX1056:-0.00007):0.02449):0.00648,(EU368021_Uncult_marine_euk_FS04GA46_01Aug05_5m:0.02285,(HQ869075_Uncult_euk_SHAX587:0.00000,HQ869035_Uncult_euk_SHAX540:0.00000):0.04720):0.01029,HQ156863_Uncult_marine_ciliate_170609_08:0.17059);", "tree2_nwk": "((HQ869075_Uncult_euk_SHAX587:0.00000,HQ869035_Uncult_euk_SHAX540:0.00000):0.04484,(EU368021_Uncult_marine_euk_FS04GA46_01Aug05_5m:0.02285,(((((EU368005_Uncult_marine_euk_FS01B033_30Mar05_5m:-0.00002,(EF172850_Uncult_euk_SSRPB47:-0.00003,EU368022_Uncult_marine_euk_FS04H169_01Aug05_89m:0.00166):0.00002):0.00597,(((EU368025_Uncult_marine_euk_FS14JA72_30Mar05_5m:0.00329,EU368020_Uncult_marine_euk_FS04GA95_01Aug05_5m:-0.00002):0.00002,EU368013_Uncult_marine_euk_FS01D014_01Aug05_65m:-0.00002):0.00010,(EU368034_Uncult_marine_euk_OC413NSS_Q007_15m:-0.00000,(EU368007_Uncult_marine_euk_FS01B026_30Mar05_5m:-0.00001,EU368004_Uncult_marine_euk_FS01AA94_01Aug05_5m:0.00328):0.00000):0.00317):0.00725):0.00202,((DQ060523_Uncult_marine_euk_NOR46.29:0.01559,(HQ868826_Uncult_euk_SHAX1073:0.00155,EU368038_Uncult_marine_euk_EN351CTD040_4mN11:0.00172):0.00429):0.00017,(EU368023_Uncult_marine_euk_FS04H153_01Aug05_89m:0.00504,(DQ222879_Uncult_photo_euk_RA000907.18:0.00166,HM858468_Uncult_marine_euk_MO.011.5m.00036:-0.00003):0.00152):0.00566):0.00662):0.00941,(HQ868882_Uncult_euk_SHAX1135:0.00170,HQ868810_Uncult_euk_SHAX1056:-0.00007):0.02449):0.00648,HQ156863_Uncult_marine_ciliate_170609_08:0.17059):0.01029):0.00236);"}'
+curl -X POST "https://phylo.cs.nmsu.edu/phylotastic_ws/md/dp/compare_trees" -H "content-type:application/json" -d '{"tree1_nwk": "(((((((EU368025_Uncult_marine_euk_FS14JA72_30Mar05_5m:0.00329,EU368020_Uncult_marine_euk_FS04GA95_01Aug05_5m:-0.00002):0.00002,EU368013_Uncult_marine_euk_FS01D014_01Aug05_65m:-0.00002):0.00010,(EU368034_Uncult_marine_euk_OC413NSS_Q007_15m:-0.00000,(EU368007_Uncult_marine_euk_FS01B026_30Mar05_5m:-0.00001,EU368004_Uncult_marine_euk_FS01AA94_01Aug05_5m:0.00328):0.00000):0.00317):0.00725,(EU368005_Uncult_marine_euk_FS01B033_30Mar05_5m:-0.00002,(EF172850_Uncult_euk_SSRPB47:-0.00003,EU368022_Uncult_marine_euk_FS04H169_01Aug05_89m:0.00166):0.00002):0.00597):0.00202,((DQ060523_Uncult_marine_euk_NOR46.29:0.01559,(HQ868826_Uncult_euk_SHAX1073:0.00155,EU368038_Uncult_marine_euk_EN351CTD040_4mN11:0.00172):0.00429):0.00017,(EU368023_Uncult_marine_euk_FS04H153_01Aug05_89m:0.00504,(DQ222879_Uncult_photo_euk_RA000907.18:0.00166,HM858468_Uncult_marine_euk_MO.011.5m.00036:-0.00003):0.00152):0.00566):0.00662):0.00941,(HQ868882_Uncult_euk_SHAX1135:0.00170,HQ868810_Uncult_euk_SHAX1056:-0.00007):0.02449):0.00648,(EU368021_Uncult_marine_euk_FS04GA46_01Aug05_5m:0.02285,(HQ869075_Uncult_euk_SHAX587:0.00000,HQ869035_Uncult_euk_SHAX540:0.00000):0.04720):0.01029,HQ156863_Uncult_marine_ciliate_170609_08:0.17059);", "tree2_nwk": "((HQ869075_Uncult_euk_SHAX587:0.00000,HQ869035_Uncult_euk_SHAX540:0.00000):0.04484,(EU368021_Uncult_marine_euk_FS04GA46_01Aug05_5m:0.02285,(((((EU368005_Uncult_marine_euk_FS01B033_30Mar05_5m:-0.00002,(EF172850_Uncult_euk_SSRPB47:-0.00003,EU368022_Uncult_marine_euk_FS04H169_01Aug05_89m:0.00166):0.00002):0.00597,(((EU368025_Uncult_marine_euk_FS14JA72_30Mar05_5m:0.00329,EU368020_Uncult_marine_euk_FS04GA95_01Aug05_5m:-0.00002):0.00002,EU368013_Uncult_marine_euk_FS01D014_01Aug05_65m:-0.00002):0.00010,(EU368034_Uncult_marine_euk_OC413NSS_Q007_15m:-0.00000,(EU368007_Uncult_marine_euk_FS01B026_30Mar05_5m:-0.00001,EU368004_Uncult_marine_euk_FS01AA94_01Aug05_5m:0.00328):0.00000):0.00317):0.00725):0.00202,((DQ060523_Uncult_marine_euk_NOR46.29:0.01559,(HQ868826_Uncult_euk_SHAX1073:0.00155,EU368038_Uncult_marine_euk_EN351CTD040_4mN11:0.00172):0.00429):0.00017,(EU368023_Uncult_marine_euk_FS04H153_01Aug05_89m:0.00504,(DQ222879_Uncult_photo_euk_RA000907.18:0.00166,HM858468_Uncult_marine_euk_MO.011.5m.00036:-0.00003):0.00152):0.00566):0.00662):0.00941,(HQ868882_Uncult_euk_SHAX1135:0.00170,HQ868810_Uncult_euk_SHAX1056:-0.00007):0.02449):0.00648,HQ156863_Uncult_marine_ciliate_170609_08:0.17059):0.01029):0.00236);"}'
 ```
 
 __Example Results:__
@@ -6071,14 +5937,14 @@ __Example Results:__
 		"execution_time": 0.03,
 		"creation_time": "2017-10-23T23:34:59.618597",
 		"source_urls": [
-			"http://dendropy.org/library/treecompare.html#module-dendropy.calculate.treecompare"
+			"https://dendropy.org/library/treecompare.html#module-dendropy.calculate.treecompare"
 		]
 	},
 	"are_same_tree": true
 }
 ```
 
-__Citation/Source:__  http://dendropy.org/library/treecompare.html#module-dendropy.calculate.treecompare
+__Citation/Source:__  https://dendropy.org/library/treecompare.html#module-dendropy.calculate.treecompare
 
 __Service Quality:__
 
@@ -6096,241 +5962,13 @@ __Service Quality:__
    | Internal server error       | 500   |         |
 
 
----
-
-## <a name='speciesdata'></a>Species data services
-
-__Service Name:__  	 	EOL_Habitat_Conservation
-
-__Service Description:__ 	A service to get habitat and conservation status of a list of species from EOL traitsbank.
-
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5013/phylotastic_ws/sd/eol/get_habitat_conservation>
-
-__HTTP Method:__ 		GET
-
-__Input Format:__ 		application/x-www-form-urlencoded
-
-__Output Format:__ 		application/json 
- 				
-__Parameters:__
-
-1. Parameter details:
-  * __Name:__ 	 	<span style="color:blue">species</span> 
-  * __Category:__  	mandatory
-  * __Data Type:__  list of strings
-  * __Description:__  pipe ("|") delimited list of species.
- 				
-  
-__Example Commands/Requests:__ 
-
-1. 
-```
-http://phylo.cs.nmsu.edu:5013/phylotastic_ws/sd/eol/get_habitat_conservation?species=Thunnus%20alalunga|Delphinapterus%20leucas
-```
-
-
-
-__Example Results:__
-
-1. 
-```json
-{
-    "status_code":200,
-    "message":"Success",
-    "meta_data":{
-        "execution_time":1.19,
-        "creation_time":"2018-04-23T20:54:11.775394",
-        "source_urls":[
-            "http://eol.org/traitbank"
-        ]
-    },
-    "species":[
-        {
-            "habitats":[
-                "slope",
-                "temperate",
-                "marine biome",
-                "pelagic zone",
-                "oceanic zone",
-                "photic zone",
-                "saline water",
-                "marine habitat",
-                "aquatic habitat",
-                "island",
-                "sea floor",
-                "bay",
-                "subtropical",
-                "shore",
-                "mediterranean sea biome",
-                "sea",
-                "mesopelagic zone",
-                "surface water",
-                "ocean",
-                "tropical"
-            ],
-            "searched_name":"Thunnus alalunga",
-            "conservation_status":"near threatened",
-            "eol_id":205933,
-            "matched_name":"Thunnus alalunga (Bonnaterre, 1788)"
-        },
-        {
-            "habitats":[
-                "slope",
-                "estuary",
-                "ice shelf",
-                "aquatic habitat",
-                "brackish water",
-                "archipelago",
-                "fresh water",
-                "sea",
-                "ocean",
-                "canal",
-                "blowhole",
-                "ridge",
-                "inlet",
-                "Large river biome",
-                "carcass",
-                "terrestrial biome",
-                "fjord",
-                "sound",
-                "marine biome",
-                "continental shelf",
-                "saline water",
-                "marine habitat",
-                "mudflat",
-                "coast",
-                "aquarium",
-                "ocean basin",
-                "estuarine biome",
-                "coastal water body",
-                "pelagic zone",
-                "polynya",
-                "ice cap",
-                "sea ice",
-                "temperate",
-                "island",
-                "bay",
-                "ice sheet",
-                "drainage basin",
-                "river"
-            ],
-            "searched_name":"Delphinapterus leucas",
-            "conservation_status":"near threatened",
-            "eol_id":328541,
-            "matched_name":"Delphinapterus leucas (Pallas, 1776)"
-        }
-    ]
-}
-```
- 
-
-__Alternative Resource URI:__  		<http://phylo.cs.nmsu.edu:5013/phylotastic_ws/sd/eol/habitat_conservation>
-
-__HTTP Method:__ 		POST
-
-__Input Format:__ 		application/json
-
-__Output Format:__ 		application/json 
-
-
-__Parameters:__
-
-1. Parameter details:
-  * __Name:__ 	 	<span style="color:blue">species</span> 
-  * __Category:__  	mandatory
-  * __Data Type:__  list of strings
-  * __Description:__  a list of species
- 				
- 				
-__Example Commands/Requests:__
-
-1. 
-```bash
-curl -X POST http://phylo.cs.nmsu.edu:5013/phylotastic_ws/sd/eol/habitat_conservation -H "content-type:application/json" -d '{"species": ["Ceratotherium simum", "Bison bison bison"]}'
-```
-
-
-__Example Results:__
-
-1. 
-
-```json
-{
-	"status_code": 200,
-	"message": "Success",
-	"meta_data": {
-		"execution_time": 1.01,
-		"creation_time": "2018-04-23T21:45:58.782763",
-		"source_urls": [
-			"http://eol.org/traitbank"
-		]
-	},
-	"species": [
-		{
-			"habitats": [
-				"savanna",
-				"cave",
-				"woodland",
-				"zoological garden",
-				"terrestrial biome",
-				"lake",
-				"swamp",
-				"national park",
-				"rift valley",
-				"grassland",
-				"terrestrial habitat",
-				"protected area",
-				"chaparral",
-				"forest"
-			],
-			"searched_name": "Ceratotherium simum",
-			"conservation_status": "near threatened",
-			"eol_id": 311503,
-			"matched_name": "Ceratotherium simum (Burchell, 1817)"
-		},
-		{
-			"habitats": [
-				"wood",
-				"national park",
-				"plain"
-			],
-			"searched_name": "Bison bison bison",
-			"conservation_status": null,
-			"eol_id": 1282459,
-			"matched_name": "Bison bison bison (Linnaeus, 1758)"
-		}
-	]
-}
-```
-
-
-__Citation/Source:__    http://eol.org/traitbank
-
-__Service Quality:__
-
- * *Restrictions on capacity:*  __maximum 30 species allowed__
- * *Expected response time:*  	__1s~15s__ (_might be longer depending on the size of the input list_)
- * *Informative message/status:*
-   
-   | Case | HTTP status code | Message | 
-   | :----------- | :------: | ------------: | 
-   | Successful       | 200   | Success        | 
-   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
-   | Invalid name of mandatory parameter (e.g. lst)       | 400   | Error: Missing parameter '_parameter name_'        |
-   | Invalid input JSON data       | 400   | Invalid JSON document        |
-   | Invalid method name in resource URI (e.g. /study)       | 404   | Error: Could not find the requested resource URI        |
-   | Internal server error       | 500   |         |
-
-
-Go to [__Top__](#servicesdocumentation).
-
 --- 
 
 __Service Name:__  	 	ECOS_Conservation
 
 __Service Description:__ 	A service to get conservation status of a list of species using ECOS services.
 
-__Resource URI:__  		<http://phylo.cs.nmsu.edu:5013/phylotastic_ws/sd/ecos/get_conservation>
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/sd/ecos/get_conservation>
 
 __HTTP Method:__ 		GET
 
@@ -6351,7 +5989,7 @@ __Example Commands/Requests:__
 
 1. 
 ```
-http://phylo.cs.nmsu.edu:5013/phylotastic_ws/sd/ecos/get_conservation?species=Pongo%20pygmaeu|Rhinoceros%20sondaicus|Panthera%20tigris|Pan%20troglodytes|Loxodonta%20africana
+https://phylo.cs.nmsu.edu/phylotastic_ws/sd/ecos/get_conservation?species=Pongo%20pygmaeu|Rhinoceros%20sondaicus|Panthera%20tigris|Pan%20troglodytes|Loxodonta%20africana
 ```
 
 
@@ -6403,7 +6041,7 @@ __Example Results:__
 ```
  
 
-__Alternative Resource URI:__  		<http://phylo.cs.nmsu.edu:5013/phylotastic_ws/sd/ecos/conservation>
+__Alternative Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/sd/ecos/conservation>
 
 __HTTP Method:__ 		POST
 
@@ -6425,7 +6063,7 @@ __Example Commands/Requests:__
 
 1. 
 ```bash
-curl -X POST http://phylo.cs.nmsu.edu:5013/phylotastic_ws/sd/ecos/conservation -H "content-type:application/json" -d '{"species": ["Ursus maritimus", "Ailuropoda melanoleuca", "Vulpes lagopus", "Delphinapterus leucas", "Diceros bicornis", "Balaenoptera musculus", "Pan paniscus", "Balaena mysticetus", "Pan troglodytes", "Balaenoptera physalus", "Carcharodon carcharias", "Chelonia mydas", "Hippopotamus amphibius", "Orcaella brevirostris", "Panthera onca", "Dermochelys coriacea", "Ara ararauna", "Amblyrhynchus cristatus"]}'
+curl -X POST https://phylo.cs.nmsu.edu/phylotastic_ws/sd/ecos/conservation -H "content-type:application/json" -d '{"species": ["Ursus maritimus", "Ailuropoda melanoleuca", "Vulpes lagopus", "Delphinapterus leucas", "Diceros bicornis", "Balaenoptera musculus", "Pan paniscus", "Balaena mysticetus", "Pan troglodytes", "Balaenoptera physalus", "Carcharodon carcharias", "Chelonia mydas", "Hippopotamus amphibius", "Orcaella brevirostris", "Panthera onca", "Dermochelys coriacea", "Ara ararauna", "Amblyrhynchus cristatus"]}'
 ```
 
 
