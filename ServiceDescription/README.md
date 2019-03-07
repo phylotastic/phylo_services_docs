@@ -17,13 +17,14 @@ __Phylotastic Web Services__ are grouped into the following categories:
 
 **[Common Name to Sceintific Name services](#commonname)** :  services to find scientific names from common names.
 
+**[Sceintific Name to Common Name services](#scientificname)** :  services to find common names from scientific names.
+
 **[Species List services](#specieslist)** :  services to publish/remove/update/access lists of species owned by a phylotastic web application/services user.
 
 **[Tree scaling services](#treescaling)** :  services for getting chronograms (trees with branch lengths proportional to time).
 
 **[Miscellaneous services](#misc)** :  services for different use cases.
 
-**[Species data services](#speciesdata)** :  services for retrieving traits of species.
 
 ---
 
@@ -6205,3 +6206,220 @@ __Service Quality:__
 Go to [__Top__](#servicesdocumentation).
 
 --- 
+
+## <a name='commonname'></a>Common Name to Scientific Name
+
+
+   | Service Name |  Summary | 
+   | :----------- | ---------: | 
+   | [NCBI_common_name](#ncbiss) | Get common names (vernacular names) of a list of species from its scientific names using NCBI API. | 
+   | [EOL_common_name](#eolss) | Get common names (vernacular names) of a list of species from its scientific names using EOL API. |
+   
+
+
+__Service Name:__  	 	<a name="ncbiss"></a>NCBI_scientific_name (__Coming soon__)
+
+__Service Description:__ 	A service to get common name(vernacular name) of a species from its scientific name using EOL API.
+
+
+
+__Citation/Source:__         http://eutils.ncbi.nlm.nih.gov/entrez/
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*  __maximum 30 species allowed__
+ * *Expected response time:*  	__1s~60s__ (_might be longer depending on the number of input common names_)
+ * *Informative message/status:*
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. common)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Invalid method name in resource URI (e.g. /scname)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
+
+  > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_scientific_name_) will be an empty string.
+
+Go to [__Top__](#servicesdocumentation).
+
+Go to [Scientific Name to Common Name](#scientificname).
+---
+
+__Service Name:__  	 	<a name="eolss"></a>EOL_scientific_name
+
+__Service Description:__ 	A service to get common name(vernacular name) of a species from its scientific name using EOL API.
+
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/ss/eol/get_common_names>
+
+__HTTP Method:__ 		GET
+
+__Input Format:__ 		application/x-www-form-urlencoded
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">scientific_names</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  list of strings
+  * __Description:__  a list of common names for which to find scientific names delimited by pipe "|".
+ 				
+  
+__Example Commands/Requests:__
+
+1. 
+```
+https://phylo.cs.nmsu.edu/phylotastic_ws/ss/eol/get_common_names?scientific_names=Balaenoptera%20musculus
+```
+
+
+__Example Results:__
+
+1. 
+```json
+{
+    "status_code":200,
+    "message":"Success",
+    "meta_data":{
+        "execution_time":1.37,
+        "creation_time":"2019-03-06T22:18:01.372101",
+        "source_urls":[
+            "http://eol.org"
+        ]
+    },
+    "result":[
+        {
+            "searched_name":"Balaenoptera musculus",
+            "identifier":46559433,
+            "common_names":[
+                "Blue whale",
+                "Common Rorqual",
+                "Sibbald's Rorqual",
+                "Pygmy Blue Whale",
+                "Sibbold’s Rorqual",
+                "Sulphur-bottom Whale",
+                "blue whale",
+                "Ostende whale",
+                "Sibbald's rorqual",
+                "blue rorqual",
+                "common rorqual",
+                "finny whale",
+                "great blue whale",
+                "great northern rorqual",
+                "great rorqual",
+                "sulphurbottom whale",
+                "Blue Whale"
+            ],
+            "matched_name":"Balaenoptera musculus (Linnaeus, 1758)"
+        }
+    ]
+}
+```
+
+
+__Alternative Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/ss/eol/common_names>
+
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		application/json
+
+__Output Format:__ 		application/json 
+
+
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">scientific_names</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  list of strings
+  * __Description:__  list of scientific names for which to find common names.
+ 				
+
+ 				
+__Example Commands/Requests:__
+
+1. 
+```
+curl -X POST "https://phylo.cs.nmsu.edu/phylotastic_ws/ss/eol/common_names" -H "content-type:application/json" -d '{"scientific_names": ["Felis catus", "Bos taurus", "Capra hircus"]}'
+``` 
+
+__Example Results:__
+
+1. 
+```json
+{
+	"status_code": 200,
+	"message": "Success",
+	"meta_data": {
+		"execution_time": 3.46,
+		"creation_time": "2019-03-06T22:15:07.521965",
+		"source_urls": [
+			"http://eol.org"
+		]
+	},
+	"result": [
+		{
+			"searched_name": "Felis catus",
+			"identifier": 1037781,
+			"common_names": [
+				"cat",
+				"Wild Cat",
+				"Domestic Cat",
+				"Domestic cat",
+				"domestic cat",
+				"feral cat",
+				"house cat",
+				"Domestic Cat -- Feral cat"
+			],
+			"matched_name": "Felis catus Linnaeus, 1758"
+		},
+		{
+			"searched_name": "Bos taurus",
+			"identifier": 34548,
+			"common_names": [
+				"ox"
+			],
+			"matched_name": "Bos Linnaeus, 1758"
+		},
+		{
+			"searched_name": "Capra hircus",
+			"identifier": 328660,
+			"common_names": [
+				"Domestic Goat",
+				"Domestic goat",
+				"Goat",
+				"Domestic goat ",
+				"domestic goat"
+			],
+			"matched_name": "Capra hircus Linnaeus, 1758"
+		}
+	]
+}
+```
+
+
+__Citation/Source:__         http://eol.org
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*  __maximum 30 species allowed__
+ * *Expected response time:*  	__1s~60s__ (_might be longer depending on the number of input common names_)
+ * *Informative message/status:*
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. common)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Invalid method name in resource URI (e.g. /scname)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
+
+  > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_scientific_name_) will be an empty string.
+
+Go to [__Top__](#servicesdocumentation).
+
+Go to [Scientific Name to Common Name](#scientificname).
+
+---
