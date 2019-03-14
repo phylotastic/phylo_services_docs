@@ -1798,6 +1798,19 @@ __Parameters:__
   * __Description:__  one or more scientific names delimited by pipe "|".
  				
  				
+2. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">metadata</span> 
+  * __Category:__  	optional
+  * __Data Type:__  boolean (default: False)
+  * __Description:__  a boolean value to specify whether to include tree metadata with the result.
+
+3. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">ottid</span> 
+  * __Category:__  	optional
+  * __Data Type:__  boolean (default: True)
+  * __Description:__  a boolean value to specify whether to remove ott ids from the tree.
+
+
 __Example Commands/Requests:__
 
 1. 
