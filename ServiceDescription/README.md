@@ -4088,7 +4088,8 @@ Go to [__Top__](#servicesdocumentation).
 
    | Service Name |  Summary | 
    | :----------- | ---------: | 
-   | [NCBI_common_name](#ncbicn) | Get scientific names of a list of species from its common name(vernacular name) using NCBI API. | 
+   | [NCBI_common_name](#ncbicn) | Get scientific names of a list of species from its common name(vernacular name) using NCBI API. |
+   | [EBI_commmon_name](#ebicn) | Get scientific names of a list of species from its common name(vernacular name) using EBI API. | 
    | [ITIS_common_name](#itiscn) | Get scientific names of a list of species from its common name(vernacular name) using ITIS API. |
    | [TROPICOS_commmon_name](#tpcscn) | Get scientific names of a list of species from its common name(vernacular name) using TROPICOS API. |
    
@@ -4429,6 +4430,187 @@ Go to [__Top__](#servicesdocumentation).
 Go to [Common Name to Scientific Name](#commonname).
 
 ---
+
+__Service Name:__  	 	<a name="ebicn"></a>EBI_common_name
+
+__Service Description:__ 	A service to get scientific name of a species from its common name(vernacular name) using EBI API.
+
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/cs/ebi/get_scientific_names>
+
+__HTTP Method:__ 		GET
+
+__Input Format:__ 		application/x-www-form-urlencoded
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">commonnames</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  list of strings
+  * __Description:__  a list of common names for which to find scientific names delimited by pipe "|".
+ 				
+2. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">multiple_match</span> 
+  * __Category:__  	optional
+  * __Data Type:__  boolean
+  * __Description:__  a boolean value to specify whether to return multiple match results. By default it is `false`. If _multiple_match_ is enabled (`true`), then the service will return multiple matches (if available) for each common name in the input list.
+  
+__Example Commands/Requests:__
+
+1. 
+```
+https://phylo.cs.nmsu.edu/phylotastic_ws/cs/ebi/get_scientific_names?commonnames=American robin|House sparrow
+```
+
+
+__Example Results:__
+
+1. 
+```json
+{
+    "status_code":200,
+    "message":"Success",
+    "result":[
+        {
+            "matched_names":[
+                {
+                    "scientific_name":"Turdus migratorius",
+                    "common_name":"American robin",
+                    "identifier":"9188"
+                }
+            ],
+            "searched_name":"American robin"
+        },
+        {
+            "matched_names":[
+                {
+                    "scientific_name":"Passer domesticus",
+                    "common_name":"House sparrow",
+                    "identifier":"48849"
+                }
+            ],
+            "searched_name":"House sparrow"
+        }
+    ],
+    "metadata":{
+        "execution_time":"2.17",
+        "creation_time":"2019-03-21T07:40:34.438447",
+        "source_urls":[
+            "https://www.ebi.ac.uk"
+        ]
+    }
+}
+```
+
+
+__Alternative Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/cs/ebi/scientific_names>
+
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		application/json
+
+__Output Format:__ 		application/json 
+
+
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">commonnames</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  list of strings
+  * __Description:__  list of common names for which to find scientific names.
+ 				
+
+2. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">multiple_match</span> 
+  * __Category:__  	optional
+  * __Data Type:__  boolean
+  * __Description:__  a boolean value to specify whether to return multiple match results. By default it is `false`. If _multiple_match_ is enabled (`true`), then the service will return multiple matches (if available) for each common name in the input list.
+
+ 				
+__Example Commands/Requests:__
+
+1. 
+```bash
+curl -X POST "https://phylo.cs.nmsu.edu/phylotastic_ws/cs/ebi/scientific_names" -H "content-type:application/json" -d '{"commonnames": ["cow", "horse", "dog"]}'
+``` 
+
+__Example Results:__
+
+1. 
+```json
+{
+	"status_code": 200,
+	"message": "Success",
+	"result": [
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Bos taurus",
+					"common_name": "cattle",
+					"identifier": "9913"
+				}
+			],
+			"searched_name": "cow"
+		},
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Equus caballus",
+					"common_name": "horse",
+					"identifier": "9796"
+				}
+			],
+			"searched_name": "horse"
+		},
+		{
+			"matched_names": [
+				{
+					"scientific_name": "Canis lupus familiaris",
+					"common_name": "dog",
+					"identifier": "9615"
+				}
+			],
+			"searched_name": "dog"
+		}
+	],
+	"metadata": {
+		"execution_time": "3.34",
+		"creation_time": "2019-03-21T07:43:10.395471",
+		"source_urls": [
+			"https://www.ebi.ac.uk"
+		]
+	}
+}
+```
+
+
+__Citation/Source:__         https://www.ebi.ac.uk
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*  __maximum 20 species allowed__
+ * *Expected response time:*  	__1s~60s__ (_might be longer depending on the number of input common names_)
+ * *Informative message/status:*
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. common)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Invalid method name in resource URI (e.g. /scname)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
+
+  > __Note__: In case of error conditions in source web services, their HTTP status codes are returned. When the request was executed successfully, but no result was produced then the response status will still be 200 and the corresponding output field(_scientific_name_) will be an empty string.
+
+Go to [__Top__](#servicesdocumentation).
+
+Go to [Common Name to Scientific Name](#commonname).
+
+---
+
 
 __Service Name:__  	 	<a name="itiscn"></a>ITIS_common_name
 
