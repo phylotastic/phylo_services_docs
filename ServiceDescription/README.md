@@ -6407,22 +6407,173 @@ Go to [__Top__](#servicesdocumentation).
 
    | Service Name |  Summary | 
    | :----------- | ---------: | 
-   | [NCBI_common_name](#ncbiss) | Get common names (vernacular names) of a list of species from its scientific names using NCBI API. | 
+   | [GNR_common_name](#gnrss) | Get common names (vernacular names) of a list of species from its scientific names using GNR API. | 
    | [EOL_common_name](#eolss) | Get common names (vernacular names) of a list of species from its scientific names using EOL API. |
    
 
 
-__Service Name:__  	 	<a name="ncbiss"></a>NCBI_scientific_name (__Coming soon__)
+__Service Name:__  	 	<a name="gnrss"></a>GNR_scientific_name
 
-__Service Description:__ 	A service to get common name(vernacular name) of a species from its scientific name using EOL API.
+__Service Description:__ 	A service to get common name(vernacular name) of a species from its scientific name using GNR API.
 
 
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">scientific_names</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  list of strings
+  * __Description:__  a list of common names for which to find scientific names delimited by pipe "|".
+ 				
+  
+__Example Commands/Requests:__
 
-__Citation/Source:__         http://eutils.ncbi.nlm.nih.gov/entrez/
+1. 
+```
+https://phylo.cs.nmsu.edu/phylotastic_ws/ss/gnr/get_common_names?scientific_names=Rangifer tarandus
+```
+
+
+__Example Results:__
+
+1. 
+```json
+{
+    "status_code":200,
+    "message":"Success",
+    "meta_data":{
+        "execution_time":0.24,
+        "creation_time":"2019-04-03T22:58:34.961657",
+        "source_urls":[
+            "https://index.globalnames.org"
+        ]
+    },
+    "result":[
+        {
+            "matched_results":[
+                {
+                    "data_source":"Catalogue of Life",
+                    "common_names":[
+                        "caribou"
+                    ],
+                    "matched_name":"Rangifer tarandus (Linnaeus, 1758)"
+                },
+                {
+                    "data_source":"World Register of Marine Species",
+                    "common_names":[
+                        "reindeer"
+                    ],
+                    "matched_name":"Rangifer tarandus (Linnaeus, 1758)"
+                },
+                {
+                    "data_source":"GBIF Backbone Taxonomy",
+                    "common_names":[
+                        "caribou",
+                        "reindeer",
+                        "Caribou (North America)"
+                    ],
+                    "matched_name":"Rangifer tarandus (Linnaeus, 1758)"
+                }
+            ],
+            "searched_name":"Rangifer tarandus"
+        }
+    ]
+}
+```
+
+
+__Alternative Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/ss/gnr/common_names>
+
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		application/json
+
+__Output Format:__ 		application/json 
+
+
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">scientific_names</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  list of strings
+  * __Description:__  list of scientific names for which to find common names.
+ 				
+
+ 				
+__Example Commands/Requests:__
+
+1. 
+```
+curl -X POST "https://phylo.cs.nmsu.edu/phylotastic_ws/ss/gnr/common_names" -H "content-type:application/json" -d '{"scientific_names": ["Felis catus", "Bos taurus"]}'
+``` 
+
+__Example Results:__
+
+1. 
+```json
+{
+	"status_code": 200,
+	"message": "Success",
+	"meta_data": {
+		"execution_time": 0.24,
+		"creation_time": "2019-04-03T23:00:30.418005",
+		"source_urls": [
+			"https://index.globalnames.org"
+		]
+	},
+	"result": [
+		{
+			"matched_results": [
+				{
+					"data_source": "Catalogue of Life",
+					"common_names": [
+						"Domestic Cat"
+					],
+					"matched_name": "Felis catus Linnaeus, 1758"
+				},
+				{
+					"data_source": "GBIF Backbone Taxonomy",
+					"common_names": [
+						"Domestic Cat",
+						"cat",
+						"Domestic cat"
+					],
+					"matched_name": "Felis catus Linnaeus, 1758"
+				}
+			],
+			"searched_name": "Felis catus"
+		},
+		{
+			"matched_results": [
+				{
+					"data_source": "Catalogue of Life",
+					"common_names": [
+						"aurochs"
+					],
+					"matched_name": "Bos taurus Linnaeus, 1758"
+				},
+				{
+					"data_source": "GBIF Backbone Taxonomy",
+					"common_names": [
+						"aurochs",
+						"domestic cattle (feral)",
+						"domesticated cattle",
+						"cow"
+					],
+					"matched_name": "Bos taurus Linnaeus, 1758"
+				}
+			],
+			"searched_name": "Bos taurus"
+		}
+	]
+}
+```
+
+
+__Citation/Source:__         https://index.globalnames.org
 
 __Service Quality:__
 
- * *Restrictions on capacity:*  __maximum 30 species allowed__
+ * *Restrictions on capacity:*  __maximum 100 species allowed__
  * *Expected response time:*  	__1s~60s__ (_might be longer depending on the number of input common names_)
  * *Informative message/status:*
    
