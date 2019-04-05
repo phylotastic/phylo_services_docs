@@ -1801,14 +1801,14 @@ __Parameters:__
 2. Parameter details:
   * __Name:__ 	 	<span style="color:blue">metadata</span> 
   * __Category:__  	optional
-  * __Data Type:__  boolean (default: False)
+  * __Data Type:__  boolean (default: `false`)
   * __Description:__  a boolean value to specify whether to include tree metadata with the result.
 
 3. Parameter details:
   * __Name:__ 	 	<span style="color:blue">ottid</span> 
   * __Category:__  	optional
-  * __Data Type:__  boolean (default: True)
-  * __Description:__  a boolean value to specify whether to remove ott ids from the tree.
+  * __Data Type:__  boolean (default: `true`)
+  * __Description:__  a boolean value to specify whether to keep ott ids in the tree or not.
 
 
 __Example Commands/Requests:__
@@ -1816,7 +1816,7 @@ __Example Commands/Requests:__
 1. 
 
 ```
-https://phylo.cs.nmsu.edu/phylotastic_ws/gt/ot/get_tree?taxa=Panthera%20pardus|Taxidea%20taxus|Lutra%20lutra|Canis%20lupus|Mustela%20altaica
+https://phylo.cs.nmsu.edu/phylotastic_ws/gt/ot/get_tree?taxa=Panthera%20pardus|Taxidea%20taxus|Lutra%20lutra|Canis%20lupus|Mustela%20altaica&metadata=true
 ```
 
 __Example Results:__
@@ -1910,7 +1910,19 @@ __Parameters:__
   * __Data Type:__  list of strings
   * __Description:__ list of scientific names.
  				
- 				
+2. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">metadata</span> 
+  * __Category:__  	optional
+  * __Data Type:__  boolean (default: `false`)
+  * __Description:__  a boolean value to specify whether to include tree metadata with the result.
+
+3. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">ottid</span> 
+  * __Category:__  	optional
+  * __Data Type:__  boolean (default: `true`)
+  * __Description:__  a boolean value to specify whether to keep ott ids in the tree or not.
+ 		
+		
 __Example Commands/Requests:__
 
 1. 
