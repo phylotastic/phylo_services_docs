@@ -25,6 +25,7 @@ __Phylotastic Web Services__ are grouped into the following categories:
 
 **[Miscellaneous services](#misc)** :  services for different use cases.
 
+**[Phylogenetic Tree Retrieval with Common Names](#compoundservice)**: service to get a tree with common names
 
 ---
 
@@ -6781,3 +6782,75 @@ Go to [__Top__](#servicesdocumentation).
 Go to [Scientific Name to Common Name](#scientificname).
 
 ---
+
+## <a name="compoundservice"></a>Phylogenetic Tree Retrieval with Common Names
+
+   | Service Name |  Summary | 
+   | :----------- | ---------: | 
+   | [OToL_common_Tree](#cpot) | Get Phylogenetic Trees from a list of taxa combining multiple services   | 
+   
+
+
+__Service Name:__  	 		<a name="cpot"></a>OToL_common_Tree
+
+__Service Description:__ 	A service to get Phylogenetic Trees with common names from a list of taxa using Open Tree of Life's induced_subtree method.
+
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/cp/gt/tree>
+
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		application/json
+
+__Output Format:__ 		application/json
+
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">list</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  string
+  * __Description:__  pipe ("|") delimited list of taxon names (scientific or common) depending on the __list_type__ parameter value.
+ 				
+2. Parameter details:
+  * __Name:__ 	 	list_type 
+  * __Category:__  	mandatory
+  * __Data Type:__  string
+  * __Description:__  a string value to specify which type (scientific or common) of list is provided as input. Valid values include `scientific` or `common`. 
+
+
+		
+__Example Commands/Requests:__
+
+1. 
+```
+curl -X POST "https://phylo.cs.nmsu.edu/phylotastic_ws/cp/gt/tree" -H "content-type:application/json" -d '{"list":["Panthera pardus", "Taxidea taxus","Lutra lutra","Canis lupus","Mustela altaica"],"list_type":"scientific"}'
+``` 
+
+__Example Results:__
+
+1. 
+
+```
+{
+	"status_code": 200,
+	"message": "Success",
+	"meta_data": {
+		"execution_time": 5.01,
+		"creation_time": "2019-04-24T23:39:53.006768",
+		"source_urls": [
+			"https://github.com/OpenTreeOfLife/opentree/wiki/Open-Tree-of-Life-APIs"
+		]
+	},
+	"input_list": [
+		"Panthera pardus",
+		"Taxidea taxus",
+		"Lutra lutra",
+		"Canis lupus",
+		"Mustela altaica"
+	],
+	"newick": "((((Eurasian river otter,Mountain weasel)mrcaott4709ott39395,American badger)Mustelidae,Gray wolf)Caniformia,Leopard)Carnivora;"
+}
+```
+
+
+
