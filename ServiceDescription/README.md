@@ -6420,8 +6420,9 @@ Go to [__Top__](#servicesdocumentation).
 
    | Service Name |  Summary | 
    | :----------- | ---------: | 
-   | [GNR_common_name](#gnrss) | Get common names (vernacular names) of a list of species from its scientific names using GNR API. | 
-   | [EOL_common_name](#eolss) | Get common names (vernacular names) of a list of species from its scientific names using EOL API. |
+   | [GNR_scientific_name](#gnrss) | Get common names (vernacular names) of a list of species from its scientific names using GNR API. | 
+   | [EOL_scientific_name](#eolss) | Get common names (vernacular names) of a list of species from its scientific names using EOL API. |
+   | [NCBI_scientific_name](#ncbiss) | Get common names (vernacular names) of a list of species from its scientific names using NCBI source. | 
    
 
 
@@ -6783,6 +6784,158 @@ Go to [Scientific Name to Common Name](#scientificname).
 
 ---
 
+__Service Name:__  	 	<a name="ncbiss"></a>NCBI_scientific_name
+
+__Service Description:__ 	A service to get common name(vernacular name) of a species from its scientific name using NCBI source.
+
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">scientific_names</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  list of strings
+  * __Description:__  a list of common names for which to find scientific names delimited by pipe "|".
+ 				
+  
+__Example Commands/Requests:__
+
+1. 
+```
+https://phylo.cs.nmsu.edu/phylotastic_ws/ss/ncbi/get_common_names?scientific_names=Rangifer tarandus|Ovis orientalis
+```
+
+
+__Example Results:__
+
+1. 
+```json
+{
+	"status_code": 200,
+	"message": "Success",
+	"result": [
+		{
+			"matched_results": [
+				{
+					"data_source": "NCBI",
+					"identifier": 9870,
+					"common_names": [
+						"reindeer"
+					],
+					"matched_name": "Rangifer tarandus"
+				}
+			],
+			"searched_name": "Rangifer tarandus"
+		},
+		{
+			"matched_results": [
+				{
+					"data_source": "NCBI",
+					"identifier": 469796,
+					"common_names": [
+						"Asiatic mouflon"
+					],
+					"matched_name": "Ovis orientalis"
+				}
+			],
+			"searched_name": "Ovis orientalis"
+		}
+	],
+	"metadata": {
+		"execution_time": "1.51",
+		"creation_time": "2019-05-08T18:17:13.661489",
+		"source_urls": [
+			"https://www.ncbi.nlm.nih.gov/taxonomy"
+		]
+	}
+}
+```
+
+
+__Alternative Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/ss/ncbi/common_names>
+
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		application/json
+
+__Output Format:__ 		application/json 
+
+
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">scientific_names</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  list of strings
+  * __Description:__  list of scientific names for which to find common names.
+ 				
+
+ 				
+__Example Commands/Requests:__
+
+1. 
+```
+curl -X POST "https://phylo.cs.nmsu.edu/phylotastic_ws/ss/ncbi/common_names" -H "content-type:application/json" -d '{"scientific_names": ["Felis catus", "Bos taurus"]}'
+``` 
+
+__Example Results:__
+
+1. 
+```json
+{
+	"status_code": 200,
+	"message": "Success",
+	"result": [
+		{
+			"matched_results": [
+				{
+					"data_source": "NCBI",
+					"identifier": 9685,
+					"common_names": [
+						"domestic cat"
+					],
+					"matched_name": "Felis catus"
+				}
+			],
+			"searched_name": "Felis catus"
+		},
+		{
+			"matched_results": [
+				{
+					"data_source": "NCBI",
+					"identifier": 9913,
+					"common_names": [
+						"cattle"
+					],
+					"matched_name": "Bos taurus"
+				}
+			],
+			"searched_name": "Bos taurus"
+		}
+	],
+	"metadata": {
+		"execution_time": "1.61",
+		"creation_time": "2019-05-08T18:14:02.126145",
+		"source_urls": [
+			"https://www.ncbi.nlm.nih.gov/taxonomy"
+		]
+	}
+}
+```
+
+
+__Citation/Source:__         https://www.ncbi.nlm.nih.gov/taxonomy
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*  __maximum 20 species allowed__
+ * *Expected response time:*  	__1s~60s__ (_might be longer depending on the number of input common names_)
+ 
+
+Go to [__Top__](#servicesdocumentation).
+
+Go to [Scientific Name to Common Name](#scientificname).
+
+---
+
 ## <a name="compoundservice"></a>Phylogenetic Tree Retrieval with Common Names
 
    | Service Name |  Summary | 
@@ -6817,7 +6970,17 @@ __Parameters:__
   * __Data Type:__  string
   * __Description:__  a string value to specify which type (scientific or common) of list is provided as input. Valid values include `scientific` or `common`. 
 
+3. Parameter details:
+  * __Name:__ 	 	source 
+  * __Category:__  	optional
+  * __Data Type:__  string
+  * __Description:__  a string value to specify which source should be used to get scientific or common names. Valid values include `EOL`, `GNR`, and `NCBI`. Default value is `GNR`. 
 
+4. Parameter details:
+  * __Name:__ 	 	multiple 
+  * __Category:__  	optional
+  * __Data Type:__  boolean
+  * __Description:__  a string value to specify wheather multiple common names will be used in the result. Valid values include `true` and `false`. Default value is `false`. 
 		
 __Example Commands/Requests:__
 
@@ -6833,10 +6996,48 @@ __Example Results:__
 ```
 {
 	"status_code": 200,
-	"message": "Success",
+	"mapping": [
+		{
+			"scientific_name": "Lutra lutra",
+			"common_names": [
+				"european otter",
+				"eurasian otter",
+				"otter, eurasian otter"
+			]
+		},
+		{
+			"scientific_name": "Mustela altaica",
+			"common_names": [
+				"mountain weasel"
+			]
+		},
+		{
+			"scientific_name": "Taxidea taxus",
+			"common_names": [
+				"american badger",
+				"badger",
+				"north american badger"
+			]
+		},
+		{
+			"scientific_name": "Canis lupus",
+			"common_names": [
+				"gray wolf",
+				"grey wolf, wolf"
+			]
+		},
+		{
+			"scientific_name": "Panthera pardus",
+			"common_names": [
+				"leopard"
+			]
+		}
+	],
+	"newick": "((((Lutra lutra_European otter,Mustela altaica_Mountain weasel)mrcaott4709ott39395,Taxidea taxus_American badger)Mustelidae,Canis lupus_Gray wolf)Caniformia,Panthera pardus_Leopard)Carnivora;",
+	"source": "GNR",
 	"meta_data": {
-		"execution_time": 5.01,
-		"creation_time": "2019-04-24T23:39:53.006768",
+		"execution_time": 1.55,
+		"creation_time": "2019-05-08T18:44:50.803645",
 		"source_urls": [
 			"https://github.com/OpenTreeOfLife/opentree/wiki/Open-Tree-of-Life-APIs"
 		]
@@ -6848,7 +7049,7 @@ __Example Results:__
 		"Canis lupus",
 		"Mustela altaica"
 	],
-	"newick": "((((Eurasian river otter,Mountain weasel)mrcaott4709ott39395,American badger)Mustelidae,Gray wolf)Caniformia,Leopard)Carnivora;"
+	"message": "Success"
 }
 ```
 
