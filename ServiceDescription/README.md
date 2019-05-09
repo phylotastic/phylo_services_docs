@@ -6639,42 +6639,47 @@ __Example Results:__
 
 1. 
 ```json
-{
-    "status_code":200,
-    "message":"Success",
-    "meta_data":{
-        "execution_time":1.37,
-        "creation_time":"2019-03-06T22:18:01.372101",
-        "source_urls":[
-            "http://eol.org"
-        ]
-    },
-    "result":[
-        {
-            "searched_name":"Balaenoptera musculus",
-            "identifier":46559433,
-            "common_names":[
-                "Blue whale",
-                "Common Rorqual",
-                "Sibbald's Rorqual",
-                "Pygmy Blue Whale",
-                "Sibbold’s Rorqual",
-                "Sulphur-bottom Whale",
-                "blue whale",
-                "Ostende whale",
-                "Sibbald's rorqual",
-                "blue rorqual",
-                "common rorqual",
-                "finny whale",
-                "great blue whale",
-                "great northern rorqual",
-                "great rorqual",
-                "sulphurbottom whale",
-                "Blue Whale"
-            ],
-            "matched_name":"Balaenoptera musculus (Linnaeus, 1758)"
-        }
+
+  "status_code": 200,
+  "message": "Success",
+  "meta_data": {
+    "execution_time": 1.45,
+    "creation_time": "2019-05-08T18:54:59.443672",
+    "source_urls": [
+      "http://eol.org"
     ]
+  },
+  "result": [
+    {
+      "matched_results": [
+        {
+          "data_source": "Encyclopedia of Life",
+          "identifier": 46559433,
+          "common_names": [
+            "Blue whale",
+            "Common Rorqual",
+            "Sibbald's Rorqual",
+            "Ostende whale",
+            "Sibbald's rorqual",
+            "blue rorqual",
+            "blue whale",
+            "common rorqual",
+            "finny whale",
+            "great blue whale",
+            "great northern rorqual",
+            "great rorqual",
+            "sulphurbottom whale",
+            "Blue Whale",
+            "Sulphur-bottom Whale",
+            "Pygmy Blue Whale",
+            "Sibbold’s Rorqual"
+          ],
+          "matched_name": "Balaenoptera musculus (Linnaeus, 1758)"
+        }
+      ],
+      "searched_name": "Balaenoptera musculus"
+    }
+  ]
 }
 ```
 
@@ -6713,47 +6718,65 @@ __Example Results:__
 	"status_code": 200,
 	"message": "Success",
 	"meta_data": {
-		"execution_time": 3.46,
-		"creation_time": "2019-03-06T22:15:07.521965",
+		"execution_time": 3.96,
+		"creation_time": "2019-05-08T18:56:11.839524",
 		"source_urls": [
 			"http://eol.org"
 		]
 	},
 	"result": [
 		{
-			"searched_name": "Felis catus",
-			"identifier": 1037781,
-			"common_names": [
-				"cat",
-				"Wild Cat",
-				"Domestic Cat",
-				"Domestic cat",
-				"domestic cat",
-				"feral cat",
-				"house cat",
-				"Domestic Cat -- Feral cat"
+			"matched_results": [
+				{
+					"data_source": "Encyclopedia of Life",
+					"identifier": 1037781,
+					"common_names": [
+						"cat",
+						"Wild Cat",
+						"Domestic Cat",
+						"Domestic cat",
+						"domestic cat",
+						"feral cat",
+						"house cat",
+						"Domestic Cat -- Feral cat"
+					],
+					"matched_name": "Felis catus Linnaeus, 1758"
+				}
 			],
-			"matched_name": "Felis catus Linnaeus, 1758"
+			"searched_name": "Felis catus"
 		},
 		{
-			"searched_name": "Bos taurus",
-			"identifier": 34548,
-			"common_names": [
-				"ox"
+			"matched_results": [
+				{
+					"data_source": "Encyclopedia of Life",
+					"identifier": 34548,
+					"common_names": [
+						"ox",
+						"oxen",
+						"true cattle"
+					],
+					"matched_name": "Bos Linnaeus, 1758"
+				}
 			],
-			"matched_name": "Bos Linnaeus, 1758"
+			"searched_name": "Bos taurus"
 		},
 		{
-			"searched_name": "Capra hircus",
-			"identifier": 328660,
-			"common_names": [
-				"Domestic Goat",
-				"Domestic goat",
-				"Goat",
-				"Domestic goat ",
-				"domestic goat"
+			"matched_results": [
+				{
+					"data_source": "Encyclopedia of Life",
+					"identifier": 328660,
+					"common_names": [
+						"Domestic Goat",
+						"Domestic goat",
+						"Domestic goat ",
+						"domestic goat",
+						"Goat",
+						"goat (feral)"
+					],
+					"matched_name": "Capra hircus Linnaeus, 1758"
+				}
 			],
-			"matched_name": "Capra hircus Linnaeus, 1758"
+			"searched_name": "Capra hircus"
 		}
 	]
 }
@@ -6962,7 +6985,7 @@ __Parameters:__
   * __Name:__ 	 	<span style="color:blue">list</span> 
   * __Category:__  	mandatory
   * __Data Type:__  string
-  * __Description:__  pipe ("|") delimited list of taxon names (scientific or common) depending on the __list_type__ parameter value.
+  * __Description:__  a list of taxon names (scientific or common) depending on the __list_type__ parameter value.
  				
 2. Parameter details:
   * __Name:__ 	 	list_type 
