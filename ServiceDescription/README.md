@@ -6997,7 +6997,7 @@ __Parameters:__
   * __Name:__ 	 	source 
   * __Category:__  	optional
   * __Data Type:__  string
-  * __Description:__  a string value to specify which source should be used to get scientific or common names. Valid values include `EOL`, `GNR`, and `NCBI`. Default value is `GNR`. 
+  * __Description:__  a string value to specify which source should be used to get scientific or common names. Valid values include `EOL`, `GNR` (default), and `NCBI` when **list_type** value is `scientific`. When **list_type** value is `common`, valid values include  `NCBI`(default), `EBI`, `ITIS`, `TROPICOS`.
 
 4. Parameter details:
   * __Name:__ 	 	multiple 
@@ -7076,5 +7076,51 @@ __Example Results:__
 }
 ```
 
+2. 
+```
+curl -X POST "https://phylo.cs.nmsu.edu/phylotastic_ws/cp/gt/tree" -H "content-type:application/json" -d '{"list":["cattle", "cat", "goat", "pig", "sheep", "duck", "chicken", "horse", "domestic dog"],"list_type":"common"}'
+``` 
+
+__Example Results:__
+
+2. 
+
+```
+{
+	"status_code": 200,
+	"mapping": {
+		"sheep": "Ovis aries",
+		"horse": "Equus caballus",
+		"domestic dog": "Canis lupus familiaris",
+		"cattle": "Bos taurus",
+		"cat": "Felis catus",
+		"duck": "Anas platyrhynchos",
+		"chicken": "Gallus gallus",
+		"pig": "Sus scrofa",
+		"goat": "Capra hircus"
+	},
+	"newick": "((((((Caprahircus-speciesindomainEukaryota-ott19017,Ovis aries_sheep)Caprinae,Bos taurus_cattle)Bovidae,Sus scrofa_pig)mrcaott1548ott21987,Equus caballus_horse)mrcaott1548ott3021,(Canis lupus familiaris_domestic dog,Felis catus_cat)Carnivora)mrcaott1548ott4697,(Gallus gallus_chicken,Anas platyrhynchos_duck)Galloanserae)Amniota;",
+	"source": "NCBI",
+	"meta_data": {
+		"execution_time": 14.18,
+		"creation_time": "2019-05-20T18:26:43.189674",
+		"source_urls": [
+			"https://github.com/OpenTreeOfLife/opentree/wiki/Open-Tree-of-Life-APIs"
+		]
+	},
+	"input_list": [
+		"cattle",
+		"cat",
+		"goat",
+		"pig",
+		"sheep",
+		"duck",
+		"chicken",
+		"horse",
+		"domestic dog"
+	],
+	"message": "Success"
+}
+```
 
 
