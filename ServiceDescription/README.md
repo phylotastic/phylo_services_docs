@@ -6101,6 +6101,169 @@ Go to [__Top__](#servicesdocumentation).
 
 ---
 
+__Service Name:__  	 	OToL_supported_studies_info
+
+__Service Description:__ 	A service to get detail information of supported studies from OpenTreeOfLife.
+
+__Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/md/get_study_info>
+
+__HTTP Method:__ 		GET
+
+__Input Format:__ 		application/x-www-form-urlencoded
+
+__Output Format:__ 		application/json 
+ 				
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">study_ids</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  string
+  * __Description:__  pipe ("|") delimited list of OpenTree supporting study ids.
+ 				
+  
+__Example Commands/Requests:__ 
+
+1. 
+```
+https://phylo.cs.nmsu.edu/phylotastic_ws/md/get_study_info?study_ids=ot_1185@tree1|pg_2685@tree6235
+```
+
+
+__Example Results:__
+
+1. 
+```json
+
+  "status_code": 200,
+  "message": "Success",
+  "meta_data": {
+    "execution_time": 0.82,
+    "creation_time": "2019-09-17T09:49:07.367044",
+    "source_urls": [
+      "https://github.com/OpenTreeOfLife/opentree/wiki/Open-Tree-of-Life-APIs#studies"
+    ]
+  },
+  "studies": [
+    {
+      "PublicationYear": 2017,
+      "FocalCladeTaxonName": "Carnivora",
+      "Publication": "Chris J. Law, Graham J. Slater, Rita S. Mehta, 2017, 'Lineage Diversity and Size Disparity in Musteloidea: Testing Patterns of Adaptive Radiation Using Molecular and Fossil-Based Methods', Systematic Biology",
+      "CandidateTreeForSynthesis": "",
+      "PublicationDOI": "http://dx.doi.org/10.1093/sysbio/syx047",
+      "DataRepository": "",
+      "Curator": [
+        "cjlaw9"
+      ],
+      "PublicationIdentifier": "ot_1185"
+    },
+    {
+      "PublicationYear": 2008,
+      "FocalCladeTaxonName": "Mustelidae",
+      "Publication": "Koepfli, Klaus-Peter, Kerry A Deere, Graham J Slater, Colleen Begg, Keith Begg, Lon Grassman, Mauro Lucherini, Geraldine Veron, Robert K Wayne. 2008. Multigene phylogeny of the Mustelidae: Resolving relationships, tempo and biogeographic history of a mammalian adaptive radiation. BMC Biology 6 (1): 10.",
+      "CandidateTreeForSynthesis": "",
+      "PublicationDOI": "http://dx.doi.org/10.1186/1741-7007-6-10",
+      "DataRepository": "",
+      "Curator": "Joseph Brown",
+      "PublicationIdentifier": "pg_2685"
+    }
+  ]
+}
+```
+
+
+__Alternative Resource URI:__  		<https://phylo.cs.nmsu.edu/phylotastic_ws/md/study_info>
+
+__HTTP Method:__ 		POST
+
+__Input Format:__ 		application/json
+
+__Output Format:__ 		application/json 
+
+
+__Parameters:__
+
+1. Parameter details:
+  * __Name:__ 	 	<span style="color:blue">study_ids</span> 
+  * __Category:__  	mandatory
+  * __Data Type:__  list of strings
+  * __Description:__  a list of OpenTree supporting study ids 
+ 				
+ 				
+__Example Commands/Requests:__
+
+1. 
+```bash
+curl -X POST https://phylo.cs.nmsu.edu/phylotastic_ws/md/study_info -H "content-type:application/json" -d '{"study_ids":["pg_1428@tree2855","ot_328@tree1"]}'
+```
+
+
+__Example Results:__
+
+1. 
+
+```json
+{
+	"status_code": 200,
+	"message": "Success",
+	"meta_data": {
+		"execution_time": 0.67,
+		"creation_time": "2019-09-17T09:44:19.665576",
+		"source_urls": [
+			"https://github.com/OpenTreeOfLife/opentree/wiki/Open-Tree-of-Life-APIs#studies"
+		]
+	},
+	"studies": [
+		{
+			"PublicationYear": 2011,
+			"FocalCladeTaxonName": "Mammalia",
+			"Publication": "Meredith, R.W., Janecka J., Gatesy J., Ryder O.A., Fisher C., Teeling E., Goodbla A., Eizirik E., Simao T., Stadler T., Rabosky D., Honeycutt R., Flynn J., Ingram C., Steiner C., Williams T., Robinson T., Herrick A., Westerman M., Ayoub N., Springer M., & Murphy W. 2011. Impacts of the Cretaceous Terrestrial Revolution and KPg Extinction on Mammal Diversification. Science 334 (6055): 521-524.",
+			"CandidateTreeForSynthesis": "",
+			"PublicationDOI": "http://dx.doi.org/10.1126/science.1211028",
+			"DataRepository": "http://purl.org/phylo/treebase/phylows/study/TB2:S11872",
+			"Curator": "Chris Owen",
+			"PublicationIdentifier": "pg_1428"
+		},
+		{
+			"PublicationYear": 2012,
+			"FocalCladeTaxonName": "Carnivora",
+			"Publication": "Nyakatura, Katrin, Olaf RP Bininda-Emonds. 2012. Updating the evolutionary history of Carnivora (Mammalia): a new species-level supertree complete with divergence time estimates. BMC Biology 10 (1): 12",
+			"CandidateTreeForSynthesis": "",
+			"PublicationDOI": "http://dx.doi.org/10.1186/1741-7007-10-12",
+			"DataRepository": "",
+			"Curator": [
+				"Joseph W. Brown",
+				"Karen Cranston"
+			],
+			"PublicationIdentifier": "ot_328"
+		}
+	]
+}
+```
+
+
+__Citation/Source:__    https://github.com/OpenTreeOfLife/opentree/wiki/Open-Tree-of-Life-APIs#studies
+
+__Service Quality:__
+
+ * *Restrictions on capacity:*  __unknown__ (_depends on the source_)
+ * *Expected response time:*  	__1s~10s__ (_might be longer depending on the input tree_)
+ * *Informative message/status:*
+   
+   | Case | HTTP status code | Message | 
+   | :----------- | :------: | ------------: | 
+   | Successful       | 200   | Success        | 
+   | Missing value of mandatory parameter       | 400   | Error: '_parameter name_' parameter must have a valid value        |
+   | Invalid name of mandatory parameter (e.g. lst)       | 400   | Error: Missing parameter '_parameter name_'        |
+   | Invalid input JSON data       | 400   | Invalid JSON document        |
+   | Invalid method name in resource URI (e.g. /study)       | 404   | Error: Could not find the requested resource URI        |
+   | Internal server error       | 500   |         |
+
+
+Go to [__Top__](#servicesdocumentation).
+
+---
+
 __Service Name:__  	 	Compare_trees
 
 __Service Description:__ 	A service to compare two Phylogenetic Trees symmetrically.
