@@ -6134,7 +6134,7 @@ __Example Results:__
 
 1. 
 ```json
-
+{
   "status_code": 200,
   "message": "Success",
   "meta_data": {
