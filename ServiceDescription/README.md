@@ -1908,8 +1908,8 @@ __Example Results:__
 	"status_code": 200,
 	"message": "Success",
 	"meta_data": {
-		"execution_time": 1.54,
-		"creation_time": "2017-10-24T22:47:06.721292",
+		"execution_time": 1.14,
+		"creation_time": "2019-10-02T10:42:31.928970",
 		"source_urls": [
 			"https://github.com/OpenTreeOfLife/opentree/wiki/Open-Tree-of-Life-APIs#tree_of_life"
 		]
@@ -1918,39 +1918,23 @@ __Example Results:__
 		"alignment_method": "NA",
 		"character_matrix": "NA",
 		"rooted": true,
-		"supporting_studies": [
-			{
-				"PublicationYear": 2010,
-				"FocalCladeTaxonName": "Parulidae",
-				"Publication": "Lovette, Irby J., Jorge L. Pérez-Emán, John P. Sullivan, Richard C. Banks, Isabella Fiorentino, Sergio Córdoba-Córdoba, María Echeverry-Galvis, F. Keith Barker, Kevin J. Burns, John Klicka, Scott M. Lanyon, Eldredge Bermingham. 2010. A comprehensive multilocus phylogeny for the wood-warblers and a revised classification of the Parulidae (Aves). Molecular Phylogenetics and Evolution 57 (2): 753-770.",
-				"CandidateTreeForSynthesis": "tree6024",
-				"PublicationDOI": "https://dx.doi.org/10.1016/j.ympev.2010.07.018",
-				"DataRepository": "",
-				"Curator": "Joseph W. Brown",
-				"PublicationIdentifier": "pg_2591"
-			},
-			{
-				"PublicationYear": 2015,
-				"FocalCladeTaxonName": "Passeriformes",
-				"Publication": "Barker, F. Keith, Kevin J. Burns, John Klicka, Scott M. Lanyon, Irby J. Lovette. 2015. New insights into New World biogeography: An integrated view from the phylogeny of blackbirds, cardinals, sparrows, tanagers, warblers, and allies. The Auk 132 (2): 333-348.",
-				"CandidateTreeForSynthesis": "tree1",
-				"PublicationDOI": "https://dx.doi.org/10.1642/auk-14-110.1",
-				"DataRepository": "https://datadryad.org/resource/doi:10.5061/dryad.pb787",
-				"Curator": "Joseph W. Brown",
-				"PublicationIdentifier": "ot_770"
-			}
-		],
 		"anastomosing": false,
 		"branch_lengths_type": null,
+		"study_ids": [
+			"ot_770@tree1",
+			"ot_521@tree1",
+			"ot_809@tree2",
+			"pg_2591@tree6024"
+		],
 		"consensus_type": "NA",
-		"inference_method": "induced_subtree from synthetic tree with ID opentree9.1",
+		"inference_method": "induced_subtree from synthetic tree with ID opentree10.4",
 		"branch_support_type": null,
 		"num_tips": 5,
 		"gene_or_species": "species",
 		"topology_id": "NA",
-		"synthetic_tree_id": "opentree9.1"
+		"synthetic_tree_id": "opentree10.4"
 	},
-	"newick": "(Setophaga_magnolia_ott532751,Setophaga_striata_ott60236,Setophaga_plumbea_ott45750,Setophaga_angelae_ott381849,Setophaga_virens_ott1014098)Setophaga_ott285198;"
+	"newick": "(Setophaga_striata_ott60236,Setophaga_plumbea_ott45750,Setophaga_angelae_ott381849,Setophaga_magnolia_ott532751,Setophaga_virens_ott1014098)Setophaga_ott285198;"
 }
 ```
 
