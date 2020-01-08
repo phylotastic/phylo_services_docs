@@ -65,7 +65,7 @@ __Parameters:__
   * __Name:__ 	 	<span style="color:blue">engine</span> 
   * __Category:__  	optional
   * __Data Type:__  integer
-  * __Description:__  a integer value to specify which search engine (_TaxonFinder_ or _NetiNeti_) to use. By default it is `0` which means it will use both engines. Value `1` means TaxonFinder and value `2` means NetiNeti.
+  * __Description:__  a integer value to specify which search engine (_Heuristic and Bayes approaches_ or _skip Bayes_) to use. By default it is `0` which means it will use Heuristic and Bayes approaches. Value `1` means skipping Bayes algorithm.
  				
 __Example Commands/Requests:__
 
@@ -347,7 +347,7 @@ __Parameters:__
   * __Name:__ 	 	<span style="color:blue">engine</span> 
   * __Category:__  	optional
   * __Data Type:__  integer
-  * __Description:__  a integer value to specify which search engine (_TaxonFinder_ or _NetiNeti_) to use. By default it is `0` which means it will use both engines. Value `1` means TaxonFinder and value `2` means NetiNeti.
+  * __Description:__  a integer value to specify which search engine (_Heuristic and Bayes approaches_ or _skip Bayes_) to use. By default it is `0` which means it will use Heuristic and Bayes approaches. Value `1` means skipping Bayes algorithm.
  				
 __Example Commands/Requests:__
 
@@ -475,7 +475,7 @@ __Parameters:__
   * __Name:__ 	 	<span style="color:blue">engine</span> 
   * __Category:__  	optional
   * __Data Type:__  integer
-  * __Description:__  a integer value to specify which search engine (_TaxonFinder_ or _NetiNeti_) to use. By default it is `0` which means it will use both engines. Value `1` means TaxonFinder and value `2` means NetiNeti.
+  * __Description:__  a integer value to specify which search engine (_Heuristic and Bayes approaches_ or _skip Bayes_) to use. By default it is `0` which means it will use Heuristic and Bayes approaches. Value `1` means skipping Bayes algorithm.
  				
 __Example Commands/Requests:__
 
